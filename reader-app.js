@@ -354,8 +354,8 @@ function showTapHintOnce() {
   state.hintShown = true;
   const hint = $('tapHint');
   hint.textContent = desktopKeyboardEnabled()
-    ? 'Space play/pause · ←/→ seek · ↑/↓ WPM · Tap or click for settings'
-    : 'Tap play · Double-tap lock · Swipe ↑↓ WPM · Hold settings';
+    ? 'Click to pause · Hold to open menu'
+    : 'Tap to pause · Hold to open menu';
   hint.classList.add('show');
   setTimeout(() => hint.classList.remove('show'), 3500);
 }
@@ -1814,6 +1814,10 @@ function bindUI() {
 
   $('chapterSelect').addEventListener('change', (e) => switchChapter(+e.target.value));
   $('btnLibrary').addEventListener('click', showLibrary);
+  $('readerBackBtn')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showLibrary();
+  });
   $('btnCloseSheet').addEventListener('click', closeSheet);
   $('btnRestartPara').addEventListener('click', () => { restartParagraph(); closeSheet(); });
   $('sheetOverlay').addEventListener('click', (e) => {
