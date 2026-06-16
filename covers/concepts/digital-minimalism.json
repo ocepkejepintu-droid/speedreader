@@ -1,0 +1,25 @@
+{
+  "slug": "digital-minimalism",
+  "title": "Digital Minimalism",
+  "author": "Cal Newport",
+  "category": "Productivity",
+  "subtopics": "digital declutter, solitude, attention",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "PRODUCTIVITY",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Digital",
+    "Minimalism"
+  ],
+  "subline": "digital declutter",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Digital Minimalism\" (Productivity) — composed from book tokens."
+}

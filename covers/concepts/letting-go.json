@@ -1,0 +1,25 @@
+{
+  "slug": "letting-go",
+  "title": "Letting Go",
+  "author": "David R. Hawkins",
+  "category": "Happiness",
+  "subtopics": "emotions, healing, courage, self-compassion",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HAPPINESS",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Letting",
+    "Go"
+  ],
+  "subline": "emotions",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Letting Go\" (Happiness) — composed from book tokens."
+}

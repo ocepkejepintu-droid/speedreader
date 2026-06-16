@@ -1,0 +1,25 @@
+{
+  "slug": "the-four-agreements",
+  "title": "The Four Agreements",
+  "author": "Don Miguel Ruiz",
+  "category": "Spirituality",
+  "subtopics": "Toltec wisdom, freedom, ancient teachings",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SPIRITUALITY",
+  "motif": "venn",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The",
+    "Four Agreements"
+  ],
+  "subline": "Toltec wisdom",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=venn for \"The Four Agreements\" (Spirituality) — composed from book tokens."
+}

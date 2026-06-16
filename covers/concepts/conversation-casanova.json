@@ -1,0 +1,25 @@
+{
+  "slug": "conversation-casanova",
+  "title": "Conversation Casanova",
+  "author": "Damon D'Amico",
+  "category": "Negotiation",
+  "subtopics": "dating, attraction, conversation",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "NEGOTIATION",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Conversation",
+    "Casanova"
+  ],
+  "subline": "dating",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Conversation Casanova\" (Negotiation) — composed from book tokens."
+}

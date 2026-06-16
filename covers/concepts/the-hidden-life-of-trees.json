@@ -1,0 +1,26 @@
+{
+  "slug": "the-hidden-life-of-trees",
+  "title": "The Hidden Life of Trees",
+  "author": "Peter Wohlleben",
+  "category": "Home & Environment",
+  "subtopics": "trees, forests, ecosystems",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HOME & ENVIRONMENT",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The Hidden",
+    "Life of",
+    "Trees"
+  ],
+  "subline": "trees",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=split for \"The Hidden Life of Trees\" (Home & Environment) — composed from book tokens."
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "zero-to-one",
+  "title": "Zero to One",
+  "author": "Peter Thiel",
+  "category": "Business & Career",
+  "subtopics": "startups, monopoly, innovation",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Zero",
+    "to One"
+  ],
+  "subline": "startups",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "pill": "1",
+  "pillPos": "top",
+  "rationale": "motif=orb for \"Zero to One\" (Business & Career) — composed from book tokens."
+}

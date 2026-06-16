@@ -1,0 +1,25 @@
+{
+  "slug": "dopamine-detox",
+  "title": "Dopamine Detox",
+  "author": "Thibaut Meurisse",
+  "category": "Self-Growth",
+  "subtopics": "dopamine, focus, productivity, mindfulness",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Dopamine",
+    "Detox"
+  ],
+  "subline": "dopamine",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=split for \"Dopamine Detox\" (Self-Growth) — composed from book tokens."
+}

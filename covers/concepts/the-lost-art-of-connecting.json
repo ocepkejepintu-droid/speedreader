@@ -1,0 +1,26 @@
+{
+  "slug": "the-lost-art-of-connecting",
+  "title": "The Lost Art of Connecting",
+  "author": "",
+  "category": "Happiness",
+  "subtopics": "relationships, connection, communication",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HAPPINESS",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The Lost",
+    "Art of",
+    "Connecting"
+  ],
+  "subline": "relationships",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"The Lost Art of Connecting\" (Happiness) — composed from book tokens."
+}

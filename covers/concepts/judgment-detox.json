@@ -1,0 +1,25 @@
+{
+  "slug": "judgment-detox",
+  "title": "Judgment Detox",
+  "author": "Gabrielle Bernstein",
+  "category": "Self-Growth",
+  "subtopics": "judgment, self-awareness, growth, emotional healing",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Judgment",
+    "Detox"
+  ],
+  "subline": "judgment",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Judgment Detox\" (Self-Growth) — composed from book tokens."
+}

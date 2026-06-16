@@ -1,0 +1,25 @@
+{
+  "slug": "the-art-of-gathering",
+  "title": "The Art of Gathering",
+  "author": "Priya Parker",
+  "category": "Business & Career",
+  "subtopics": "gatherings, community, hosting, connection",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The Art",
+    "of Gathering"
+  ],
+  "subline": "gatherings",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"The Art of Gathering\" (Business & Career) — composed from book tokens."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "the-tipping-point",
+  "title": "The Tipping Point",
+  "author": "Malcolm Gladwell",
+  "category": "Society & Tech",
+  "subtopics": "trends, epidemics, social phenomena",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The",
+    "Tipping Point"
+  ],
+  "subline": "trends",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"The Tipping Point\" (Society & Tech) — composed from book tokens."
+}

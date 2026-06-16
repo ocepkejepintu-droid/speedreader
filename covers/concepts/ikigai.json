@@ -1,0 +1,24 @@
+{
+  "slug": "ikigai",
+  "title": "Ikigai",
+  "author": "Héctor García and Francesc Miralles",
+  "category": "Self-Growth",
+  "subtopics": "purpose, longevity, mindfulness",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "venn",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 540,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Ikigai"
+  ],
+  "subline": "purpose",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=venn for \"Ikigai\" (Self-Growth) — composed from book tokens."
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "one-small-step-can-change-your-life",
+  "title": "One Small Step Can Change Your Life",
+  "author": "Robert Maurer",
+  "category": "Self-Growth",
+  "subtopics": "kaizen, small steps, habit change",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "One Small",
+    "Step Can",
+    "Change Your Life"
+  ],
+  "subline": "kaizen",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "pill": "1",
+  "pillPos": "top",
+  "rationale": "motif=orb for \"One Small Step Can Change Your Life\" (Self-Growth) — composed from book tokens."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "chip-war",
+  "title": "Chip War",
+  "author": "Chris Miller",
+  "category": "Society & Tech",
+  "subtopics": "semiconductors, geopolitics, tech industry",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "mark",
+  "titlePos": "center",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Chip",
+    "War"
+  ],
+  "subline": "semiconductors",
+  "sublinePos": "subline-bot",
+  "accent": "brand-bottom",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "top",
+  "rationale": "motif=mark for \"Chip War\" (Society & Tech) — composed from book tokens."
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "the-lean-startup",
+  "title": "The Lean Startup",
+  "author": "Eric Ries",
+  "category": "Business & Career",
+  "subtopics": "MVP, validated learning, innovation",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "number",
+  "number": "01",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The",
+    "Lean Startup"
+  ],
+  "subline": "MVP",
+  "sublinePos": "subline-bot",
+  "accent": "brand-corner",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=number for \"The Lean Startup\" (Business & Career) — composed from book tokens."
+}

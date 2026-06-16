@@ -1,0 +1,26 @@
+{
+  "slug": "battle-hymn-of-the-tiger-mother",
+  "title": "Battle Hymn of the Tiger Mother",
+  "author": "Amy Chua",
+  "category": "Family",
+  "subtopics": "parenting, Chinese-American, strict upbringing",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "FAMILY",
+  "motif": "arc",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Battle Hymn",
+    "of the",
+    "Tiger Mother"
+  ],
+  "subline": "parenting",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=arc for \"Battle Hymn of the Tiger Mother\" (Family) — composed from book tokens."
+}

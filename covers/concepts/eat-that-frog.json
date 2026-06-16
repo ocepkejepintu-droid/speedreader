@@ -1,0 +1,25 @@
+{
+  "slug": "eat-that-frog",
+  "title": "Eat That Frog!",
+  "author": "Brian Tracy",
+  "category": "Productivity",
+  "subtopics": "prioritization, procrastination, time management",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "PRODUCTIVITY",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Eat",
+    "That Frog!"
+  ],
+  "subline": "prioritization",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=split for \"Eat That Frog!\" (Productivity) — composed from book tokens."
+}

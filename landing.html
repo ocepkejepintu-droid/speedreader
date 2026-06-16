@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="description" content="RSVP Reader — a free, no-account EPUB reader that flashes one word at a time so you can finish books in stolen minutes. Runs in your browser, syncs across devices.">
+<meta property="og:title" content="RSVP Reader — one word at a time, in your browser">
+<meta property="og:description" content="Free, no account, no tracking. EPUBs stay on your device. Library syncs across phone, tablet, and desktop.">
+<meta property="og:url" content="https://zipang.id/rsvp/">
+<meta property="og:type" content="website">
+<title>RSVP Reader — read EPUBs one word at a time</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#0a0a0a;color:#f0f0f0;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-text-size-adjust:100%}
+body{min-height:100vh;display:flex;flex-direction:column}
+a{color:#ff6b6b;text-decoration:none}
+a:hover,a:focus{text-decoration:underline}
+img,svg{display:block;max-width:100%;height:auto}
+
+.wrap{max-width:880px;margin:0 auto;padding:0 1.25rem;width:100%}
+
+/* Hero */
+.hero{padding:4rem 0 3rem;text-align:center}
+.hero h1{font-size:clamp(2.2rem,7vw,3.6rem);font-weight:700;margin:0 0 1rem;letter-spacing:-0.02em;line-height:1.1}
+.hero h1 .accent{color:#ff6b6b}
+.hero p.lede{font-size:clamp(1.05rem,2.5vw,1.3rem);color:#b8b8b8;margin:0 auto 2rem;max-width:36rem}
+.cta{display:inline-block;background:#ff6b6b;color:#0a0a0a;padding:0.95rem 1.75rem;border-radius:10px;font-weight:600;font-size:1.05rem;border:0;cursor:pointer;transition:transform 0.08s ease,background 0.15s ease}
+.cta:hover,.cta:focus{background:#ff8585;text-decoration:none;transform:translateY(-1px)}
+.cta:active{transform:translateY(0)}
+
+/* Demo image */
+.demo{margin:2.5rem auto 0;max-width:680px;border-radius:12px;overflow:hidden;background:#1a1a1a;border:1px solid #2a2a2a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#555;font-size:0.9rem}
+.demo img{width:100%;height:100%;object-fit:cover}
+
+/* Features */
+.section{padding:3.5rem 0}
+.section h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:600;margin:0 0 2rem;text-align:center;letter-spacing:-0.01em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.card{background:#161616;border:1px solid #242424;border-radius:12px;padding:1.5rem}
+.card h3{font-size:1.05rem;font-weight:600;margin:0 0 0.5rem;color:#fff}
+.card p{margin:0;color:#a8a8a8;font-size:0.95rem}
+.card .icon{font-size:1.6rem;line-height:1;margin-bottom:0.75rem;display:block}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;counter-reset:step}
+.step{counter-increment:step;padding-left:0}
+.step .num{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;background:#ff6b6b;color:#0a0a0a;border-radius:50%;font-weight:700;font-size:0.95rem;margin-bottom:0.75rem}
+.step h3{font-size:1.05rem;font-weight:600;margin:0 0 0.5rem}
+.step p{margin:0;color:#a8a8a8;font-size:0.95rem}
+
+/* Footer */
+.footer{margin-top:auto;padding:2rem 0;border-top:1px solid #1a1a1a;font-size:0.9rem;color:#777}
+.footer .inner{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;justify-content:space-between;align-items:center}
+.footer a{color:#999}
+@media (max-width:480px){
+  .hero{padding:2.5rem 0 2rem}
+  .section{padding:2.5rem 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Read more books.<br><span class="accent">One word at a time.</span></h1>
+    <p class="lede">RSVP Reader is a free, no-account EPUB reader for the browser. Words flash in place so you can finish chapters in the time you'd normally waste on a feed.</p>
+    <a class="cta" href="https://zipang.id/rsvp/app/">Open the reader</a>
+
+    <div class="demo">
+      <img src="demo.gif" alt="60-second screencast: drag an EPUB into the library, read in RSVP mode, switch to scroll, and pick up on your phone." loading="lazy">
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="icon" aria-hidden="true">&#9679;</span>
+        <h3>Focused reading</h3>
+        <p>One word anchored on the same focal point, with the red letter as the optical recognition point. Your eyes never move. Choose your WPM; pause on punctuation.</p>
+      </div>
+      <div class="card">
+        <span class="icon" aria-hidden="true">&#128274;</span>
+        <h3>Your library stays yours</h3>
+        <p>Files live on your device. Progress syncs across phone, tablet, and desktop through iCloud Drive. No account, no telemetry, no subscription.</p>
+      </div>
+      <div class="card">
+        <span class="icon" aria-hidden="true">&#128241;</span>
+        <h3>Works everywhere</h3>
+        <p>It's a PWA. Install on iOS, Android, macOS, Windows, or Linux. Same URL everywhere. Same library. Same chapter, same line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="num" aria-hidden="true">1</span>
+        <h3>Drop in an EPUB</h3>
+        <p>Drag a file onto the library. It stays on your device, no upload, no conversion step.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">2</span>
+        <h3>Pick a mode</h3>
+        <p>RSVP for speed, Phantom for context, or Scroll for a normal read. WPM is a slider, not a setting you commit to.</p>
+      </div>
+      <div class="step">
+        <span class="num" aria-hidden="true">3</span>
+        <h3>Open it anywhere</h3>
+        <p>Same URL on your phone and your library is there. Pick up at the last word, not the last chapter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap inner">
+    <span>RSVP Reader &middot; free, in your browser</span>
+    <span>
+      <a href="#privacy">Privacy</a>
+      <p><a href="bookmarklet.html">Send-to-RSVP bookmarklet</a> &mdash; one click from any article to your library.</p>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

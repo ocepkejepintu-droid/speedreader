@@ -1,0 +1,25 @@
+{
+  "slug": "the-unfair-advantage",
+  "title": "The Unfair Advantage",
+  "author": "",
+  "category": "Business & Career",
+  "subtopics": "startup advantages, location, timing",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The",
+    "Unfair Advantage"
+  ],
+  "subline": "startup advantages",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"The Unfair Advantage\" (Business & Career) — composed from book tokens."
+}

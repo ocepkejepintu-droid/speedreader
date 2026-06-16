@@ -1,0 +1,25 @@
+{
+  "slug": "the-deficit-myth",
+  "title": "The Deficit Myth",
+  "author": "Stephanie Kelton",
+  "category": "Society & Tech",
+  "subtopics": "economy, public policy, MMT",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The",
+    "Deficit Myth"
+  ],
+  "subline": "economy",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"The Deficit Myth\" (Society & Tech) — composed from book tokens."
+}

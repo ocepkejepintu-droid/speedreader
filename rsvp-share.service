@@ -1,0 +1,24 @@
+[Unit]
+Description=RSVP Reader share target (PWA share_target POST receiver)
+After=network.target
+
+[Service]
+Type=simple
+User=nginx
+Group=nginx
+WorkingDirectory=/var/www/rsvp-reader
+EnvironmentFile=-/etc/rsvp-share.env
+Environment=RSVP_SHARE_PORT=9878
+Environment=RSVP_SHARE_DIR=/var/www/rsvp-reader/share-data
+ExecStart=/usr/local/bin/node /var/www/rsvp-reader/share.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/www/rsvp-reader/share-data
+LimitNOFILE=8192
+
+[Install]
+WantedBy=multi-user.target

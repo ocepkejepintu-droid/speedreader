@@ -1,0 +1,25 @@
+{
+  "slug": "never-split-the-difference",
+  "title": "Never Split the Difference",
+  "author": "Chris Voss",
+  "category": "Negotiation",
+  "subtopics": "tactical empathy, bargaining, tactics",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "NEGOTIATION",
+  "motif": "arc",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Never Split",
+    "the Difference"
+  ],
+  "subline": "tactical empathy",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=arc for \"Never Split the Difference\" (Negotiation) — composed from book tokens."
+}

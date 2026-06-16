@@ -1,0 +1,25 @@
+{
+  "slug": "better-small-talk-talk-to-anyone-avoid-awkwardness-generate-deep-conversations-and-make-real-friends",
+  "title": "Better Small Talk",
+  "author": "Patrick King",
+  "category": "Negotiation",
+  "subtopics": "conversation, social skills, networking",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "NEGOTIATION",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Better",
+    "Small Talk"
+  ],
+  "subline": "conversation",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Better Small Talk\" (Negotiation) — composed from book tokens."
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "finish",
+  "title": "Finish",
+  "author": "Jon Acuff",
+  "category": "Productivity",
+  "subtopics": "goals, perfectionism, follow-through",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "PRODUCTIVITY",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 540,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Finish"
+  ],
+  "subline": "goals",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Finish\" (Productivity) — composed from book tokens."
+}

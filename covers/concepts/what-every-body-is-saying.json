@@ -1,0 +1,26 @@
+{
+  "slug": "what-every-body-is-saying",
+  "title": "What Every BODY Is Saying",
+  "author": "Joe Navarro",
+  "category": "Negotiation",
+  "subtopics": "body language, nonverbal cues, reading people",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "NEGOTIATION",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "What Every",
+    "BODY Is",
+    "Saying"
+  ],
+  "subline": "body language",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"What Every BODY Is Saying\" (Negotiation) — composed from book tokens."
+}

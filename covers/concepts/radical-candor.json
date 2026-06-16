@@ -1,0 +1,25 @@
+{
+  "slug": "radical-candor",
+  "title": "Radical Candor",
+  "author": "Kim Scott",
+  "category": "Leadership",
+  "subtopics": "feedback, management, workplace relationships",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "LEADERSHIP",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Radical",
+    "Candor"
+  ],
+  "subline": "feedback",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Radical Candor\" (Leadership) — composed from book tokens."
+}

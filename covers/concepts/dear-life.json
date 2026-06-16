@@ -1,0 +1,25 @@
+{
+  "slug": "dear-life",
+  "title": "Dear Life",
+  "author": "Alice Munro",
+  "category": "Happiness",
+  "subtopics": "mortality, palliative care, meaning",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HAPPINESS",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Dear",
+    "Life"
+  ],
+  "subline": "mortality",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Dear Life\" (Happiness) — composed from book tokens."
+}

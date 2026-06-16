@@ -1,0 +1,26 @@
+{
+  "slug": "the-7-habits-of-highly-effective-people",
+  "title": "The 7 Habits of Highly Effective People",
+  "author": "Stephen R. Covey",
+  "category": "Self-Growth",
+  "subtopics": "effectiveness, proactivity, synergy",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The 7",
+    "Habits of",
+    "Highly Effective People"
+  ],
+  "subline": "effectiveness",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"The 7 Habits of Highly Effective People\" (Self-Growth) — composed from book tokens."
+}

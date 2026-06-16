@@ -1,0 +1,25 @@
+{
+  "slug": "four-thousand-weeks",
+  "title": "Four Thousand Weeks",
+  "author": "Oliver Burkeman",
+  "category": "Self-Growth",
+  "subtopics": "time, productivity, limits",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "venn",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Four",
+    "Thousand Weeks"
+  ],
+  "subline": "time",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=venn for \"Four Thousand Weeks\" (Self-Growth) — composed from book tokens."
+}

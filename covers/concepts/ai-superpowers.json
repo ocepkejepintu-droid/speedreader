@@ -1,0 +1,25 @@
+{
+  "slug": "ai-superpowers",
+  "title": "AI Superpowers",
+  "author": "Kai-Fu Lee",
+  "category": "Society & Tech",
+  "subtopics": "AI, China, job automation, inequality",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "AI",
+    "Superpowers"
+  ],
+  "subline": "AI",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"AI Superpowers\" (Society & Tech) — composed from book tokens."
+}

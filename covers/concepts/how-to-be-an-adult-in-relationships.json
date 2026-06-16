@@ -1,0 +1,26 @@
+{
+  "slug": "how-to-be-an-adult-in-relationships",
+  "title": "How to Be an Adult in Relationships",
+  "author": "David Richo",
+  "category": "Love & Sex",
+  "subtopics": "intimacy, trust, conflict, communication",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "LOVE & SEX",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "How to",
+    "Be an",
+    "Adult in Relationships"
+  ],
+  "subline": "intimacy",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"How to Be an Adult in Relationships\" (Love & Sex) — composed from book tokens."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "the-art-of-war",
+  "title": "The Art of War",
+  "author": "Sun Tzu",
+  "category": "Leadership",
+  "subtopics": "strategy, tactics, warfare",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "LEADERSHIP",
+  "motif": "arc",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The Art",
+    "of War"
+  ],
+  "subline": "strategy",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "top",
+  "rationale": "motif=arc for \"The Art of War\" (Leadership) — composed from book tokens."
+}

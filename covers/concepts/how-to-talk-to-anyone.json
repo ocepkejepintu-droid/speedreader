@@ -1,0 +1,27 @@
+{
+  "slug": "how-to-talk-to-anyone",
+  "title": "How to Talk to Anyone",
+  "author": "",
+  "category": "Negotiation",
+  "subtopics": "conversation, charisma, networking, social skills",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "NEGOTIATION",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "How to",
+    "Talk to",
+    "Anyone"
+  ],
+  "subline": "conversation",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "pill": "1",
+  "pillPos": "top",
+  "rationale": "motif=orb for \"How to Talk to Anyone\" (Negotiation) — composed from book tokens."
+}

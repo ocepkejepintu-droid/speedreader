@@ -1,0 +1,25 @@
+{
+  "slug": "real-artists-dont-starve",
+  "title": "Real Artists Don't Starve",
+  "author": "Jeff Goins",
+  "category": "Business & Career",
+  "subtopics": "creativity, money, marketing",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Real Artists",
+    "Don't Starve"
+  ],
+  "subline": "creativity",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Real Artists Don't Starve\" (Business & Career) — composed from book tokens."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "conversationally-speaking-tested-new-ways-to-increase-your-personal-and-social-effectiveness",
+  "title": "Conversationally Speaking",
+  "author": "Alan Garner",
+  "category": "Negotiation",
+  "subtopics": "conversation skills, social confidence, communication",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "NEGOTIATION",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Conversationally",
+    "Speaking"
+  ],
+  "subline": "conversation skills",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Conversationally Speaking\" (Negotiation) — composed from book tokens."
+}

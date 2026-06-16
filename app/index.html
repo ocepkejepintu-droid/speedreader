@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RSVP">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="stylesheet" href="home.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/icon-16.png">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
+  <meta name="description" content="A focused, distraction-free reader. Read EPUBs and articles one word at a time, at your pace. Free, no account required, no tracking.">
+  <meta property="og:title" content="RSVP Reader">
+  <meta property="og:description" content="A focused, distraction-free reader. One word at a time, at your pace. Free, no account required.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zipang.id/rsvp/app/">
+  <meta name="twitter:card" content="summary">
+  <title>RSVP Reader</title>
+  <style>
+    :root {
+      --color-signal-red: #fc1c46;
+      --color-pure-white: #ffffff;
+      --color-ash: #cccccc;
+      --color-graphite: #4c4c4c;
+      --surface-obsidian: #0a0a0a;
+      --surface-carbon: #1a1a1a;
+      --surface-elevated: #141414;
+      --font-reader: 'Courier New', Courier, monospace;
+      --page-pad: clamp(16px, 4vw, 48px);
+      --max-width: 1200px;
+      --ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+      --bg: var(--surface-carbon);
+      --fg: var(--color-pure-white);
+      --orp: var(--color-signal-red);
+      --muted: var(--color-graphite);
+      --panel: var(--surface-elevated);
+      --border: rgba(76, 76, 76, 0.55);
+      --font-word: clamp(2rem, 6vw, 4rem);
+      --orp-anchor: 35%;
+      --orp-guide-half: 20px;
+      --orp-guide-gap: 4px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      height: 100dvh;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, sans-serif;
+      overflow: hidden;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .hidden { display: none !important; }
+
+    .muted { color: var(--muted); }
+    .small { font-size: 0.78rem; }
+    hr { border: 0; border-top: 1px solid var(--border); margin: 0.6rem 0; }
+
+    .small { font-size: 0.78rem; }
+    #paymentSection hr { border: 0; border-top: 1px solid var(--border); margin: 0.6rem 0; }
+    #paymentSection .payment-btn,
+    #paymentSection #paymentBtn { width: 100%; margin: 0.4rem 0; }
+
+    input[type="file"] { display: none; }
+
+    /* ── Reader: text only ── */
+    #reader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+
+    .word-display {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .focal-line { display: none !important; }
+
+    .orp-stage {
+      position: relative;
+      width: 100%;
+      max-width: 42rem;
+      min-height: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .orp-guide {
+      display: none;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body.mode-rsvp .orp-guide,
+    body.mode-phantom .orp-guide {
+      display: block;
+    }
+
+    .orp-guide-top,
+    .orp-guide-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 5px;
+    }
+
+    .orp-guide-top { top: calc(50% - 2.15rem); }
+    .orp-guide-bottom { bottom: calc(50% - 2.15rem); }
+
+    .orp-guide-bar-left,
+    .orp-guide-bar-right {
+      position: absolute;
+      top: 0;
+      height: 1px;
+      background: rgba(240, 240, 240, 0.38);
+    }
+
+    .orp-guide-bar-left {
+      left: max(0px, calc(var(--orp-anchor) - var(--orp-guide-half)));
+      width: max(0px, calc(var(--orp-guide-half) - var(--orp-guide-gap)));
+    }
+
+    .orp-guide-bar-right {
+      left: calc(var(--orp-anchor) + var(--orp-guide-gap));
+      width: max(0px, calc(var(--orp-guide-half) - var(--orp-guide-gap)));
+    }
+
+    .orp-guide-tick {
+      position: absolute;
+      top: 0;
+      left: var(--orp-anchor);
+      transform: translateX(-50%);
+      width: 2px;
+      height: 5px;
+      background: var(--orp);
+      opacity: 0.85;
+    }
+
+    .word-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      font-size: var(--font-size-word, var(--font-word));
+      font-family: var(--font-reader);
+      line-height: 1;
+      padding: 0;
+    }
+
+    body.mode-rsvp .word-container,
+    body.mode-phantom .word-container {
+      letter-spacing: 0;
+    }
+
+    .orp-track {
+      position: relative;
+      width: 100%;
+      min-height: 5.5rem;
+    }
+
+    .orp-word {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      white-space: nowrap;
+      line-height: 1;
+      font-weight: 500;
+      color: var(--fg);
+    }
+
+    .word-orp {
+      color: var(--orp);
+      font-weight: 700;
+    }
+
+    .phantom-before,
+    .phantom-after {
+      display: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: inherit;
+      font-weight: 500;
+      opacity: 0.243;
+      color: var(--fg);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .phantom-before { text-align: right; }
+    .phantom-after { text-align: left; }
+
+    body.mode-phantom .phantom-before:not(:empty),
+    body.mode-phantom .phantom-after:not(:empty) {
+      display: block;
+    }
+
+    /* Scroll mode */
+    body.mode-scroll.in-reader #reader {
+      background: var(--bg);
+    }
+
+    .scroll-view {
+      position: absolute;
+      inset: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      padding: calc(1rem + env(safe-area-inset-top)) 6vw calc(1rem + env(safe-area-inset-bottom));
+      z-index: 1;
+      display: none;
+    }
+
+    body.mode-scroll .scroll-view { display: block; }
+    body.mode-scroll .orp-stage,
+    body.mode-scroll .sentence-context,
+    body.mode-scroll .tap-hint,
+    body.mode-paragraph .orp-stage,
+    body.mode-paragraph .sentence-context,
+    body.mode-paragraph .tap-hint { display: none !important; }
+
+    .paragraph-view {
+      position: absolute;
+      inset: 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: calc(1rem + env(safe-area-inset-top)) 6vw calc(3rem + env(safe-area-inset-bottom));
+      z-index: 1;
+      display: none;
+    }
+
+    body.mode-paragraph .paragraph-view { display: block; }
+
+    .paragraph-content {
+      max-width: 42rem;
+      margin: 0 auto;
+      font-size: var(--scroll-font-size, 1.1rem);
+      line-height: 1.75;
+      font-family: var(--font-reader);
+    }
+
+    .para-block { margin-bottom: 1.1rem; }
+
+    .para-word {
+      cursor: pointer;
+      border-radius: 2px;
+      scroll-margin-block: 28vh;
+      transition: opacity 0.18s ease, color 0.18s ease;
+    }
+
+    .para-word.para-sent-read {
+      opacity: 0.28;
+      color: var(--muted);
+    }
+
+    .para-word.para-sent-current {
+      opacity: 1;
+      color: #fff;
+    }
+
+    .para-word.para-sent-ahead {
+      opacity: 0.14;
+      color: var(--muted);
+    }
+
+    body.paused.mode-paragraph .para-word.para-sent-ahead { opacity: 0.32; }
+    body.paused.mode-paragraph .para-word.para-sent-read { opacity: 0.42; }
+
+    .para-word.current {
+      background: var(--orp);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.05em 0.12em;
+      border-radius: 3px;
+      opacity: 1;
+    }
+
+    .scrub-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.85);
+    }
+
+    .scrub-content {
+      max-width: 90%;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-family: var(--font-reader);
+    }
+
+    .scrub-word.current {
+      background: var(--orp);
+      color: #fff;
+      padding: 0.1em 0.2em;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .progress-footer {
+      position: absolute;
+      bottom: calc(0.65rem + env(safe-area-inset-bottom));
+      right: calc(0.85rem + env(safe-area-inset-right));
+      z-index: 3;
+      padding: 0.3rem 0.55rem;
+      font-size: 0.68rem;
+      color: var(--muted);
+      background: rgba(0,0,0,0.35);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    body.playing .progress-footer { opacity: 0.45; }
+
+    .wpm-toast {
+      position: absolute;
+      top: calc(1rem + env(safe-area-inset-top));
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      padding: 0.45rem 0.9rem;
+      background: rgba(0,0,0,0.8);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+
+    .wpm-toast.show { opacity: 1; }
+
+    .sheet-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .sheet-toggle input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--orp);
+    }
+
+
+
+    .scroll-content {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding-block: 38vh;
+      font-size: var(--scroll-font-size, 1.15rem);
+      line-height: 1.75;
+      font-family: var(--font-reader);
+      color: var(--fg);
+      text-align: left;
+      hyphens: none;
+      letter-spacing: 0.01em;
+      word-spacing: 0.04em;
+    }
+
+    .scroll-para {
+      margin: 0 0 1.15rem;
+    }
+
+    .scroll-para:last-child {
+      margin-bottom: 0;
+    }
+
+    .scroll-word {
+      cursor: pointer;
+      border-radius: 2px;
+      padding: 0.05em 0.1em;
+      transition: opacity 0.12s ease;
+    }
+
+    .scroll-word.read {
+      opacity: 0.58;
+    }
+
+    body.paused .scroll-word.read {
+      opacity: 0.72;
+    }
+
+    body.paused .scroll-word:not(.current):active {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .scroll-word.current {
+      background: var(--orp);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 3px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      opacity: 1;
+    }
+
+    .rotate-hint {
+      position: absolute;
+      inset: 0;
+      z-index: 6;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      padding: 2rem;
+      background: var(--bg);
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .rotate-hint-icon {
+      font-size: 2.75rem;
+      line-height: 1;
+      opacity: 0.85;
+    }
+
+    .rotate-hint-title {
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .rotate-hint-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 16rem;
+      line-height: 1.45;
+    }
+
+    .rotate-hint { display: none !important; }
+
+    @media (orientation: landscape) {
+      .scroll-view {
+        padding:
+          calc(0.85rem + env(safe-area-inset-top))
+          calc(2.5rem + env(safe-area-inset-right))
+          calc(0.85rem + env(safe-area-inset-bottom))
+          calc(2.5rem + env(safe-area-inset-left));
+      }
+
+      .scroll-content {
+        max-width: 56rem;
+        font-size: var(--scroll-font-size, 1.22rem);
+        line-height: 1.8;
+      }
+    }
+
+    .mode-segment {
+      display: flex;
+      flex: 1;
+      gap: 0.35rem;
+    }
+
+    .mode-segment button {
+      flex: 1;
+      padding: 0.45rem 0.25rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 0.65rem;
+      cursor: pointer;
+    }
+
+    .mode-segment button.active {
+      background: var(--orp);
+      border-color: var(--orp);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .word-placeholder {
+      display: none;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 1rem;
+      color: var(--muted);
+      opacity: 0.5;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .word-container.is-empty .orp-track { display: none; }
+    .word-container.is-empty .word-placeholder { display: block; }
+
+    .sentence-context {
+      position: absolute;
+      bottom: calc(2rem + env(safe-area-inset-bottom));
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(92%, 520px);
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.5;
+      opacity: 0.6;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    body.playing .sentence-context {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    body.paused .sentence-context {
+      opacity: 0.6;
+      visibility: visible;
+    }
+
+    .ctx-current {
+      color: var(--orp);
+      font-weight: bold;
+    }
+
+    /* One-shot hint — fades out, never blocks reading */
+    .tap-hint {
+      position: absolute;
+      bottom: calc(3rem + env(safe-area-inset-bottom));
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      color: var(--muted);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+
+    .tap-hint.show { opacity: 0.45; }
+
+    /* Settings sheet */
+    .sheet-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 20;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+
+    .sheet-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .sheet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--panel);
+      border-radius: 16px 16px 0 0;
+      padding: 1.25rem 1.25rem calc(1.25rem + env(safe-area-inset-bottom));
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+      max-height: 75dvh;
+      overflow-y: auto;
+    }
+
+    .sheet-overlay.open .sheet { transform: translateY(0); }
+
+    .sheet-handle {
+      width: 36px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin: 0 auto 1rem;
+    }
+
+    .sheet h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .sheet-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .sheet-row label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      min-width: 3rem;
+    }
+
+    .sheet-row output {
+      min-width: 2.5rem;
+      text-align: right;
+      font-size: 0.85rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    input[type="range"] { flex: 1; accent-color: var(--orp); }
+
+    .sheet-select {
+      flex: 1;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 0.85rem;
+    }
+
+    .sheet-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .sheet-btn {
+      flex: 1;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .sheet-btn.primary {
+      background: var(--orp);
+      border-color: var(--orp);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .sheet-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* Loading */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      z-index: 100;
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--panel);
+      border-top-color: var(--orp);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Desktop mode — auto-detected or manual; optimizes Phantom/RSVP on wide screens */
+    body.desktop-mode .orp-stage {
+      max-width: 48rem;
+    }
+
+    body.desktop-mode .phantom-before,
+    body.desktop-mode .phantom-after {
+      opacity: 0.243;
+    }
+
+    body.desktop-mode .orp-word {
+      font-weight: 600;
+    }
+
+    body.desktop-mode .orp-guide-bar-left,
+    body.desktop-mode .orp-guide-bar-right {
+      background: rgba(240, 240, 240, 0.45);
+    }
+
+    body.desktop-mode.mode-phantom.playing .sentence-context {
+      opacity: 0.35;
+      visibility: visible;
+    }
+
+    body.desktop-mode .tap-hint {
+      max-width: 36rem;
+      text-align: center;
+      line-height: 1.45;
+    }
+
+    .sheet-desktop-hint {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      margin: -0.35rem 0 0.65rem;
+      line-height: 1.4;
+    }
+
+    .desktop-mode-segment button {
+      font-size: 0.62rem;
+    }
+
+    /* Landing page embed — real reader only, no library chrome */
+    body.embed-landing {
+      overflow: hidden;
+    }
+
+    body.embed-landing #library,
+    body.embed-landing .auth-gate,
+    body.embed-landing .rotate-hint {
+      display: none !important;
+    }
+
+    body.embed-landing #reader {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      display: block !important;
+    }
+
+    body.embed-landing #reader.hidden {
+      display: block !important;
+    }
+
+    body.embed-landing .overlay {
+      z-index: 20;
+    }
+
+    body.embed-landing .tap-hint,
+    body.embed-landing .rotate-hint {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="paused">
+  <div class="overlay hidden" id="overlay">
+    <div class="spinner"></div>
+    <p id="overlayMsg">Loading…</p>
+  </div>
+
+  <div class="auth-gate" id="authGate">
+    <div class="auth-gate-card">
+      <div class="auth-gate-title">RSVP Reader</div>
+      <p class="auth-gate-msg" id="authGateMsg">Sign in to load your library. Progress syncs automatically across devices.</p>
+      <div id="authSignIn">
+        <a class="auth-google-btn" href="/auth/signin?callbackUrl=%2Frsvp%2Fapp%2F">Continue with Google</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="library" class="library-shell">
+    <header class="library-topbar">
+      <a class="wordmark" href="/rsvp/" aria-label="RSVP Reader home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>RSVP</span>
+      </a>
+      <div class="library-topbar-end">
+        <div class="auth-user-slot" id="authUserSlot">
+          <span class="auth-status-label" id="authStatusLabel"></span>
+          <div id="authUserButton"></div>
+        </div>
+        <button class="signal-cta-compact lib-upload-btn hidden" id="uploadBtn" type="button">+ Upload</button>
+      </div>
+    </header>
+
+    <nav class="home-tabs mode-nav" id="homeTabs" aria-label="Main sections">
+      <button type="button" class="home-tab mode-pill active" id="tabSummaries" data-tab="summaries">Summaries</button>
+      <button type="button" class="home-tab mode-pill" id="tabLibrary" data-tab="library">Library</button>
+    </nav>
+
+    <div id="summariesPanel" class="home-panel">
+      <div class="panel-toolbar">
+        <p class="panel-eyebrow">263 summaries · no sign-in · progress stays on device</p>
+        <input type="search" class="lib-search" id="summariesSearch" placeholder="Search summaries…" autocomplete="off">
+        <div class="summaries-filters">
+          <div class="cat-chips" id="summariesCategoryChips" role="toolbar" aria-label="Browse by category"></div>
+          <span class="summaries-count" id="summariesCount" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="panel-scroll" id="summariesScroll">
+        <div class="panel-scroll-inner">
+          <div id="summariesFeaturedWrap" class="hidden">
+            <h2 class="summaries-section-title">Top picks</h2>
+            <div class="book-grid" id="summariesFeaturedGrid"></div>
+          </div>
+          <div id="summariesGrid" class="summaries-browse"></div>
+          <div class="lib-empty hidden" id="summariesEmpty">No summaries match your search.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="libraryPanel" class="home-panel hidden">
+      <div class="panel-toolbar">
+        <div class="lib-sync-banner hidden" id="libSyncBanner"></div>
+        <div class="ios-install-banner hidden" id="iosInstallBanner" role="status" aria-live="polite">
+          <div class="ios-install-text">
+            Tap <span aria-hidden="true">⤴</span> <strong>Share</strong> &rarr; <strong>Add to Home Screen</strong> to install RSVP Reader and unlock the share-to-RSVP flow.
+          </div>
+          <button type="button" class="ios-install-close" id="iosInstallClose" aria-label="Dismiss install hint">&times;</button>
+        </div>
+        <input type="search" class="lib-search hidden" id="libSearch" placeholder="Search books…" autocomplete="off">
+        <div class="lib-actions" id="libActions">
+          <button type="button" class="lib-action-btn" id="addArticleBtn">+ Article</button>
+          <button type="button" class="lib-action-btn" id="exportLibBtn">Export</button>
+          <button type="button" class="lib-action-btn" id="exportOpmlBtn">Export OPML</button>
+          <button type="button" class="lib-action-btn" id="importLibBtn">Import</button>
+          <a href="#" id="librarySupportLink" class="lib-action-btn lib-support-link hidden" hidden>Pay what you want</a>
+        </div>
+        <div class="article-panel hidden" id="articlePanel">
+          <input type="text" id="articleTitle" placeholder="Title (optional)">
+          <textarea id="articleText" placeholder="Paste article text…"></textarea>
+          <p class="article-hint muted small">Multi-chapter paste: start sections with <code>## Section title</code> on its own line (Headway key points).</p>
+          <button type="button" class="article-save-btn" id="saveArticleBtn">Save & Read</button>
+        </div>
+      </div>
+      <input type="file" id="importInput" accept=".json,application/json" class="hidden">
+      <div class="panel-scroll" id="libContent">
+        <div id="uploadError" class="hidden lib-error" role="alert"></div>
+        <div id="uploadZone">
+          <label class="upload-zone" for="epubInput">
+            <div class="upload-icon">📖</div>
+            <div class="upload-label">Upload EPUB</div>
+            <div class="upload-hint">EPUB or .txt · drag here or tap</div>
+          </label>
+        </div>
+        <div class="book-grid hidden" id="libGrid"></div>
+        <div class="lib-empty hidden" id="libEmpty">No books match your search.</div>
+      </div>
+      <input type="file" id="epubInput" accept=".epub,.txt,.md,application/epub+zip,text/plain" multiple>
+    </div>
+  </div>
+
+  <div id="reader" class="hidden">
+    <div class="word-display" id="wordDisplay">
+      <div class="orp-stage" id="orpStage">
+        <div class="orp-guide" id="orpGuide" aria-hidden="true">
+          <div class="orp-guide-top">
+            <span class="orp-guide-bar-left"></span>
+            <span class="orp-guide-tick"></span>
+            <span class="orp-guide-bar-right"></span>
+          </div>
+          <div class="orp-guide-bottom">
+            <span class="orp-guide-bar-left"></span>
+            <span class="orp-guide-tick"></span>
+            <span class="orp-guide-bar-right"></span>
+          </div>
+        </div>
+        <div class="word-container" id="wordContainer">
+          <div class="orp-track" id="orpTrack">
+            <span class="phantom-before" id="phantomBefore"></span>
+            <span class="orp-word" id="orpWord"></span>
+            <span class="phantom-after" id="phantomAfter"></span>
+          </div>
+          <span class="word-placeholder" id="wordPlaceholder">Tap to start</span>
+        </div>
+      </div>
+      <div class="sentence-context" id="sentenceCtx"></div>
+      <div class="scroll-view" id="scrollView"></div>
+      <div class="paragraph-view" id="paragraphView"></div>
+      <div class="scrub-overlay hidden" id="scrubOverlay"></div>
+      <div class="wpm-toast" id="wpmToast"></div>
+      <div class="progress-footer" id="progressFooter"></div>
+      <div class="rotate-hint" id="rotateHint">
+        <div class="rotate-hint-icon">↻</div>
+        <div class="rotate-hint-title">Turn phone sideways</div>
+        <div class="rotate-hint-sub">Scroll mode reads best in landscape — wider lines, easier to follow.</div>
+      </div>
+      <div class="tap-hint" id="tapHint">Tap play · Double-tap lock · Swipe ↑↓ WPM · Hold settings</div>
+    </div>
+  </div>
+
+  <div class="sheet-overlay" id="sheetOverlay">
+    <div class="sheet">
+      <div class="sheet-handle"></div>
+      <h3 id="sheetTitle">Settings</h3>
+      <div class="sheet-row">
+        <label>Speed</label>
+        <input type="range" id="wpm" min="100" max="1000" step="25" value="300">
+        <output id="wpmOut">300</output>
+      </div>
+      <div class="sheet-row">
+        <label>Pause</label>
+        <input type="range" id="pauseMult" min="1" max="4" step="0.5" value="2">
+        <output id="pauseMultOut">2×</output>
+      </div>
+      <div class="sheet-row">
+        <label>Size</label>
+        <input type="range" id="fontSize" min="1.5" max="4" step="0.25" value="3">
+        <output id="fontSizeOut">3rem</output>
+      </div>
+      <div class="sheet-row">
+        <label>Mode</label>
+        <div class="mode-segment" id="modeSegment">
+          <button type="button" data-mode="rsvp">RSVP</button>
+          <button type="button" data-mode="phantom">Phantom</button>
+          <button type="button" data-mode="scroll">Scroll</button>
+          <button type="button" data-mode="paragraph">Para</button>
+        </div>
+      </div>
+      <div class="sheet-row" id="desktopModeRow">
+        <label>Desktop</label>
+        <div class="mode-segment desktop-mode-segment" id="desktopModeSegment">
+          <button type="button" data-desktop="auto" class="active">Auto</button>
+          <button type="button" data-desktop="on">On</button>
+          <button type="button" data-desktop="off">Off</button>
+        </div>
+      </div>
+      <p class="sheet-desktop-hint" id="desktopModeHint"></p>
+      <div class="sheet-row">
+        <label>Long word</label>
+        <div class="sheet-toggle">
+          <input type="checkbox" id="lengthDelay">
+          <input type="range" id="lengthDelayFactor" min="0" max="0.5" step="0.05" value="0.1">
+          <output id="lengthDelayOut">0.1</output>
+        </div>
+      </div>
+      <div class="sheet-row">
+        <label>Rare word</label>
+        <div class="sheet-toggle">
+          <input type="checkbox" id="freqDelay">
+          <input type="range" id="freqDelayFactor" min="0" max="1" step="0.05" value="0.3">
+          <output id="freqDelayOut">0.3</output>
+        </div>
+      </div>
+      <div class="sheet-row">
+        <label>Pause</label>
+        <div class="sheet-toggle">
+          <span style="font-size:0.72rem;color:var(--muted)">End sentence</span>
+          <input type="checkbox" id="pauseSentence">
+        </div>
+      </div>
+      <div class="sheet-row hidden" id="sheetChapterRow">
+        <label>Chapter</label>
+        <select class="sheet-select" id="chapterSelect"></select>
+      </div>
+      <div class="sheet-actions">
+        <button class="sheet-btn" id="btnLibrary">← Library</button>
+        <button class="sheet-btn" id="btnRestartPara">↺ Paragraph</button>
+        <button class="sheet-btn primary" id="btnCloseSheet">Done</button>
+      </div>
+      <div class="sheet-meta" id="sheetMeta"></div>
+      <div id="paymentSection" class="hidden" hidden>
+        <hr>
+        <p class="muted small">Optional support</p>
+        <button id="paymentBtn" class="lib-action-btn" type="button">Pay what you want ($5+)</button>
+        <p class="muted small">No account, no tracking, no subscription. One-time tip via Lemon Squeezy.</p>
+      </div>
+    </div>
+  </div>
+
+  <textarea id="inputText" class="hidden" aria-hidden="true"></textarea>
+
+  <section id="statsPanel" class="hidden" aria-hidden="true" hidden>
+    <h2>Reading stats</h2>
+    <dl id="statsList"></dl>
+    <section id="statsWeekly" class="hidden" hidden>
+      <h3>This week</h3>
+      <div id="statsWeeklyList"></div>
+    </section>
+    <p class="muted">Local-only. No account, no tracking.</p>
+  </section>
+
+  <script type="module">
+    import { initReaderApp, getCompletionStats, getWeeklyBreakdown } from '../reader-app.js';
+    initReaderApp();
+
+    // ── iOS PWA install hint ─────────────────────────────────────────────
+    // Show a one-time banner the first time a visitor opens the app from
+    // iOS Safari. 7-day re-prompt max. Track dismissal in localStorage.
+    function maybeShowIosInstallHint() {
+      try {
+        const ua = navigator.userAgent || '';
+        const isIOS = /iPhone|iPad|iPod/i.test(ua) || (
+          /Macintosh/i.test(ua) && navigator.maxTouchPoints > 1
+        );
+        const standalone = window.matchMedia?.('(display-mode: standalone)')?.matches
+          || window.navigator.standalone === true;
+        if (!isIOS || standalone) return;
+
+        const KEY = 'rsvp-ios-install-hint';
+        const raw = localStorage.getItem(KEY);
+        const now = Date.now();
+        const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
+        if (raw) {
+          try {
+            const data = JSON.parse(raw);
+            if (data?.dismissedAt && (now - data.dismissedAt) < SEVEN_DAYS) return;
+          } catch { /* fall through and re-prompt */ }
+        }
+
+        const banner = document.getElementById('iosInstallBanner');
+        const closeBtn = document.getElementById('iosInstallClose');
+        if (!banner || !closeBtn) return;
+
+        banner.classList.remove('hidden');
+        const dismiss = () => {
+          banner.classList.add('hidden');
+          try { localStorage.setItem(KEY, JSON.stringify({ dismissedAt: Date.now() })); } catch { /* ignore */ }
+        };
+        closeBtn.addEventListener('click', dismiss, { once: true });
+      } catch { /* never let the hint break the app */ }
+    }
+    maybeShowIosInstallHint();
+
+    // Wire the local stats panel: open with `?stats=1`, refresh on tab focus.
+    function renderStats() {
+      const panel = document.getElementById('statsPanel');
+      const list = document.getElementById('statsList');
+      if (!panel || !list) return;
+      const s = getCompletionStats();
+      list.innerHTML = `
+        <dt>Chapters finished (total)</dt><dd>${s.totalChapters}</dd>
+        <dt>Chapters finished (last 7 days)</dt><dd>${s.chapters7d}</dd>
+        <dt>Chapters finished (last 30 days)</dt><dd>${s.chapters30d}</dd>
+        <dt>Unique books started</dt><dd>${s.uniqueBooks}</dd>
+        <dt>Average WPM at completion</dt><dd>${s.avgWpm || '—'}</dd>
+      `;
+      const weekly = typeof getWeeklyBreakdown === 'function' ? getWeeklyBreakdown() : [];
+      const weeklyEl = document.getElementById('statsWeeklyList');
+      const weeklyWrap = document.getElementById('statsWeekly');
+      if (weeklyEl && weeklyWrap) {
+        if (weekly.length === 0) {
+          weeklyEl.innerHTML = '<p class="muted">No chapters finished in the last 7 days.</p>';
+        } else {
+          weeklyEl.innerHTML = '<ol>' + weekly.map((b) => {
+            const idShort = (b.bookId || '').slice(0, 8);
+            const title = idShort ? `Book ${idShort}` : 'Unknown book';
+            return `<li><strong>${title}</strong> — ${b.chapters} chapter${b.chapters===1?'':'s'}, ${b.words.toLocaleString()} words, ${b.minutes} min</li>`;
+          }).join('') + '</ol>';
+        }
+        weeklyWrap.classList.remove('hidden');
+        weeklyWrap.removeAttribute('hidden');
+      }
+      panel.classList.remove('hidden');
+      panel.setAttribute('aria-hidden', 'false');
+    }
+    if (new URLSearchParams(window.location.search).get('stats') === '1') {
+      renderStats();
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') renderStats();
+      });
+    }
+  </script>
+</body>
+</html>

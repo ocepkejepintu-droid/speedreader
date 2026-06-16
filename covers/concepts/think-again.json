@@ -1,0 +1,25 @@
+{
+  "slug": "think-again",
+  "title": "Think Again",
+  "author": "Adam Grant",
+  "category": "Self-Growth",
+  "subtopics": "rethinking, debate, learning",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Think",
+    "Again"
+  ],
+  "subline": "rethinking",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Think Again\" (Self-Growth) — composed from book tokens."
+}

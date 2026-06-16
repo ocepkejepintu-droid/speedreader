@@ -1,0 +1,43 @@
+{
+  "packageId": "id.zipang.rsvp",
+  "host": "zipang.id",
+  "name": "RSVP Reader",
+  "launcherName": "RSVP",
+  "display": "standalone",
+  "orientation": "portrait",
+  "statusBarColor": "#1a1a1a",
+  "navigationColor": "#1a1a1a",
+  "backgroundColor": "#1a1a1a",
+  "themeColor": "#1a1a1a",
+  "enableNotifications": false,
+  "webManifestUrl": "https://zipang.id/rsvp/manifest.json",
+  "startUrl": "/rsvp/app/",
+  "scope": "/rsvp/",
+  "appVersion": "1.1.0",
+  "appVersionCode": 110,
+  "iconUrl": "https://zipang.id/rsvp/icons/icon-512.png",
+  "splashScreenUrl": "https://zipang.id/rsvp/icons/icon-512.png",
+  "monochromeIconUrl": "https://zipang.id/rsvp/icons/icon-192.png",
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "android"
+  },
+  "fallbackType": "customtabs",
+  "features": {
+    "appsFlyer": false,
+    "playBilling": false
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "assetStatements": [
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "id.zipang.rsvp",
+        "sha256_cert_fingerprints": ["REPLACE_WITH_SHA256_OF_UPLOAD_KEY"]
+      }
+    }
+  ]
+}

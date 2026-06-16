@@ -1,0 +1,25 @@
+{
+  "slug": "herding-tigers",
+  "title": "Herding Tigers",
+  "author": "Todd Henry",
+  "category": "Leadership",
+  "subtopics": "creative leadership, team management, power, culture",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "LEADERSHIP",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Herding",
+    "Tigers"
+  ],
+  "subline": "creative leadership",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Herding Tigers\" (Leadership) — composed from book tokens."
+}

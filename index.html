@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="RSVP Reader — finish chapters faster with phantom speed reading. 263 book summaries, live demo, no sign-in.">
+  <meta property="og:title" content="RSVP Reader — finish the chapter before the coffee cools">
+  <meta property="og:description" content="Phantom reading with ghost context words. 263 summaries. Try the real app on the homepage.">
+  <meta property="og:url" content="https://zipang.id/rsvp/">
+  <meta property="og:type" content="website">
+  <title>RSVP Reader — finish the chapter before the coffee cools</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+  <link rel="stylesheet" href="landing.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <section class="hero-cinematic" aria-labelledby="hero-title">
+      <div class="hero-canvas-wrap" aria-hidden="true">
+        <canvas id="hillsCanvas"></canvas>
+        <div class="hero-vignette"></div>
+      </div>
+
+      <div class="hero-stage">
+        <header class="hero-nav">
+          <a class="wordmark" href="/rsvp/" aria-label="RSVP Reader home">
+            <span class="wordmark-mark" aria-hidden="true"></span>
+            <span>RSVP</span>
+          </a>
+          <a class="nav-cta" href="/rsvp/app/">Open app</a>
+        </header>
+
+        <div class="hero-type">
+          <p class="hero-eyebrow">263 summaries · phantom · no account</p>
+          <h1 id="hero-title">
+            <span class="hero-line-italic">Finish the chapter</span>
+            <span class="hero-line-main">before the coffee cools.</span>
+          </h1>
+          <p class="hero-sub">Ghost context on either side. One anchored word. Pick a summary, set reading speed, watch it run.</p>
+          <a class="signal-cta" href="/rsvp/app/">Open full app</a>
+        </div>
+
+        <div class="hero-demo-overlay" aria-label="Live phantom reader demo">
+          <nav class="demo-mode-bar" aria-label="Reading modes">
+            <button type="button" class="mode-pill" data-demo-mode="rsvp">RSVP</button>
+            <button type="button" class="mode-pill active" data-demo-mode="phantom">Phantom</button>
+            <button type="button" class="mode-pill" data-demo-mode="scroll">Scroll</button>
+            <button type="button" class="mode-pill" data-demo-mode="paragraph">Para</button>
+          </nav>
+          <div class="demo-chrome">
+            <div class="demo-field">
+              <label class="demo-label" for="demoSummarySelect">Summary</label>
+              <select class="demo-select" id="demoSummarySelect" aria-label="Choose a book summary">
+                <option value="">Loading summaries…</option>
+              </select>
+            </div>
+            <div class="demo-field demo-speed">
+              <label class="demo-label" for="demoWpm">Reading speed</label>
+              <div class="speed-row">
+                <input type="range" id="demoWpm" min="100" max="1000" step="25" value="300" aria-valuemin="100" aria-valuemax="1000" aria-valuenow="300">
+                <output id="demoWpmOut" class="speed-value" for="demoWpm">300</output>
+              </div>
+            </div>
+          </div>
+          <div class="demo-showcase">
+            <div class="demo-glow" aria-hidden="true"></div>
+            <div class="demo-shell">
+              <div class="demo-shine" aria-hidden="true"></div>
+              <div class="demo-beam" aria-hidden="true"></div>
+              <div class="demo-frame">
+                <iframe
+                  id="appDemo"
+                  class="demo-iframe"
+                  title="RSVP Reader — live phantom demo"
+                  src="/rsvp/app/?embed=landing&mode=phantom&autoplay=1"
+                  loading="eager"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <p class="demo-caption">Live phantom reader · <a href="/rsvp/app/">open full app</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bento reveal" aria-label="Features">
+      <article class="bento-card bento-wide">
+        <span class="bento-tag">Catalog</span>
+        <h2>263 summaries</h2>
+        <p>Pre-digested chapters across 14 categories. Featured picks shuffle daily.</p>
+      </article>
+      <article class="bento-card">
+        <span class="bento-tag">Modes</span>
+        <h2>Phantom first</h2>
+        <p>Ghost words at 24% opacity. Your eye stays on the optical recognition point.</p>
+      </article>
+      <article class="bento-card">
+        <span class="bento-tag">Library</span>
+        <h2>Your books</h2>
+        <p>Upload EPUBs and articles. Google sign-in syncs progress across devices.</p>
+      </article>
+    </section>
+
+    <section class="cta-band reveal" aria-label="Get started">
+      <p class="cta-line">The demo above is the real reader — not a mockup.</p>
+      <a class="signal-cta cta-large" href="/rsvp/app/">Open RSVP Reader</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>RSVP Reader · zipang.id</span>
+    <span><a href="/rsvp/app/">Reader</a> · <a href="bookmarklet.html">Bookmarklet</a></span>
+  </footer>
+
+  <script type="module" src="landing/landing-boot.js"></script>
+</body>
+</html>

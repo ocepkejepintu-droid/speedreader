@@ -1,0 +1,25 @@
+{
+  "slug": "competition-demystified",
+  "title": "Competition Demystified",
+  "author": "Brent Beshore",
+  "category": "Business & Career",
+  "subtopics": "strategy, competitive analysis, business",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "arc",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Competition",
+    "Demystified"
+  ],
+  "subline": "strategy",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=arc for \"Competition Demystified\" (Business & Career) — composed from book tokens."
+}

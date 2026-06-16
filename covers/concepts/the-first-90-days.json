@@ -1,0 +1,26 @@
+{
+  "slug": "the-first-90-days",
+  "title": "The First 90 Days",
+  "author": "Michael D. Watkins",
+  "category": "Business & Career",
+  "subtopics": "leadership transition, onboarding, new leader, strategy",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "arc",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The First",
+    "90 Days"
+  ],
+  "subline": "leadership transition",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "pill": "1",
+  "pillPos": "top",
+  "rationale": "motif=arc for \"The First 90 Days\" (Business & Career) — composed from book tokens."
+}

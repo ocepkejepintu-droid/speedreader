@@ -1,0 +1,26 @@
+{
+  "slug": "how-to-raise-an-adult",
+  "title": "How to Raise an Adult",
+  "author": "Julie Lythcott-Haims",
+  "category": "Family",
+  "subtopics": "parenting, helicopter parenting, independence, adulthood",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "FAMILY",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "How to",
+    "Raise an",
+    "Adult"
+  ],
+  "subline": "parenting",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"How to Raise an Adult\" (Family) — composed from book tokens."
+}

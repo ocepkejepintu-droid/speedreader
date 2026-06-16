@@ -1,0 +1,25 @@
+{
+  "slug": "a-mind-for-numbers",
+  "title": "A Mind for Numbers",
+  "author": "Barbara Oakley",
+  "category": "Self-Growth",
+  "subtopics": "learning, math, study techniques",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "A Mind",
+    "for Numbers"
+  ],
+  "subline": "learning",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"A Mind for Numbers\" (Self-Growth) — composed from book tokens."
+}

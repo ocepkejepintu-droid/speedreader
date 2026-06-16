@@ -1,0 +1,25 @@
+{
+  "slug": "living-with-a-seal",
+  "title": "Living with a SEAL",
+  "author": "Travis Bradberry",
+  "category": "Health",
+  "subtopics": "endurance, training, discipline",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HEALTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Living with",
+    "a SEAL"
+  ],
+  "subline": "endurance",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Living with a SEAL\" (Health) — composed from book tokens."
+}

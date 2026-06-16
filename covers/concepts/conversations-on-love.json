@@ -1,0 +1,25 @@
+{
+  "slug": "conversations-on-love",
+  "title": "Conversations on Love",
+  "author": "Natasha Lunn",
+  "category": "Love & Sex",
+  "subtopics": "love, relationships, vulnerability",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "LOVE & SEX",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Conversations",
+    "on Love"
+  ],
+  "subline": "love",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Conversations on Love\" (Love & Sex) — composed from book tokens."
+}

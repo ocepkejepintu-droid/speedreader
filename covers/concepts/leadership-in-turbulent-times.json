@@ -1,0 +1,25 @@
+{
+  "slug": "leadership-in-turbulent-times",
+  "title": "Leadership in Turbulent Times",
+  "author": "Doris Kearns Goodwin",
+  "category": "Business & Career",
+  "subtopics": "presidential leadership, crisis, vision",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Leadership in",
+    "Turbulent Times"
+  ],
+  "subline": "presidential leadership",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=split for \"Leadership in Turbulent Times\" (Business & Career) — composed from book tokens."
+}

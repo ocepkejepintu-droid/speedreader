@@ -1,0 +1,25 @@
+{
+  "slug": "don-t-overthink-it",
+  "title": "Don't Overthink It",
+  "author": "",
+  "category": "Self-Growth",
+  "subtopics": "decision-making, values, simplicity",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Don't",
+    "Overthink It"
+  ],
+  "subline": "decision-making",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Don't Overthink It\" (Self-Growth) — composed from book tokens."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "get-a-grip",
+  "title": "Get A Grip",
+  "author": "Gino Wickman, Mike Paton",
+  "category": "Leadership",
+  "subtopics": "business turnaround, leadership, operations, culture",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "LEADERSHIP",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Get",
+    "A Grip"
+  ],
+  "subline": "business turnaround",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Get A Grip\" (Leadership) — composed from book tokens."
+}

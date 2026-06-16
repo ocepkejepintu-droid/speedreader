@@ -1,0 +1,26 @@
+{
+  "slug": "when-more-is-not-better-overcoming-americas-obsession-with-economic-efficiency",
+  "title": "When More Is Not Better",
+  "author": "Roger L. Martin",
+  "category": "Society & Tech",
+  "subtopics": "economics, capitalism, democracy",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "When More",
+    "Is Not",
+    "Better"
+  ],
+  "subline": "economics",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"When More Is Not Better\" (Society & Tech) — composed from book tokens."
+}

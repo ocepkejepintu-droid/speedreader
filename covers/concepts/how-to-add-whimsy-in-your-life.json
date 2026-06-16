@@ -1,0 +1,26 @@
+{
+  "slug": "how-to-add-whimsy-in-your-life",
+  "title": "How to Add Whimsy in Your Life",
+  "author": "",
+  "category": "Happiness",
+  "subtopics": "whimsy, joy, stress relief, creativity",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HAPPINESS",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "How to",
+    "Add Whimsy",
+    "in Your Life"
+  ],
+  "subline": "whimsy",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"How to Add Whimsy in Your Life\" (Happiness) — composed from book tokens."
+}

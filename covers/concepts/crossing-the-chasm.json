@@ -1,0 +1,25 @@
+{
+  "slug": "crossing-the-chasm",
+  "title": "Crossing the Chasm",
+  "author": "Geoffrey A. Moore",
+  "category": "Business & Career",
+  "subtopics": "tech marketing, chasm strategy, niche",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "arc",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Crossing",
+    "the Chasm"
+  ],
+  "subline": "tech marketing",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=arc for \"Crossing the Chasm\" (Business & Career) — composed from book tokens."
+}

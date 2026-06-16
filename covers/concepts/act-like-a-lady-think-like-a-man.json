@@ -1,0 +1,26 @@
+{
+  "slug": "act-like-a-lady-think-like-a-man",
+  "title": "Act Like a Lady, Think Like a Man",
+  "author": "Steve Harvey",
+  "category": "Love & Sex",
+  "subtopics": "relationships, gender dynamics, dating",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "LOVE & SEX",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Act Like",
+    "a Lady,",
+    "Think Like a Man"
+  ],
+  "subline": "relationships",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Act Like a Lady, Think Like a Man\" (Love & Sex) — composed from book tokens."
+}

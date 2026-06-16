@@ -1,0 +1,24 @@
+{
+  "slug": "1984",
+  "title": "1984",
+  "author": "George Orwell",
+  "category": "Society & Tech",
+  "subtopics": "totalitarianism, surveillance, dystopia",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "mark",
+  "titlePos": "center",
+  "titleWeight": 300,
+  "titleSize": 540,
+  "titleTransform": "uppercase",
+  "lines": [
+    "1984"
+  ],
+  "subline": "totalitarianism",
+  "sublinePos": "subline-bot",
+  "accent": "brand-bottom",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "top",
+  "rationale": "motif=mark for \"1984\" (Society & Tech) — composed from book tokens."
+}

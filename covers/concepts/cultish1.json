@@ -1,0 +1,24 @@
+{
+  "slug": "cultish1",
+  "title": "Cultish",
+  "author": "Amanda Montell",
+  "category": "Society & Tech",
+  "subtopics": "cults, language, group influence",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 540,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Cultish"
+  ],
+  "subline": "cults",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Cultish\" (Society & Tech) — composed from book tokens."
+}

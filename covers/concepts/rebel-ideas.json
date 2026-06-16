@@ -1,0 +1,25 @@
+{
+  "slug": "rebel-ideas",
+  "title": "Rebel Ideas",
+  "author": "Matthew Syed",
+  "category": "Self-Growth",
+  "subtopics": "diversity of thought, problem solving, blind spots, group intelligence",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Rebel",
+    "Ideas"
+  ],
+  "subline": "diversity of thought",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Rebel Ideas\" (Self-Growth) — composed from book tokens."
+}

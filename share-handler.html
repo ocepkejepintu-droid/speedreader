@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#1a1a1a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>RSVP Reader — Share</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #1a1a1a;
+      color: #f0f0f0;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      padding-top: calc(1.5rem + env(safe-area-inset-top));
+      padding-bottom: calc(1.5rem + env(safe-safe-area-inset-bottom, 0));
+    }
+    main {
+      max-width: 30rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+    h1 { font-weight: 300; font-size: 1.5rem; margin: 0 0 0.75rem; }
+    p { font-size: 0.95rem; opacity: 0.85; margin: 0 0 0.75rem; }
+    a.btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      background: #ff4444;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    code {
+      background: #2a2a2a;
+      padding: 0.1em 0.4em;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+    .small { font-size: 0.78rem; opacity: 0.55; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>RSVP Reader</h1>
+    <p id="status">Saving your article&hellip;</p>
+    <p id="detail" class="small"></p>
+    <a class="btn hidden" id="openBtn" href="/rsvp/app/">Open RSVP Reader</a>
+  </main>
+  <script>
+    // share-handler.html — the manifest's share_target posts a multipart form
+    // here. We forward it to the server, then redirect the user into the
+    // PWA library with the article id.
+    //
+    // The static manifest share_target spec doesn't support GET-vs-POST
+    // dispatch, so we keep this page small and JS-only. The server-side
+    // endpoint does the real work and the server returns a 302 to
+    // /rsvp/?article=<id> in the form-POST case. This file exists as a
+    // graceful fallback for users who visit the URL directly.
+    (async function () {
+      var status = document.getElementById('status');
+      var detail = document.getElementById('detail');
+      var openBtn = document.getElementById('openBtn');
+
+      function showError(msg) {
+        status.textContent = 'Could not save this article';
+        detail.textContent = msg;
+        openBtn.classList.remove('hidden');
+      }
+
+      // The browser already POSTed the form to the server and followed the
+      // 302. If we end up here, it means the form post didn't fire (older
+      // iOS versions, or the user navigated to the URL directly). In that
+      // case, treat the URL params as a fallback — they shouldn't normally
+      // be present, but if we get a "share" intent via Universal Link or
+      // similar, we still want to do the right thing.
+      var params = new URLSearchParams(window.location.search);
+      var url = params.get('url') || '';
+      var title = params.get('title') || '';
+      var text = params.get('text') || '';
+
+      if (!url && !text) {
+        status.textContent = 'RSVP Reader share target';
+        detail.innerHTML = 'From your iPhone: open the page you want to save, tap <strong>Share</strong>, then pick <strong>RSVP</strong> from the share sheet. (You may need to install the PWA via <em>Add to Home Screen</em> first.)';
+        openBtn.classList.remove('hidden');
+        return;
+      }
+
+      try {
+        var res = await fetch('/share', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: url, title: title, text: text, shareSource: 'share_handler' })
+        });
+        if (!res.ok) {
+          var body = await res.text();
+          throw new Error('Server returned ' + res.status + ': ' + body);
+        }
+        var json = await res.json();
+        window.location.replace('/rsvp/app/?article=' + encodeURIComponent(json.id));
+      } catch (err) {
+        showError(err.message || 'Network error');
+      }
+    })();
+  </script>
+</body>
+</html>

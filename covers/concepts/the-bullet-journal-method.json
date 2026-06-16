@@ -1,0 +1,25 @@
+{
+  "slug": "the-bullet-journal-method",
+  "title": "The Bullet Journal Method",
+  "author": "Ryder Carroll",
+  "category": "Productivity",
+  "subtopics": "journaling, organization, mindfulness, productivity",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "PRODUCTIVITY",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The Bullet",
+    "Journal Method"
+  ],
+  "subline": "journaling",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=split for \"The Bullet Journal Method\" (Productivity) — composed from book tokens."
+}

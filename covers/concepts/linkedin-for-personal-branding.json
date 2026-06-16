@@ -1,0 +1,25 @@
+{
+  "slug": "linkedin-for-personal-branding",
+  "title": "LinkedIn for Personal Branding",
+  "author": "",
+  "category": "Business & Career",
+  "subtopics": "LinkedIn, personal brand, networking, career",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "LinkedIn for",
+    "Personal Branding"
+  ],
+  "subline": "LinkedIn",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"LinkedIn for Personal Branding\" (Business & Career) — composed from book tokens."
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "taking-charge-of-your-fertility",
+  "title": "Taking Charge of Your Fertility",
+  "author": "Toni Weschler",
+  "category": "Health",
+  "subtopics": "fertility, women's health, family planning",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HEALTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Taking Charge",
+    "of Your",
+    "Fertility"
+  ],
+  "subline": "fertility",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Taking Charge of Your Fertility\" (Health) — composed from book tokens."
+}

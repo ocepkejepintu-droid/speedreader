@@ -1,0 +1,25 @@
+{
+  "slug": "as-a-man-thinketh",
+  "title": "As a Man Thinketh",
+  "author": "James Allen",
+  "category": "Self-Growth",
+  "subtopics": "thought, purpose, character",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "As a",
+    "Man Thinketh"
+  ],
+  "subline": "thought",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"As a Man Thinketh\" (Self-Growth) — composed from book tokens."
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "how-to-spend-a-trillion-dollars",
+  "title": "How to Spend a Trillion Dollars",
+  "author": "Rowan Hooper",
+  "category": "Society & Tech",
+  "subtopics": "global issues, science, climate, philanthropy",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "How to",
+    "Spend a",
+    "Trillion Dollars"
+  ],
+  "subline": "global issues",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"How to Spend a Trillion Dollars\" (Society & Tech) — composed from book tokens."
+}

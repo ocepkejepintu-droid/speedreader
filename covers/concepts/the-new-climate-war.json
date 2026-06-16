@@ -1,0 +1,25 @@
+{
+  "slug": "the-new-climate-war",
+  "title": "The New Climate War",
+  "author": "Michael Mann",
+  "category": "Society & Tech",
+  "subtopics": "climate, misinformation, policy",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "mark",
+  "titlePos": "center",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The New",
+    "Climate War"
+  ],
+  "subline": "climate",
+  "sublinePos": "subline-bot",
+  "accent": "brand-bottom",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "top",
+  "rationale": "motif=mark for \"The New Climate War\" (Society & Tech) — composed from book tokens."
+}

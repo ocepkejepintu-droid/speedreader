@@ -1,0 +1,25 @@
+{
+  "slug": "eat-move-sleep",
+  "title": "Eat Move Sleep",
+  "author": "Tom Rath",
+  "category": "Health",
+  "subtopics": "nutrition, exercise, sleep, health habits",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HEALTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Eat",
+    "Move Sleep"
+  ],
+  "subline": "nutrition",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Eat Move Sleep\" (Health) — composed from book tokens."
+}

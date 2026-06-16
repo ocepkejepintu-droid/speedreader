@@ -1,0 +1,25 @@
+{
+  "slug": "straight-jacket",
+  "title": "Straight Jacket",
+  "author": "Matthew Quick",
+  "category": "Love & Sex",
+  "subtopics": "LGBTQ, identity, mental health",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "LOVE & SEX",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Straight",
+    "Jacket"
+  ],
+  "subline": "LGBTQ",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Straight Jacket\" (Love & Sex) — composed from book tokens."
+}

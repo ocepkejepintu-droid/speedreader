@@ -1,0 +1,26 @@
+{
+  "slug": "atomic-habits",
+  "title": "Atomic Habits",
+  "author": "James Clear",
+  "category": "Self-Growth",
+  "subtopics": "habit formation, behavior change, 1% improvement",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "hairlines",
+  "motifCount": 4,
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Atomic",
+    "Habits"
+  ],
+  "subline": "habit formation",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=hairlines for \"Atomic Habits\" (Self-Growth) — composed from book tokens."
+}

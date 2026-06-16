@@ -1,0 +1,25 @@
+{
+  "slug": "all-secure",
+  "title": "All Secure",
+  "author": "",
+  "category": "Personalities",
+  "subtopics": "military memoir, special forces, combat",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "PERSONALITIES",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "none",
+  "lines": [
+    "All",
+    "Secure"
+  ],
+  "subline": "military memoir",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"All Secure\" (Personalities) — composed from book tokens."
+}

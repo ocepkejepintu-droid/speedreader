@@ -1,0 +1,9 @@
+{
+  "storeSlug": "zipang",
+  "productSlug": "rsvp-reader-tip",
+  "checkoutUrl": "https://zipang.lemonsqueezy.com/checkout/buy/RSVP-PRODUCT-ID",
+  "minimumPriceUsd": 5,
+  "suggestedPricesUsd": [5, 20, 50],
+  "licenseMode": "single-user-pwyw",
+  "envVarName": "LEMON_SQUEEZY_CHECKOUT_URL"
+}

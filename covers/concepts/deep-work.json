@@ -1,0 +1,25 @@
+{
+  "slug": "deep-work",
+  "title": "Deep Work",
+  "author": "Cal Newport",
+  "category": "Productivity",
+  "subtopics": "focus, deep work rules, distraction",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "PRODUCTIVITY",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Deep",
+    "Work"
+  ],
+  "subline": "focus",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Deep Work\" (Productivity) — composed from book tokens."
+}

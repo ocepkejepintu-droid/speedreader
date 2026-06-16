@@ -1,0 +1,25 @@
+{
+  "slug": "american-prison",
+  "title": "American Prison",
+  "author": "",
+  "category": "Society & Tech",
+  "subtopics": "prison system, privatization, reform",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "American",
+    "Prison"
+  ],
+  "subline": "prison system",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=split for \"American Prison\" (Society & Tech) — composed from book tokens."
+}

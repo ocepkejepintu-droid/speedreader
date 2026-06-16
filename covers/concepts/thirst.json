@@ -1,0 +1,24 @@
+{
+  "slug": "thirst",
+  "title": "Thirst",
+  "author": "Scott Harrison",
+  "category": "Personalities",
+  "subtopics": "charity, transformation, memoir",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "PERSONALITIES",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 540,
+  "titleTransform": "none",
+  "lines": [
+    "Thirst"
+  ],
+  "subline": "charity",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Thirst\" (Personalities) — composed from book tokens."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "growing-up-biden",
+  "title": "Growing Up Biden",
+  "author": "",
+  "category": "Personalities",
+  "subtopics": "Biden family, American politics, memoir",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "PERSONALITIES",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "none",
+  "lines": [
+    "Growing",
+    "Up Biden"
+  ],
+  "subline": "Biden family",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Growing Up Biden\" (Personalities) — composed from book tokens."
+}

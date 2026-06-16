@@ -1,0 +1,25 @@
+{
+  "slug": "the-climate-book",
+  "title": "The Climate Book",
+  "author": "Greta Thunberg",
+  "category": "Society & Tech",
+  "subtopics": "climate change, environment, activism",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The",
+    "Climate Book"
+  ],
+  "subline": "climate change",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"The Climate Book\" (Society & Tech) — composed from book tokens."
+}

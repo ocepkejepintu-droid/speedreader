@@ -1,0 +1,26 @@
+{
+  "slug": "the-one-thing",
+  "title": "The One Thing",
+  "author": "Gary Keller",
+  "category": "Productivity",
+  "subtopics": "focus, singular goal, productivity",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "PRODUCTIVITY",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The",
+    "One Thing"
+  ],
+  "subline": "focus",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "pill": "1",
+  "pillPos": "top",
+  "rationale": "motif=split for \"The One Thing\" (Productivity) — composed from book tokens."
+}

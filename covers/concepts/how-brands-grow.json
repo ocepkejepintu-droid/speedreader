@@ -1,0 +1,25 @@
+{
+  "slug": "how-brands-grow",
+  "title": "How Brands Grow",
+  "author": "Byron Sharp",
+  "category": "Business & Career",
+  "subtopics": "marketing, brand growth, consumer behavior",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "How",
+    "Brands Grow"
+  ],
+  "subline": "marketing",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"How Brands Grow\" (Business & Career) — composed from book tokens."
+}

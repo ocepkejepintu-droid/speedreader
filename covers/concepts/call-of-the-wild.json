@@ -1,0 +1,25 @@
+{
+  "slug": "call-of-the-wild",
+  "title": "Call of the Wild",
+  "author": "Jack London",
+  "category": "Happiness",
+  "subtopics": "adventure, survival, transformation",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HAPPINESS",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Call of",
+    "the Wild"
+  ],
+  "subline": "adventure",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Call of the Wild\" (Happiness) — composed from book tokens."
+}

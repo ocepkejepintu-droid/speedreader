@@ -1,0 +1,25 @@
+{
+  "slug": "stay-positive",
+  "title": "Stay Positive",
+  "author": "Jon Gordon",
+  "category": "Self-Growth",
+  "subtopics": "positivity, mindset, perseverance",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Stay",
+    "Positive"
+  ],
+  "subline": "positivity",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Stay Positive\" (Self-Growth) — composed from book tokens."
+}

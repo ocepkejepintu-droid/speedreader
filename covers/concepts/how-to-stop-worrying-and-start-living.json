@@ -1,0 +1,26 @@
+{
+  "slug": "how-to-stop-worrying-and-start-living",
+  "title": "How to Stop Worrying and Start Living",
+  "author": "Dale Carnegie",
+  "category": "Self-Growth",
+  "subtopics": "worry, anxiety, mindset",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "How to",
+    "Stop Worrying",
+    "and Start Living"
+  ],
+  "subline": "worry",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"How to Stop Worrying and Start Living\" (Self-Growth) — composed from book tokens."
+}

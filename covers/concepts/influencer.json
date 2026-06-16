@@ -1,0 +1,24 @@
+{
+  "slug": "influencer",
+  "title": "Influencer",
+  "author": "Joseph Grenny, Kerry Patterson et al.",
+  "category": "Negotiation",
+  "subtopics": "influence, behavior change, motivation",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "NEGOTIATION",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Influencer"
+  ],
+  "subline": "influence",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Influencer\" (Negotiation) — composed from book tokens."
+}

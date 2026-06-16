@@ -1,0 +1,24 @@
+{
+  "slug": "immunity-the-science-of-staying-well",
+  "title": "Immunity",
+  "author": "Jenna Macciochi",
+  "category": "Health",
+  "subtopics": "immune system, sleep, mental health, prevention",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HEALTH",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 540,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Immunity"
+  ],
+  "subline": "immune system",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=split for \"Immunity\" (Health) — composed from book tokens."
+}

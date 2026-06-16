@@ -1,0 +1,26 @@
+{
+  "slug": "have-a-beautiful-terrible-day-daily-meditations-for-the-ups-downs-and-in-betweens",
+  "title": "Have a Beautiful, Terrible Day!",
+  "author": "Kate Bowler",
+  "category": "Happiness",
+  "subtopics": "meditation, mindfulness, daily affirmations, calm",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HAPPINESS",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Have a",
+    "Beautiful, Terrible",
+    "Day!"
+  ],
+  "subline": "meditation",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Have a Beautiful, Terrible Day!\" (Happiness) — composed from book tokens."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "innovation-in-real-places",
+  "title": "Innovation in Real Places",
+  "author": "Dan Breznitz",
+  "category": "Business & Career",
+  "subtopics": "innovation, regional growth, policy",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Innovation in",
+    "Real Places"
+  ],
+  "subline": "innovation",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Innovation in Real Places\" (Business & Career) — composed from book tokens."
+}

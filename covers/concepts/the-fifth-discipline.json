@@ -1,0 +1,25 @@
+{
+  "slug": "the-fifth-discipline",
+  "title": "The Fifth Discipline",
+  "author": "Peter M. Senge",
+  "category": "Leadership",
+  "subtopics": "learning organizations, systems thinking, mental models",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "LEADERSHIP",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The",
+    "Fifth Discipline"
+  ],
+  "subline": "learning organizations",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=split for \"The Fifth Discipline\" (Leadership) — composed from book tokens."
+}

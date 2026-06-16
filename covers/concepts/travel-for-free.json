@@ -1,0 +1,25 @@
+{
+  "slug": "travel-for-free",
+  "title": "Travel for Free",
+  "author": "",
+  "category": "Money & Investments",
+  "subtopics": "travel hacking, savings, location independence",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "MONEY & INVESTMENTS",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Travel",
+    "for Free"
+  ],
+  "subline": "travel hacking",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Travel for Free\" (Money & Investments) — composed from book tokens."
+}

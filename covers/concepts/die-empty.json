@@ -1,0 +1,25 @@
+{
+  "slug": "die-empty",
+  "title": "Die Empty",
+  "author": "Todd Henry",
+  "category": "Self-Growth",
+  "subtopics": "creative contribution, lifelong growth, purpose",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Die",
+    "Empty"
+  ],
+  "subline": "creative contribution",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Die Empty\" (Self-Growth) — composed from book tokens."
+}

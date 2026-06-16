@@ -1,0 +1,27 @@
+{
+  "slug": "21-lessons-for-the-21st-century",
+  "title": "21 Lessons for the 21st Century",
+  "author": "Yuval Noah Harari",
+  "category": "Self-Growth",
+  "subtopics": "future challenges, critical thinking, resilience",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "21 Lessons",
+    "for the",
+    "21st Century"
+  ],
+  "subline": "future challenges",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "pill": "1",
+  "pillPos": "top",
+  "rationale": "motif=orb for \"21 Lessons for the 21st Century\" (Self-Growth) — composed from book tokens."
+}

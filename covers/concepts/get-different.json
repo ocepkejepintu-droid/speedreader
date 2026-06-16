@@ -1,0 +1,25 @@
+{
+  "slug": "get-different",
+  "title": "Get Different",
+  "author": "Mike Michalowicz",
+  "category": "Business & Career",
+  "subtopics": "marketing, differentiation, growth, strategy",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "arc",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Get",
+    "Different"
+  ],
+  "subline": "marketing",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=arc for \"Get Different\" (Business & Career) — composed from book tokens."
+}

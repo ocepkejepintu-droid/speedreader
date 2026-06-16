@@ -1,0 +1,25 @@
+{
+  "slug": "the-alter-ego-effect",
+  "title": "The Alter Ego Effect",
+  "author": "Todd Herman",
+  "category": "Self-Growth",
+  "subtopics": "identity, performance, confidence",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The Alter",
+    "Ego Effect"
+  ],
+  "subline": "identity",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"The Alter Ego Effect\" (Self-Growth) — composed from book tokens."
+}

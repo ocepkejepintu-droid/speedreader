@@ -1,0 +1,26 @@
+{
+  "slug": "iak-ukrayins-kii-fikshn-uchit-smilivosti",
+  "title": "Як український фікшн учить сміливості",
+  "author": "",
+  "category": "Society & Tech",
+  "subtopics": "Ukrainian fiction, culture, courage, literature",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SOCIETY & TECH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Як український",
+    "фікшн учить",
+    "сміливості"
+  ],
+  "subline": "Ukrainian fiction",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Як український фікшн учить сміливості\" (Society & Tech) — composed from book tokens."
+}

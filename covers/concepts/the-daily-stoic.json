@@ -1,0 +1,25 @@
+{
+  "slug": "the-daily-stoic",
+  "title": "The Daily Stoic",
+  "author": "Ryan Holiday, Stephen Hanselman",
+  "category": "Self-Growth",
+  "subtopics": "stoicism, awareness, philosophy",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "arc",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The",
+    "Daily Stoic"
+  ],
+  "subline": "stoicism",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=arc for \"The Daily Stoic\" (Self-Growth) — composed from book tokens."
+}

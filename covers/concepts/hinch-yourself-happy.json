@@ -1,0 +1,25 @@
+{
+  "slug": "hinch-yourself-happy",
+  "title": "Hinch Yourself Happy",
+  "author": "Mrs Hinch",
+  "category": "Home & Environment",
+  "subtopics": "cleaning, home, decluttering, motivation",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HOME & ENVIRONMENT",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Hinch",
+    "Yourself Happy"
+  ],
+  "subline": "cleaning",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Hinch Yourself Happy\" (Home & Environment) — composed from book tokens."
+}

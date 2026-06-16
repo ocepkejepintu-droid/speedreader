@@ -1,0 +1,25 @@
+{
+  "slug": "dopamine-nation",
+  "title": "Dopamine Nation",
+  "author": "Anna Lembke",
+  "category": "Health",
+  "subtopics": "addiction, pleasure, pain, self-control",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HEALTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Dopamine",
+    "Nation"
+  ],
+  "subline": "addiction",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Dopamine Nation\" (Health) — composed from book tokens."
+}

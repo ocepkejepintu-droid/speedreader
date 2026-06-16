@@ -1,0 +1,25 @@
+{
+  "slug": "thinking-fast-and-slow",
+  "title": "Thinking, Fast and Slow",
+  "author": "Daniel Kahneman",
+  "category": "Happiness",
+  "subtopics": "decision-making, cognitive biases, system 1/2",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "HAPPINESS",
+  "motif": "split",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Thinking, Fast",
+    "and Slow"
+  ],
+  "subline": "decision-making",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=split for \"Thinking, Fast and Slow\" (Happiness) — composed from book tokens."
+}

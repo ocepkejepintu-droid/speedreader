@@ -1,0 +1,25 @@
+{
+  "slug": "digital-gold",
+  "title": "Digital Gold",
+  "author": "Nathaniel Popper",
+  "category": "Money & Investments",
+  "subtopics": "Bitcoin, cryptocurrency, digital money",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "MONEY & INVESTMENTS",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Digital",
+    "Gold"
+  ],
+  "subline": "Bitcoin",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Digital Gold\" (Money & Investments) — composed from book tokens."
+}

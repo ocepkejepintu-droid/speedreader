@@ -1,0 +1,26 @@
+{
+  "slug": "craft-in-the-real-world",
+  "title": "Craft in the Real World",
+  "author": "Matthew Salesses",
+  "category": "Self-Growth",
+  "subtopics": "writing, creativity, craft",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Craft in",
+    "the Real",
+    "World"
+  ],
+  "subline": "writing",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Craft in the Real World\" (Self-Growth) — composed from book tokens."
+}

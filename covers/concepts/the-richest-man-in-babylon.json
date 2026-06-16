@@ -1,0 +1,26 @@
+{
+  "slug": "the-richest-man-in-babylon",
+  "title": "The Richest Man in Babylon",
+  "author": "George S. Clason",
+  "category": "Money & Investments",
+  "subtopics": "saving, investing, wealth principles",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "MONEY & INVESTMENTS",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "The Richest",
+    "Man in",
+    "Babylon"
+  ],
+  "subline": "saving",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"The Richest Man in Babylon\" (Money & Investments) — composed from book tokens."
+}

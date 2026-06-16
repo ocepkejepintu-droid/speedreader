@@ -1,0 +1,25 @@
+{
+  "slug": "humor-seriously",
+  "title": "Humor, Seriously",
+  "author": "Jennifer Aaker, Naomi Bagdonas",
+  "category": "Business & Career",
+  "subtopics": "humor, business culture, creativity, leadership",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "BUSINESS & CAREER",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Humor,",
+    "Seriously"
+  ],
+  "subline": "humor",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Humor, Seriously\" (Business & Career) — composed from book tokens."
+}

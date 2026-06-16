@@ -1,0 +1,25 @@
+{
+  "slug": "broken-open-how-difficult-times-can-help-us-grow",
+  "title": "Broken Open",
+  "author": "David Richo",
+  "category": "Self-Growth",
+  "subtopics": "adversity, growth, resilience, transformation",
+  "year": "",
+  "datelineLeft": "BOOK SUMMARY",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "orb",
+  "titlePos": "top",
+  "titleWeight": 300,
+  "titleSize": 198,
+  "titleTransform": "uppercase",
+  "lines": [
+    "Broken",
+    "Open"
+  ],
+  "subline": "adversity",
+  "sublinePos": "subline-bot",
+  "accent": "brand-top",
+  "brandMark": "THOUGHTLAB",
+  "redRule": "none",
+  "rationale": "motif=orb for \"Broken Open\" (Self-Growth) — composed from book tokens."
+}

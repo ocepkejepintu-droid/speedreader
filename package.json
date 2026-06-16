@@ -1,0 +1,18 @@
+{
+  "name": "speedreader",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "jsdom": "^29.1.1",
+    "jszip": "^3.10.1",
+    "next-auth": "^4.24.11"
+  },
+  "devDependencies": {
+    "@xmldom/xmldom": "^0.9.10",
+    "fake-indexeddb": "^6.2.5"
+  }
+}
