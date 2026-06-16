@@ -557,6 +557,36 @@
 
     .tap-hint.show { opacity: 0.45; }
 
+    .reader-back-btn {
+      position: absolute;
+      top: calc(0.65rem + env(safe-area-inset-top));
+      left: calc(0.85rem + env(safe-area-inset-left));
+      z-index: 5;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.35rem 0.65rem;
+      font-size: 0.78rem;
+      font-family: inherit;
+      color: var(--muted);
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      touch-action: manipulation;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+
+    .reader-back-btn:hover,
+    .reader-back-btn:focus-visible {
+      color: var(--fg);
+      border-color: rgba(76, 76, 76, 0.85);
+      background: rgba(0, 0, 0, 0.55);
+      outline: none;
+    }
+
+    body.playing .reader-back-btn { opacity: 0.55; }
+
     /* Settings sheet */
     .sheet-overlay {
       position: fixed;
@@ -762,7 +792,8 @@
     }
 
     body.embed-landing .tap-hint,
-    body.embed-landing .rotate-hint {
+    body.embed-landing .rotate-hint,
+    body.embed-landing .reader-back-btn {
       display: none !important;
     }
   </style>
@@ -866,6 +897,7 @@
   </div>
 
   <div id="reader" class="hidden">
+    <button type="button" class="reader-back-btn" id="readerBackBtn" aria-label="Back to library">← Back</button>
     <div class="word-display" id="wordDisplay">
       <div class="orp-stage" id="orpStage">
         <div class="orp-guide" id="orpGuide" aria-hidden="true">
@@ -900,7 +932,7 @@
         <div class="rotate-hint-title">Turn phone sideways</div>
         <div class="rotate-hint-sub">Scroll mode reads best in landscape — wider lines, easier to follow.</div>
       </div>
-      <div class="tap-hint" id="tapHint">Tap play · Double-tap lock · Swipe ↑↓ WPM · Hold settings</div>
+      <div class="tap-hint" id="tapHint">Tap to pause · Hold to open menu</div>
     </div>
   </div>
 
