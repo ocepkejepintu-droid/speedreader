@@ -29,19 +29,30 @@
       --surface-carbon: #1a1a1a;
       --surface-elevated: #141414;
       --font-reader: 'Courier New', Courier, monospace;
+      --font-focus: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
       --page-pad: clamp(16px, 4vw, 48px);
       --max-width: 1200px;
       --ease-out: cubic-bezier(0.32, 0.72, 0, 1);
-      --bg: var(--surface-carbon);
-      --fg: var(--color-pure-white);
-      --orp: var(--color-signal-red);
-      --muted: var(--color-graphite);
-      --panel: var(--surface-elevated);
-      --border: rgba(76, 76, 76, 0.55);
-      --font-word: clamp(2rem, 6vw, 4rem);
+      --reader-bg: #0d0b09;
+      --reader-bg-2: #17120d;
+      --reader-ivory: #f3e9d7;
+      --reader-muted: #9b8a73;
+      --reader-faint: #504538;
+      --reader-gold: #d7a14b;
+      --reader-gold-soft: rgba(215, 161, 75, 0.18);
+      --reader-copper: #8f5a2e;
+      --reader-glass: rgba(243, 233, 215, 0.06);
+      --reader-border: rgba(215, 161, 75, 0.22);
+      --bg: var(--reader-bg);
+      --fg: var(--reader-ivory);
+      --orp: var(--reader-gold);
+      --muted: var(--reader-muted);
+      --panel: var(--reader-bg-2);
+      --border: var(--reader-border);
+      --font-word: clamp(2.35rem, 7vw, 5.15rem);
       --orp-anchor: 35%;
-      --orp-guide-half: 20px;
-      --orp-guide-gap: 4px;
+      --orp-guide-half: 34px;
+      --orp-guide-gap: 10px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -76,8 +87,39 @@
     #reader {
       position: fixed;
       inset: 0;
-      background: var(--bg);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(215, 161, 75, 0.13), transparent 28%),
+        radial-gradient(circle at 14% 18%, rgba(143, 90, 46, 0.18), transparent 26%),
+        linear-gradient(145deg, #080706 0%, var(--reader-bg) 42%, #18100a 100%);
       z-index: 10;
+      isolation: isolate;
+    }
+
+    #reader::before,
+    #reader::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    #reader::before {
+      z-index: 0;
+      opacity: 0.52;
+      background:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+      background-size: 18px 18px, 22px 22px;
+      mask-image: radial-gradient(circle at center, #000 0%, transparent 78%);
+      -webkit-mask-image: radial-gradient(circle at center, #000 0%, transparent 78%);
+    }
+
+    #reader::after {
+      z-index: 0;
+      background:
+        radial-gradient(ellipse at center, transparent 36%, rgba(0, 0, 0, 0.46) 100%),
+        linear-gradient(90deg, rgba(0,0,0,0.28), transparent 18%, transparent 82%, rgba(0,0,0,0.28));
     }
 
     .word-display {
@@ -88,6 +130,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      z-index: 1;
     }
 
     .focal-line { display: none !important; }
@@ -95,8 +138,8 @@
     .orp-stage {
       position: relative;
       width: 100%;
-      max-width: 42rem;
-      min-height: 6rem;
+      max-width: 46rem;
+      min-height: clamp(7rem, 18vw, 10rem);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -112,6 +155,24 @@
       z-index: 0;
     }
 
+    .orp-guide::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(78vw, 28rem);
+      height: clamp(4.8rem, 13vw, 8.4rem);
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(215, 161, 75, 0.2);
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at var(--orp-anchor) 50%, rgba(215, 161, 75, 0.18), transparent 19%),
+        linear-gradient(90deg, transparent, rgba(243, 233, 215, 0.035), transparent);
+      box-shadow:
+        inset 0 0 38px rgba(215, 161, 75, 0.08),
+        0 0 42px rgba(0, 0, 0, 0.32);
+    }
+
     body.mode-rsvp .orp-guide,
     body.mode-phantom .orp-guide {
       display: block;
@@ -125,15 +186,15 @@
       height: 5px;
     }
 
-    .orp-guide-top { top: calc(50% - 2.15rem); }
-    .orp-guide-bottom { bottom: calc(50% - 2.15rem); }
+    .orp-guide-top { top: calc(50% - 3.25rem); }
+    .orp-guide-bottom { bottom: calc(50% - 3.25rem); }
 
     .orp-guide-bar-left,
     .orp-guide-bar-right {
       position: absolute;
       top: 0;
       height: 1px;
-      background: rgba(240, 240, 240, 0.38);
+      background: linear-gradient(90deg, transparent, rgba(215, 161, 75, 0.68), transparent);
     }
 
     .orp-guide-bar-left {
@@ -150,11 +211,13 @@
       position: absolute;
       top: 0;
       left: var(--orp-anchor);
-      transform: translateX(-50%);
-      width: 2px;
-      height: 5px;
+      transform: translate(-50%, -1px);
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
       background: var(--orp);
-      opacity: 0.85;
+      opacity: 0.95;
+      box-shadow: 0 0 16px rgba(215, 161, 75, 0.8);
     }
 
     .word-container {
@@ -162,14 +225,14 @@
       z-index: 1;
       width: 100%;
       font-size: var(--font-size-word, var(--font-word));
-      font-family: var(--font-reader);
+      font-family: var(--font-focus);
       line-height: 1;
       padding: 0;
     }
 
     body.mode-rsvp .word-container,
     body.mode-phantom .word-container {
-      letter-spacing: 0;
+      letter-spacing: 0.015em;
     }
 
     .orp-track {
@@ -185,13 +248,15 @@
       transform: translate(0, -50%);
       white-space: nowrap;
       line-height: 1;
-      font-weight: 500;
+      font-weight: 520;
       color: var(--fg);
+      text-shadow: 0 8px 28px rgba(0, 0, 0, 0.48);
     }
 
     .word-orp {
       color: var(--orp);
-      font-weight: 700;
+      font-weight: 800;
+      text-shadow: 0 0 18px rgba(215, 161, 75, 0.56), 0 8px 28px rgba(0, 0, 0, 0.46);
     }
 
     .phantom-before,
@@ -201,18 +266,27 @@
       top: 50%;
       transform: translateY(-50%);
       font-size: inherit;
-      font-weight: 500;
-      opacity: 0.243;
-      color: var(--fg);
+      font-weight: 460;
+      opacity: 0.22;
+      color: var(--reader-ivory);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       pointer-events: none;
       line-height: 1;
+      filter: blur(0.2px);
     }
 
-    .phantom-before { text-align: right; }
-    .phantom-after { text-align: left; }
+    .phantom-before {
+      text-align: right;
+      mask-image: linear-gradient(90deg, transparent, #000 22%, #000 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 100%);
+    }
+    .phantom-after {
+      text-align: left;
+      mask-image: linear-gradient(90deg, #000 0%, #000 78%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 78%, transparent);
+    }
 
     body.mode-phantom .phantom-before:not(:empty),
     body.mode-phantom .phantom-after:not(:empty) {
@@ -221,7 +295,9 @@
 
     /* Scroll mode */
     body.mode-scroll.in-reader #reader {
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(215, 161, 75, 0.11), transparent 30%),
+        linear-gradient(145deg, #090806 0%, var(--reader-bg) 100%);
     }
 
     .scroll-view {
@@ -260,7 +336,7 @@
       margin: 0 auto;
       font-size: var(--scroll-font-size, 1.1rem);
       line-height: 1.75;
-      font-family: var(--font-reader);
+      font-family: var(--font-focus);
     }
 
     .para-block { margin-bottom: 1.1rem; }
@@ -291,11 +367,12 @@
     body.paused.mode-paragraph .para-word.para-sent-read { opacity: 0.42; }
 
     .para-word.current {
-      background: var(--orp);
-      color: #fff;
+      background: rgba(215, 161, 75, 0.18);
+      color: var(--reader-ivory);
       font-weight: 600;
       padding: 0.05em 0.12em;
-      border-radius: 3px;
+      border-radius: 5px;
+      box-shadow: inset 0 -2px 0 rgba(215, 161, 75, 0.72);
       opacity: 1;
     }
 
@@ -315,15 +392,16 @@
       text-align: center;
       font-size: 1.1rem;
       line-height: 1.6;
-      font-family: var(--font-reader);
+      font-family: var(--font-focus);
     }
 
     .scrub-word.current {
-      background: var(--orp);
-      color: #fff;
+      background: rgba(215, 161, 75, 0.2);
+      color: var(--reader-ivory);
       padding: 0.1em 0.2em;
-      border-radius: 3px;
+      border-radius: 5px;
       font-weight: 600;
+      box-shadow: inset 0 -2px 0 rgba(215, 161, 75, 0.72);
     }
 
     .progress-footer {
@@ -331,11 +409,16 @@
       bottom: calc(0.65rem + env(safe-area-inset-bottom));
       right: calc(0.85rem + env(safe-area-inset-right));
       z-index: 3;
-      padding: 0.3rem 0.55rem;
+      padding: 0.38rem 0.7rem;
       font-size: 0.68rem;
-      color: var(--muted);
-      background: rgba(0,0,0,0.35);
-      border-radius: 6px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(243, 233, 215, 0.72);
+      background: rgba(13, 11, 9, 0.56);
+      border: 1px solid var(--reader-border);
+      border-radius: 999px;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+      backdrop-filter: blur(16px);
       cursor: pointer;
     }
 
@@ -348,8 +431,10 @@
       transform: translateX(-50%);
       z-index: 5;
       padding: 0.45rem 0.9rem;
-      background: rgba(0,0,0,0.8);
-      border-radius: 8px;
+      color: var(--reader-ivory);
+      background: rgba(13, 11, 9, 0.78);
+      border: 1px solid var(--reader-border);
+      border-radius: 999px;
       font-size: 0.9rem;
       opacity: 0;
       transition: opacity 0.2s;
@@ -380,7 +465,7 @@
       padding-block: 38vh;
       font-size: var(--scroll-font-size, 1.15rem);
       line-height: 1.75;
-      font-family: var(--font-reader);
+      font-family: var(--font-focus);
       color: var(--fg);
       text-align: left;
       hyphens: none;
@@ -416,10 +501,11 @@
     }
 
     .scroll-word.current {
-      background: var(--orp);
-      color: #fff;
+      background: rgba(215, 161, 75, 0.18);
+      color: var(--reader-ivory);
       font-weight: 600;
-      border-radius: 3px;
+      border-radius: 5px;
+      box-shadow: inset 0 -2px 0 rgba(215, 161, 75, 0.72);
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
       opacity: 1;
@@ -484,20 +570,22 @@
 
     .mode-segment button {
       flex: 1;
-      padding: 0.45rem 0.25rem;
-      border-radius: 6px;
+      padding: 0.52rem 0.25rem;
+      border-radius: 999px;
       border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--muted);
+      background: rgba(243, 233, 215, 0.035);
+      color: rgba(243, 233, 215, 0.58);
       font-size: 0.65rem;
+      letter-spacing: 0.04em;
       cursor: pointer;
     }
 
     .mode-segment button.active {
-      background: var(--orp);
+      background: linear-gradient(135deg, rgba(215, 161, 75, 0.32), rgba(143, 90, 46, 0.22));
       border-color: var(--orp);
-      color: #fff;
+      color: var(--reader-ivory);
       font-weight: 600;
+      box-shadow: 0 0 0 1px rgba(215, 161, 75, 0.14), 0 12px 28px rgba(0, 0, 0, 0.22);
     }
 
     .word-placeholder {
@@ -520,9 +608,16 @@
       transform: translateX(-50%);
       width: min(92%, 520px);
       text-align: center;
-      font-size: 1rem;
-      line-height: 1.5;
-      opacity: 0.6;
+      font-family: var(--font-focus);
+      font-size: 0.96rem;
+      line-height: 1.55;
+      color: rgba(243, 233, 215, 0.54);
+      opacity: 0.66;
+      padding: 0.55rem 0.8rem;
+      border: 1px solid rgba(215, 161, 75, 0.12);
+      border-radius: 999px;
+      background: rgba(13, 11, 9, 0.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.035);
       pointer-events: none;
       transition: opacity 0.2s;
     }
@@ -540,6 +635,7 @@
     .ctx-current {
       color: var(--orp);
       font-weight: bold;
+      text-shadow: 0 0 14px rgba(215, 161, 75, 0.42);
     }
 
     /* One-shot hint — fades out, never blocks reading */
@@ -549,7 +645,7 @@
       left: 50%;
       transform: translateX(-50%);
       font-size: 0.8rem;
-      color: var(--muted);
+      color: rgba(243, 233, 215, 0.58);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.4s;
@@ -565,13 +661,14 @@
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
-      padding: 0.35rem 0.65rem;
+      padding: 0.42rem 0.78rem;
       font-size: 0.78rem;
       font-family: inherit;
-      color: var(--muted);
-      background: rgba(0, 0, 0, 0.35);
+      color: rgba(243, 233, 215, 0.68);
+      background: rgba(13, 11, 9, 0.48);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 999px;
+      backdrop-filter: blur(16px);
       cursor: pointer;
       touch-action: manipulation;
       transition: color 0.2s, border-color 0.2s, background 0.2s;
@@ -580,8 +677,8 @@
     .reader-back-btn:hover,
     .reader-back-btn:focus-visible {
       color: var(--fg);
-      border-color: rgba(76, 76, 76, 0.85);
-      background: rgba(0, 0, 0, 0.55);
+      border-color: rgba(215, 161, 75, 0.48);
+      background: rgba(24, 17, 11, 0.7);
       outline: none;
     }
 
@@ -591,7 +688,8 @@
     .sheet-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(4, 3, 2, 0.72);
+      backdrop-filter: blur(8px);
       z-index: 20;
       opacity: 0;
       pointer-events: none;
@@ -608,8 +706,12 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: var(--panel);
-      border-radius: 16px 16px 0 0;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(215, 161, 75, 0.12), transparent 38%),
+        linear-gradient(180deg, rgba(24, 18, 13, 0.98), rgba(11, 9, 7, 0.98));
+      border: 1px solid rgba(215, 161, 75, 0.16);
+      border-bottom: 0;
+      border-radius: 24px 24px 0 0;
       padding: 1.25rem 1.25rem calc(1.25rem + env(safe-area-inset-bottom));
       transform: translateY(100%);
       transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
@@ -622,7 +724,7 @@
     .sheet-handle {
       width: 36px;
       height: 4px;
-      background: var(--border);
+      background: rgba(215, 161, 75, 0.32);
       border-radius: 2px;
       margin: 0 auto 1rem;
     }
@@ -631,6 +733,7 @@
       font-size: 1rem;
       font-weight: 500;
       margin-bottom: 1rem;
+      color: var(--reader-ivory);
     }
 
     .sheet-row {
@@ -658,9 +761,9 @@
     .sheet-select {
       flex: 1;
       padding: 0.5rem;
-      border-radius: 6px;
+      border-radius: 999px;
       border: 1px solid var(--border);
-      background: var(--bg);
+      background: rgba(13, 11, 9, 0.66);
       color: var(--fg);
       font-size: 0.85rem;
     }
@@ -676,18 +779,18 @@
     .sheet-btn {
       flex: 1;
       padding: 0.75rem;
-      border-radius: 8px;
+      border-radius: 999px;
       border: 1px solid var(--border);
-      background: var(--bg);
+      background: rgba(13, 11, 9, 0.66);
       color: var(--fg);
       font-size: 0.9rem;
       cursor: pointer;
     }
 
     .sheet-btn.primary {
-      background: var(--orp);
+      background: linear-gradient(135deg, rgba(215, 161, 75, 0.95), rgba(143, 90, 46, 0.92));
       border-color: var(--orp);
-      color: #fff;
+      color: #120d08;
       font-weight: 600;
     }
 
@@ -723,14 +826,14 @@
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Desktop mode — auto-detected or manual; optimizes Phantom/RSVP on wide screens */
+    /* Desktop mode — auto-detected or manual; optimizes Ghostline/Focus on wide screens */
     body.desktop-mode .orp-stage {
       max-width: 48rem;
     }
 
     body.desktop-mode .phantom-before,
     body.desktop-mode .phantom-after {
-      opacity: 0.243;
+      opacity: 0.28;
     }
 
     body.desktop-mode .orp-word {
@@ -739,7 +842,7 @@
 
     body.desktop-mode .orp-guide-bar-left,
     body.desktop-mode .orp-guide-bar-right {
-      background: rgba(240, 240, 240, 0.45);
+      background: linear-gradient(90deg, transparent, rgba(215, 161, 75, 0.78), transparent);
     }
 
     body.desktop-mode.mode-phantom.playing .sentence-context {
@@ -899,7 +1002,7 @@
   </div>
 
   <div id="reader" class="hidden">
-    <button type="button" class="reader-back-btn" id="readerBackBtn" aria-label="Back to library">← Back</button>
+    <button type="button" class="reader-back-btn" id="readerBackBtn" aria-label="Back to library">← Library</button>
     <div class="word-display" id="wordDisplay">
       <div class="orp-stage" id="orpStage">
         <div class="orp-guide" id="orpGuide" aria-hidden="true">
@@ -960,10 +1063,10 @@
       <div class="sheet-row">
         <label>Mode</label>
         <div class="mode-segment" id="modeSegment">
-          <button type="button" data-mode="rsvp">RSVP</button>
-          <button type="button" data-mode="phantom">Phantom</button>
-          <button type="button" data-mode="scroll">Scroll</button>
-          <button type="button" data-mode="paragraph">Para</button>
+          <button type="button" data-mode="rsvp">Focus</button>
+          <button type="button" data-mode="phantom">Ghost</button>
+          <button type="button" data-mode="scroll">Flow</button>
+          <button type="button" data-mode="paragraph">Zen</button>
         </div>
       </div>
       <div class="sheet-row" id="desktopModeRow">

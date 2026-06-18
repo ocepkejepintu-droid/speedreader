@@ -82,7 +82,7 @@ export function getWeeklyBreakdown() {
 
 const DESKTOP_FONT_BOOST = 0.5;
 const ORP_ANCHOR_PERCENT = 0.35;
-const PHANTOM_WORD_GAP_PX = 24; // rsvpnano kPhantomCurrentGapMedium
+const GHOSTLINE_WORD_GAP_PX = 32;
 
 const LONG_PRESS_MS = 450;
 const SWIPE_DOWN_THRESHOLD = 70;
@@ -469,7 +469,7 @@ function updateDesktopModeUI() {
   const hint = $('desktopModeHint');
   if (!hint) return;
   hint.textContent = isDesktopMode()
-    ? `${desktopModeLabel()} — centered column, brighter Phantom context, keyboard shortcuts`
+    ? `${desktopModeLabel()} — centered Noir Focus column, brighter Ghostline context, keyboard shortcuts`
     : `${desktopModeLabel()} — phone layout`;
   document.querySelectorAll('#desktopModeSegment button').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.desktop === state.desktopModePref);
@@ -522,7 +522,12 @@ function openSheet() {
     $('sheetTitle').textContent = state.book.title;
     const total = state.words.length;
     const pct = total ? Math.round((state.index / total) * 100) : 0;
-    const modeLabel = { rsvp: 'RSVP', phantom: 'Phantom', scroll: 'Scroll', paragraph: 'Paragraph' }[state.readingMode];
+    const modeLabel = {
+      rsvp: 'Focus Pulse',
+      phantom: 'Ghostline',
+      scroll: 'Flow Scroll',
+      paragraph: 'Paragraph Zen',
+    }[state.readingMode];
     $('sheetMeta').textContent = `${modeLabel} · ${state.index} / ${total} words · ${pct}% · ${state.wpm} WPM`;
   }
   $('sheetOverlay').classList.add('open');
@@ -571,7 +576,7 @@ function orpWordHtml(raw) {
 }
 
 function measureOrpLayout(wordEl, track) {
-  // Match rsvpnano rsvpStartX: anchorX - focusCenterX with layout at x=0.
+  // Align the active focus glyph to the Noir Focus anchor after measuring at x=0.
   wordEl.style.left = '0';
   wordEl.style.transform = 'translateY(-50%)';
 
@@ -611,7 +616,7 @@ function layoutOrpReader() {
   wordEl.style.left = '0';
   wordEl.style.transform = `translate(${shiftX}px, -50%)`;
 
-  const gap = PHANTOM_WORD_GAP_PX;
+  const gap = GHOSTLINE_WORD_GAP_PX;
   const wordLeft = minX + shiftX;
   const wordRight = maxX + shiftX;
 
