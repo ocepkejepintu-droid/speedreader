@@ -72,16 +72,29 @@ chmod -R a+r "$REMOTE_DIR"
 chmod 775 "$REMOTE_DIR/sync-data" 2>/dev/null || true
 chmod 755 "$REMOTE_DIR/summaries-data" 2>/dev/null || true
 
-# Node sync API proxy
-if ! grep -q 'location /rsvp/sync' "$ZIPANG"; then
-  sed -i '/location = \/rsvp {/i\
-    location /rsvp/sync {\
-        proxy_pass http://127.0.0.1:9877/;\
+# Node sync API proxy. The trailing slash in proxy_pass used to send
+# "/rsvp/sync/health" as "//health" (double-slash collapse stripped the
+# /health route). Strip the /rsvp/sync prefix in nginx so the upstream
+# sees the route it actually serves.
+if ! grep -q 'location \^~ /rsvp/sync' "$ZIPANG"; then
+  if grep -q 'location /rsvp/sync' "$ZIPANG"; then
+    sed -i 's|location /rsvp/sync {|location ^~ /rsvp/sync {|' "$ZIPANG"
+    sed -i '/location \^~ \/rsvp\/sync {/a\
+        rewrite ^/rsvp/sync(.*)$ $1 break;\
+        proxy_pass http://127.0.0.1:9877;' "$ZIPANG"
+    sed -i '/rewrite \^/rsvp\/sync/d' "$ZIPANG"
+    echo "Upgraded /rsvp/sync proxy to ^~ priority with prefix strip"
+  else
+    sed -i '/location = \/rsvp {/i\
+    location ^~ /rsvp/sync {\
+        rewrite ^/rsvp/sync(.*)$ $1 break;\
+        proxy_pass http://127.0.0.1:9877;\
         proxy_http_version 1.1;\
         proxy_set_header Host $host;\
     }\
 ' "$ZIPANG"
-  echo "Added /rsvp/sync proxy to zipang.conf"
+    echo "Added /rsvp/sync proxy to zipang.conf"
+  fi
 fi
 
 if [ ! -f /etc/rsvp-reader.env ]; then
