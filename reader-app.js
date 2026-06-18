@@ -16,6 +16,15 @@ import {
   groupSummariesByCategory, sortSummariesForDisplay,
   formatLastRead as formatSummaryLastRead,
 } from './summaries.js';
+import {
+  buildAccountSnapshot, parseAccountSnapshot, mergeAccountSnapshot,
+  validateSnapshotShape, getOrCreateDeviceId, SNAPSHOT_VERSION, absoluteWordIndex,
+} from './sync-model.js';
+import {
+  buildReadingEvent, mergeEvents as mergeReadingEvents,
+  groupEventsByLocalDay, aggregateStats, checkAchievements,
+  summarizeCompletions,
+} from './analytics.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -127,6 +136,43 @@ let libraryDirty = false;
 let authConfigured = false;
 
 const SYNC_API = './sync';
+const SYNC_SNAPSHOT_API = './sync/snapshot';
+const DEVICE_ID_KEY = 'rsvp-device-id';
+const READING_EVENTS_KEY = 'rsvp-reading-events';
+const ACHIEVEMENTS_KEY = 'rsvp-achievements';
+const MAX_LOCAL_EVENTS = 2000;
+
+function getDeviceId() {
+  try { return getOrCreateDeviceId(window.localStorage); }
+  catch { return null; }
+}
+
+function loadLocalEvents() {
+  try {
+    const raw = localStorage.getItem(READING_EVENTS_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch { return []; }
+}
+
+function saveLocalEvents(events) {
+  try {
+    const trimmed = events.slice(-MAX_LOCAL_EVENTS);
+    localStorage.setItem(READING_EVENTS_KEY, JSON.stringify(trimmed));
+  } catch { /* ignore */ }
+}
+
+function loadAchievements() {
+  try {
+    const raw = localStorage.getItem(ACHIEVEMENTS_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch { return []; }
+}
+
+function saveAchievements(list) {
+  try { localStorage.setItem(ACHIEVEMENTS_KEY, JSON.stringify(list)); } catch { /* ignore */ }
+}
 
 const etaDisplay = { chapterSec: null, bookSec: null, lastWpm: null };
 
@@ -274,6 +320,70 @@ function showReader() {
 
 function isPortrait() {
   return window.matchMedia('(orientation: portrait)').matches;
+}
+
+/**
+ * Recompute the analytics dashboard from the local events store and write any
+ * newly-unlocked achievements to localStorage. Lightweight enough to call on
+ * every library render.
+ */
+function refreshAnalyticsView() {
+  const panel = $('libStats');
+  if (!panel) return;
+  const events = loadLocalEvents();
+  const stats = aggregateStats(events);
+  const days = groupEventsByLocalDay(events);
+  const dayList = Object.entries(days)
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .slice(-7);
+  panel.innerHTML = `
+    <div class="lib-stats-grid">
+      <div class="lib-stat"><div class="lib-stat-num">${stats.wordsToday.toLocaleString()}</div><div class="lib-stat-label">words today</div></div>
+      <div class="lib-stat"><div class="lib-stat-num">${stats.words7d.toLocaleString()}</div><div class="lib-stat-label">7-day words</div></div>
+      <div class="lib-stat"><div class="lib-stat-num">${stats.currentStreak}</div><div class="lib-stat-label">day streak</div></div>
+      <div class="lib-stat"><div class="lib-stat-num">${stats.bestStreak}</div><div class="lib-stat-label">best streak</div></div>
+    </div>
+    ${renderSparkline(dayList)}
+    <div class="lib-achievements" id="libAchievements">${renderAchievementsList()}</div>
+  `;
+  // Re-check achievement unlocks after a render
+  const existing = loadAchievements();
+  const books = state.libraryBooks || [];
+  const summary = summarizeCompletions(books);
+  const newList = checkAchievements(stats, days, {
+    chapterCompletions: stats.totalEvents,
+    booksFinished: summary.booksFinished,
+    uniqueDevices7d: new Set(events.map((e) => e.deviceId).filter(Boolean)).size,
+    longestSingleSessionMs: 0,
+  }, existing);
+  if (newList.length !== existing.length) saveAchievements(newList);
+  const listEl = $('libAchievements');
+  if (listEl) listEl.innerHTML = renderAchievementsList();
+}
+
+function renderSparkline(dayList) {
+  if (!dayList.length) return '';
+  const max = Math.max(1, ...dayList.map(([, d]) => d.words));
+  const w = 280, h = 60, gap = 4;
+  const barW = (w - gap * (dayList.length - 1)) / dayList.length;
+  return `<svg class="lib-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-label="Words per day, last 7 days">
+    ${dayList.map(([, d], i) => {
+      const bh = Math.round((d.words / max) * h);
+      const x = i * (barW + gap);
+      const y = h - bh;
+      return `<rect x="${x.toFixed(1)}" y="${y}" width="${barW.toFixed(1)}" height="${bh}" rx="2" />`;
+    }).join('')}
+  </svg>`;
+}
+
+function renderAchievementsList() {
+  const list = loadAchievements();
+  if (!list.length) return '<div class="lib-achievements-empty">No achievements yet — read 1,000 words in a day to start.</div>';
+  return `<ul class="lib-achievements-list">${list.map((a) => `
+    <li class="lib-achievement">
+      <span class="lib-achievement-title">${escapeHtml(a.title)}</span>
+      <span class="lib-achievement-desc">${escapeHtml(a.description)}</span>
+    </li>`).join('')}</ul>`;
 }
 
 function detectDesktopCapable() {
@@ -861,6 +971,7 @@ function doStop() {
   state.pendingStop = false;
   if (state.timer) { clearTimeout(state.timer); state.timer = null; }
   saveProgressNow();
+  flushReadingEvent();
   updateUI();
 }
 
@@ -925,8 +1036,21 @@ async function applyChapter(idx, wordIdx = 0) {
   renderChapterSelects();
 }
 
+async function loopLandingDemo(continuePlaying = false) {
+  if (!isLandingEmbed() || !state.book || !continuePlaying) return false;
+  await applyChapter(0, 0);
+  if (!state.words.length) return false;
+  saveProgressNow();
+  state.playing = true;
+  updateUI();
+  tick();
+  window.parent?.postMessage({ type: 'rsvp-looped' }, '*');
+  return true;
+}
+
 async function advanceToNextChapter(continuePlaying = false) {
   if (!hasNextChapter()) {
+    if (await loopLandingDemo(continuePlaying)) return true;
     doStop();
     return false;
   }
@@ -959,6 +1083,7 @@ async function tick() {
     await advanceToNextChapter(true);
     return;
   }
+  noteReadStartIfNeeded();
   const word = state.words[state.index] || '';
   const delay = calcMsPerWord(word, state.wpm, timingSettings());
   state.index++;
@@ -973,9 +1098,13 @@ async function tick() {
 }
 
 async function play() {
-  if (!state.words.length && !hasNextChapter()) return;
+  if (!state.words.length && !hasNextChapter()) {
+    if (isLandingEmbed() && state.book) await applyChapter(0, 0);
+    else return;
+  }
   if (isAtChapterEnd()) {
     if (hasNextChapter()) await advanceToNextChapter(false);
+    else if (isLandingEmbed() && state.book) await applyChapter(0, 0);
     else return;
   }
   closeSheet();
@@ -1161,11 +1290,57 @@ async function loadText(resetIndex = true) {
   updateUI();
 }
 
+/**
+ * Track reading progress as an event for analytics. The event is created
+ * lazily — we only need a tiny shim of "where I was N words ago vs. now" —
+ * and rolled into the local events store, which the next sync push carries
+ * to the server.
+ *
+ * We avoid emitting an event if the interval has zero forward progress, and
+ * we collapse quick re-renders into a single event per pause.
+ */
+let pendingReadSession = null; // { startAbs, startAt, wpm, contentHash, bookId }
+function noteReadStartIfNeeded() {
+  if (!state.book?.id) return;
+  if (state.book.isSharedSummary) return;
+  if (pendingReadSession) return;
+  const abs = absoluteWordIndex(state.book, state.chapterIndex, state.index);
+  pendingReadSession = {
+    startAbs: abs,
+    startAt: Date.now(),
+    wpm: state.wpm,
+    contentHash: state.book.contentHash || state.book.id || '',
+    bookId: state.book.id,
+  };
+}
+
+function flushReadingEvent() {
+  if (!pendingReadSession || !state.book?.id) return;
+  const endAbs = absoluteWordIndex(state.book, state.chapterIndex, state.index);
+  const ev = buildReadingEvent({
+    deviceId: getDeviceId(),
+    contentHash: pendingReadSession.contentHash,
+    bookId: pendingReadSession.bookId,
+    startAbs: pendingReadSession.startAbs,
+    endAbs,
+    wpm: state.wpm,
+    startedAt: pendingReadSession.startAt,
+    endedAt: Date.now(),
+  });
+  pendingReadSession = null;
+  if (!ev) return;
+  const events = loadLocalEvents();
+  const merged = mergeReadingEvents([], [ev, ...events]);
+  saveLocalEvents(merged);
+  refreshAnalyticsView();
+}
+
 async function persistProgress() {
   if (!state.book?.id) return;
   state.book.chapterIndex = state.chapterIndex;
   state.book.wordIndex = state.index;
   state.book.wpm = state.wpm;
+  state.book.progressUpdatedAt = Date.now();
   if (state.book.isSharedSummary && state.book.summaryId) {
     saveSummaryProgress(state.book.summaryId, {
       chapterIndex: state.chapterIndex,
@@ -1179,6 +1354,7 @@ async function persistProgress() {
     chapterIndex: state.chapterIndex,
     wordIndex: state.index,
     wpm: state.wpm,
+    progressUpdatedAt: state.book.progressUpdatedAt,
   });
 }
 
@@ -1237,21 +1413,16 @@ async function pushLibraryToAccount() {
 
   const libJson = await exportLibrary();
   const local = parseLibraryPayload(libJson);
-  const localCount = Array.isArray(local?.books) ? local.books.length : 0;
+  const localBooks = Array.isArray(local?.books) ? local.books : [];
+  const deviceId = getDeviceId();
+  const snap = buildAccountSnapshot(localBooks, { deviceId, exportedAt: Date.now() });
+  // Validate the payload before shipping — we own this code path, but a
+  // bad book record should not propagate to the server.
+  const shapeErr = validateSnapshotShape(snap);
+  if (shapeErr) throw new Error(`Refusing to push invalid snapshot: ${shapeErr}`);
 
-  if (localCount === 0) {
-    const probe = await fetch(SYNC_API, { headers });
-    if (probe.ok) {
-      const server = parseLibraryPayload(await probe.text());
-      const serverCount = Array.isArray(server?.books) ? server.books.length : 0;
-      if (serverCount > 0) return false;
-    }
-  }
-
-  const stats = typeof getCompletionStats === 'function' ? getCompletionStats() : null;
-  const payload = stats ? { library: libJson, stats } : libJson;
   const t0 = performance.now();
-  const res = await fetch(SYNC_API, { method: 'POST', headers, body: JSON.stringify(payload) });
+  const res = await fetch(SYNC_SNAPSHOT_API, { method: 'POST', headers, body: JSON.stringify(snap) });
   const dt = Math.round(performance.now() - t0);
   if (typeof console !== 'undefined') console.info(`[rsvp-sync] push ${res.status} ${dt}ms`);
   if (!res.ok) throw new Error('Could not save library to your account');
@@ -1264,33 +1435,45 @@ async function pullLibraryFromAccount() {
   if (!headers) {
     throw new Error('Sign in required to load your library');
   }
-  const res = await fetch(SYNC_API, { headers });
+  const res = await fetch(SYNC_SNAPSHOT_API, { headers });
+  if (res.status === 404) {
+    // Server is the older /sync-only build; gracefully fall back so the
+    // client still works during the deploy window.
+    return { books: await listBooks(), tombstones: [], attached: 0, placeholders: 0, deleted: 0, changed: false, bookCount: 0 };
+  }
   if (!res.ok) throw new Error('Could not load library from your account');
   const raw = await res.text();
-  const library = parseLibraryPayload(raw);
-  const libJson = typeof library === 'string' ? library : JSON.stringify(library);
-  const result = await importLibrary(libJson, { merge: true });
-  let removed = 0;
-  const exportedAt = library?.exportedAt ?? null;
-  if (exportedAt != null) {
-    const serverBooks = library?.books || [];
-    const serverKeys = new Set(serverBooks.map((b) => b.contentHash || b.id));
-    const localBooks = await listBooks();
-    for (const book of localBooks) {
-      const key = book.contentHash || book.id;
-      if (!serverKeys.has(key)) {
-        await deleteBook(book.id);
-        removed++;
-      }
-    }
-  }
+  const parsed = parseAccountSnapshot(raw);
+  const localBooks = await listBooks();
+  const deviceId = getDeviceId();
+  const merged = mergeAccountSnapshot(localBooks, parsed, { deviceId });
+  await replaceAllBooks(merged.books);
   await renderLibraryGrid();
   return {
-    ...result,
-    removed,
-    changed: (result.imported + result.updated + removed) > 0,
-    bookCount: (library?.books || []).length,
+    ...merged,
+    changed: (merged.attached + merged.placeholders + merged.deleted) > 0,
+    bookCount: merged.books.length,
   };
+}
+
+/**
+ * Replace the local library wholesale after a sync merge. Each book is saved
+ * (idempotent) and any books that no longer exist locally are deleted. We
+ * never delete books that the server did not return + did not tombstone.
+ */
+async function replaceAllBooks(books) {
+  const keep = new Set();
+  for (const b of (Array.isArray(books) ? books : [])) {
+    if (!b?.id && !b?.contentHash) continue;
+    const id = b.id || b.contentHash;
+    keep.add(id);
+    await saveBook(b);
+  }
+  const existing = await listBooks();
+  for (const e of existing) {
+    const id = e.id || e.contentHash;
+    if (!keep.has(id)) await deleteBook(e.id);
+  }
 }
 
 async function syncAccountLibrary({ forcePush = false } = {}) {
@@ -1623,9 +1806,15 @@ async function renderLibraryGrid() {
     const author = b.author || (b.type === 'article' ? 'Article' : 'Unknown author');
     const chLabel = prog.chapterTitle ? escapeHtml(prog.chapterTitle) : `Ch. ${(b.chapterIndex ?? 0) + 1}`;
     const typeLabel = b.type === 'article' ? 'Article' : b.type === 'summary' ? 'Summary' : 'EPUB';
+    const placeholderBadge = b.isCloudPlaceholder
+      ? `<span class="book-card-badge" title="This book is on another device — open the EPUB to read here.">On your other device</span>`
+      : '';
+    const reuploadBtn = b.isCloudPlaceholder
+      ? `<button class="book-reupload" data-id="${escapeHtml(b.id)}" type="button">Open EPUB</button>`
+      : '';
     return `
-      <div class="book-card" data-id="${escapeHtml(b.id)}">
-        <div class="book-card-badges"><span class="book-card-type">${typeLabel}</span></div>
+      <div class="book-card${b.isCloudPlaceholder ? ' is-placeholder' : ''}" data-id="${escapeHtml(b.id)}">
+        <div class="book-card-badges"><span class="book-card-type">${typeLabel}</span>${placeholderBadge}</div>
         <div class="book-card-body">
           <div class="book-card-title">${escapeHtml(b.title)}</div>
           <div class="book-card-author">${escapeHtml(author)}</div>
@@ -1634,10 +1823,12 @@ async function renderLibraryGrid() {
             <span>${chLabel}</span>
             <span>${formatLastRead(b.lastReadAt)}</span>
           </div>
+          ${reuploadBtn}
         </div>
         <button class="book-delete" data-id="${escapeHtml(b.id)}" type="button" aria-label="Delete">×</button>
       </div>`;
   }).join('');
+  refreshAnalyticsView();
 }
 
 async function openBookRecord(record, enterReader = true) {
