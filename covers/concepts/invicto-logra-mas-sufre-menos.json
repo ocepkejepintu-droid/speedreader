@@ -1,24 +1,25 @@
 {
   "slug": "invicto-logra-mas-sufre-menos",
   "title": "Invicto",
-  "author": "",
+  "author": "Martín Alonso",
   "category": "Self-Growth",
   "subtopics": "resilience, planning, determination, self-improvement",
-  "year": "",
+  "year": "2016",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
-  "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 540,
+  "motif": "custom",
+  "titlePos": "center",
+  "titleWeight": 500,
+  "titleSize": 560,
   "titleTransform": "uppercase",
-  "lines": [
-    "Invicto"
-  ],
-  "subline": "resilience",
+  "lines": ["INVICTO"],
+  "subline": "Logra más. Sufre menos.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "INVICTUS",
+  "pill": "ESPAÑOL",
+  "pillPos": "bot",
   "redRule": "none",
-  "rationale": "motif=orb for \"Invicto\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A shield. A red diagonal slash across the shield. The title sits in the shield. -->\n  <g transform=\"translate(800 1000)\" fill=\"none\" stroke=\"#cccccc\" stroke-width=\"3\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" text-anchor=\"middle\">\n    <path d=\"M -200 -200 Q -200 -260 -140 -260 L 140 -260 Q 200 -260 200 -200 L 200 0 Q 200 200 0 320 Q -200 200 -200 0 Z\"/>\n    <path d=\"M -170 -180 Q -170 -230 -120 -230 L 120 -230 Q 170 -230 170 -180 L 170 -10 Q 170 170 0 270 Q -170 170 -170 -10 Z\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <line x1=\"-200\" y1=\"0\" x2=\"200\" y2=\"-200\" stroke=\"#fc1c46\" stroke-width=\"6\"/>\n    <text x=\"0\" y=\"-60\" font-size=\"18\" font-weight=\"500\" fill=\"#fc1c46\" letter-spacing=\"0.18em\">UNBROKEN</text>\n  </g>\n</svg>",
+  "rationale": "A heater shield with a single red diagonal slash — the wound that didn't break it. The title 'INVICTO' sits in massive 560px weight 500 type centered, a Spanish-language wall of confidence."
 }

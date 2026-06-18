@@ -4,22 +4,22 @@
   "author": "Annie Duke",
   "category": "Self-Growth",
   "subtopics": "decision-making, probability, bias, risk",
-  "year": "",
+  "year": "2018",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 198,
+  "titleSize": 220,
   "titleTransform": "uppercase",
-  "lines": [
-    "Thinking",
-    "in Bets"
-  ],
-  "subline": "decision-making",
+  "lines": ["Thinking", "in Bets"],
+  "subline": "Life is poker, not chess.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "PROBABILITY",
+  "pill": "60%",
+  "pillPos": "bot",
   "redRule": "none",
-  "rationale": "motif=orb for \"Thinking in Bets\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- Two playing cards: the left shows 60% (a partial deck), the right shows 40% (the rest of the pie). One is RED. -->\n  <g transform=\"translate(800 1500)\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" text-anchor=\"middle\">\n    <!-- Card 1 (LEFT, ash, 60% bet) -->\n    <g transform=\"translate(-300 0)\">\n      <rect x=\"-150\" y=\"-220\" width=\"300\" height=\"440\" fill=\"none\" stroke=\"#cccccc\" stroke-width=\"2\"/>\n      <!-- A pie chart inside: 60% ash filled, 40% open -->\n      <g transform=\"translate(0 0)\">\n        <circle cx=\"0\" cy=\"0\" r=\"100\" fill=\"none\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n        <!-- 60% wedge: from 0deg to 216deg -->\n        <path d=\"M 0 0 L 100 0 A 100 100 0 1 1 -30.9 95.1 Z\" fill=\"#cccccc\" opacity=\"0.3\" stroke=\"#cccccc\" stroke-width=\"2\"/>\n      </g>\n      <text x=\"0\" y=\"160\" font-size=\"48\" font-weight=\"500\" fill=\"#cccccc\" letter-spacing=\"-0.04em\">60%</text>\n      <text x=\"0\" y=\"200\" font-size=\"14\" font-weight=\"500\" fill=\"#cccccc\" letter-spacing=\"0.18em\">YOUR BET</text>\n    </g>\n    <!-- Card 2 (RIGHT, RED, 40% bet) -->\n    <g transform=\"translate(300 0)\">\n      <rect x=\"-150\" y=\"-220\" width=\"300\" height=\"440\" fill=\"#fc1c46\"/>\n      <!-- A pie chart inside: 40% red wedge -->\n      <g transform=\"translate(0 0)\">\n        <circle cx=\"0\" cy=\"0\" r=\"100\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"1\"/>\n        <!-- 40% wedge: from 0 to 144deg -->\n        <path d=\"M 0 0 L 100 0 A 100 100 0 0 1 -80.9 58.8 Z\" fill=\"#ffffff\" opacity=\"0.3\" stroke=\"#ffffff\" stroke-width=\"2\"/>\n      </g>\n      <text x=\"0\" y=\"160\" font-size=\"48\" font-weight=\"500\" fill=\"#ffffff\" letter-spacing=\"-0.04em\">40%</text>\n      <text x=\"0\" y=\"200\" font-size=\"14\" font-weight=\"500\" fill=\"#ffffff\" letter-spacing=\"0.18em\">HIDDEN</text>\n    </g>\n    <!-- A whisper label between the two cards -->\n    <text x=\"0\" y=\"-260\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">EXPECTED VALUE</text>\n  </g>\n</svg>",
+  "rationale": "Two playing cards: left card is ash 60% (your bet, what you know); right card is RED 40% (the hidden part of the probability). Together they make 100%. 220px whisper title at the top — the cards ARE the cover."
 }

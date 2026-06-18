@@ -4,21 +4,22 @@
   "author": "Jon Acuff",
   "category": "Productivity",
   "subtopics": "goals, perfectionism, follow-through",
-  "year": "",
+  "year": "2017",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "PRODUCTIVITY",
-  "motif": "orb",
-  "titlePos": "top",
-  "titleWeight": 300,
+  "motif": "custom",
+  "titlePos": "center",
+  "titleWeight": 500,
   "titleSize": 540,
   "titleTransform": "uppercase",
-  "lines": [
-    "Finish"
-  ],
-  "subline": "goals",
-  "sublinePos": "subline-bot",
+  "lines": ["FINISH"],
+  "subline": "Give yourself the gift of done.",
+  "sublinePos": "subline-top",
   "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "brandMark": "DONE",
+  "pill": "✓",
+  "pillPos": "bot",
   "redRule": "none",
-  "rationale": "motif=orb for \"Finish\" (Productivity) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A giant checkmark drawn as a single sweeping red line — the 'finishing' gesture. It's the visual '✓' that becomes the cover. -->\n  <g transform=\"translate(800 1200)\" fill=\"none\">\n    <!-- A massive red checkmark, ~1400px wide, behind the title -->\n    <path d=\"M -700 0 L -200 500 L 700 -500\" stroke=\"#fc1c46\" stroke-width=\"10\" stroke-linecap=\"square\" stroke-linejoin=\"miter\"/>\n    <!-- A subtle drop shadow line beneath the checkmark, hairline -->\n    <path d=\"M -700 30 L -200 530 L 700 -470\" stroke=\"#fc1c46\" stroke-width=\"2\" opacity=\"0.3\"/>\n  </g>\n</svg>",
+  "rationale": "The book IS the gesture. A single massive red checkmark — 1400px wide, 10px stroke — sweeps diagonally across the entire cover. The title 'FINISH' (540px UPPERCASE weight 500) sits centered on top of the check. There's no other mark. The check IS the cover. Brand 'DONE' in the bottom-right; pill '✓' at the bottom. Acuff's whole book is a permission to stop starting and start finishing — the cover is one giant finishing gesture."
 }

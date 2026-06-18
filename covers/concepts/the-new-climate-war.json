@@ -4,22 +4,25 @@
   "author": "Michael Mann",
   "category": "Society & Tech",
   "subtopics": "climate, misinformation, policy",
-  "year": "",
+  "year": "2021",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SOCIETY & TECH",
-  "motif": "mark",
-  "titlePos": "center",
-  "titleWeight": 300,
-  "titleSize": 198,
+  "motif": "custom",
+  "titlePos": "top",
+  "titleWeight": 500,
+  "titleSize": 280,
   "titleTransform": "uppercase",
-  "lines": [
-    "The New",
-    "Climate War"
-  ],
-  "subline": "climate",
+  "lines": ["The New", "Climate War"],
+  "subline": "The fight to take back the green agenda.",
   "sublinePos": "subline-bot",
   "accent": "brand-bottom",
-  "brandMark": "THOUGHTLAB",
-  "redRule": "top",
-  "rationale": "motif=mark for \"The New Climate War\" (Society & Tech) — composed from book tokens."
+  "brandMark": "1.5°C",
+  "pill": "1.5°",
+  "pillPos": "bot",
+  "redRule": "none",
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- The hockey-stick curve. The flat historical part is ash; the sharp upward modern spike is RED. The 1.5°C threshold is a horizontal red dashed line. -->\n  <g transform=\"translate(800 1500)\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\">\n    <!-- Axes -->\n    <line x1=\"-700\" y1=\"280\" x2=\"700\" y2=\"280\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <line x1=\"-700\" y1=\"280\" x2=\"-700\" y2=\"-300\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <!-- 1.5°C threshold red dashed line -->\n    <line x1=\"-700\" y1=\"-100\" x2=\"700\" y2=\"-100\" stroke=\"#fc1c46\" stroke-width=\"1\" stroke-dasharray=\"8 6\"/>\n    <text x=\"-720\" y=\"-95\" text-anchor=\"end\" font-size=\"13\" font-weight=\"500\" fill=\"#fc1c46\" letter-spacing=\"0.18em\">+1.5°C</text>\n    <!-- The historical flat part (ash) -->\n    <path d=\"M -680 200 L -640 180 L -600 160 L -560 140 L -520 120 L -480 100 L -440 80 L -400 60 L -360 40 L -320 20\" fill=\"none\" stroke=\"#cccccc\" stroke-width=\"2\"/>\n    <!-- The sharp upward modern part (RED), crossing the threshold -->\n    <path d=\"M -320 20 Q -200 -20 -100 -80 Q 50 -160 200 -200 Q 350 -240 500 -260 L 600 -270\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <!-- The 12 tick marks along the baseline (decades) -->\n    <g stroke=\"#4c4c4c\" stroke-width=\"1\">\n      <line x1=\"-660\" y1=\"280\" x2=\"-660\" y2=\"290\"/><line x1=\"-580\" y1=\"280\" x2=\"-580\" y2=\"290\"/>\n      <line x1=\"-500\" y1=\"280\" x2=\"-500\" y2=\"290\"/><line x1=\"-420\" y1=\"280\" x2=\"-420\" y2=\"290\"/>\n      <line x1=\"-340\" y1=\"280\" x2=\"-340\" y2=\"290\"/><line x1=\"-260\" y1=\"280\" x2=\"-260\" y2=\"290\"/>\n      <line x1=\"-180\" y1=\"280\" x2=\"-180\" y2=\"290\"/><line x1=\"-100\" y1=\"280\" x2=\"-100\" y2=\"290\"/>\n      <line x1=\"-20\" y1=\"280\" x2=\"-20\" y2=\"290\"/><line x1=\"60\" y1=\"280\" x2=\"60\" y2=\"290\"/>\n      <line x1=\"140\" y1=\"280\" x2=\"140\" y2=\"290\"/><line x1=\"220\" y1=\"280\" x2=\"220\" y2=\"290\"/>\n      <line x1=\"300\" y1=\"280\" x2=\"300\" y2=\"290\"/><line x1=\"380\" y1=\"280\" x2=\"380\" y2=\"290\"/>\n      <line x1=\"460\" y1=\"280\" x2=\"460\" y2=\"290\"/><line x1=\"540\" y1=\"280\" x2=\"540\" y2=\"290\"/>\n    </g>\n    <!-- Year labels (a few anchor years) -->\n    <g font-size=\"11" font-weight="500" fill="#4c4c4c" letter-spacing="0.18em">\n      <text x="-660" y="320" text-anchor="middle">1850</text>\n      <text x="-260" y="320" text-anchor="middle">1950</text>\n      <text x="220" y="320" text-anchor="middle">2010</text>\n      <text x="540" y="320" text-anchor="middle">2050</text>\n    </g>
+    <!-- The end of the curve: a red dot at 2050 -->\n    <circle cx="540" cy="-260" r="10" fill="#fc1c46"/>
+  </g>
+</svg>",
+  "rationale": "The hockey-stick climate curve. The flat historical part is ash; the sharp upward modern part is RED, crossing a red dashed 1.5°C threshold. 280px weight-500 title at the top."
 }

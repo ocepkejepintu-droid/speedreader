@@ -1,24 +1,26 @@
 {
   "slug": "ikigai",
   "title": "Ikigai",
-  "author": "Héctor García and Francesc Miralles",
+  "author": "Hector Garcia",
   "category": "Self-Growth",
-  "subtopics": "purpose, longevity, mindfulness",
-  "year": "",
+  "subtopics": "purpose, longevity, japanese philosophy",
+  "year": "2016",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "venn",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 540,
-  "titleTransform": "uppercase",
-  "lines": [
-    "Ikigai"
-  ],
-  "subline": "purpose",
+  "titleSize": 480,
+  "titleTransform": "italic",
+  "lines": ["Ikigai"],
+  "subline": "The Japanese secret to a long and happy life.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "HÉCTOR GARCÍA",
+  "pill": "生き甲斐",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=venn for \"Ikigai\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- The ikigai Venn: four overlapping circles. The intersection at the center is RED. Labels: what you LOVE (top), what you're GOOD AT (right), what the world NEEDS (left), what you can be PAID FOR (bottom). -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Top circle: LOVE -->\n    <circle cx=\"0\" cy=\"-180\" r=\"220\" stroke=\"#4c4c4c\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n    <!-- Right circle: GOOD AT -->\n    <circle cx=\"180\" cy=\"0\" r=\"220\" stroke=\"#4c4c4c\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n    <!-- Bottom circle: PAID FOR -->\n    <circle cx=\"0\" cy=\"180\" r=\"220\" stroke=\"#4c4c4c\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n    <!-- Left circle: NEEDS -->\n    <circle cx=\"-180\" cy=\"0\" r=\"220\" stroke=\"#4c4c4c\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n    <!-- The central intersection: a small red dot -->\n    <circle cx=\"0\" cy=\"0\" r=\"14\" fill=\"#fc1c46\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"32\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"1\" opacity=\"0.4\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"56\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"0.8\" opacity=\"0.2\"/>\n    <!-- Labels at the cardinal extents -->\n    <text x=\"0\" y=\"-460\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"20\" font-weight=\"300\" fill=\"#cccccc\" letter-spacing=\"0.3em\">LOVE</text>\n    <text x=\"460\" y=\"6\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"20\" font-weight=\"300\" fill=\"#cccccc\" letter-spacing=\"0.3em\">GOOD AT</text>\n    <text x=\"0\" y=\"486\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"20\" font-weight=\"300\" fill=\"#cccccc\" letter-spacing=\"0.3em\">PAID FOR</text>\n    <text x=\"-460\" y=\"6\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"20\" font-weight=\"300\" fill=\"#cccccc\" letter-spacing=\"0.3em\">NEEDS</text>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">FOUR CIRCLES · ONE REASON</text>\n</svg>",
+  "rationale": "The classic ikigai Venn: four overlapping ash circles (LOVE top, GOOD AT right, PAID FOR bottom, NEEDS left). The intersection at center is a single red 14px dot, with two faint red glow rings. The red dot is the reason. Title 480px italic, single word 'Ikigai', weight 300 — the title IS the concept."
 }

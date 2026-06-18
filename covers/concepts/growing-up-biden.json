@@ -1,25 +1,25 @@
 {
   "slug": "growing-up-biden",
   "title": "Growing Up Biden",
-  "author": "",
+  "author": "Valerie Biden Owens",
   "category": "Personalities",
   "subtopics": "Biden family, American politics, memoir",
-  "year": "",
+  "year": "2022",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "PERSONALITIES",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 198,
+  "titleSize": 320,
   "titleTransform": "none",
-  "lines": [
-    "Growing",
-    "Up Biden"
-  ],
-  "subline": "Biden family",
+  "lines": ["Growing Up", "Biden"],
+  "subline": "A memoir by Valerie Biden Owens.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "VALERIE BIDEN OWENS",
+  "pill": "BIDEN",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Growing Up Biden\" (Personalities) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A family tree: 4 children at the bottom, branching up to 2 parents. The middle child (Joe) is RED, the others ash. -->\n  <g transform=\"translate(800 1180)\" fill=\"none\" stroke=\"#4c4c4c\" stroke-width=\"1.5\">\n    <!-- Two parents at top -->\n    <g transform=\"translate(0 0)\">\n      <circle cx=\"-200\" cy=\"0\" r=\"40\"/>\n      <line x1=\"-200\" y1=\"40\" x2=\"-200\" y2=\"200\"/>\n      <text x=\"-200\" y=\"240\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">MOTHER</text>\n    </g>\n    <g transform=\"translate(0 0)\">\n      <circle cx=\"200\" cy=\"0\" r=\"40\"/>\n      <line x1=\"200\" y1=\"40\" x2=\"200\" y2=\"200\"/>\n      <text x=\"200\" y=\"240\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">FATHER</text>\n    </g>\n    <!-- 4 children at bottom -->\n    <g>\n      <g transform=\"translate(-450 600)\">\n        <circle cx=\"0\" cy=\"0\" r=\"36\"/>\n        <line x1=\"0\" y1=\"36\" x2=\"0\" y2=\"120\"/>\n        <text x=\"0\" y=\"160\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">JIMMY</text>\n      </g>\n      <!-- JOE: RED -->\n      <g transform=\"translate(-150 600)\" stroke=\"#fc1c46\" stroke-width=\"2.5\">\n        <circle cx=\"0\" cy=\"0\" r=\"42\"/>\n        <line x1=\"0\" y1=\"42\" x2=\"0\" y2=\"120\"/>\n        <text x=\"0\" y=\"160\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#fc1c46\" letter-spacing=\"0.18em\">JOE</text>\n      </g>\n      <g transform=\"translate(150 600)\" stroke=\"#4c4c4c\" stroke-width=\"1.5\">\n        <circle cx=\"0\" cy=\"0\" r=\"36\"/>\n        <line x1=\"0\" y1=\"36\" x2=\"0\" y2=\"120\"/>\n        <text x=\"0\" y=\"160\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">VALERIE</text>\n      </g>\n      <g transform=\"translate(450 600)\" stroke=\"#4c4c4c\" stroke-width=\"1.5\">\n        <circle cx=\"0\" cy=\"0\" r=\"36\"/>\n        <line x1=\"0\" y1=\"36\" x2=\"0\" y2=\"120\"/>\n        <text x=\"0\" y=\"160\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">FRANKIE</text>\n      </g>\n    </g>\n    <!-- Connecting lines: parents → 4 children -->\n    <g stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.7\">\n      <path d=\"M -200 200 Q -325 350 -450 600\"/>\n      <path d=\"M -200 200 Q -175 350 -150 600\"/>\n      <path d=\"M 200 200 Q 175 350 150 600\"/>\n      <path d=\"M 200 200 Q 325 350 450 600\"/>\n    </g>\n    <path d=\"M -100 250 Q -125 400 -150 600\" stroke=\"#fc1c46\" stroke-width=\"1.5\"/>\n  </g>\n  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">ONE SISTER'S STORY OF A BROTHER</text>\n</svg>",
+  "rationale": "A family tree: two parents at the top connected by hairline curves to four children at the bottom (Jimmy, Joe, Valerie, Frankie). The middle child — Joe Biden — is the only one rendered in red 2.5px stroke + red label. The rest are graphite 1.5px. The connecting parent-to-Joe line is also red 1.5px. Title 320px mixed case, two lines, weight 300. The composition is a sibling portrait."
 }

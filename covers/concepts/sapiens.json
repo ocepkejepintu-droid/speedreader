@@ -4,21 +4,22 @@
   "author": "Yuval Noah Harari",
   "category": "Society & Tech",
   "subtopics": "human history, evolution, civilization",
-  "year": "",
+  "year": "2011",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SOCIETY & TECH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 540,
+  "titleSize": 520,
   "titleTransform": "uppercase",
-  "lines": [
-    "Sapiens"
-  ],
-  "subline": "human history",
+  "lines": ["SAPIENS"],
+  "subline": "A brief history of humankind.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
+  "accent": "brand-bottom",
   "brandMark": "THOUGHTLAB",
+  "pill": "70,000 YR",
+  "pillPos": "bot",
   "redRule": "none",
-  "rationale": "motif=orb for \"Sapiens\" (Society & Tech) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%;opacity:0.85\">\n  <!-- Three overlapping circles = the three revolutions. Centered in the LOWER 2/3 of the canvas so the giant title can dominate the top half. -->\n  <g transform=\"translate(800 1620)\">\n    <!-- Cognitive Revolution (cyan-white) -->\n    <circle cx=\"-280\" cy=\"-120\" r=\"560\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" opacity=\"0.55\"/>\n    <circle cx=\"-280\" cy=\"-120\" r=\"555\" fill=\"none\" stroke=\"#9fd6ff\" stroke-width=\"1\" opacity=\"0.35\"/>\n    <!-- Agricultural Revolution (ash) -->\n    <circle cx=\"280\" cy=\"-120\" r=\"560\" fill=\"none\" stroke=\"#cccccc\" stroke-width=\"2\" opacity=\"0.45\"/>\n    <!-- Scientific Revolution (red-violet, the only chromatic edge) -->\n    <circle cx=\"0\" cy=\"320\" r=\"560\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"2\" opacity=\"0.85\"/>\n    <!-- Three small dots in the three intersection regions to imply the milestones -->\n    <circle cx=\"-140\" cy=\"-260\" r=\"6\" fill=\"#cccccc\"/>\n    <circle cx=\"140\" cy=\"-260\" r=\"6\" fill=\"#cccccc\"/>\n    <circle cx=\"0\" cy=\"100\" r=\"8\" fill=\"#fc1c46\"/>\n  </g>\n</svg>",
+  "rationale": "Vast 520px uppercase title sits at the top — the title IS the cover, just like the original Sapiens design. The three revolutions (Cognitive / Agricultural / Scientific) collapse to a tight overlapping Venn in the lower 2/3 so the circles feel like an archeological imprint under the type, not a diagram competing with it. The Scientific Revolution's edge is the sole red line; cyan + ash are achromatic family. Pill 70,000 YR anchors the bottom-left."
 }

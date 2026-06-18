@@ -1,24 +1,26 @@
 {
   "slug": "equity",
   "title": "Equity",
-  "author": "Sara Zarr",
-  "category": "Society & Tech",
-  "subtopics": "equity, systems thinking, bias",
-  "year": "",
+  "author": "Minal Bopaiah",
+  "category": "Self-Growth",
+  "subtopics": "diversity, inclusion, equity, workplace",
+  "year": "2021",
   "datelineLeft": "BOOK SUMMARY",
-  "datelineRight": "SOCIETY & TECH",
-  "motif": "split",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 540,
-  "titleTransform": "uppercase",
-  "lines": [
-    "Equity"
-  ],
-  "subline": "equity",
+  "titleWeight": 500,
+  "titleSize": 480,
+  "titleTransform": "none",
+  "lines": ["Equity"],
+  "subline": "How to design organizations where everyone thrives.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "MINAL BOPAIAH",
+  "pill": "FAIR",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=split for \"Equity\" (Society & Tech) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- The classic 'three figures behind a fence' equity illustration: three figures of different heights, with the fence panels at different heights so they can all see over. The third figure is RED — that's the equity adjustment. -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Ground line -->\n    <line x1=\"-600\" y1=\"200\" x2=\"600\" y2=\"200\" stroke=\"#4c4c4c\" stroke-width=\"2\"/>\n    <!-- Figure 1 (tallest) — ash -->\n    <g stroke=\"#4c4c4c\" stroke-width=\"2\" stroke-linecap=\"round\">\n      <circle cx=\"-380\" cy=\"80\" r=\"36\"/>\n      <line x1=\"-380\" y1=\"116\" x2=\"-380\" y2=\"200\"/>\n    </g>\n    <!-- Fence board 1 (low — tall figure looks over) -->\n    <line x1=\"-460\" y1=\"200\" x2=\"-460\" y2=\"100\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <line x1=\"-300\" y1=\"200\" x2=\"-300\" y2=\"100\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <line x1=\"-460\" y1=\"100\" x2=\"-300\" y2=\"100\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <!-- Figure 2 (medium) — ash -->\n    <g stroke=\"#4c4c4c\" stroke-width=\"2\" stroke-linecap=\"round\">\n      <circle cx=\"0\" cy=\"120\" r=\"30\"/>\n      <line x1=\"0\" y1=\"150\" x2=\"0\" y2=\"200\"/>\n    </g>\n    <!-- Fence board 2 (medium) -->\n    <line x1=\"-80\" y1=\"200\" x2=\"-80\" y2=\"140\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <line x1=\"80\" y1=\"200\" x2=\"80\" y2=\"140\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <line x1=\"-80\" y1=\"140\" x2=\"80\" y2=\"140\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <!-- Figure 3 (shortest) — RED, with a RED step/box that gives them the height to see over -->\n    <g stroke=\"#fc1c46\" stroke-width=\"2\" stroke-linecap=\"round\">\n      <circle cx=\"380\" cy=\"160\" r=\"26\"/>\n      <line x1=\"380\" y1=\"186\" x2=\"380\" y2=\"200\"/>\n    </g>\n    <!-- The RED step (equity intervention) -->\n    <rect x=\"320\" y=\"170\" width=\"120\" height=\"30\" fill=\"#fc1c46\" stroke=\"#fc1c46\" stroke-width=\"2\"/>\n    <!-- Fence board 3 (tall) — ash -->\n    <line x1=\"300\" y1=\"200\" x2=\"300\" y2=\"60\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <line x1=\"460\" y1=\"200\" x2=\"460\" y2=\"60\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <line x1=\"300\" y1=\"60\" x2=\"460\" y2=\"60\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <!-- A horizontal 'sight line' showing all three figures can see over the top -->\n    <line x1=\"-380\" y1=\"40\" x2=\"380\" y2=\"40\" stroke=\"#cccccc\" stroke-width=\"0.8\" stroke-dasharray=\"4 4\" opacity=\"0.5\"/>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">EQUAL INPUT · UNEQUAL SUPPORT · ONE SIGHT LINE</text>\n</svg>",
+  "rationale": "The classic equity illustration: three figures of different heights behind three fence panels. The third (shortest) figure is RED and stands on a RED step — the equity intervention. A dashed sight line runs across the top showing all three figures can see over. Title 480px mixed case, single word 'Equity', weight 500."
 }

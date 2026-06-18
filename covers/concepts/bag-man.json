@@ -1,25 +1,26 @@
 {
   "slug": "bag-man",
   "title": "Bag Man",
-  "author": "Mady Siegler",
-  "category": "Society & Tech",
-  "subtopics": "politics, corruption, Watergate",
-  "year": "",
+  "author": "Jared Yates Sexton",
+  "category": "Self-Growth",
+  "subtopics": "spiro agnew, corruption, american politics",
+  "year": "2020",
   "datelineLeft": "BOOK SUMMARY",
-  "datelineRight": "SOCIETY & TECH",
-  "motif": "orb",
+  "datelineRight": "SELF-GROWTH",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 198,
+  "titleWeight": 500,
+  "titleSize": 480,
   "titleTransform": "uppercase",
-  "lines": [
-    "Bag",
-    "Man"
-  ],
-  "subline": "politics",
+  "lines": ["BAG", "MAN"],
+  "subline": "The wild story of the most corrupt White House aide in modern American history.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "JARED YATES SEXTON",
+  "pill": "1973",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Bag Man\" (Society & Tech) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A literal 'bag man' — a paper bag silhouette (head inside a paper bag, like an anonymous source). A red cash-stuffed tie hangs from the bag opening. The figure is a hairline outline. -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Paper bag (head) — a rectangular bag with crinkled top -->\n    <g stroke=\"#4c4c4c\" stroke-width=\"2.5\">\n      <!-- Bag body -->\n      <rect x=\"-160\" y=\"-200\" width=\"320\" height=\"380\"/>\n      <!-- Crinkled top (zigzag) -->\n      <path d=\"M -160 -200 L -130 -220 L -100 -200 L -70 -220 L -40 -200 L -10 -220 L 20 -200 L 50 -220 L 80 -200 L 110 -220 L 140 -200 L 160 -200\"/>\n      <!-- Eye holes -->\n      <ellipse cx=\"-50\" cy=\"-80\" rx=\"14\" ry=\"6\" fill=\"#000000\"/>\n      <ellipse cx=\"50\" cy=\"-80\" rx=\"14\" ry=\"6\" fill=\"#000000\"/>\n      <!-- Vertical fold lines on the bag -->\n      <line x1=\"-80\" y1=\"-200\" x2=\"-80\" y2=\"180\"/>\n      <line x1=\"80\" y1=\"-200\" x2=\"80\" y2=\"180\"/>\n    </g>\n    <!-- TIE — RED, stuffed with cash (the corruption) -->\n    <!-- Tie body -->\n    <path d=\"M -40 200 L -50 240 L 50 240 L 40 200 L 30 180 L -30 180 Z\" fill=\"#fc1c46\"/>\n    <!-- Cash bills visible in the tie -->\n    <rect x=\"-30\" y=\"200\" width=\"14\" height=\"20\" fill=\"#fc1c46\" stroke=\"#000000\" stroke-width=\"0.5\"/>\n    <rect x=\"-10\" y=\"195\" width=\"14\" height=\"20\" fill=\"#fc1c46\" stroke=\"#000000\" stroke-width=\"0.5\"/>\n    <rect x=\"10\" y=\"205\" width=\"14\" height=\"20\" fill=\"#fc1c46\" stroke=\"#000000\" stroke-width=\"0.5\"/>\n    <!-- A dollar sign on the tie -->\n    <text x=\"0\" y=\"225\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"20\" font-weight=\"500\" fill=\"#000000\">$</text>\n    <!-- A few loose bills falling away from the tie -->\n    <g stroke=\"#4c4c4c\" stroke-width=\"1\" fill=\"none\" opacity=\"0.6\">\n      <rect x=\"100\" y=\"280\" width=\"40\" height=\"20\" transform=\"rotate(20 120 290)\"/>\n      <rect x=\"-140\" y=\"290\" width=\"40\" height=\"20\" transform=\"rotate(-15 -120 300)\"/>\n    </g>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">A POLITICAL LIFE BAGS THE TRUTH</text>\n</svg>",
+  "rationale": "A hairline paper bag with eye holes, a crinkled top — the literal 'bag man' anonymity. A red tie hangs from the bag, and the tie is visibly stuffed with cash bills (corruption). Two loose bills drift away. The red tie is the only color, the money is the motive. Title 480px uppercase, two lines, weight 500 — BAG MAN."
 }

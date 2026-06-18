@@ -83,6 +83,11 @@ export function getWeeklyBreakdown() {
 const DESKTOP_FONT_BOOST = 0.5;
 const ORP_ANCHOR_PERCENT = 0.35;
 const GHOSTLINE_WORD_GAP_PX = 32;
+const READER_THEMES = {
+  nova: 'Nova Orange',
+  vanilla: 'Vanilla RSVP',
+  noir: 'Noir Gold',
+};
 
 const LONG_PRESS_MS = 450;
 const SWIPE_DOWN_THRESHOLD = 70;
@@ -118,6 +123,7 @@ const state = {
   summariesSearchQuery: '',
   summariesCategory: 'all',
   readingMode: 'rsvp',
+  readerTheme: 'nova',
   progressFooterMode: 0,
   scrubbing: false,
   scrubIndex: 0,
@@ -261,6 +267,19 @@ function setBodyMode() {
   document.body.classList.toggle('play-locked', state.playLocked);
   document.body.classList.remove('mode-rsvp', 'mode-phantom', 'mode-scroll', 'mode-paragraph');
   document.body.classList.add(`mode-${state.readingMode}`);
+}
+
+function setReaderTheme(theme) {
+  const next = READER_THEMES[theme] ? theme : 'nova';
+  state.readerTheme = next;
+  localStorage.setItem('rsvp-reader-theme', next);
+  document.body.classList.remove(...Object.keys(READER_THEMES).map((key) => `theme-${key}`));
+  document.body.classList.add(`theme-${next}`);
+  document.querySelectorAll('#themeSegment button').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.theme === next);
+  });
+  updateDesktopModeUI();
+  layoutOrpReader();
 }
 
 function setReadingMode(mode) {
@@ -468,9 +487,10 @@ function updateDesktopMode() {
 function updateDesktopModeUI() {
   const hint = $('desktopModeHint');
   if (!hint) return;
+  const themeName = READER_THEMES[state.readerTheme] || READER_THEMES.nova;
   hint.textContent = isDesktopMode()
-    ? `${desktopModeLabel()} — centered Noir Focus column, brighter Ghostline context, keyboard shortcuts`
-    : `${desktopModeLabel()} — phone layout`;
+    ? `${desktopModeLabel()} — ${themeName}, centered Ghostline column, keyboard shortcuts`
+    : `${desktopModeLabel()} — ${themeName}, phone layout`;
   document.querySelectorAll('#desktopModeSegment button').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.desktop === state.desktopModePref);
   });
@@ -528,7 +548,8 @@ function openSheet() {
       scroll: 'Flow Scroll',
       paragraph: 'Paragraph Zen',
     }[state.readingMode];
-    $('sheetMeta').textContent = `${modeLabel} · ${state.index} / ${total} words · ${pct}% · ${state.wpm} WPM`;
+    const themeLabel = READER_THEMES[state.readerTheme] || READER_THEMES.nova;
+    $('sheetMeta').textContent = `${modeLabel} · ${themeLabel} · ${state.index} / ${total} words · ${pct}% · ${state.wpm} WPM`;
   }
   $('sheetOverlay').classList.add('open');
 }
@@ -576,7 +597,7 @@ function orpWordHtml(raw) {
 }
 
 function measureOrpLayout(wordEl, track) {
-  // Align the active focus glyph to the Noir Focus anchor after measuring at x=0.
+  // Align the active focus glyph to the themed focus anchor after measuring at x=0.
   wordEl.style.left = '0';
   wordEl.style.transform = 'translateY(-50%)';
 
@@ -2120,6 +2141,11 @@ function bindUI() {
     if (btn) setReadingMode(btn.dataset.mode);
   });
 
+  $('themeSegment')?.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-theme]');
+    if (btn) setReaderTheme(btn.dataset.theme);
+  });
+
   $('desktopModeSegment')?.addEventListener('click', (e) => {
     const btn = e.target.closest('button[data-desktop]');
     if (btn) setDesktopModePref(btn.dataset.desktop);
@@ -2158,6 +2184,9 @@ function bindUI() {
 }
 
 function loadSettings() {
+  const theme = localStorage.getItem('rsvp-reader-theme');
+  setReaderTheme(READER_THEMES[theme] ? theme : 'nova');
+
   const mode = localStorage.getItem('rsvp-reading-mode');
   if (['rsvp', 'phantom', 'scroll', 'paragraph'].includes(mode)) setReadingMode(mode);
   else setReadingMode('rsvp');
@@ -2205,6 +2234,9 @@ function bindLandingEmbedMessages() {
       const modes = ['rsvp', 'phantom', 'scroll', 'paragraph'];
       if (modes.includes(data.mode)) setReadingMode(data.mode);
     }
+    if (data.type === 'rsvp-set-theme' && data.theme) {
+      setReaderTheme(data.theme);
+    }
     if (data.type === 'rsvp-set-wpm' && data.wpm != null) {
       setWpm(data.wpm);
     }
@@ -2228,6 +2260,9 @@ async function initLandingEmbed() {
 
   const embedWpm = params.get('wpm');
   if (embedWpm) setWpm(embedWpm);
+
+  const embedTheme = params.get('theme');
+  if (embedTheme) setReaderTheme(embedTheme);
 
   const shouldAutoplay = params.get('autoplay') !== '0';
 

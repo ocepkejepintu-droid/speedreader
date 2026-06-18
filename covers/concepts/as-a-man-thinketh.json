@@ -4,22 +4,23 @@
   "author": "James Allen",
   "category": "Self-Growth",
   "subtopics": "thought, purpose, character",
-  "year": "",
+  "year": "1903",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 198,
-  "titleTransform": "uppercase",
-  "lines": [
-    "As a",
-    "Man Thinketh"
-  ],
-  "subline": "thought",
+  "titleSize": 320,
+  "titleTransform": "italic",
+  "lines": ["As a Man", "Thinketh"],
+  "subline": "He is what he thinks.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-corner",
+  "brandMark": "JAMES ALLEN",
+  "pill": "1903",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"As a Man Thinketh\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A single head silhouette in profile (left-facing), hairline. Inside the head, a brain-shape region with a single red glowing dot — the seed thought. The word 'seed' would fit. -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Head profile facing left -->\n    <path d=\"M 0 -300 Q 200 -340 240 -200 Q 280 -80 240 60 Q 200 160 60 200 L 60 280 L 100 320 L 0 340 L -40 320 L 0 300 Z\" stroke=\"#4c4c4c\" stroke-width=\"2.5\"/>\n    <!-- A small ear -->\n    <ellipse cx=\"180\" cy=\"60\" rx=\"14\" ry=\"22\" stroke=\"#4c4c4c\" stroke-width=\"1.5\"/>\n    <!-- An eye dot -->\n    <circle cx=\"140\" cy=\"-100\" r=\"4\" fill=\"#4c4c4c\"/>\n    <!-- Brain curve inside the head -->\n    <path d=\"M 100 -240 Q 160 -220 200 -160 Q 220 -100 200 -40 Q 180 20 140 40 Q 100 60 80 100\" stroke=\"#cccccc\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.7\"/>\n    <!-- A second brain wave (parallel) -->\n    <path d=\"M 60 -220 Q 100 -180 120 -100 Q 100 -20 80 60 Q 60 100 40 120\" stroke=\"#4c4c4c\" stroke-width=\"1\" fill=\"none\" opacity=\"0.4\"/>\n    <!-- The single red dot (the seed thought) -->\n    <circle cx=\"160\" cy=\"-160\" r=\"14\" fill=\"#fc1c46\"/>\n    <!-- Red glow -->\n    <circle cx=\"160\" cy=\"-160\" r=\"30\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"1\" opacity=\"0.4\"/>\n    <circle cx=\"160\" cy=\"-160\" r=\"50\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"1\" opacity=\"0.2\"/>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">A SEED · A HARVEST</text>\n</svg>",
+  "rationale": "A single head in profile, facing left, hairline outline. Inside the head: a faint brain-shape curve in ash, and a single red 14px filled circle with two faint red glow rings. The red dot is the thought — the seed. Title 320px italic, two lines, weight 300. The composition is a head, a thought, and the rest is silence."
 }

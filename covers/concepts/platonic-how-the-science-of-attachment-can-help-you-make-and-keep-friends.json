@@ -4,21 +4,22 @@
   "author": "Marisa G. Franco",
   "category": "Love & Sex",
   "subtopics": "friendship, attachment, connection",
-  "year": "",
+  "year": "2022",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "LOVE & SEX",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 540,
-  "titleTransform": "uppercase",
-  "lines": [
-    "Platonic"
-  ],
-  "subline": "friendship",
+  "titleSize": 520,
+  "titleTransform": "none",
+  "lines": ["Platonic"],
+  "subline": "How the science of attachment can help you make — and keep — friends.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "MARISA G. FRANCO",
+  "pill": "φ",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Platonic\" (Love & Sex) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- Two abstract human silhouettes facing each other, hands extended. Between them, a red square (the 'platonic' space — not a heart, not a hug, just connection). -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Left figure -->\n    <g stroke=\"#cccccc\" stroke-width=\"3\" stroke-linecap=\"round\">\n      <circle cx=\"-340\" cy=\"-260\" r=\"80\"/>\n      <line x1=\"-340\" y1=\"-180\" x2=\"-340\" y2=\"120\"/>\n      <line x1=\"-340\" y1=\"-100\" x2=\"-460\" y2=\"0\"/>\n      <line x1=\"-340\" y1=\"-100\" x2=\"-220\" y2=\"-40\"/>\n      <line x1=\"-340\" y1=\"120\" x2=\"-400\" y2=\"280\"/>\n      <line x1=\"-340\" y1=\"120\" x2=\"-280\" y2=\"280\"/>\n    </g>\n    <!-- Right figure (mirror) -->\n    <g stroke=\"#cccccc\" stroke-width=\"3\" stroke-linecap=\"round\">\n      <circle cx=\"340\" cy=\"-260\" r=\"80\"/>\n      <line x1=\"340\" y1=\"-180\" x2=\"340\" y2=\"120\"/>\n      <line x1=\"340\" y1=\"-100\" x2=\"220\" y2=\"-40\"/>\n      <line x1=\"340\" y1=\"-100\" x2=\"460\" y2=\"0\"/>\n      <line x1=\"340\" y1=\"120\" x2=\"280\" y2=\"280\"/>\n      <line x1=\"340\" y1=\"120\" x2=\"400\" y2=\"280\"/>\n    </g>\n    <!-- Hands meeting -->\n    <line x1=\"-220\" y1=\"-40\" x2=\"220\" y2=\"-40\" stroke=\"#cccccc\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n    <!-- The red square between them — the platonic space, no romance implied -->\n    <rect x=\"-60\" y=\"-100\" width=\"120\" height=\"120\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <circle cx=\"0\" cy=\"-40\" r=\"8\" fill=\"#fc1c46\"/>\n    <!-- Caption -->\n    <text x=\"0\" y=\"380\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">FRIENDSHIP, NOT ROMANCE</text>\n  </g>\n</svg>",
+  "rationale": "Two ash silhouettes face each other, hands extended and meeting. Between them floats a single red square — not a heart, not a ring, but a defined platonic space. A small red dot sits at its center. 'Friendship, not romance' is the caption. Title 520px mixed case, single word 'Platonic' at the top — the whole cover says it."
 }

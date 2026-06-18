@@ -16,3 +16,14 @@ covers/tmp/
 rsvp-sync.env
 rsvp-share.env
 /etc/rsvp-reader.env
+
+# Tooling state (omx/codex session caches)
+.claude/
+.grok/
+readwait/
+check.mjs
+checkall.mjs
+jaccard-check.mjs
+jaccard-exact.mjs
+jaccard-live.mjs
+shared.mjs

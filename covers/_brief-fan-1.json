@@ -1,0 +1,415 @@
+[
+  {
+    "slug": "innovation-in-real-places",
+    "title": "Innovation in Real Places",
+    "author": "Dan Breznitz",
+    "category": "Business & Career",
+    "subtopics": "innovation, regional growth, policy"
+  },
+  {
+    "slug": "the-lean-startup",
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "category": "Business & Career",
+    "subtopics": "MVP, validated learning, innovation"
+  },
+  {
+    "slug": "think-like-an-entrepreneur-act-like-a-ceo",
+    "title": "Think Like an Entrepreneur, Act Like a CEO",
+    "author": "",
+    "category": "Business & Career",
+    "subtopics": "entrepreneurship, CEO mindset, leadership"
+  },
+  {
+    "slug": "invent-and-wander",
+    "title": "Invent & Wander",
+    "author": "Jeff Bezos",
+    "category": "Business & Career",
+    "subtopics": "Amazon, leadership, innovation, long-term thinking"
+  },
+  {
+    "slug": "in-search-of-excellence",
+    "title": "In Search of Excellence",
+    "author": "Tom Peters, Robert H. Waterman",
+    "category": "Business & Career",
+    "subtopics": "management, organizational culture, leadership"
+  },
+  {
+    "slug": "the-pathless-path-imagining-a-new-story-of-work-and-life",
+    "title": "The Pathless Path",
+    "author": "Paul Millerd",
+    "category": "Business & Career",
+    "subtopics": "work, life, alternative careers"
+  },
+  {
+    "slug": "how-brands-grow",
+    "title": "How Brands Grow",
+    "author": "Byron Sharp",
+    "category": "Business & Career",
+    "subtopics": "marketing, brand growth, consumer behavior"
+  },
+  {
+    "slug": "how-to-raise-an-adult",
+    "title": "How to Raise an Adult",
+    "author": "Julie Lythcott-Haims",
+    "category": "Family",
+    "subtopics": "parenting, helicopter parenting, independence, adulthood"
+  },
+  {
+    "slug": "bringing-up-bebe",
+    "title": "Bringing Up B\u00e9b\u00e9",
+    "author": "Pamela Druckerman",
+    "category": "Family",
+    "subtopics": "parenting, French style, motherhood"
+  },
+  {
+    "slug": "overwhelmed",
+    "title": "Overwhelmed",
+    "author": "Brigid Schulte",
+    "category": "Happiness",
+    "subtopics": "work-life balance, stress, rest"
+  },
+  {
+    "slug": "how-to-add-whimsy-in-your-life",
+    "title": "How to Add Whimsy in Your Life",
+    "author": "",
+    "category": "Happiness",
+    "subtopics": "whimsy, joy, stress relief, creativity"
+  },
+  {
+    "slug": "everybody-always",
+    "title": "Everybody Always",
+    "author": "Bob Goff",
+    "category": "Happiness",
+    "subtopics": "love, kindness, relationships"
+  },
+  {
+    "slug": "call-of-the-wild",
+    "title": "Call of the Wild",
+    "author": "Jack London",
+    "category": "Happiness",
+    "subtopics": "adventure, survival, transformation"
+  },
+  {
+    "slug": "the-joy-of-missing-out",
+    "title": "The Joy of Missing Out",
+    "author": "Anneli Rufus",
+    "category": "Happiness",
+    "subtopics": "productivity, FOMO, mindfulness, focus"
+  },
+  {
+    "slug": "taking-charge-of-your-fertility",
+    "title": "Taking Charge of Your Fertility",
+    "author": "Toni Weschler",
+    "category": "Health",
+    "subtopics": "fertility, women's health, family planning"
+  },
+  {
+    "slug": "eat-move-sleep",
+    "title": "Eat Move Sleep",
+    "author": "Tom Rath",
+    "category": "Health",
+    "subtopics": "nutrition, exercise, sleep, health habits"
+  },
+  {
+    "slug": "running-on-empty",
+    "title": "Running on Empty",
+    "author": "Jonice Webb",
+    "category": "Health",
+    "subtopics": "childhood emotional neglect, mental health"
+  },
+  {
+    "slug": "hinch-yourself-happy",
+    "title": "Hinch Yourself Happy",
+    "author": "Mrs Hinch",
+    "category": "Home & Environment",
+    "subtopics": "cleaning, home, decluttering, motivation"
+  },
+  {
+    "slug": "get-a-grip",
+    "title": "Get A Grip",
+    "author": "Gino Wickman, Mike Paton",
+    "category": "Leadership",
+    "subtopics": "business turnaround, leadership, operations, culture"
+  },
+  {
+    "slug": "the-art-of-war",
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "category": "Leadership",
+    "subtopics": "strategy, tactics, warfare"
+  },
+  {
+    "slug": "straight-jacket",
+    "title": "Straight Jacket",
+    "author": "Matthew Quick",
+    "category": "Love & Sex",
+    "subtopics": "LGBTQ, identity, mental health"
+  },
+  {
+    "slug": "anxiously-attached-becoming-more-secure-in-life-and-love",
+    "title": "Anxiously Attached",
+    "author": "Jessica Baum",
+    "category": "Love & Sex",
+    "subtopics": "attachment, anxiety, relationships, self-worth"
+  },
+  {
+    "slug": "the-state-of-affairs",
+    "title": "The State of Affairs",
+    "author": "Esther Perel",
+    "category": "Love & Sex",
+    "subtopics": "infidelity, relationships, marriage"
+  },
+  {
+    "slug": "conversations-on-love",
+    "title": "Conversations on Love",
+    "author": "Natasha Lunn",
+    "category": "Love & Sex",
+    "subtopics": "love, relationships, vulnerability"
+  },
+  {
+    "slug": "the-millionaire-next-door",
+    "title": "The Millionaire Next Door",
+    "author": "Thomas J. Stanley",
+    "category": "Money & Investments",
+    "subtopics": "frugality, wealth building, millionaire habits"
+  },
+  {
+    "slug": "flash-boys",
+    "title": "Flash Boys",
+    "author": "Michael Lewis",
+    "category": "Money & Investments",
+    "subtopics": "high-frequency trading, Wall Street, market structure"
+  },
+  {
+    "slug": "irrational-exuberance",
+    "title": "Irrational Exuberance",
+    "author": "Robert Shiller",
+    "category": "Money & Investments",
+    "subtopics": "bubbles, market psychology, speculation, financial crises"
+  },
+  {
+    "slug": "influence",
+    "title": "Influence",
+    "author": "Robert B. Cialdini",
+    "category": "Negotiation",
+    "subtopics": "persuasion, reciprocity, social proof"
+  },
+  {
+    "slug": "how-to-talk-to-anyone",
+    "title": "How to Talk to Anyone",
+    "author": "",
+    "category": "Negotiation",
+    "subtopics": "conversation, charisma, networking, social skills"
+  },
+  {
+    "slug": "ted-talks",
+    "title": "TED Talks",
+    "author": "Chris Anderson",
+    "category": "Negotiation",
+    "subtopics": "public speaking, presentations, communication"
+  },
+  {
+    "slug": "crucial-conversations-tools-for-talking-when-stakes-are-high",
+    "title": "Crucial Conversations",
+    "author": "Kerry Patterson",
+    "category": "Negotiation",
+    "subtopics": "difficult conversations, communication, dialogue"
+  },
+  {
+    "slug": "hamilton",
+    "title": "Hamilton",
+    "author": "Lin-Manuel Miranda, Jeremy McCarter",
+    "category": "Personalities",
+    "subtopics": "musical theater, Alexander Hamilton, Broadway"
+  },
+  {
+    "slug": "heartland",
+    "title": "Heartland",
+    "author": "Sarah Smarsh",
+    "category": "Personalities",
+    "subtopics": "poverty, American memoir, family"
+  },
+  {
+    "slug": "einstein",
+    "title": "Einstein",
+    "author": "Walter Isaacson",
+    "category": "Personalities",
+    "subtopics": "Einstein, genius, science history"
+  },
+  {
+    "slug": "building-a-second-brain-a-proven-method-to-organize-your-digital-life-and-unlock-your-creative-potential",
+    "title": "Building a Second Brain",
+    "author": "Tiago Forte",
+    "category": "Productivity",
+    "subtopics": "note-taking, knowledge management, creativity"
+  },
+  {
+    "slug": "eat-that-frog",
+    "title": "Eat That Frog!",
+    "author": "Brian Tracy",
+    "category": "Productivity",
+    "subtopics": "prioritization, procrastination, time management"
+  },
+  {
+    "slug": "digital-minimalism",
+    "title": "Digital Minimalism",
+    "author": "Cal Newport",
+    "category": "Productivity",
+    "subtopics": "digital declutter, solitude, attention"
+  },
+  {
+    "slug": "the-daily-stoic",
+    "title": "The Daily Stoic",
+    "author": "Ryan Holiday, Stephen Hanselman",
+    "category": "Self-Growth",
+    "subtopics": "stoicism, awareness, philosophy"
+  },
+  {
+    "slug": "i-hate-you",
+    "title": "I Hate You",
+    "author": "Don R. Crawley",
+    "category": "Self-Growth",
+    "subtopics": "borderline personality, recovery, mental health"
+  },
+  {
+    "slug": "outliers",
+    "title": "Outliers",
+    "author": "Malcolm Gladwell",
+    "category": "Self-Growth",
+    "subtopics": "success, opportunity, culture"
+  },
+  {
+    "slug": "its-not-supposed-to-be-this-way",
+    "title": "It's Not Supposed to Be This Way",
+    "author": "Lysa TerKeurst",
+    "category": "Self-Growth",
+    "subtopics": "disappointment, perception, trust"
+  },
+  {
+    "slug": "what-the-most-successful-people-do-before-breakfast",
+    "title": "What The Most Successful People Do Before Breakfast",
+    "author": "",
+    "category": "Self-Growth",
+    "subtopics": "morning routines, productivity, success habits"
+  },
+  {
+    "slug": "the-power-of-full-engagement",
+    "title": "The Power of Full Engagement",
+    "author": "Jim Loehr, Tony Schwartz",
+    "category": "Self-Growth",
+    "subtopics": "energy management, performance, balance"
+  },
+  {
+    "slug": "wired-to-create",
+    "title": "Wired to Create",
+    "author": "Scott Barry Kaufman",
+    "category": "Self-Growth",
+    "subtopics": "creativity, play, imagination"
+  },
+  {
+    "slug": "essentialism",
+    "title": "Essentialism",
+    "author": "Greg McKeown",
+    "category": "Self-Growth",
+    "subtopics": "prioritization, focus, trade-offs"
+  },
+  {
+    "slug": "21-lessons-for-the-21st-century",
+    "title": "21 Lessons for the 21st Century",
+    "author": "Yuval Noah Harari",
+    "category": "Self-Growth",
+    "subtopics": "future challenges, critical thinking, resilience"
+  },
+  {
+    "slug": "four-thousand-weeks",
+    "title": "Four Thousand Weeks",
+    "author": "Oliver Burkeman",
+    "category": "Self-Growth",
+    "subtopics": "time, productivity, limits"
+  },
+  {
+    "slug": "the-universe-has-your-back",
+    "title": "The Universe Has Your Back",
+    "author": "Gabrielle Bernstein",
+    "category": "Self-Growth",
+    "subtopics": "faith, trust, surrender"
+  },
+  {
+    "slug": "don-t-be-a-weak-man",
+    "title": "Don't Be a Weak Man",
+    "author": "",
+    "category": "Self-Growth",
+    "subtopics": "masculinity, strength, boundaries, self-respect"
+  },
+  {
+    "slug": "how-to-get-dressed",
+    "title": "How to Get Dressed",
+    "author": "Alison Freer",
+    "category": "Self-Growth",
+    "subtopics": "fashion, style, confidence"
+  },
+  {
+    "slug": "the-spy-and-the-traitor",
+    "title": "The Spy and the Traitor",
+    "author": "Ben Macintyre",
+    "category": "Society & Tech",
+    "subtopics": "espionage, Cold War, intelligence"
+  },
+  {
+    "slug": "ways-of-seeing",
+    "title": "Ways of Seeing",
+    "author": "John Berger",
+    "category": "Society & Tech",
+    "subtopics": "art, visual culture, perception"
+  },
+  {
+    "slug": "brotopia",
+    "title": "Brotopia",
+    "author": "Emily Chang",
+    "category": "Society & Tech",
+    "subtopics": "tech industry, gender inequality, Silicon Valley"
+  },
+  {
+    "slug": "the-soul-of-america",
+    "title": "The Soul of America",
+    "author": "Jon Meacham",
+    "category": "Society & Tech",
+    "subtopics": "American history, civil rights, hope, politics"
+  },
+  {
+    "slug": "when-more-is-not-better-overcoming-americas-obsession-with-economic-efficiency",
+    "title": "When More Is Not Better",
+    "author": "Roger L. Martin",
+    "category": "Society & Tech",
+    "subtopics": "economics, capitalism, democracy"
+  },
+  {
+    "slug": "the-deficit-myth",
+    "title": "The Deficit Myth",
+    "author": "Stephanie Kelton",
+    "category": "Society & Tech",
+    "subtopics": "economy, public policy, MMT"
+  },
+  {
+    "slug": "homo-deus",
+    "title": "Homo Deus",
+    "author": "Yuval Noah Harari",
+    "category": "Society & Tech",
+    "subtopics": "future of humanity, biotechnology, AI"
+  },
+  {
+    "slug": "el-quinto-acuerdo-una-guia-practica-para-la-maestria-personal1",
+    "title": "The Fifth Agreement",
+    "author": "Don Miguel Ruiz",
+    "category": "Spirituality",
+    "subtopics": "Toltec wisdom, self-mastery, truth"
+  },
+  {
+    "slug": "braiding-sweetgrass",
+    "title": "Braiding Sweetgrass",
+    "author": "Robin Wall Kimmerer",
+    "category": "Spirituality",
+    "subtopics": "indigenous wisdom, gratitude, nature"
+  }
+]

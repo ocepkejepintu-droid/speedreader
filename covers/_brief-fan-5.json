@@ -1,0 +1,324 @@
+[
+  {
+    "slug": "linkedin-for-personal-branding",
+    "title": "LinkedIn for Personal Branding",
+    "author": "",
+    "category": "Business & Career",
+    "subtopics": "LinkedIn, personal brand, networking, career"
+  },
+  {
+    "slug": "creativity-inc",
+    "title": "Creativity, Inc.",
+    "author": "Ed Catmull",
+    "category": "Business & Career",
+    "subtopics": "creative leadership, management, Pixar"
+  },
+  {
+    "slug": "entrepreneurial-negotiation",
+    "title": "Entrepreneurial Negotiation",
+    "author": "Barry Nalebuff",
+    "category": "Business & Career",
+    "subtopics": "negotiation, startups, entrepreneurship"
+  },
+  {
+    "slug": "how-to-win-at-the-sport-of-business",
+    "title": "How to Win at the Sport of Business",
+    "author": "Mark Cuban",
+    "category": "Business & Career",
+    "subtopics": "entrepreneurship, business competition, boldness"
+  },
+  {
+    "slug": "humor-seriously",
+    "title": "Humor, Seriously",
+    "author": "Jennifer Aaker, Naomi Bagdonas",
+    "category": "Business & Career",
+    "subtopics": "humor, business culture, creativity, leadership"
+  },
+  {
+    "slug": "masters-of-scale",
+    "title": "Masters of Scale",
+    "author": "Reid Hoffman",
+    "category": "Business & Career",
+    "subtopics": "startup growth, company culture, scaling"
+  },
+  {
+    "slug": "battle-hymn-of-the-tiger-mother",
+    "title": "Battle Hymn of the Tiger Mother",
+    "author": "Amy Chua",
+    "category": "Family",
+    "subtopics": "parenting, Chinese-American, strict upbringing"
+  },
+  {
+    "slug": "here-for-it",
+    "title": "Here for It",
+    "author": "R. Eric Thomas",
+    "category": "Happiness",
+    "subtopics": "humor, identity, resilience"
+  },
+  {
+    "slug": "a-mindfulness-guide-for-the-frazzled",
+    "title": "A Mindfulness Guide for the Frazzled",
+    "author": "Jem Lerner",
+    "category": "Happiness",
+    "subtopics": "mindfulness, stress, focus"
+  },
+  {
+    "slug": "dude-you-re-gonna-be-a-dad",
+    "title": "Dude, You're Gonna Be a Dad",
+    "author": "John Pfeiffer",
+    "category": "Happiness",
+    "subtopics": "fatherhood, pregnancy, preparation"
+  },
+  {
+    "slug": "the-biggest-bluff1",
+    "title": "The Biggest Bluff",
+    "author": "Maria Konnikova",
+    "category": "Happiness",
+    "subtopics": "mindset, chance, life path"
+  },
+  {
+    "slug": "beyond-anxiety-curiosity-creativity-and-finding-your-life-s-purpose",
+    "title": "Beyond Anxiety",
+    "author": "Chester Elton",
+    "category": "Happiness",
+    "subtopics": "anxiety, curiosity, purpose"
+  },
+  {
+    "slug": "expecting-better",
+    "title": "Expecting Better",
+    "author": "Emily Oster",
+    "category": "Health",
+    "subtopics": "pregnancy, evidence-based, women's health"
+  },
+  {
+    "slug": "divergent-mind",
+    "title": "Divergent Mind",
+    "author": "Janet Throop",
+    "category": "Health",
+    "subtopics": "neurodivergence, ADHD, autism, sensitivity"
+  },
+  {
+    "slug": "high-output-management",
+    "title": "High Output Management",
+    "author": "Andrew S. Grove",
+    "category": "Leadership",
+    "subtopics": "management, meetings, decision quality"
+  },
+  {
+    "slug": "act-like-a-lady-think-like-a-man",
+    "title": "Act Like a Lady, Think Like a Man",
+    "author": "Steve Harvey",
+    "category": "Love & Sex",
+    "subtopics": "relationships, gender dynamics, dating"
+  },
+  {
+    "slug": "bonk",
+    "title": "Bonk",
+    "author": "Mary Roach",
+    "category": "Love & Sex",
+    "subtopics": "sex research, science, biology"
+  },
+  {
+    "slug": "it-begins-with-you-the-9-hard-truths-about-love-that-will-change-your-life",
+    "title": "It Begins with You",
+    "author": "Jillian Turecki",
+    "category": "Love & Sex",
+    "subtopics": "love, self-worth, relationships"
+  },
+  {
+    "slug": "you-are-a-badass-at-making-money",
+    "title": "You Are a Badass at Making Money",
+    "author": "Jen Sincero",
+    "category": "Money & Investments",
+    "subtopics": "money mindset, wealth, earning"
+  },
+  {
+    "slug": "travel-for-free",
+    "title": "Travel for Free",
+    "author": "",
+    "category": "Money & Investments",
+    "subtopics": "travel hacking, savings, location independence"
+  },
+  {
+    "slug": "how-to-make-people-like-you-in-90-seconds-or-less",
+    "title": "How to Make People Like You in 90 Seconds",
+    "author": "",
+    "category": "Negotiation",
+    "subtopics": "first impressions, body language, rapport"
+  },
+  {
+    "slug": "better-small-talk-talk-to-anyone-avoid-awkwardness-generate-deep-conversations-and-make-real-friends",
+    "title": "Better Small Talk",
+    "author": "Patrick King",
+    "category": "Negotiation",
+    "subtopics": "conversation, social skills, networking"
+  },
+  {
+    "slug": "talk-like-ted",
+    "title": "Talk Like TED",
+    "author": "Carmine Gallo",
+    "category": "Negotiation",
+    "subtopics": "public speaking, presentation, storytelling"
+  },
+  {
+    "slug": "between-two-kingdoms",
+    "title": "Between Two Kingdoms",
+    "author": "Suleika Jaouad",
+    "category": "Personalities",
+    "subtopics": "cancer memoir, healing, identity"
+  },
+  {
+    "slug": "the-autobiography-of-malcolm-x",
+    "title": "The Autobiography of Malcolm X",
+    "author": "",
+    "category": "Personalities",
+    "subtopics": "Malcolm X, civil rights, transformation"
+  },
+  {
+    "slug": "getting-things-done",
+    "title": "Getting Things Done",
+    "author": "David Allen",
+    "category": "Productivity",
+    "subtopics": "workflow, organization, productivity system"
+  },
+  {
+    "slug": "finish",
+    "title": "Finish",
+    "author": "Jon Acuff",
+    "category": "Productivity",
+    "subtopics": "goals, perfectionism, follow-through"
+  },
+  {
+    "slug": "the-tapping-solution",
+    "title": "The Tapping Solution",
+    "author": "Nick Ortner",
+    "category": "Self-Growth",
+    "subtopics": "EFT, stress relief, healing"
+  },
+  {
+    "slug": "unglued",
+    "title": "Unglued",
+    "author": "Lysa TerKeurst",
+    "category": "Self-Growth",
+    "subtopics": "emotions, self-control, faith"
+  },
+  {
+    "slug": "how-to-think-like-socrates-ancient-philosophy-as-a-way-of-life-in-the-modern-world",
+    "title": "How to Think Like Socrates",
+    "author": "Donald J. Robertson",
+    "category": "Self-Growth",
+    "subtopics": "Socrates, questioning, philosophy"
+  },
+  {
+    "slug": "calling-bullshit",
+    "title": "Calling Bullshit",
+    "author": "Carl T. Bergstrom",
+    "category": "Self-Growth",
+    "subtopics": "critical thinking, misinformation, skepticism"
+  },
+  {
+    "slug": "keep-moving",
+    "title": "Keep Moving",
+    "author": "",
+    "category": "Self-Growth",
+    "subtopics": "resilience, healing, life transitions, moving forward"
+  },
+  {
+    "slug": "designing-your-life",
+    "title": "Designing Your Life",
+    "author": "Bill Burnett",
+    "category": "Self-Growth",
+    "subtopics": "design thinking, life planning, career"
+  },
+  {
+    "slug": "reasons-to-stay-alive",
+    "title": "Reasons to Stay Alive",
+    "author": "Matt Haig",
+    "category": "Self-Growth",
+    "subtopics": "depression, mental health, hope"
+  },
+  {
+    "slug": "broken-open-how-difficult-times-can-help-us-grow",
+    "title": "Broken Open",
+    "author": "David Richo",
+    "category": "Self-Growth",
+    "subtopics": "adversity, growth, resilience, transformation"
+  },
+  {
+    "slug": "a-mind-for-numbers",
+    "title": "A Mind for Numbers",
+    "author": "Barbara Oakley",
+    "category": "Self-Growth",
+    "subtopics": "learning, math, study techniques"
+  },
+  {
+    "slug": "good-morning-monster-a-therapist-shares-five-heroic-stories-of-emotional-recovery",
+    "title": "Good Morning, Monster",
+    "author": "Catherine Gildiner",
+    "category": "Self-Growth",
+    "subtopics": "therapy, emotional recovery, trauma, courage"
+  },
+  {
+    "slug": "how-to-stop-worrying-and-start-living",
+    "title": "How to Stop Worrying and Start Living",
+    "author": "Dale Carnegie",
+    "category": "Self-Growth",
+    "subtopics": "worry, anxiety, mindset"
+  },
+  {
+    "slug": "lateral-thinking",
+    "title": "Lateral Thinking",
+    "author": "Edward de Bono",
+    "category": "Self-Growth",
+    "subtopics": "creativity, problem solving, thinking, innovation"
+  },
+  {
+    "slug": "the-climate-book",
+    "title": "The Climate Book",
+    "author": "Greta Thunberg",
+    "category": "Society & Tech",
+    "subtopics": "climate change, environment, activism"
+  },
+  {
+    "slug": "ai-superpowers",
+    "title": "AI Superpowers",
+    "author": "Kai-Fu Lee",
+    "category": "Society & Tech",
+    "subtopics": "AI, China, job automation, inequality"
+  },
+  {
+    "slug": "cultish1",
+    "title": "Cultish",
+    "author": "Amanda Montell",
+    "category": "Society & Tech",
+    "subtopics": "cults, language, group influence"
+  },
+  {
+    "slug": "chip-war",
+    "title": "Chip War",
+    "author": "Chris Miller",
+    "category": "Society & Tech",
+    "subtopics": "semiconductors, geopolitics, tech industry"
+  },
+  {
+    "slug": "how-ukrainian-fiction-teaches-courage",
+    "title": "How Ukrainian Fiction Teaches Courage",
+    "author": "",
+    "category": "Society & Tech",
+    "subtopics": "Ukraine, literature, courage, culture"
+  },
+  {
+    "slug": "the-tipping-point",
+    "title": "The Tipping Point",
+    "author": "Malcolm Gladwell",
+    "category": "Society & Tech",
+    "subtopics": "trends, epidemics, social phenomena"
+  },
+  {
+    "slug": "yoke",
+    "title": "Yoke",
+    "author": "Jesselyn Radack",
+    "category": "Spirituality",
+    "subtopics": "yoga, mindfulness, faith"
+  }
+]

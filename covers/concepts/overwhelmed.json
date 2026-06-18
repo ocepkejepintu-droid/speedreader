@@ -4,21 +4,22 @@
   "author": "Brigid Schulte",
   "category": "Happiness",
   "subtopics": "work-life balance, stress, rest",
-  "year": "",
+  "year": "2014",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "HAPPINESS",
-  "motif": "orb",
-  "titlePos": "top",
+  "motif": "custom",
+  "titlePos": "bottom",
   "titleWeight": 300,
-  "titleSize": 198,
+  "titleSize": 480,
   "titleTransform": "uppercase",
-  "lines": [
-    "Overwhelmed"
-  ],
-  "subline": "work-life balance",
-  "sublinePos": "subline-bot",
+  "lines": ["OVER-", "WHELMED"],
+  "subline": "How to work, love, and play when no one has the time.",
+  "sublinePos": "subline-top",
   "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "brandMark": "TIME CRUNCH",
+  "pill": "24/7",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Overwhelmed\" (Happiness) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A clock face: 24 hour marks around a circle. Some are highlighted as WORK (ash), some as LOVE (ash), some as PLAY (ash), some as REST (red — the only one). Most are full. -->\n  <g transform=\"translate(800 1100)\" fill=\"none\">\n    <circle cx=\"0\" cy=\"0\" r=\"380\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"320\" stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.5\"/>\n    <!-- 24 hour ticks, label a few -->\n    <g stroke=\"#cccccc\" stroke-width=\"2\">\n      <line x1=\"0\" y1=\"-380\" x2=\"0\" y2=\"-340\"/>\n      <line x1=\"190\" y1=\"-329\" x2=\"170\" y2=\"-294\"/>\n      <line x1=\"329\" y1=\"-190\" x2=\"294\" y2=\"-170\"/>\n      <line x1=\"380\" y1=\"0\" x2=\"340\" y2=\"0\"/>\n      <line x1=\"329\" y1=\"190\" x2=\"294\" y2=\"170\"/>\n      <line x1=\"190\" y1=\"329\" x2=\"170\" y2=\"294\"/>\n      <line x1=\"0\" y1=\"380\" x2=\"0\" y2=\"340\"/>\n      <line x1=\"-190\" y1=\"329\" x2=\"-170\" y2=\"294\"/>\n      <line x1=\"-329\" y1=\"190\" x2=\"-294\" y2=\"170\"/>\n      <line x1=\"-380\" y1=\"0\" x2=\"-340\" y2=\"0\"/>\n      <line x1=\"-329\" y1=\"-190\" x2=\"-294\" y2=\"-170\"/>\n      <line x1=\"-190\" y1=\"-329\" x2=\"-170\" y2=\"-294\"/>\n    </g>\n    <!-- 12 sectors representing 24 hours filled with quadrants labeled W/L/P/R -->\n    <g fill=\"#4c4c4c\" opacity=\"0.45\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" letter-spacing=\"0.18em\" text-anchor=\"middle\">\n      <text x=\"0\" y=\"-100\">WORK</text>\n      <text x=\"100\" y=\"0\">LOVE</text>\n      <text x=\"0\" y=\"120\">PLAY</text>\n      <text x=\"-100\" y=\"0\">REST</text>\n    </g>\n    <!-- Three sectors are crowded with small dots (work, love, play). REST is empty until we add a single red dot. -->\n    <g fill=\"#cccccc\">\n      <!-- Work -->\n      <circle cx=\"-50\" cy=\"-120\" r=\"2\"/><circle cx=\"-30\" cy=\"-100\" r=\"2\"/><circle cx=\"-10\" cy=\"-130\" r=\"2\"/><circle cx=\"20\" cy=\"-110\" r=\"2\"/><circle cx=\"40\" cy=\"-90\" r=\"2\"/><circle cx=\"60\" cy=\"-110\" r=\"2\"/><circle cx=\"-50\" cy=\"-80\" r=\"2\"/><circle cx=\"-30\" cy=\"-60\" r=\"2\"/><circle cx=\"50\" cy=\"-70\" r=\"2\"/><circle cx=\"-15\" cy=\"-100\" r=\"2\"/>\n      <!-- Love -->\n      <circle cx=\"80\" cy=\"-30\" r=\"2\"/><circle cx=\"100\" cy=\"-10\" r=\"2\"/><circle cx=\"120\" cy=\"-30\" r=\"2\"/><circle cx=\"90\" cy=\"10\" r=\"2\"/><circle cx=\"110\" cy=\"30\" r=\"2\"/><circle cx=\"130\" cy=\"10\" r=\"2\"/><circle cx=\"80\" cy=\"40\" r=\"2\"/><circle cx=\"100\" cy=\"50\" r=\"2\"/>\n      <!-- Play -->\n      <circle cx=\"-30\" cy=\"80\" r=\"2\"/><circle cx=\"-10\" cy=\"100\" r=\"2\"/><circle cx=\"20\" cy=\"80\" r=\"2\"/><circle cx=\"50\" cy=\"100\" r=\"2\"/><circle cx=\"-50\" cy=\"110\" r=\"2\"/><circle cx=\"-20\" cy=\"130\" r=\"2\"/><circle cx=\"10\" cy=\"140\" r=\"2\"/>\n    </g>\n    <!-- The single RED dot — REST, the missing piece -->\n    <circle cx=\"-100\" cy=\"0\" r=\"9\" fill=\"#fc1c46\"/>\n    <circle cx=\"-100\" cy=\"0\" r=\"22\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"1\" opacity=\"0.4\"/>\n    <!-- 12, 6, 3, 9 labels -->\n    <g fill=\"#4c4c4c\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"11\" font-weight=\"500\" letter-spacing=\"0.18em\" text-anchor=\"middle\">\n      <text x=\"0\" y=\"-410\">12</text>\n      <text x=\"0\" y=\"430\">6</text>\n      <text x=\"410\" y=\"0\">3</text>\n      <text x=\"-410\" y=\"0\">9</text>\n    </g>\n  </g>\n</svg>",
+  "rationale": "A 24-hour clock divided into four quadrants: WORK, LOVE, PLAY, REST. The first three are crowded with ash dots. REST has a single red dot — the missing piece. 480px uppercase title sits at the bottom, broken as OVER-WHELMED. The book made visible: life is full, rest is empty."
 }

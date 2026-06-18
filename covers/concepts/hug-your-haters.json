@@ -4,22 +4,22 @@
   "author": "Jay Baer",
   "category": "Business & Career",
   "subtopics": "customer service, complaints, business, online reviews",
-  "year": "",
+  "year": "2016",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "BUSINESS & CAREER",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 198,
+  "titleSize": 360,
   "titleTransform": "uppercase",
-  "lines": [
-    "Hug",
-    "Your Haters"
-  ],
-  "subline": "customer service",
+  "lines": ["Hug", "Your Haters"],
+  "subline": "Complainants are uninvited focus groups.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "SERVICE",
+  "pill": "OFFLINE / ONLINE",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Hug Your Haters\" (Business & Career) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- Two speech bubbles facing each other: one HUGS the other. The hugged bubble is RED (the complaint turned to feedback). -->\n  <g transform=\"translate(800 1500)\" fill=\"none\" stroke=\"#cccccc\" stroke-width=\"2\">\n    <!-- Left bubble = the HUGGER (brand) -->\n    <path d=\"M -460 -200 Q -460 -340 -320 -340 L 20 -340 Q 160 -340 160 -200 L 160 -40 Q 160 100 20 100 L -180 100 L -260 180 L -240 100 L -320 100 Q -460 100 -460 -40 Z\"/>\n    <!-- right bubble = the HATED (complaint) — RED stroke + filled with red -->\n    <g transform=\"translate(560 0)\">\n      <path d=\"M -340 -180 Q -340 -300 -200 -300 L 160 -300 Q 300 -300 300 -180 L 300 -20 Q 300 100 160 100 L 60 100 L 140 180 L 20 100 L -200 100 Q -340 100 -340 -20 Z\" fill=\"#fc1c46\" stroke=\"#fc1c46\" stroke-width=\"2\"/>\n    </g>\n    <!-- HUG arcs: the brand's two arms wrapping the red bubble -->\n    <path d=\"M -260 -200 Q 60 -360 360 -180\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <path d=\"M -260 60 Q 60 -120 360 60\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <!-- Small mouth inside the hugger bubble — smiling -->\n    <path d=\"M -220 -60 Q -160 -120 -100 -60\" stroke=\"#cccccc\" stroke-width=\"2\"/>\n    <circle cx=\"-300\" cy=\"-160\" r=\"6\" fill=\"#cccccc\"/>\n    <circle cx=\"-140\" cy=\"-160\" r=\"6\" fill=\"#cccccc\"/>\n    <!-- angry mouth inside the red bubble -->\n    <path d=\"M 700 -60 Q 760 0 820 -60\" stroke=\"#ffffff\" stroke-width=\"2\"/>\n    <circle cx=\"640\" cy=\"-160\" r=\"6\" fill=\"#ffffff\"/>\n    <circle cx=\"800\" cy=\"-160\" r=\"6\" fill=\"#ffffff\"/>\n  </g>\n</svg>",
+  "rationale": "Two opposing speech bubbles — the brand and the hater — face each other in the lower 2/3. The hater's bubble is filled RED (the only chromatic element). Red hug-arcs wrap the red bubble, making the metaphor literal: a hostile message embraced. Big 360px uppercase title dominates the top."
 }

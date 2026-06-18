@@ -4,24 +4,23 @@
   "author": "Catherine Price",
   "category": "Productivity",
   "subtopics": "smartphone, focus, digital habits, mindfulness",
-  "year": "",
+  "year": "2018",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "PRODUCTIVITY",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 198,
-  "titleTransform": "uppercase",
-  "lines": [
-    "How to",
-    "Break Up",
-    "with Your Phone"
-  ],
-  "subline": "smartphone",
+  "titleSize": 280,
+  "titleTransform": "none",
+  "lines": ["How to Break", "Up with", "Your Phone"],
+  "subline": "A 30-day digital detox for the chronically connected.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
-  "pill": "1",
+  "accent": "brand-bottom",
+  "brandMark": "30 DAYS",
+  "pill": "30",
   "pillPos": "top",
-  "rationale": "motif=orb for \"How to Break Up with Your Phone\" (Productivity) — composed from book tokens."
+  "redRule": "none",
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A simple smartphone outline (vertical rectangle with rounded corners), drawn in red 3px stroke. The screen is filled with a single hairline X (the break-up). -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Phone outline -->\n    <rect x=\"-200\" y=\"-440\" width=\"400\" height=\"880\" rx=\"40\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <!-- Speaker (top) -->\n    <line x1=\"-30\" y1=\"-400\" x2=\"30\" y2=\"-400\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <!-- Home button (bottom) -->\n    <circle cx=\"0\" cy=\"400\" r=\"22\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <!-- The big X across the screen — break up -->\n    <line x1=\"-180\" y1=\"-360\" x2=\"180\" y2=\"320\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <line x1=\"180\" y1=\"-360\" x2=\"-180\" y2=\"320\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n  </g>
+  <text x=\"800\" y=\"2150\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">IT'S NOT YOU, IT'S ME · 30 DAYS</text>\n</svg>",
+  "rationale": "A simple smartphone outline in red 3px stroke, with a giant red X across the screen. Speaker slit at top, home button at bottom, both in red. No graphite anywhere. The phone is the only object and the X is the break-up. Title 280px mixed case, three lines, weight 300. The composition is a single canceled device."
 }

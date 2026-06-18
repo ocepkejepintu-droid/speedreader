@@ -4,21 +4,23 @@
   "author": "Malcolm Gladwell",
   "category": "Self-Growth",
   "subtopics": "intuition, snap judgments, thin-slicing",
-  "year": "",
+  "year": "2005",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 540,
+  "titleWeight": 500,
+  "titleSize": 520,
   "titleTransform": "uppercase",
-  "lines": [
-    "Blink"
-  ],
-  "subline": "intuition",
+  "lines": ["BLINK"],
+  "subline": "The power of thinking without thinking.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "MALCOLM GLADWELL",
+  "pill": "0.5 SEC",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Blink\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A single eye in extreme close-up. The eye is in the LOWER 2/3. The pupil is dilated, with a tiny red dot at center (the snap judgment's source). -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Eye outline (almond shape) -->\n    <path d=\"M -600 0 Q 0 -340 600 0 Q 0 340 -600 0 Z\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <!-- Iris (outer ring) -->\n    <circle cx=\"0\" cy=\"0\" r=\"200\" stroke=\"#4c4c4c\" stroke-width=\"2\"/>\n    <!-- Iris (inner ring) -->\n    <circle cx=\"0\" cy=\"0\" r=\"180\" stroke=\"#cccccc\" stroke-width=\"1.5\" fill=\"none\"/>\n    <!-- Pupil -->\n    <circle cx=\"0\" cy=\"0\" r=\"80\" fill=\"#000000\"/>\n    <!-- Highlight -->\n    <circle cx=\"-40\" cy=\"-30\" r=\"14\" fill=\"#ffffff\"/>\n    <!-- The single red dot (the 'intuition') -->\n    <circle cx=\"0\" cy=\"0\" r=\"6\" fill=\"#fc1c46\"/>\n    <!-- Top eyelash row -->\n    <g stroke=\"#4c4c4c\" stroke-width=\"2\" stroke-linecap=\"round\">\n      <line x1=\"-580\" y1=\"-20\" x2=\"-560\" y2=\"-80\"/>\n      <line x1=\"-460\" y1=\"-180\" x2=\"-440\" y2=\"-260\"/>\n      <line x1=\"-260\" y1=\"-280\" x2=\"-240\" y2=\"-340\"/>\n      <line x1=\"0\" y1=\"-340\" x2=\"0\" y2=\"-400\"/>\n      <line x1=\"260\" y1=\"-280\" x2=\"240\" y2=\"-340\"/>\n      <line x1=\"460\" y1=\"-180\" x2=\"440\" y2=\"-260\"/>\n      <line x1=\"580\" y1=\"-20\" x2=\"560\" y2=\"-80\"/>\n    </g>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">A SINGLE GLANCE CAN CHANGE EVERYTHING</text>\n</svg>",
+  "rationale": "A single eye in extreme close-up, occupying the lower 2/3. Almond outline, concentric iris, a large black pupil with one white highlight and one red 6px dot at center. The red dot is the snap judgment. Top eyelashes drawn as short angled strokes. Title 520px uppercase, single word 'BLINK', weight 500 — the word IS the cover."
 }

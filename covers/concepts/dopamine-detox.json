@@ -4,22 +4,30 @@
   "author": "Thibaut Meurisse",
   "category": "Self-Growth",
   "subtopics": "dopamine, focus, productivity, mindfulness",
-  "year": "",
+  "year": "2021",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "split",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 198,
+  "titleSize": 320,
   "titleTransform": "uppercase",
-  "lines": [
-    "Dopamine",
-    "Detox"
-  ],
-  "subline": "dopamine",
+  "lines": ["Dopamine", "Detox"],
+  "subline": "Reset your brain. Reclaim your focus.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "RESET",
+  "pill": "48H",
+  "pillPos": "bot",
   "redRule": "none",
-  "rationale": "motif=split for \"Dopamine Detox\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A single phone screen, large, with a TIMER running down. The timer's digital readouts are ash digits; the final second is RED. -->\n  <g transform=\"translate(800 1500)\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" text-anchor=\"middle\">\n    <!-- Phone outline: a 540x900 rounded rectangle drawn as a sharp rect (no rounded) -->\n    <rect x=\"-270\" y=\"-450\" width=\"540\" height=\"900\" fill=\"none\" stroke=\"#cccccc\" stroke-width=\"2\"/>\n    <!-- Top status bar -->\n    <line x1=\"-270\" y1=\"-400\" x2=\"270\" y2=\"-400\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <text x=\"0\" y=\"-415\" text-anchor=\"middle\" font-size=\"11" font-weight="500" fill="#4c4c4c" letter-spacing="0.18em">DETOX · DAY 1</text>\n    <!-- The TIMER: 48:00:00 displayed huge in 6 digits -->\n    <g font-size="160" font-weight="300" letter-spacing="-0.05em">\n      <text x="-220" y="-100" fill="#cccccc">48</text>\n      <text x="-50" y="-100" fill="#cccccc">:</text>\n      <text x="20" y="-100" fill="#cccccc">00</text>\n      <text x="190" y="-100" fill="#cccccc">:</text>\n    </g>
+    <g font-size="160" font-weight="300" letter-spacing="-0.05em">\n      <text x="-220" y="80" fill="#cccccc">00</text>\n      <text x="-50" y="80" fill="#cccccc">:</text>\n      <text x="20" y="80" fill="#fc1c46">00</text>\n      <text x="190" y="80" fill="#cccccc">:</text>\n    </g>
+    <!-- Labels under the timer -->\n    <g font-size="14" font-weight="500" letter-spacing="0.18em" fill="#4c4c4c">\n      <text x="-150" y="-30">HOURS</text>\n      <text x="100" y="-30">MINUTES</text>\n      <text x="-150" y="150">SECONDS</text>\n      <text x="100" y="150" fill="#fc1c46">FOCUS</text>\n    </g>
+    <!-- A large OFF button at the bottom -->\n    <g transform="translate(0 350)">
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#cccccc" stroke-width="2"/>
+      <text x="0" y="10" text-anchor="middle" font-size="14" font-weight="500" fill="#cccccc" letter-spacing="0.18em">OFF</text>
+    </g>
+  </g>
+</svg>",
+  "rationale": "A phone screen with a 48:00:00 timer counting down. The final '00' (seconds) is RED — the moment your focus returns. 320px whisper title at the top — the device is the addiction."
 }

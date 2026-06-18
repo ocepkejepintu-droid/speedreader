@@ -4,22 +4,23 @@
   "author": "Gabriel Wyner",
   "category": "Self-Growth",
   "subtopics": "language learning, memory, pronunciation",
-  "year": "",
+  "year": "2014",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 198,
+  "titleWeight": 500,
+  "titleSize": 360,
   "titleTransform": "uppercase",
-  "lines": [
-    "Fluent",
-    "Forever"
-  ],
-  "subline": "language learning",
+  "lines": ["FLUENT", "FOREVER"],
+  "subline": "How to learn any language fast — and never forget it.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "GABRIEL WYNER",
+  "pill": "4 STEPS",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Fluent Forever\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- 4 nested speech bubbles, each smaller, in different languages (transliterated). The outermost is 'hello' in English; the innermost is the same in the target language — 'hola' (Spanish). One is RED. -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Outermost bubble (English) -->\n    <path d=\"M -560 -200 Q -580 -280 -480 -300 Q -440 -360 -320 -340 Q -260 -380 -160 -360 Q -100 -400 0 -380 Q 80 -400 140 -360 Q 240 -380 320 -340 Q 440 -360 480 -300 Q 580 -280 560 -200 L 540 -120 L 580 0 L 540 60 L 560 100 Q 580 180 480 200 Q 440 280 320 260 Q 240 300 140 280 Q 80 320 0 300 Q -100 320 -160 280 Q -260 300 -320 260 Q -440 280 -480 200 Q -580 180 -560 100 L -540 60 L -580 0 L -540 -120 Z\" stroke=\"#4c4c4c\" stroke-width=\"2\"/>\n    <text x=\"0\" y=\"-100\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"40\" font-weight=\"300\" fill=\"#4c4c4c\" letter-spacing=\"-0.02em\">hello</text>\n    <!-- Bubble 2 (French) -->\n    <path d=\"M -380 -120 Q -400 -180 -320 -200 Q -280 -240 -200 -220 Q -140 -260 -60 -240 Q 0 -260 60 -240 Q 140 -260 200 -220 Q 280 -240 320 -200 Q 400 -180 380 -120 L 360 -60 L 400 40 L 360 80 L 380 120 Q 400 180 320 200 Q 280 240 200 220 Q 140 260 60 240 Q 0 260 -60 240 Q -140 260 -200 220 Q -280 240 -320 200 Q -400 180 -380 120 L -360 80 L -400 40 L -360 -60 Z\" stroke=\"#4c4c4c\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n    <text x=\"0\" y=\"-40\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"34\" font-weight=\"300\" fill=\"#cccccc\" letter-spacing=\"-0.02em\">bonjour</text>\n    <!-- Bubble 3 (German) -->\n    <path d=\"M -240 -50 Q -260 -110 -180 -130 Q -140 -160 -80 -150 Q -20 -180 40 -150 Q 100 -180 160 -150 Q 220 -160 240 -110 L 220 -50 L 260 30 L 220 60 L 240 100 Q 260 150 180 170 Q 140 200 80 180 Q 20 200 -40 180 Q -100 200 -160 180 Q -220 200 -240 150 Q -260 100 -240 50 L -220 30 L -260 -10 Z\" stroke=\"#4c4c4c\" stroke-width=\"1.5\" opacity=\"0.6\"/>\n    <text x=\"0\" y=\"20\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"30\" font-weight=\"300\" fill=\"#cccccc\" letter-spacing=\"-0.02em\">guten tag</text>\n    <!-- Innermost bubble (Spanish) RED -->\n    <path d=\"M -140 0 Q -160 -60 -100 -80 Q -60 -110 0 -100 Q 60 -110 100 -80 Q 160 -60 140 0 L 120 40 L 160 80 L 120 110 L 140 140 Q 160 180 100 200 Q 60 220 0 210 Q -60 220 -100 200 Q -160 180 -140 140 L -120 110 L -160 80 L -120 40 Z\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <text x=\"0\" y=\"80\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"28\" font-weight=\"500\" fill=\"#fc1c46\" letter-spacing=\"-0.02em\">hola</text>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">FOUR LANGUAGES DEEPER · ONE FLUENT FOREVER</text>\n</svg>",
+  "rationale": "Four nested speech bubbles, each smaller than the last. Outer to inner: 'hello' (English, ash), 'bonjour' (French, ash), 'guten tag' (German, ash), 'hola' (Spanish, RED 3px). The Spanish bubble is the target — what fluency looks like. The composition is a Russian-doll of language. Title 360px uppercase, two lines, weight 500."
 }

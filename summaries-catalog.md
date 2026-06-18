@@ -58,6 +58,7 @@
 | 206 | dopamine-detox | Dopamine Detox | Thibaut Meurisse | Self-Growth | dopamine, focus, productivity, mindfulness |
 | 212 | for-the-love | For The Love |  | Self-Growth | balance, women's empowerment, calling, compromise |
 | 216 | good-morning-monster-a-therapist-shares-five-heroic-stories-of-emotional-recovery | Good Morning, Monster | Catherine Gildiner | Self-Growth | therapy, emotional recovery, trauma, courage |
+| 263 | music-theory-from-absolute-beginner-to-expert | Music Theory |  | Self-Growth | music theory, scales, chords, rhythm, learning music |
 
 ## Productivity
 
@@ -173,6 +174,7 @@
 | 242 | irrational-exuberance | Irrational Exuberance | Robert Shiller | Money & Investments | bubbles, market psychology, speculation, financial crises |
 | 211 | flash-boys | Flash Boys | Michael Lewis | Money & Investments | high-frequency trading, Wall Street, market structure |
 | 237 | i-will-teach-you-to-be-rich | I Will Teach You to Be Rich | Ramit Sethi | Money & Investments | personal finance, automation, investing, savings |
+| 272 | naked-economics | Naked Economics | Charles Wheelan | Money & Investments | economics, trade, markets, currency, global economy |
 
 ## Leadership
 
@@ -232,6 +234,10 @@
 | 209 | finding-ultra | Finding Ultra | Rich Roll | Health | endurance, transformation, sobriety, plant-based |
 | 215 | glucose-revolution | Glucose Revolution | Jessie Inchauspé | Health | glucose, nutrition, blood sugar, inflammation |
 | 240 | immunity-the-science-of-staying-well | Immunity | Jenna Macciochi | Health | immune system, sleep, mental health, prevention |
+| 264 | my-age-of-anxiety | My Age of Anxiety |  | Health | anxiety, mental health, neuroscience, treatment, memoir |
+| 265 | mindless-eating | Mindless Eating |  | Health | eating habits, food cues, portion control, mindfulness |
+| 266 | neurotribes-the-legacy-of-autism-and-the-future-of-neurodiversity | Neurotribes |  | Health | autism, neurodiversity, mental health, history, science |
+| 273 | never-binge-again | Never Binge Again | Glenn Livingston | Health | binge eating, food addiction, healthy eating, recovery, self-control |
 
 ## Society & Tech
 
@@ -270,6 +276,10 @@
 | 261 | the-future-of-the-mind | The Future of the Mind | Michio Kaku | Society & Tech | neuroscience, brain, consciousness, future tech |
 | 262 | the-soul-of-america | The Soul of America | Jon Meacham | Society & Tech | American history, civil rights, hope, politics |
 | 238 | iak-ukrayins-kii-fikshn-uchit-smilivosti | Як український фікшн учить сміливості |  | Society & Tech | Ukrainian fiction, culture, courage, literature |
+| 267 | minor-feelings | Minor Feelings | Cathy Park Hong | Society & Tech | racism, Asian American identity, race in America, cultural visibility |
+| 268 | my-grandmothers-hands | My Grandmother's Hands | Resmaa Menakem | Society & Tech | racial trauma, white supremacy, embodiment, healing, America |
+| 274 | new-dark-age | New Dark Age | James Bridle | Society & Tech | technology critique, surveillance, fake news, climate, digital age |
+| 275 | nexus-a-brief-history-of-information-networks-from-the-stone-age-to-ai | Nexus | Yuval Noah Harari | Society & Tech | information networks, AI, society, history, technology |
 
 ## Personalities
 
@@ -289,6 +299,9 @@
 | 193 | when-breath-becomes-air | When Breath Becomes Air | Paul Kalanithi | Personalities | mortality, neurosurgery, memoir |
 | 194 | thirst | Thirst | Scott Harrison | Personalities | charity, transformation, memoir |
 | 221 | hidden-valley-road | Hidden Valley Road | Robert Kolker | Personalities | schizophrenia, family memoir, mental health, science |
+| 269 | more-myself | More Myself | Alicia Keys | Personalities | Alicia Keys, memoir, fame, music career, self-discovery |
+| 270 | my-inventions | My Inventions | Nikola Tesla | Personalities | Nikola Tesla, invention, electricity, AC motor, memoir |
+| 271 | my-own-words | My Own Words | Ruth Bader Ginsburg | Personalities | Ruth Bader Ginsburg, law, gender equality, civil rights, memoir |
 
 ## Love & Sex
 
@@ -348,4 +361,4 @@
 
 ---
 
-Total: 263 books across 14 categories. Largest: Self-Growth (62 books).
+Total: 273 books across 14 categories. Largest: Self-Growth (63 books).

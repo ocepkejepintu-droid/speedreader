@@ -29,10 +29,65 @@
       --surface-carbon: #1a1a1a;
       --surface-elevated: #141414;
       --font-reader: 'Courier New', Courier, monospace;
-      --font-focus: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+      --font-focus: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
       --page-pad: clamp(16px, 4vw, 48px);
       --max-width: 1200px;
       --ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+      --reader-bg: #05080d;
+      --reader-bg-2: #0b121c;
+      --reader-ivory: #f7fbff;
+      --reader-muted: #8aa0b8;
+      --reader-faint: #324254;
+      --reader-gold: #ff6a1f;
+      --reader-gold-soft: rgba(255, 106, 31, 0.18);
+      --reader-copper: #00b7ff;
+      --reader-glass: rgba(247, 251, 255, 0.06);
+      --reader-border: rgba(255, 106, 31, 0.24);
+      --bg: var(--reader-bg);
+      --fg: var(--reader-ivory);
+      --reader-accent-rgb: 255, 106, 31;
+      --reader-secondary-rgb: 0, 183, 255;
+      --reader-ghost-rgb: 247, 251, 255;
+      --orp: var(--reader-gold);
+      --muted: var(--reader-muted);
+      --panel: var(--reader-bg-2);
+      --border: var(--reader-border);
+      --font-word: clamp(2.35rem, 7vw, 5.15rem);
+      --orp-anchor: 35%;
+      --orp-guide-half: 34px;
+      --orp-guide-gap: 10px;
+    }
+
+
+
+    body.theme-vanilla {
+      --font-focus: 'Courier New', Courier, monospace;
+      --reader-bg: #0a0a0a;
+      --reader-bg-2: #141414;
+      --reader-ivory: #f0f0f0;
+      --reader-muted: #6b6b6b;
+      --reader-faint: #4c4c4c;
+      --reader-gold: var(--color-signal-red);
+      --reader-gold-soft: rgba(252, 28, 70, 0.18);
+      --reader-copper: #fc1c46;
+      --reader-glass: rgba(255, 255, 255, 0.04);
+      --reader-border: rgba(76, 76, 76, 0.55);
+      --reader-accent-rgb: 252, 28, 70;
+      --reader-secondary-rgb: 240, 240, 240;
+      --reader-ghost-rgb: 240, 240, 240;
+      --bg: var(--reader-bg);
+      --fg: var(--reader-ivory);
+      --orp: var(--reader-gold);
+      --muted: var(--reader-muted);
+      --panel: var(--reader-bg-2);
+      --border: var(--reader-border);
+      --font-word: clamp(2rem, 6vw, 4rem);
+      --orp-guide-half: 20px;
+      --orp-guide-gap: 4px;
+    }
+
+    body.theme-noir {
+      --font-focus: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
       --reader-bg: #0d0b09;
       --reader-bg-2: #17120d;
       --reader-ivory: #f3e9d7;
@@ -43,16 +98,41 @@
       --reader-copper: #8f5a2e;
       --reader-glass: rgba(243, 233, 215, 0.06);
       --reader-border: rgba(215, 161, 75, 0.22);
-      --bg: var(--reader-bg);
-      --fg: var(--reader-ivory);
-      --orp: var(--reader-gold);
-      --muted: var(--reader-muted);
-      --panel: var(--reader-bg-2);
-      --border: var(--reader-border);
-      --font-word: clamp(2.35rem, 7vw, 5.15rem);
-      --orp-anchor: 35%;
-      --orp-guide-half: 34px;
-      --orp-guide-gap: 10px;
+      --reader-accent-rgb: 215, 161, 75;
+      --reader-secondary-rgb: 143, 90, 46;
+      --reader-ghost-rgb: 243, 233, 215;
+    }
+
+    body.theme-vanilla #reader {
+      background: var(--bg);
+    }
+
+    body.theme-vanilla #reader::before,
+    body.theme-vanilla #reader::after,
+    body.theme-vanilla .orp-guide::before {
+      display: none;
+    }
+
+    body.theme-vanilla .orp-guide-top { top: calc(50% - 2.15rem); }
+    body.theme-vanilla .orp-guide-bottom { bottom: calc(50% - 2.15rem); }
+
+    body.theme-vanilla .orp-guide-bar-left,
+    body.theme-vanilla .orp-guide-bar-right {
+      background: rgba(240, 240, 240, 0.38);
+    }
+
+    body.theme-vanilla .orp-guide-tick {
+      width: 2px;
+      height: 5px;
+      border-radius: 0;
+      transform: translateX(-50%);
+      box-shadow: none;
+    }
+
+    body.theme-vanilla.mode-rsvp .word-container,
+    body.theme-vanilla.mode-phantom .word-container,
+    body.theme-vanilla .word-container {
+      letter-spacing: 0;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -89,9 +169,9 @@
       inset: 0;
       overflow: hidden;
       background:
-        radial-gradient(circle at 50% 42%, rgba(215, 161, 75, 0.13), transparent 28%),
-        radial-gradient(circle at 14% 18%, rgba(143, 90, 46, 0.18), transparent 26%),
-        linear-gradient(145deg, #080706 0%, var(--reader-bg) 42%, #18100a 100%);
+        radial-gradient(circle at 50% 42%, rgba(var(--reader-accent-rgb), 0.13), transparent 28%),
+        radial-gradient(circle at 14% 18%, rgba(var(--reader-secondary-rgb), 0.18), transparent 26%),
+        linear-gradient(145deg, #02060c 0%, var(--reader-bg) 42%, #101a24 100%);
       z-index: 10;
       isolation: isolate;
     }
@@ -163,13 +243,13 @@
       width: min(78vw, 28rem);
       height: clamp(4.8rem, 13vw, 8.4rem);
       transform: translate(-50%, -50%);
-      border: 1px solid rgba(215, 161, 75, 0.2);
+      border: 1px solid rgba(var(--reader-accent-rgb), 0.2);
       border-radius: 999px;
       background:
-        radial-gradient(circle at var(--orp-anchor) 50%, rgba(215, 161, 75, 0.18), transparent 19%),
-        linear-gradient(90deg, transparent, rgba(243, 233, 215, 0.035), transparent);
+        radial-gradient(circle at var(--orp-anchor) 50%, rgba(var(--reader-accent-rgb), 0.18), transparent 19%),
+        linear-gradient(90deg, transparent, rgba(var(--reader-ghost-rgb), 0.035), transparent);
       box-shadow:
-        inset 0 0 38px rgba(215, 161, 75, 0.08),
+        inset 0 0 38px rgba(var(--reader-accent-rgb), 0.08),
         0 0 42px rgba(0, 0, 0, 0.32);
     }
 
@@ -194,7 +274,7 @@
       position: absolute;
       top: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(215, 161, 75, 0.68), transparent);
+      background: linear-gradient(90deg, transparent, rgba(var(--reader-accent-rgb), 0.68), transparent);
     }
 
     .orp-guide-bar-left {
@@ -217,7 +297,7 @@
       border-radius: 999px;
       background: var(--orp);
       opacity: 0.95;
-      box-shadow: 0 0 16px rgba(215, 161, 75, 0.8);
+      box-shadow: 0 0 16px rgba(var(--reader-accent-rgb), 0.8);
     }
 
     .word-container {
@@ -256,7 +336,7 @@
     .word-orp {
       color: var(--orp);
       font-weight: 800;
-      text-shadow: 0 0 18px rgba(215, 161, 75, 0.56), 0 8px 28px rgba(0, 0, 0, 0.46);
+      text-shadow: 0 0 18px rgba(var(--reader-accent-rgb), 0.56), 0 8px 28px rgba(0, 0, 0, 0.46);
     }
 
     .phantom-before,
@@ -296,8 +376,8 @@
     /* Scroll mode */
     body.mode-scroll.in-reader #reader {
       background:
-        radial-gradient(circle at 50% 0%, rgba(215, 161, 75, 0.11), transparent 30%),
-        linear-gradient(145deg, #090806 0%, var(--reader-bg) 100%);
+        radial-gradient(circle at 50% 0%, rgba(var(--reader-accent-rgb), 0.11), transparent 30%),
+        linear-gradient(145deg, #02060c 0%, var(--reader-bg) 100%);
     }
 
     .scroll-view {
@@ -367,12 +447,12 @@
     body.paused.mode-paragraph .para-word.para-sent-read { opacity: 0.42; }
 
     .para-word.current {
-      background: rgba(215, 161, 75, 0.18);
+      background: rgba(var(--reader-accent-rgb), 0.18);
       color: var(--reader-ivory);
       font-weight: 600;
       padding: 0.05em 0.12em;
       border-radius: 5px;
-      box-shadow: inset 0 -2px 0 rgba(215, 161, 75, 0.72);
+      box-shadow: inset 0 -2px 0 rgba(var(--reader-accent-rgb), 0.72);
       opacity: 1;
     }
 
@@ -396,12 +476,12 @@
     }
 
     .scrub-word.current {
-      background: rgba(215, 161, 75, 0.2);
+      background: rgba(var(--reader-accent-rgb), 0.2);
       color: var(--reader-ivory);
       padding: 0.1em 0.2em;
       border-radius: 5px;
       font-weight: 600;
-      box-shadow: inset 0 -2px 0 rgba(215, 161, 75, 0.72);
+      box-shadow: inset 0 -2px 0 rgba(var(--reader-accent-rgb), 0.72);
     }
 
     .progress-footer {
@@ -413,8 +493,8 @@
       font-size: 0.68rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(243, 233, 215, 0.72);
-      background: rgba(13, 11, 9, 0.56);
+      color: rgba(var(--reader-ghost-rgb), 0.72);
+      background: rgba(5, 8, 13, 0.62);
       border: 1px solid var(--reader-border);
       border-radius: 999px;
       box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
@@ -432,7 +512,7 @@
       z-index: 5;
       padding: 0.45rem 0.9rem;
       color: var(--reader-ivory);
-      background: rgba(13, 11, 9, 0.78);
+      background: rgba(5, 8, 13, 0.82);
       border: 1px solid var(--reader-border);
       border-radius: 999px;
       font-size: 0.9rem;
@@ -501,11 +581,11 @@
     }
 
     .scroll-word.current {
-      background: rgba(215, 161, 75, 0.18);
+      background: rgba(var(--reader-accent-rgb), 0.18);
       color: var(--reader-ivory);
       font-weight: 600;
       border-radius: 5px;
-      box-shadow: inset 0 -2px 0 rgba(215, 161, 75, 0.72);
+      box-shadow: inset 0 -2px 0 rgba(var(--reader-accent-rgb), 0.72);
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
       opacity: 1;
@@ -573,19 +653,19 @@
       padding: 0.52rem 0.25rem;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(243, 233, 215, 0.035);
-      color: rgba(243, 233, 215, 0.58);
+      background: rgba(var(--reader-ghost-rgb), 0.035);
+      color: rgba(var(--reader-ghost-rgb), 0.58);
       font-size: 0.65rem;
       letter-spacing: 0.04em;
       cursor: pointer;
     }
 
     .mode-segment button.active {
-      background: linear-gradient(135deg, rgba(215, 161, 75, 0.32), rgba(143, 90, 46, 0.22));
+      background: linear-gradient(135deg, rgba(var(--reader-accent-rgb), 0.32), rgba(var(--reader-secondary-rgb), 0.22));
       border-color: var(--orp);
       color: var(--reader-ivory);
       font-weight: 600;
-      box-shadow: 0 0 0 1px rgba(215, 161, 75, 0.14), 0 12px 28px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 0 0 1px rgba(var(--reader-accent-rgb), 0.14), 0 12px 28px rgba(0, 0, 0, 0.22);
     }
 
     .word-placeholder {
@@ -611,12 +691,12 @@
       font-family: var(--font-focus);
       font-size: 0.96rem;
       line-height: 1.55;
-      color: rgba(243, 233, 215, 0.54);
+      color: rgba(var(--reader-ghost-rgb), 0.54);
       opacity: 0.66;
       padding: 0.55rem 0.8rem;
-      border: 1px solid rgba(215, 161, 75, 0.12);
+      border: 1px solid rgba(var(--reader-accent-rgb), 0.12);
       border-radius: 999px;
-      background: rgba(13, 11, 9, 0.28);
+      background: rgba(5, 8, 13, 0.34);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.035);
       pointer-events: none;
       transition: opacity 0.2s;
@@ -635,7 +715,7 @@
     .ctx-current {
       color: var(--orp);
       font-weight: bold;
-      text-shadow: 0 0 14px rgba(215, 161, 75, 0.42);
+      text-shadow: 0 0 14px rgba(var(--reader-accent-rgb), 0.42);
     }
 
     /* One-shot hint — fades out, never blocks reading */
@@ -645,7 +725,7 @@
       left: 50%;
       transform: translateX(-50%);
       font-size: 0.8rem;
-      color: rgba(243, 233, 215, 0.58);
+      color: rgba(var(--reader-ghost-rgb), 0.58);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.4s;
@@ -664,8 +744,8 @@
       padding: 0.42rem 0.78rem;
       font-size: 0.78rem;
       font-family: inherit;
-      color: rgba(243, 233, 215, 0.68);
-      background: rgba(13, 11, 9, 0.48);
+      color: rgba(var(--reader-ghost-rgb), 0.68);
+      background: rgba(5, 8, 13, 0.54);
       border: 1px solid var(--border);
       border-radius: 999px;
       backdrop-filter: blur(16px);
@@ -677,8 +757,8 @@
     .reader-back-btn:hover,
     .reader-back-btn:focus-visible {
       color: var(--fg);
-      border-color: rgba(215, 161, 75, 0.48);
-      background: rgba(24, 17, 11, 0.7);
+      border-color: rgba(var(--reader-accent-rgb), 0.48);
+      background: rgba(10, 18, 28, 0.78);
       outline: none;
     }
 
@@ -707,9 +787,9 @@
       left: 0;
       right: 0;
       background:
-        radial-gradient(circle at 50% 0%, rgba(215, 161, 75, 0.12), transparent 38%),
-        linear-gradient(180deg, rgba(24, 18, 13, 0.98), rgba(11, 9, 7, 0.98));
-      border: 1px solid rgba(215, 161, 75, 0.16);
+        radial-gradient(circle at 50% 0%, rgba(var(--reader-accent-rgb), 0.12), transparent 38%),
+        linear-gradient(180deg, rgba(10, 18, 28, 0.98), rgba(3, 6, 10, 0.98));
+      border: 1px solid rgba(var(--reader-accent-rgb), 0.16);
       border-bottom: 0;
       border-radius: 24px 24px 0 0;
       padding: 1.25rem 1.25rem calc(1.25rem + env(safe-area-inset-bottom));
@@ -724,7 +804,7 @@
     .sheet-handle {
       width: 36px;
       height: 4px;
-      background: rgba(215, 161, 75, 0.32);
+      background: rgba(var(--reader-accent-rgb), 0.32);
       border-radius: 2px;
       margin: 0 auto 1rem;
     }
@@ -763,7 +843,7 @@
       padding: 0.5rem;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(13, 11, 9, 0.66);
+      background: rgba(5, 8, 13, 0.7);
       color: var(--fg);
       font-size: 0.85rem;
     }
@@ -781,16 +861,16 @@
       padding: 0.75rem;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(13, 11, 9, 0.66);
+      background: rgba(5, 8, 13, 0.7);
       color: var(--fg);
       font-size: 0.9rem;
       cursor: pointer;
     }
 
     .sheet-btn.primary {
-      background: linear-gradient(135deg, rgba(215, 161, 75, 0.95), rgba(143, 90, 46, 0.92));
+      background: linear-gradient(135deg, rgba(var(--reader-accent-rgb), 0.95), rgba(var(--reader-secondary-rgb), 0.92));
       border-color: var(--orp);
-      color: #120d08;
+      color: #080b10;
       font-weight: 600;
     }
 
@@ -842,7 +922,7 @@
 
     body.desktop-mode .orp-guide-bar-left,
     body.desktop-mode .orp-guide-bar-right {
-      background: linear-gradient(90deg, transparent, rgba(215, 161, 75, 0.78), transparent);
+      background: linear-gradient(90deg, transparent, rgba(var(--reader-accent-rgb), 0.78), transparent);
     }
 
     body.desktop-mode.mode-phantom.playing .sentence-context {
@@ -1067,6 +1147,14 @@
           <button type="button" data-mode="phantom">Ghost</button>
           <button type="button" data-mode="scroll">Flow</button>
           <button type="button" data-mode="paragraph">Zen</button>
+        </div>
+      </div>
+      <div class="sheet-row">
+        <label>Theme</label>
+        <div class="mode-segment theme-segment" id="themeSegment">
+          <button type="button" data-theme="nova">Nova</button>
+          <button type="button" data-theme="vanilla">Vanilla</button>
+          <button type="button" data-theme="noir">Noir</button>
         </div>
       </div>
       <div class="sheet-row" id="desktopModeRow">

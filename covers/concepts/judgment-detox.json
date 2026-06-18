@@ -4,22 +4,23 @@
   "author": "Gabrielle Bernstein",
   "category": "Self-Growth",
   "subtopics": "judgment, self-awareness, growth, emotional healing",
-  "year": "",
+  "year": "2020",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 198,
-  "titleTransform": "uppercase",
-  "lines": [
-    "Judgment",
-    "Detox"
-  ],
-  "subline": "judgment",
+  "titleSize": 320,
+  "titleTransform": "none",
+  "lines": ["Judgment", "Detox"],
+  "subline": "Release the judgments that hold you back.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "GABRIELLE BERNSTEIN",
+  "pill": "CLEANSE",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Judgment Detox\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A thought bubble. Inside the bubble, a 'judging eye' (eyeball with a tiny red pupil). The bubble is being WRAPPED in a purifying cross — a horizontal red line and a vertical red line forming a + (the detox). -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Thought bubble: an irregular cloud shape -->\n    <path d=\"M -360 0 Q -380 -100 -300 -160 Q -260 -240 -140 -220 Q -60 -280 60 -240 Q 180 -260 240 -160 Q 340 -120 320 0 Q 360 80 280 160 Q 220 240 100 220 Q 20 280 -80 240 Q -200 260 -280 180 Q -380 140 -360 0 Z\" stroke=\"#4c4c4c\" stroke-width=\"2\"/>\n    <!-- The eye inside -->\n    <ellipse cx=\"0\" cy=\"0\" rx=\"120\" ry=\"60\" stroke=\"#cccccc\" stroke-width=\"1.5\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"38\" stroke=\"#cccccc\" stroke-width=\"1.5\" fill=\"none\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"14\" fill=\"#fc1c46\"/>\n    <!-- The detox cross: a red + sign that overlays the thought bubble -->\n    <line x1=\"-500\" y1=\"0\" x2=\"500\" y2=\"0\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <line x1=\"0\" y1=\"-400\" x2=\"0\" y2=\"400\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">RELEASE THE JUDGMENT · KEEP THE LESSON</text>\n</svg>",
+  "rationale": "An ash thought-bubble cloud containing a single judging eye (ellipse + small red pupil). Over the entire bubble, a red 3px cross — a + sign — runs horizontally and vertically, framing the eye. The cross IS the detox: a + to neutralize the -. Title 320px mixed case, two lines, weight 300."
 }

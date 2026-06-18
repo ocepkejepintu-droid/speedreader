@@ -1,25 +1,25 @@
 {
   "slug": "the-unfair-advantage",
   "title": "The Unfair Advantage",
-  "author": "",
+  "author": "Ash Ali & Hasan Kubba",
   "category": "Business & Career",
   "subtopics": "startup advantages, location, timing",
-  "year": "",
+  "year": "2021",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "BUSINESS & CAREER",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 198,
+  "titleWeight": 500,
+  "titleSize": 320,
   "titleTransform": "uppercase",
-  "lines": [
-    "The",
-    "Unfair Advantage"
-  ],
-  "subline": "startup advantages",
+  "lines": ["THE UNFAIR", "ADVANTAGE"],
+  "subline": "What you don't know about success might be the only thing that matters.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-corner",
+  "brandMark": "M = P + E + T + K",
+  "pill": "MOK",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"The Unfair Advantage\" (Business & Career) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <g transform=\"translate(800 1600)\">\n    <rect x=\"-280\" y=\"-280\" width=\"560\" height=\"560\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3\"/>\n    <text x=\"0\" y=\"40\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"280\" font-weight=\"300\" fill=\"#ffffff\" letter-spacing=\"-0.06em\">M</text>\n    <g transform=\"translate(-560 -560)\">\n      <rect x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#4c4c4c\" stroke-width=\"1.5\"/>\n      <text x=\"100\" y=\"140\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"100\" font-weight=\"300\" fill=\"#cccccc\" letter-spacing=\"-0.05em\">P</text>\n    </g>\n    <g transform=\"translate(360 -560)\">\n      <rect x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#4c4c4c\" stroke-width=\"1.5\"/>\n      <text x=\"100\" y=\"140\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"100\" font-weight=\"300\" fill=\"#cccccc\" letter-spacing=\"-0.05em\">E</text>\n    </g>\n    <g transform=\"translate(-560 360)\">\n      <rect x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#4c4c4c\" stroke-width=\"1.5\"/>\n      <text x=\"100\" y=\"140\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"100\" font-weight=\"300\" fill=\"#cccccc\" letter-spacing=\"-0.05em\">T</text>\n    </g>\n    <g transform=\"translate(360 360)\">\n      <rect x=\"0\" y=\"0\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"2.5\"/>\n      <text x=\"100\" y=\"140\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"100\" font-weight=\"300\" fill=\"#fc1c46\" letter-spacing=\"-0.05em\">K</text>\n    </g>\n    <g stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.6\">\n      <line x1=\"-360\" y1=\"-360\" x2=\"-280\" y2=\"-280\"/>\n      <line x1=\"360\" y1=\"-360\" x2=\"280\" y2=\"-280\"/>\n      <line x1=\"-360\" y1=\"360\" x2=\"-280\" y2=\"280\"/>\n    </g>\n    <line x1=\"360\" y1=\"360\" x2=\"280\" y2=\"280\" stroke=\"#fc1c46\" stroke-width=\"1.5\"/>\n    <g font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" letter-spacing=\"0.18em\" text-anchor=\"middle\" fill=\"#4c4c4c\">\n      <text x=\"-460\" y=\"-580\">P · PASSION</text>\n      <text x=\"460\" y=\"-580\">E · EXPERTISE</text>\n      <text x=\"-460\" y=\"600\">T · TIMING</text>\n    </g>\n    <text x=\"460\" y=\"600\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" letter-spacing=\"0.18em\" fill=\"#fc1c46\">K · KNOWLEDGE</text>\n  </g>\n</svg>",
+  "rationale": "The book's core equation M = P + E + T + K rendered as a 2x2 grid. The big M (success) is the white 560px outlined square; the four inputs are smaller squares at the corners. K = Knowledge is RED — the variable the author argues is the unfair advantage. The composition is a visual math problem with a hidden answer."
 }

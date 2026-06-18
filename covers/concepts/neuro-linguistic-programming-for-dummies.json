@@ -1,25 +1,26 @@
 {
   "slug": "neuro-linguistic-programming-for-dummies",
   "title": "Neuro-Linguistic Programming for Dummies",
-  "author": "Romilla Ready, Kate Burton",
+  "author": "Romilla Ready",
   "category": "Self-Growth",
-  "subtopics": "NLP, mindset, communication",
-  "year": "",
+  "subtopics": "nlp, communication, reprogramming",
+  "year": "2010",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 198,
-  "titleTransform": "uppercase",
-  "lines": [
-    "Neuro-Linguistic Programming",
-    "for Dummies"
-  ],
-  "subline": "NLP",
+  "titleSize": 280,
+  "titleTransform": "none",
+  "lines": ["Neuro-Linguistic", "Programming"],
+  "subline": "Rewire your brain with the power of language.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "ROMILLA READY",
+  "pill": "NLP",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Neuro-Linguistic Programming for Dummies\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A simple brain outline (left hemisphere). Inside the brain, two neural pathways of dots. One pathway is being REDIRECTED — a red loop closes the circuit. -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Brain silhouette (left profile, simplified) -->\n    <path d=\"M -260 -200 Q -360 -200 -380 -120 Q -420 -60 -380 0 Q -420 60 -360 100 Q -340 160 -240 180 Q -180 220 -100 200 Q -40 220 40 180 Q 100 200 140 140 Q 200 80 180 0 Q 200 -80 140 -140 Q 100 -200 20 -200 Q -60 -240 -140 -220 Q -200 -240 -260 -200 Z\" stroke=\"#4c4c4c\" stroke-width=\"2\"/>\n    <!-- Old pathway: a chain of ash dots in a default zigzag -->\n    <g fill=\"#4c4c4c\">\n      <circle cx=\"-200\" cy=\"-100\" r=\"5\"/>\n      <circle cx=\"-140\" cy=\"-60\" r=\"5\"/>\n      <circle cx=\"-80\" cy=\"-100\" r=\"5\"/>\n      <circle cx=\"-20\" cy=\"-60\" r=\"5\"/>\n      <circle cx=\"40\" cy=\"-100\" r=\"5\"/>\n    </g>\n    <line x1=\"-200\" y1=\"-100\" x2=\"-140\" y2=\"-60\" stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.4\"/>\n    <line x1=\"-140\" y1=\"-60\" x2=\"-80\" y2=\"-100\" stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.4\"/>\n    <line x1=\"-80\" y1=\"-100\" x2=\"-20\" y2=\"-60\" stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.4\"/>\n    <line x1=\"-20\" y1=\"-60\" x2=\"40\" y2=\"-100\" stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.4\"/>\n    <!-- New pathway: a red arc that bypasses the loop -->\n    <path d=\"M 40 -100 Q 100 -200 0 -220 Q -100 -200 -200 -100\" stroke=\"#fc1c46\" stroke-width=\"2\" fill=\"none\"/>\n    <circle cx=\"-200\" cy=\"-100\" r=\"6\" fill=\"#fc1c46\"/>\n    <circle cx=\"40\" cy=\"-100\" r=\"6\" fill=\"#fc1c46\"/>\n    <!-- A few words along the red path (the 'linguistic' input) -->\n    <text x=\"-80\" y=\"-180\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#fc1c46\" letter-spacing=\"0.1em\">NEW</text>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">REWIRE THE BRAIN · REROUTE THE THOUGHT</text>\n</svg>",
+  "rationale": "A hairline brain silhouette. Inside: an old ash pathway of dots zigzagging in a default pattern, and a new RED arc that bypasses the loop, terminating in a red 6px dot on each end. The red arc is the linguistic input rerouting the neural net. Title 280px mixed case, two lines, weight 300."
 }

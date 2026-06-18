@@ -4,22 +4,23 @@
   "author": "Sukhinder Singh Cassidy",
   "category": "Self-Growth",
   "subtopics": "risk-taking, opportunity, mindset",
-  "year": "",
+  "year": "2022",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 198,
+  "titleWeight": 500,
+  "titleSize": 320,
   "titleTransform": "uppercase",
-  "lines": [
-    "Choose",
-    "Possibility"
-  ],
-  "subline": "risk-taking",
+  "lines": ["CHOOSE", "POSSIBILITY"],
+  "subline": "Why the only way to grow is to take more risks.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "SUKHINDER SINGH CASSIDY",
+  "pill": "RISK ON",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Choose Possibility\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- Two paths diverging. The 'safe' path goes straight ahead (ash). The 'possible' path branches diagonally, with a series of branching decisions (red). -->\n  <g transform=\"translate(0 1700)\" fill=\"none\">\n    <!-- Safe path: straight, gray -->\n    <g stroke=\"#4c4c4c\" stroke-width=\"2\" stroke-linecap=\"round\">\n      <line x1=\"0\" y1=\"0\" x2=\"1600\" y2=\"0\"/>\n    </g>\n    <!-- Possible path: branches and re-branches. The 'choice' is the red node where it diverges. -->\n    <g stroke=\"#cccccc\" stroke-width=\"2\" stroke-linecap=\"round\">\n      <path d=\"M 200 0 Q 280 -50 360 -120 Q 420 -180 480 -240\"/>\n      <path d=\"M 480 -240 Q 540 -280 620 -300 Q 700 -320 760 -380\"/>\n      <path d=\"M 620 -300 Q 680 -360 760 -380 Q 840 -400 920 -460\"/>\n      <path d=\"M 760 -380 Q 820 -420 900 -480 Q 1000 -500 1100 -480\"/>\n      <path d=\"M 1100 -480 Q 1200 -460 1280 -500 Q 1380 -540 1480 -580\"/>\n    </g>\n    <!-- The 'choice' node: where the possible path diverges from the safe path -->\n    <circle cx=\"200\" cy=\"0\" r=\"14\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"3\"/>\n    <circle cx=\"200\" cy=\"0\" r=\"5\" fill=\"#fc1c46\"/>\n    <!-- Other small choice nodes (graphite, smaller) -->\n    <circle cx=\"480\" cy=\"-240\" r=\"6\" fill=\"#cccccc\"/>\n    <circle cx=\"760\" cy=\"-380\" r=\"6\" fill=\"#cccccc\"/>\n    <circle cx=\"1100\" cy=\"-480\" r=\"6\" fill=\"#cccccc\"/>\n    <!-- Labels -->\n    <text x=\"20\" y=\"40\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">SAFE</text>\n    <text x=\"200\" y=\"-50\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#fc1c46\" letter-spacing=\"0.18em\">CHOOSE</text>\n    <text x=\"780\" y=\"-410\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#cccccc\" letter-spacing=\"0.18em\">POSSIBLE</text>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">EVERY CHOICE UNLOCKS THE NEXT</text>\n</svg>",
+  "rationale": "Two paths: a straight horizontal ash line ('SAFE') and a branching ash tree going up-and-right ('POSSIBLE'). The single point where the possible path branches off the safe one is the red dot — the 'CHOOSE' moment. Three smaller graphite dots mark sub-choices along the way. Title 320px uppercase, two lines, weight 500. The composition is a decision tree."
 }

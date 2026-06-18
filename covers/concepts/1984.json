@@ -4,21 +4,22 @@
   "author": "George Orwell",
   "category": "Society & Tech",
   "subtopics": "totalitarianism, surveillance, dystopia",
-  "year": "",
+  "year": "1949",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SOCIETY & TECH",
-  "motif": "mark",
+  "motif": "custom",
   "titlePos": "center",
   "titleWeight": 300,
   "titleSize": 540,
   "titleTransform": "uppercase",
-  "lines": [
-    "1984"
-  ],
-  "subline": "totalitarianism",
+  "lines": ["1984"],
+  "subline": "It was a bright cold day in April, and the clocks were striking thirteen.",
   "sublinePos": "subline-bot",
   "accent": "brand-bottom",
-  "brandMark": "THOUGHTLAB",
+  "brandMark": "BIG BROTHER",
+  "pill": "OCEANIA",
+  "pillPos": "bot",
   "redRule": "top",
-  "rationale": "motif=mark for \"1984\" (Society & Tech) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A giant eye outline. The '1984' title sits inside the eye. The pupil is RED. -->\n  <g transform=\"translate(800 1200)\" fill=\"none\" stroke-linejoin=\"round\">\n    <!-- Eye outline: an almond shape -->\n    <path d=\"M -800 0 Q 0 -400 800 0 Q 0 400 -800 0 Z\" stroke=\"#cccccc\" stroke-width=\"3\"/>\n    <!-- Inner eye ring -->\n    <circle cx=\"0\" cy=\"0\" r=\"280\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <!-- Iris -->\n    <circle cx=\"0\" cy=\"0\" r=\"220\" stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.7\"/>\n    <!-- Pupil: RED — the all-seeing eye -->\n    <circle cx=\"0\" cy=\"0\" r=\"100\" fill=\"#fc1c46\"/>\n    <!-- Tiny radial hairlines through the pupil, like an eye's catchlight -->\n    <g stroke=\"#ffffff\" stroke-width=\"1\" opacity=\"0.6\">\n      <line x1=\"-40\" y1=\"-40\" x2=\"-20\" y2=\"-20\"/>\n      <line x1=\"40\" y1=\"40\" x2=\"20\" y2=\"20\"/>\n    </g>\n  </g>\n</svg>",
+  "rationale": "A giant eye outline with a RED pupil. The 540px title '1984' sits at the center, inside the eye — Big Brother is watching. Subline is the famous opening line. Centered, weight 300."
 }

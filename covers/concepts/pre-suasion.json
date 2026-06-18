@@ -4,21 +4,22 @@
   "author": "Robert B. Cialdini",
   "category": "Negotiation",
   "subtopics": "attention, persuasion, framing",
-  "year": "",
+  "year": "2016",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "NEGOTIATION",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 198,
+  "titleSize": 320,
   "titleTransform": "uppercase",
-  "lines": [
-    "Pre-Suasion"
-  ],
-  "subline": "attention",
+  "lines": ["Pre-Suasion"],
+  "subline": "The most important moment is before the message.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "WINDOW",
+  "pill": "PRE",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Pre-Suasion\" (Negotiation) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A wide spotlight beam falling from above onto an empty stage. The beam is RED. The moment BEFORE the message (the dark area to the left). -->\n  <g transform=\"translate(800 1500)\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\">\n    <!-- The stage floor: a horizontal hairline -->\n    <line x1=\"-700\" y1=\"280\" x2=\"700\" y2=\"280\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <!-- The spotlight beam: a triangle of red light, narrowing as it falls -->\n    <path d=\"M -20 -400 L 20 -400 L 200 280 L -200 280 Z\" fill=\"#fc1c46\" opacity=\"0.18\"/>\n    <!-- The beam edges: two converging red lines from a single point above -->\n    <line x1=\"0\" y1=\"-440\" x2=\"-200\" y2=\"280\" stroke=\"#fc1c46\" stroke-width=\"2\"/>\n    <line x1=\"0\" y1=\"-440\" x2=\"200\" y2=\"280\" stroke=\"#fc1c46\" stroke-width=\"2\"/>\n    <!-- A single red dot at the apex (the message source) -->\n    <circle cx=\"0\" cy=\"-440\" r=\"10\" fill=\"#fc1c46\"/>\n    <!-- Tiny mark at the stage where the message lands -->\n    <circle cx=\"0\" cy=\"280\" r=\"6\" fill=\"#fc1c46\"/>\n    <!-- The dark area to the LEFT: pre-suasion territory. A dim arrow pointing to the bright moment -->\n    <line x1=\"-650\" y1=\"0\" x2=\"-220\" y2=\"0\" stroke=\"#4c4c4c\" stroke-width=\"1\" stroke-dasharray=\"4 6\"/>\n    <text x=\"-650\" y=\"-30\" text-anchor=\"start\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">PRE-SUASION</text>\n    <text x=\"650\" y=\"-30\" text-anchor=\"end\" font-size=\"14\" font-weight=\"500\" fill=\"#fc1c46\" letter-spacing=\"0.18em\">MESSAGE</text>\n    <!-- Stage whisper -->\n    <text x=\"0\" y=\"340\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">THE WINDOW OF ATTENTION</text>\n  </g>\n</svg>",
+  "rationale": "A red spotlight beam from above landing on a small dot on the stage. The dark area to the left is 'PRE-SUASION' (ash), the bright spot is 'MESSAGE' (red). 320px whisper title at the top — minimalist and tense."
 }

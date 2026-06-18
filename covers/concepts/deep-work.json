@@ -4,22 +4,23 @@
   "author": "Cal Newport",
   "category": "Productivity",
   "subtopics": "focus, deep work rules, distraction",
-  "year": "",
+  "year": "2016",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "PRODUCTIVITY",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 198,
+  "titleWeight": 500,
+  "titleSize": 420,
   "titleTransform": "uppercase",
-  "lines": [
-    "Deep",
-    "Work"
-  ],
-  "subline": "focus",
+  "lines": ["DEEP", "WORK"],
+  "subline": "Rules for focused success in a distracted world.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "CAL NEWPORT",
+  "pill": "4 PHILOSOPHIES",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Deep Work\" (Productivity) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A square/rectangle showing an isolated 'deep' workspace. Inside: a single hairline chair + desk with one monitor. Outside the square: noise — many small squares (notifications, distractions) flying around. One single red squiggle breaks INTO the deep work square. -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- The deep work boundary (a single 700x500 hairline rectangle) -->\n    <rect x=\"-350\" y=\"-250\" width=\"700\" height=\"500\" stroke=\"#4c4c4c\" stroke-width=\"2\"/>\n    <!-- Inside: a desk + monitor + chair -->\n    <g stroke=\"#cccccc\" stroke-width=\"1.5\">\n      <!-- Monitor -->\n      <rect x=\"-100\" y=\"-160\" width=\"200\" height=\"120\"/>\n      <line x1=\"-50\" y1=\"-40\" x2=\"50\" y2=\"-40\"/>\n      <line x1=\"0\" y1=\"-40\" x2=\"0\" y2=\"-20\"/>\n      <line x1=\"-40\" y1=\"-20\" x2=\"40\" y2=\"-20\"/>\n      <!-- Desk -->\n      <line x1=\"-200\" y1=\"-20\" x2=\"200\" y2=\"-20\"/>\n      <line x1=\"-200\" y1=\"-20\" x2=\"-200\" y2=\"60\"/>\n      <line x1=\"200\" y1=\"-20\" x2=\"200\" y2=\"60\"/>\n      <!-- Chair (back of chair, simple) -->\n      <line x1=\"0\" y1=\"60\" x2=\"0\" y2=\"180\"/>\n      <line x1=\"-40\" y1=\"180\" x2=\"40\" y2=\"180\"/>\n      <line x1=\"0\" y1=\"60\" x2=\"-30\" y2=\"0\"/>\n      <line x1=\"0\" y1=\"60\" x2=\"30\" y2=\"0\"/>\n    </g>\n    <!-- The single red notification SQUARE floating outside the box, with an arrow pointing IN -->\n    <rect x=\"380\" y=\"-180\" width=\"40\" height=\"40\" stroke=\"#fc1c46\" stroke-width=\"2\" fill=\"#fc1c46\"/>\n    <line x1=\"370\" y1=\"-100\" x2=\"320\" y2=\"-60\" stroke=\"#fc1c46\" stroke-width=\"2\"/>\n    <polyline points=\"300,-80 320,-60 340,-80\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"2\"/>\n    <text x=\"440\" y=\"-160\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#fc1c46\" letter-spacing=\"0.18em\">NOTIFICATION</text>\n    <!-- A few grey distraction dots outside the boundary (faint) -->\n    <g fill=\"#4c4c4c\" opacity=\"0.5\">\n      <circle cx=\"-450\" cy=\"-200\" r=\"6\"/>\n      <circle cx=\"-470\" cy=\"-150\" r=\"4\"/>\n      <circle cx=\"-460\" cy=\"-100\" r=\"5\"/>\n      <circle cx=\"-480\" cy=\"200\" r=\"5\"/>\n      <circle cx=\"-450\" cy=\"240\" r=\"4\"/>\n      <circle cx=\"480\" cy=\"100\" r=\"5\"/>\n      <circle cx=\"470\" cy=\"200\" r=\"6\"/>\n      <circle cx=\"450\" cy=\"240\" r=\"4\"/>\n    </g>\n  </g>
+  <text x=\"800\" y=\"2150\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">FOCUS IS THE NEW IQ</text>\n</svg>",
+  "rationale": "A single hairline rectangle (the deep work 'boundary') surrounds a simple desk, monitor, and chair. Outside the boundary: a few faint grey distraction dots floating. ONE red notification square sits outside the boundary with a small red arrow pointing IN — the only intrusion, the one you have to block. Title 420px uppercase, two lines, weight 500."
 }

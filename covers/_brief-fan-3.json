@@ -1,0 +1,352 @@
+[
+  {
+    "slug": "transform-your-business-from-a-cash-eating-monster-to-a-money-making-machine",
+    "title": "Profit First",
+    "author": "Mike Michalowicz",
+    "category": "Business & Career",
+    "subtopics": "profit, cash flow, business finance"
+  },
+  {
+    "slug": "built-not-born",
+    "title": "Built, Not Born",
+    "author": "Tom Golisano",
+    "category": "Business & Career",
+    "subtopics": "entrepreneurship, business finance, sales"
+  },
+  {
+    "slug": "the-first-90-days",
+    "title": "The First 90 Days",
+    "author": "Michael D. Watkins",
+    "category": "Business & Career",
+    "subtopics": "leadership transition, onboarding, new leader, strategy"
+  },
+  {
+    "slug": "built-to-last",
+    "title": "Built to Last",
+    "author": "Jim Collins",
+    "category": "Business & Career",
+    "subtopics": "company vision, enduring success, culture"
+  },
+  {
+    "slug": "the-art-of-gathering",
+    "title": "The Art of Gathering",
+    "author": "Priya Parker",
+    "category": "Business & Career",
+    "subtopics": "gatherings, community, hosting, connection"
+  },
+  {
+    "slug": "get-different",
+    "title": "Get Different",
+    "author": "Mike Michalowicz",
+    "category": "Business & Career",
+    "subtopics": "marketing, differentiation, growth, strategy"
+  },
+  {
+    "slug": "big-friendship",
+    "title": "Big Friendship",
+    "author": "Aminatou Sow",
+    "category": "Family",
+    "subtopics": "friendship, community, long-term bonds"
+  },
+  {
+    "slug": "if-youre-so-smart-why-arent-you-happy",
+    "title": "If You're So Smart, Why Aren't You Happy?",
+    "author": "Raj Raghunathan",
+    "category": "Happiness",
+    "subtopics": "happiness, success, decision-making, self-worth"
+  },
+  {
+    "slug": "lost-in-work",
+    "title": "Lost in Work",
+    "author": "",
+    "category": "Happiness",
+    "subtopics": "work, capitalism, meaning"
+  },
+  {
+    "slug": "be-here-now",
+    "title": "Be Here Now",
+    "author": "Ram Dass",
+    "category": "Happiness",
+    "subtopics": "presence, mindfulness, awakening"
+  },
+  {
+    "slug": "dear-life",
+    "title": "Dear Life",
+    "author": "Alice Munro",
+    "category": "Happiness",
+    "subtopics": "mortality, palliative care, meaning"
+  },
+  {
+    "slug": "the-book-of-hope",
+    "title": "The Book of Hope",
+    "author": "Jane Goodall",
+    "category": "Happiness",
+    "subtopics": "hope, resilience, human spirit"
+  },
+  {
+    "slug": "exercised",
+    "title": "Exercised",
+    "author": "Daniel E. Lieberman",
+    "category": "Health",
+    "subtopics": "exercise science, evolution, fitness"
+  },
+  {
+    "slug": "being-mortal",
+    "title": "Being Mortal",
+    "author": "Atul Gawande",
+    "category": "Health",
+    "subtopics": "aging, end of life, medicine"
+  },
+  {
+    "slug": "change-your-brain-change-your-life",
+    "title": "Change Your Brain, Change Your Life",
+    "author": "Daniel G. Amen",
+    "category": "Health",
+    "subtopics": "brain health, neuroscience, mental health"
+  },
+  {
+    "slug": "stuff-matters",
+    "title": "Stuff Matters",
+    "author": "Mark Miodownik",
+    "category": "Home & Environment",
+    "subtopics": "materials science, everyday objects, history"
+  },
+  {
+    "slug": "focus",
+    "title": "Focus",
+    "author": "Daniel Goleman",
+    "category": "Leadership",
+    "subtopics": "focus, attention, leadership effectiveness"
+  },
+  {
+    "slug": "the-fifth-discipline",
+    "title": "The Fifth Discipline",
+    "author": "Peter M. Senge",
+    "category": "Leadership",
+    "subtopics": "learning organizations, systems thinking, mental models"
+  },
+  {
+    "slug": "8-rules-of-love",
+    "title": "8 Rules of Love",
+    "author": "Jay Shetty",
+    "category": "Love & Sex",
+    "subtopics": "love, relationships, conflict resolution, growth"
+  },
+  {
+    "slug": "attached-the-new-science-of-adult-attachment-and-how-it-can-help-youfind",
+    "title": "Attached",
+    "author": "Amir Levine",
+    "category": "Love & Sex",
+    "subtopics": "attachment theory, relationships, security"
+  },
+  {
+    "slug": "breakup-bootcamp-the-science-of-rewiring-your-heart",
+    "title": "Breakup Bootcamp",
+    "author": "Amy Chan",
+    "category": "Love & Sex",
+    "subtopics": "breakups, recovery, relationships"
+  },
+  {
+    "slug": "think-and-grow-rich",
+    "title": "Think and Grow Rich",
+    "author": "Napoleon Hill",
+    "category": "Money & Investments",
+    "subtopics": "wealth mindset, desire, success"
+  },
+  {
+    "slug": "building-your-money-machine-how-to-get-your-money-to-work-harder-for-you-than-you-did-for-it",
+    "title": "Building Your Money Machine",
+    "author": "Michael Yardney",
+    "category": "Money & Investments",
+    "subtopics": "wealth building, passive income, investing"
+  },
+  {
+    "slug": "how-to-speed-read-people-think-like-a-psychologist-analyze-human-behavior-and-decode-emotions",
+    "title": "How to Speed Read People",
+    "author": "",
+    "category": "Negotiation",
+    "subtopics": "body language, psychology, behavior, emotions"
+  },
+  {
+    "slug": "never-split-the-difference",
+    "title": "Never Split the Difference",
+    "author": "Chris Voss",
+    "category": "Negotiation",
+    "subtopics": "tactical empathy, bargaining, tactics"
+  },
+  {
+    "slug": "conversation-casanova",
+    "title": "Conversation Casanova",
+    "author": "Damon D'Amico",
+    "category": "Negotiation",
+    "subtopics": "dating, attraction, conversation"
+  },
+  {
+    "slug": "is-everyone-hanging-out-without-me-and-other-concerns",
+    "title": "Is Everyone Hanging Out Without Me? (And Other Concerns)",
+    "author": "Mindy Kaling",
+    "category": "Personalities",
+    "subtopics": "memoir, comedy, adulthood"
+  },
+  {
+    "slug": "when-breath-becomes-air",
+    "title": "When Breath Becomes Air",
+    "author": "Paul Kalanithi",
+    "category": "Personalities",
+    "subtopics": "mortality, neurosurgery, memoir"
+  },
+  {
+    "slug": "questions-are-the-answer",
+    "title": "Questions Are the Answer",
+    "author": "Hal Gregersen",
+    "category": "Productivity",
+    "subtopics": "inquiry, problem solving, innovation"
+  },
+  {
+    "slug": "measure-what-matters",
+    "title": "Measure What Matters",
+    "author": "John Doerr",
+    "category": "Productivity",
+    "subtopics": "OKRs, goal setting, tracking progress"
+  },
+  {
+    "slug": "emotions-revealed-recognizing-faces-and-feelings-to-improve-communication-and-emotional-life",
+    "title": "Emotions Revealed",
+    "author": "Paul Ekman",
+    "category": "Self-Growth",
+    "subtopics": "emotions, body language, communication"
+  },
+  {
+    "slug": "dress-your-best-life",
+    "title": "Dress Your Best Life",
+    "author": "Dawn Lucy",
+    "category": "Self-Growth",
+    "subtopics": "fashion, confidence, personal style"
+  },
+  {
+    "slug": "rebel-ideas",
+    "title": "Rebel Ideas",
+    "author": "Matthew Syed",
+    "category": "Self-Growth",
+    "subtopics": "diversity of thought, problem solving, blind spots, group intelligence"
+  },
+  {
+    "slug": "die-empty",
+    "title": "Die Empty",
+    "author": "Todd Henry",
+    "category": "Self-Growth",
+    "subtopics": "creative contribution, lifelong growth, purpose"
+  },
+  {
+    "slug": "the-7-habits-of-highly-effective-people",
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "category": "Self-Growth",
+    "subtopics": "effectiveness, proactivity, synergy"
+  },
+  {
+    "slug": "atomic-habits",
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "category": "Self-Growth",
+    "subtopics": "habit formation, behavior change, 1% improvement"
+  },
+  {
+    "slug": "range",
+    "title": "Range",
+    "author": "David Epstein",
+    "category": "Self-Growth",
+    "subtopics": "generalists, learning, quitting"
+  },
+  {
+    "slug": "keep-it-moving",
+    "title": "Keep It Moving",
+    "author": "Desmond Tutu, Mpho Tutu",
+    "category": "Self-Growth",
+    "subtopics": "aging, growth, resilience"
+  },
+  {
+    "slug": "the-alter-ego-effect",
+    "title": "The Alter Ego Effect",
+    "author": "Todd Herman",
+    "category": "Self-Growth",
+    "subtopics": "identity, performance, confidence"
+  },
+  {
+    "slug": "why-won-t-you-apologize-healing-big-betrayals-and-everyday-hurts",
+    "title": "Why Won't You Apologize?",
+    "author": "Harriet Lerner",
+    "category": "Self-Growth",
+    "subtopics": "apology, healing, relationships"
+  },
+  {
+    "slug": "don-t-overthink-it",
+    "title": "Don't Overthink It",
+    "author": "",
+    "category": "Self-Growth",
+    "subtopics": "decision-making, values, simplicity"
+  },
+  {
+    "slug": "remember",
+    "title": "Remember",
+    "author": "Lisa Genova",
+    "category": "Self-Growth",
+    "subtopics": "memory, cognition, recall"
+  },
+  {
+    "slug": "falter",
+    "title": "Falter",
+    "author": "Bill McKibben",
+    "category": "Society & Tech",
+    "subtopics": "climate change, technology, human future"
+  },
+  {
+    "slug": "how-to-spend-a-trillion-dollars",
+    "title": "How to Spend a Trillion Dollars",
+    "author": "Rowan Hooper",
+    "category": "Society & Tech",
+    "subtopics": "global issues, science, climate, philanthropy"
+  },
+  {
+    "slug": "nickel-and-dimed",
+    "title": "Nickel and Dimed",
+    "author": "Barbara Ehrenreich",
+    "category": "Society & Tech",
+    "subtopics": "poverty, low-wage work, inequality"
+  },
+  {
+    "slug": "ukrayina-v-istoriiakh-ta-opovidiakh1",
+    "title": "\u0423\u043a\u0440\u0430\u0457\u043d\u0430 \u0432 \u0456\u0441\u0442\u043e\u0440\u0456\u044f\u0445 \u0442\u0430 \u043e\u043f\u043e\u0432\u0456\u0434\u0430\u043d\u043d\u044f\u0445",
+    "author": "",
+    "category": "Society & Tech",
+    "subtopics": "Ukraine, culture, history"
+  },
+  {
+    "slug": "the-future-of-the-mind",
+    "title": "The Future of the Mind",
+    "author": "Michio Kaku",
+    "category": "Society & Tech",
+    "subtopics": "neuroscience, brain, consciousness, future tech"
+  },
+  {
+    "slug": "entangled-life",
+    "title": "Entangled Life",
+    "author": "Merlin Sheldrake",
+    "category": "Society & Tech",
+    "subtopics": "fungi, ecology, biology"
+  },
+  {
+    "slug": "a-cup-of-zen-21-short-stories-to-calm-the-mind-stop-overthinking-and-find-inner-peace",
+    "title": "A Cup of Zen",
+    "author": "",
+    "category": "Spirituality",
+    "subtopics": "zen, mindfulness, short stories, inner peace"
+  },
+  {
+    "slug": "how-to-live",
+    "title": "How to Live",
+    "author": "Sarah Bakewell",
+    "category": "Spirituality",
+    "subtopics": "Montaigne, philosophy, meaning"
+  }
+]

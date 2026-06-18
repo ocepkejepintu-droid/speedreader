@@ -4,21 +4,22 @@
   "author": "Jenna Macciochi",
   "category": "Health",
   "subtopics": "immune system, sleep, mental health, prevention",
-  "year": "",
+  "year": "2020",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "HEALTH",
-  "motif": "split",
+  "motif": "custom",
   "titlePos": "top",
   "titleWeight": 300,
-  "titleSize": 540,
+  "titleSize": 520,
   "titleTransform": "uppercase",
-  "lines": [
-    "Immunity"
-  ],
-  "subline": "immune system",
+  "lines": ["IMMUNITY"],
+  "subline": "The science of staying well.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "DR. JENNA MACCIOCHI",
+  "pill": "SCIENCE",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=split for \"Immunity\" (Health) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A giant concentric 'shield' or 'cell wall' graphic. Outer ring of graphite, then ash, then a small red core. White blood cells (small white circles with red dots) patrol the rings. -->\n  <g transform=\"translate(800 1650)\" fill=\"none\">\n    <!-- Concentric rings -->\n    <circle cx=\"0\" cy=\"0\" r=\"480\" stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.6\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"380\" stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.5\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"280\" stroke=\"#cccccc\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"180\" stroke=\"#cccccc\" stroke-width=\"1.5\" opacity=\"0.8\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"100\" stroke=\"#ffffff\" stroke-width=\"2\"/>\n    <circle cx=\"0\" cy=\"0\" r=\"14\" fill=\"#fc1c46\"/>\n    <!-- Patrolling white blood cells: small filled circles on the rings -->\n    <g fill=\"#ffffff\">\n      <circle cx=\"480\" cy=\"0\" r=\"8\"/>\n      <circle cx=\"-340\" cy=\"-340\" r=\"8\"/>\n      <circle cx=\"280\" cy=\"280\" r=\"8\"/>\n      <circle cx=\"-180\" cy=\"180\" r=\"8\"/>\n      <circle cx=\"100\" cy=\"-380\" r=\"8\"/>\n      <circle cx=\"-100\" cy=\"280\" r=\"8\"/>\n    </g>\n    <!-- Each white cell has a red dot inside -->\n    <g fill=\"#fc1c46\">\n      <circle cx=\"480\" cy=\"0\" r=\"3\"/>\n      <circle cx=\"-340\" cy=\"-340\" r=\"3\"/>\n      <circle cx=\"280\" cy=\"280\" r=\"3\"/>\n      <circle cx=\"-180\" cy=\"180\" r=\"3\"/>\n      <circle cx=\"100\" cy=\"-380\" r=\"3\"/>\n      <circle cx=\"-100\" cy=\"280\" r=\"3\"/>\n    </g>\n    <!-- Ticks (defense lines) pointing inward -->\n    <g stroke=\"#4c4c4c\" stroke-width=\"1\" opacity=\"0.5\">\n      <line x1=\"0\" y1=\"-480\" x2=\"0\" y2=\"-520\"/>\n      <line x1=\"480\" y1=\"0\" x2=\"520\" y2=\"0\"/>\n      <line x1=\"0\" y1=\"480\" x2=\"0\" y2=\"520\"/>\n      <line x1=\"-480\" y1=\"0\" x2=\"-520\" y2=\"0\"/>\n    </g>\n    <text x=\"0\" y=\"600\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">YOUR INVISIBLE ARMY</text>\n  </g>\n</svg>",
+  "rationale": "Concentric rings (graphite fading to white) with six small white blood cells patrolling the rings — each with a red dot at its center. The core is a single red dot. The composition reads as a top-down view of a single cell and its immune defenders. Title 520px uppercase, weight 300, sits as a single word at the top — 'IMMUNITY' is the cover."
 }

@@ -1,25 +1,25 @@
 {
   "slug": "killing-sacred-cows-overcoming-the-financial-myths-that-are-destroying-your-prosperity",
   "title": "Killing Sacred Cows",
-  "author": "Garrett B. Gunderson, Stephen Palmer",
+  "author": "Garrett B. Gunderson & Stephen Palmer",
   "category": "Money & Investments",
   "subtopics": "financial myths, wealth building, prosperity",
-  "year": "",
+  "year": "2016",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "MONEY & INVESTMENTS",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 198,
+  "titleWeight": 500,
+  "titleSize": 320,
   "titleTransform": "uppercase",
-  "lines": [
-    "Killing",
-    "Sacred Cows"
-  ],
-  "subline": "financial myths",
+  "lines": ["KILLING", "SACRED COWS"],
+  "subline": "Overcoming the financial myths destroying your prosperity.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "5 MYTHS",
+  "pill": "5",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Killing Sacred Cows\" (Money & Investments) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- 5 cows in a row, each labeled with a financial myth. The middle cow (myth #3) has a red X through it. -->\n  <g transform=\"translate(0 1600)\" fill=\"none\">\n    <!-- Cow 1: silhouette of a cow facing right, simple shapes -->\n    <g transform=\"translate(180 0)\">\n      <g stroke=\"#4c4c4c\" stroke-width=\"2\" fill=\"none\">\n        <ellipse cx=\"0\" cy=\"0\" rx=\"80\" ry=\"50\"/>\n        <line x1=\"-80\" y1=\"20\" x2=\"-80\" y2=\"80\"/>\n        <line x1=\"-50\" y1=\"20\" x2=\"-50\" y2=\"80\"/>\n        <line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"80\"/>\n        <line x1=\"80\" y1=\"20\" x2=\"80\" y2=\"80\"/>\n        <ellipse cx=\"-70\" cy=\"-30\" rx=\"20\" ry=\"15\"/>\n        <line x1=\"-50\" y1=\"-15\" x2=\"-30\" y2=\"-15\"/>\n        <line x1=\"-50\" y1=\"-25\" x2=\"-30\" y2=\"-25\"/>\n        <line x1=\"-90\" y1=\"-20\" x2=\"-100\" y2=\"-50\"/>\n        <line x1=\"-70\" y1=\"-30\" x2=\"-80\" y2=\"-55\"/>\n      </g>\n      <text x=\"0\" y=\"160\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">SAVINGS</text>\n    </g>\n    <g transform=\"translate(460 0)\">\n      <g stroke=\"#4c4c4c\" stroke-width=\"2\" fill=\"none\">\n        <ellipse cx=\"0\" cy=\"0\" rx=\"80\" ry=\"50\"/>\n        <line x1=\"-80\" y1=\"20\" x2=\"-80\" y2=\"80\"/>\n        <line x1=\"-50\" y1=\"20\" x2=\"-50\" y2=\"80\"/>\n        <line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"80\"/>\n        <line x1=\"80\" y1=\"20\" x2=\"80\" y2=\"80\"/>\n        <ellipse cx=\"-70\" cy=\"-30\" rx=\"20\" ry=\"15\"/>\n        <line x1=\"-50\" y1=\"-15\" x2=\"-30\" y2=\"-15\"/>\n        <line x1=\"-50\" y1=\"-25\" x2=\"-30\" y2=\"-25\"/>\n        <line x1=\"-90\" y1=\"-20\" x2=\"-100\" y2=\"-50\"/>\n        <line x1=\"-70\" y1=\"-30\" x2=\"-80\" y2=\"-55\"/>\n      </g>\n      <text x=\"0\" y=\"160\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">DEBT</text>\n    </g>\n    <!-- Cow 3: RED, X'd out -->\n    <g transform=\"translate(740 0)\">\n      <g stroke=\"#fc1c46\" stroke-width=\"2.5\" fill=\"none\">\n        <ellipse cx=\"0\" cy=\"0\" rx=\"80\" ry=\"50\"/>\n        <line x1=\"-80\" y1=\"20\" x2=\"-80\" y2=\"80\"/>\n        <line x1=\"-50\" y1=\"20\" x2=\"-50\" y2=\"80\"/>\n        <line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"80\"/>\n        <line x1=\"80\" y1=\"20\" x2=\"80\" y2=\"80\"/>\n        <ellipse cx=\"-70\" cy=\"-30\" rx=\"20\" ry=\"15\"/>\n        <line x1=\"-50\" y1=\"-15\" x2=\"-30\" y2=\"-15\"/>\n        <line x1=\"-50\" y1=\"-25\" x2=\"-30\" y2=\"-25\"/>\n        <line x1=\"-90\" y1=\"-20\" x2=\"-100\" y2=\"-50\"/>\n        <line x1=\"-70\" y1=\"-30\" x2=\"-80\" y2=\"-55\"/>\n      </g>\n      <!-- The X -->\n      <line x1=\"-100\" y1=\"-90\" x2=\"100\" y2=\"80\" stroke=\"#fc1c46\" stroke-width=\"5\"/>\n      <line x1=\"100\" y1=\"-90\" x2=\"-100\" y2=\"80\" stroke=\"#fc1c46\" stroke-width=\"5\"/>\n      <text x=\"0\" y=\"160\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#fc1c46\" letter-spacing=\"0.18em\">RETIREMENT</text>\n    </g>\n    <g transform=\"translate(1020 0)\">\n      <g stroke=\"#4c4c4c\" stroke-width=\"2\" fill=\"none\">\n        <ellipse cx=\"0\" cy=\"0\" rx=\"80\" ry=\"50\"/>\n        <line x1=\"-80\" y1=\"20\" x2=\"-80\" y2=\"80\"/>\n        <line x1=\"-50\" y1=\"20\" x2=\"-50\" y2=\"80\"/>\n        <line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"80\"/>\n        <line x1=\"80\" y1=\"20\" x2=\"80\" y2=\"80\"/>\n        <ellipse cx=\"-70\" cy=\"-30\" rx=\"20\" ry=\"15\"/>\n        <line x1=\"-50\" y1=\"-15\" x2=\"-30\" y2=\"-15\"/>\n        <line x1=\"-50\" y1=\"-25\" x2=\"-30\" y2=\"-25\"/>\n        <line x1=\"-90\" y1=\"-20\" x2=\"-100\" y2=\"-50\"/>\n        <line x1=\"-70\" y1=\"-30\" x2=\"-80\" y2=\"-55\"/>\n      </g>\n      <text x=\"0\" y=\"160\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">BUDGET</text>\n    </g>\n    <g transform=\"translate(1300 0)\">\n      <g stroke=\"#4c4c4c\" stroke-width=\"2\" fill=\"none\">\n        <ellipse cx=\"0\" cy=\"0\" rx=\"80\" ry=\"50\"/>\n        <line x1=\"-80\" y1=\"20\" x2=\"-80\" y2=\"80\"/>\n        <line x1=\"-50\" y1=\"20\" x2=\"-50\" y2=\"80\"/>\n        <line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"80\"/>\n        <line x1=\"80\" y1=\"20\" x2=\"80\" y2=\"80\"/>\n        <ellipse cx=\"-70\" cy=\"-30\" rx=\"20\" ry=\"15\"/>\n        <line x1=\"-50\" y1=\"-15\" x2=\"-30\" y2=\"-15\"/>\n        <line x1=\"-50\" y1=\"-25\" x2=\"-30\" y2=\"-25\"/>\n        <line x1=\"-90\" y1=\"-20\" x2=\"-100\" y2=\"-50\"/>\n        <line x1=\"-70\" y1=\"-30\" x2=\"-80\" y2=\"-55\"/>\n      </g>\n      <text x=\"0\" y=\"160\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.18em\">DIVERSIFY</text>\n    </g>\n  </g>\n  <text x=\"800\" y=\"2050\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">A LIE IS STILL A LIE, EVEN IF MILLIONS BELIEVE IT</text>\n</svg>",
+  "rationale": "Five identical hairline cow silhouettes in a row, each labeled with a different financial myth (savings, debt, retirement, budget, diversify). The middle one — 'RETIREMENT' — is the sacred cow, rendered in red 2.5px stroke and crossed out with a thick red X. Title 320px uppercase, two lines, weight 500. The visual: row of cows, one slayed."
 }

@@ -175,6 +175,7 @@ const html = `<!doctype html>
     ${titlePos === 'center' ? 'top: 50%; transform: translateY(-50%);' : ''}
     ${titlePos === 'bottom' ? 'bottom: 200px;' : ''}
     ${titlePos === 'split' ? 'top: 880px;' : ''}
+    ${titlePos === 'custom' && Number.isFinite(concept.titleTop) ? 'top: ' + concept.titleTop + 'px;' : ''}
   }
   .title-line {
     font-weight: ${titleWeight};
@@ -187,7 +188,7 @@ const html = `<!doctype html>
   }
   .author-block {
     position: absolute;
-    ${titlePos === 'bottom' ? 'top: 200px; left: 126px; right: 126px;' : 'bottom: 200px; left: 126px; right: 126px;'}
+    ${titlePos === 'bottom' || titlePos === 'split' ? 'top: 200px; left: 126px; right: 126px;' : 'bottom: 200px; left: 126px; right: 126px;'}
     font-size: 27px; font-weight: 400; color: #cccccc; line-height: 1.2;
     letter-spacing: -0.009em;
   }

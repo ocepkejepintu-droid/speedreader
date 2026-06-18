@@ -4,21 +4,23 @@
   "author": "Samantha Parker",
   "category": "Self-Growth",
   "subtopics": "manipulation, recovery, boundaries",
-  "year": "",
+  "year": "2018",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 198,
+  "titleWeight": 500,
+  "titleSize": 420,
   "titleTransform": "uppercase",
-  "lines": [
-    "Gaslighting"
-  ],
-  "subline": "manipulation",
+  "lines": ["GASLIGHTING"],
+  "subline": "Recognize manipulative and emotionally abusive people — and break free.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "SELF-TRUTH",
+  "pill": "RED FLAG",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Gaslighting\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A gas streetlight: a single lamp post with a lamp head. The lamp's light is rendered as a small red halo (the 'gas' that manipulates your reality). The post is in ash, the lamp's glow is RED. -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- Lamp post -->\n    <line x1=\"0\" y1=\"300\" x2=\"0\" y2=\"-100\" stroke=\"#cccccc\" stroke-width=\"3\"/>\n    <line x1=\"-60\" y1=\"-100\" x2=\"60\" y2=\"-100\" stroke=\"#cccccc\" stroke-width=\"3\"/>\n    <!-- Lamp head (triangular) -->\n    <path d=\"M -80 -100 L 0 -240 L 80 -100 Z\" stroke=\"#cccccc\" stroke-width=\"2.5\" fill=\"none\"/>\n    <!-- Lamp glow: a small red disc + 4 expanding circles -->\n    <circle cx=\"0\" cy=\"-100\" r=\"14\" fill=\"#fc1c46\"/>\n    <circle cx=\"0\" cy=\"-100\" r=\"40\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"1.5\" opacity=\"0.5\"/>\n    <circle cx=\"0\" cy=\"-100\" r=\"80\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"1\" opacity=\"0.3\"/>\n    <circle cx=\"0\" cy=\"-100\" r=\"140\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"1\" opacity=\"0.18\"/>\n    <!-- Light beams radiating downward -->\n    <g stroke=\"#fc1c46\" stroke-width=\"1\" opacity=\"0.4\">\n      <line x1=\"0\" y1=\"-100\" x2=\"-200\" y2=\"300\"/>\n      <line x1=\"0\" y1=\"-100\" x2=\"-100\" y2=\"300\"/>\n      <line x1=\"0\" y1=\"-100\" x2=\"0\" y2=\"300\"/>\n      <line x1=\"0\" y1=\"-100\" x2=\"100\" y2=\"300\"/>\n      <line x1=\"0\" y1=\"-100\" x2=\"200\" y2=\"300\"/>\n    </g>\n    <!-- Foundation rule -->\n    <line x1=\"-100\" y1=\"300\" x2=\"100\" y2=\"300\" stroke=\"#4c4c4c\" stroke-width=\"2\"/>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">WHEN THE LAMP IS RED, THE STREET IS NOT SAFE</text>\n</svg>",
+  "rationale": "A single gas streetlight: ash lamp post, ash triangular lamp head, with a red 14px filled disc as the lit flame and 4 expanding red circles as the glow. Five faint red light beams radiate downward. The composition is a literal 'gas' streetlight that lights the wrong things. Title 420px uppercase, single word 'GASLIGHTING', weight 500."
 }

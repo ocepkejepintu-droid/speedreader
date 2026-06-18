@@ -1,0 +1,345 @@
+[
+  {
+    "slug": "hug-your-haters",
+    "title": "Hug Your Haters",
+    "author": "Jay Baer",
+    "category": "Business & Career",
+    "subtopics": "customer service, complaints, business, online reviews"
+  },
+  {
+    "slug": "12-months-to-1-million",
+    "title": "12 Months to $1 Million",
+    "author": "Ryan Daniel Moran",
+    "category": "Business & Career",
+    "subtopics": "entrepreneurship, brand building, sales"
+  },
+  {
+    "slug": "fix-this-next",
+    "title": "Fix This Next",
+    "author": "Mike Michalowicz",
+    "category": "Business & Career",
+    "subtopics": "business priorities, growth, sustainability"
+  },
+  {
+    "slug": "the-advantage",
+    "title": "The Advantage",
+    "author": "Patrick Lencioni",
+    "category": "Business & Career",
+    "subtopics": "organizational health, teamwork, leadership"
+  },
+  {
+    "slug": "real-artists-dont-starve",
+    "title": "Real Artists Don't Starve",
+    "author": "Jeff Goins",
+    "category": "Business & Career",
+    "subtopics": "creativity, money, marketing"
+  },
+  {
+    "slug": "crossing-the-chasm",
+    "title": "Crossing the Chasm",
+    "author": "Geoffrey A. Moore",
+    "category": "Business & Career",
+    "subtopics": "tech marketing, chasm strategy, niche"
+  },
+  {
+    "slug": "1-2-3-magic-for-christian-parents",
+    "title": "1-2-3 Magic for Christian Parents",
+    "author": "Thomas W. Phelan",
+    "category": "Family",
+    "subtopics": "parenting, discipline, Christian faith"
+  },
+  {
+    "slug": "have-a-beautiful-terrible-day-daily-meditations-for-the-ups-downs-and-in-betweens",
+    "title": "Have a Beautiful, Terrible Day!",
+    "author": "Kate Bowler",
+    "category": "Happiness",
+    "subtopics": "meditation, mindfulness, daily affirmations, calm"
+  },
+  {
+    "slug": "missing-each-other",
+    "title": "Missing Each Other",
+    "author": "Edward S. Brodkin, Ashley Pallathra",
+    "category": "Happiness",
+    "subtopics": "attunement, connection, social media, relationships"
+  },
+  {
+    "slug": "the-hero-with-a-thousand-faces",
+    "title": "The Hero With a Thousand Faces",
+    "author": "Joseph Campbell",
+    "category": "Happiness",
+    "subtopics": "mythology, hero's journey, archetypes"
+  },
+  {
+    "slug": "radical-compassion-learning-to-love-yourself-and-your-world-with-the-practice-of-rain",
+    "title": "Radical Compassion",
+    "author": "Tara Brach",
+    "category": "Happiness",
+    "subtopics": "self-compassion, forgiveness, mindfulness"
+  },
+  {
+    "slug": "anxious-for-nothing",
+    "title": "Anxious for Nothing",
+    "author": "Max Lucado",
+    "category": "Happiness",
+    "subtopics": "anxiety, faith, calm"
+  },
+  {
+    "slug": "living-with-a-seal",
+    "title": "Living with a SEAL",
+    "author": "Travis Bradberry",
+    "category": "Health",
+    "subtopics": "endurance, training, discipline"
+  },
+  {
+    "slug": "glucose-revolution",
+    "title": "Glucose Revolution",
+    "author": "Jessie Inchausp\u00e9",
+    "category": "Health",
+    "subtopics": "glucose, nutrition, blood sugar, inflammation"
+  },
+  {
+    "slug": "dopamine-nation",
+    "title": "Dopamine Nation",
+    "author": "Anna Lembke",
+    "category": "Health",
+    "subtopics": "addiction, pleasure, pain, self-control"
+  },
+  {
+    "slug": "an-immense-world",
+    "title": "An Immense World",
+    "author": "Ed Yong",
+    "category": "Home & Environment",
+    "subtopics": "animal senses, perception, biology"
+  },
+  {
+    "slug": "radical-candor",
+    "title": "Radical Candor",
+    "author": "Kim Scott",
+    "category": "Leadership",
+    "subtopics": "feedback, management, workplace relationships"
+  },
+  {
+    "slug": "the-obstacle-is-the-way",
+    "title": "The Obstacle Is the Way",
+    "author": "Ryan Holiday",
+    "category": "Leadership",
+    "subtopics": "perseverance, perspective, action"
+  },
+  {
+    "slug": "sheet-music",
+    "title": "Sheet Music",
+    "author": "Joanne Lipman, Melanie Kupchynsky",
+    "category": "Love & Sex",
+    "subtopics": "desire, marriage, intimacy"
+  },
+  {
+    "slug": "how-to-be-an-adult-in-relationships",
+    "title": "How to Be an Adult in Relationships",
+    "author": "David Richo",
+    "category": "Love & Sex",
+    "subtopics": "intimacy, trust, conflict, communication"
+  },
+  {
+    "slug": "dollars-and-sex",
+    "title": "Dollars and Sex",
+    "author": "Marshall G. Miller",
+    "category": "Love & Sex",
+    "subtopics": "dating, marriage, relationships"
+  },
+  {
+    "slug": "digital-gold",
+    "title": "Digital Gold",
+    "author": "Nathaniel Popper",
+    "category": "Money & Investments",
+    "subtopics": "Bitcoin, cryptocurrency, digital money"
+  },
+  {
+    "slug": "i-will-teach-you-to-be-rich",
+    "title": "I Will Teach You to Be Rich",
+    "author": "Ramit Sethi",
+    "category": "Money & Investments",
+    "subtopics": "personal finance, automation, investing, savings"
+  },
+  {
+    "slug": "influencer",
+    "title": "Influencer",
+    "author": "Joseph Grenny, Kerry Patterson et al.",
+    "category": "Negotiation",
+    "subtopics": "influence, behavior change, motivation"
+  },
+  {
+    "slug": "pre-suasion",
+    "title": "Pre-Suasion",
+    "author": "Robert B. Cialdini",
+    "category": "Negotiation",
+    "subtopics": "attention, persuasion, framing"
+  },
+  {
+    "slug": "what-every-body-is-saying",
+    "title": "What Every BODY Is Saying",
+    "author": "Joe Navarro",
+    "category": "Negotiation",
+    "subtopics": "body language, nonverbal cues, reading people"
+  },
+  {
+    "slug": "hidden-valley-road",
+    "title": "Hidden Valley Road",
+    "author": "Robert Kolker",
+    "category": "Personalities",
+    "subtopics": "schizophrenia, family memoir, mental health, science"
+  },
+  {
+    "slug": "all-secure",
+    "title": "All Secure",
+    "author": "",
+    "category": "Personalities",
+    "subtopics": "military memoir, special forces, combat"
+  },
+  {
+    "slug": "the-bullet-journal-method",
+    "title": "The Bullet Journal Method",
+    "author": "Ryder Carroll",
+    "category": "Productivity",
+    "subtopics": "journaling, organization, mindfulness, productivity"
+  },
+  {
+    "slug": "how-to-do-it-now-because-its-not-going-away",
+    "title": "How to Do It Now Because It's Not Going Away",
+    "author": "",
+    "category": "Productivity",
+    "subtopics": "procrastination, focus, routines"
+  },
+  {
+    "slug": "dopamine-detox",
+    "title": "Dopamine Detox",
+    "author": "Thibaut Meurisse",
+    "category": "Self-Growth",
+    "subtopics": "dopamine, focus, productivity, mindfulness"
+  },
+  {
+    "slug": "i-don-t-want-to-talk-about-it-overcoming-the-secret-legacy-of-male-depression",
+    "title": "I Don't Want to Talk About It",
+    "author": "Terrence Real",
+    "category": "Self-Growth",
+    "subtopics": "male depression, hidden pain, mental health, healing"
+  },
+  {
+    "slug": "let-go-now",
+    "title": "Let Go Now",
+    "author": "Karen Casey",
+    "category": "Self-Growth",
+    "subtopics": "attachment, acceptance, freedom, letting go"
+  },
+  {
+    "slug": "30-dias-cambia-de-habitos-cambia-de-vida-algunos-pasos-simples-cada-dia-para-crear-la-vida-que-deseas",
+    "title": "30 D\u00edas: Cambia de h\u00e1bitos, cambia de vida",
+    "author": "Greg S. Reid",
+    "category": "Self-Growth",
+    "subtopics": "habits, discipline, perseverance"
+  },
+  {
+    "slug": "codependent-no-more",
+    "title": "Codependent No More",
+    "author": "Melody Beattie",
+    "category": "Self-Growth",
+    "subtopics": "codependency, recovery, boundaries"
+  },
+  {
+    "slug": "the-power-of-your-subconscious-mind",
+    "title": "The Power of Your Subconscious Mind",
+    "author": "Joseph Murphy",
+    "category": "Self-Growth",
+    "subtopics": "subconscious, healing, prayer"
+  },
+  {
+    "slug": "for-the-love",
+    "title": "For The Love",
+    "author": "",
+    "category": "Self-Growth",
+    "subtopics": "balance, women's empowerment, calling, compromise"
+  },
+  {
+    "slug": "think-again",
+    "title": "Think Again",
+    "author": "Adam Grant",
+    "category": "Self-Growth",
+    "subtopics": "rethinking, debate, learning"
+  },
+  {
+    "slug": "how-to-do-the-work",
+    "title": "How to Do the Work",
+    "author": "Nicole LePera",
+    "category": "Self-Growth",
+    "subtopics": "self-healing, trauma, boundaries"
+  },
+  {
+    "slug": "invicto-logra-mas-sufre-menos",
+    "title": "Invicto",
+    "author": "",
+    "category": "Self-Growth",
+    "subtopics": "resilience, planning, determination, self-improvement"
+  },
+  {
+    "slug": "the-creative-act",
+    "title": "The Creative Act",
+    "author": "Rick Rubin",
+    "category": "Self-Growth",
+    "subtopics": "creativity, art, presence, creative process"
+  },
+  {
+    "slug": "thinking-in-bets",
+    "title": "Thinking in Bets",
+    "author": "Annie Duke",
+    "category": "Self-Growth",
+    "subtopics": "decision-making, probability, bias, risk"
+  },
+  {
+    "slug": "a-guide-to-gender",
+    "title": "A Guide to Gender",
+    "author": "Anouchka Grose",
+    "category": "Society & Tech",
+    "subtopics": "gender, social justice, identity"
+  },
+  {
+    "slug": "1984",
+    "title": "1984",
+    "author": "George Orwell",
+    "category": "Society & Tech",
+    "subtopics": "totalitarianism, surveillance, dystopia"
+  },
+  {
+    "slug": "the-new-climate-war",
+    "title": "The New Climate War",
+    "author": "Michael Mann",
+    "category": "Society & Tech",
+    "subtopics": "climate, misinformation, policy"
+  },
+  {
+    "slug": "the-big-short",
+    "title": "The Big Short",
+    "author": "Michael Lewis",
+    "category": "Society & Tech",
+    "subtopics": "financial crisis, subprime, Wall Street"
+  },
+  {
+    "slug": "how-to-avoid-a-climate-disaster",
+    "title": "How to Avoid a Climate Disaster",
+    "author": "Bill Gates",
+    "category": "Society & Tech",
+    "subtopics": "climate, greenhouse gases, energy, sustainability"
+  },
+  {
+    "slug": "american-prison",
+    "title": "American Prison",
+    "author": "",
+    "category": "Society & Tech",
+    "subtopics": "prison system, privatization, reform"
+  },
+  {
+    "slug": "the-seat-of-the-soul",
+    "title": "The Seat of the Soul",
+    "author": "Gary Zukav",
+    "category": "Spirituality",
+    "subtopics": "soul, karma, spiritual path"
+  }
+]

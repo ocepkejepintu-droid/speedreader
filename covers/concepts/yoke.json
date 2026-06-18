@@ -4,21 +4,23 @@
   "author": "Jesselyn Radack",
   "category": "Spirituality",
   "subtopics": "yoga, mindfulness, faith",
-  "year": "",
+  "year": "2020",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SPIRITUALITY",
-  "motif": "orb",
-  "titlePos": "top",
+  "motif": "custom",
+  "titlePos": "center",
   "titleWeight": 300,
-  "titleSize": 540,
-  "titleTransform": "uppercase",
-  "lines": [
-    "Yoke"
-  ],
-  "subline": "yoga",
-  "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "titleSize": 360,
+  "titleTransform": "italic",
+  "lines": ["Yoke"],
+  "subline": "Finding the sacred in the everyday.",
+  "sublinePos": "subline-top",
+  "accent": "brand-bottom",
+  "brandMark": "अ + य",
+  "pill": "YOGA",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Yoke\" (Spirituality) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A yoga figure in tree pose (vrksasana): stick-figure person balanced on one leg, arms raised overhead, fingers touching. The body is hairline, the fingers meet at a red dot (the 'bind point' / third eye). -->\n  <g transform=\"translate(800 1280)\" fill=\"none\" stroke-width=\"3\">\n    <!-- A hairline horizon line (the ground) -->\n    <line x1=\"-300\" y1=\"320\" x2=\"300\" y2=\"320\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <!-- The figure: head + body + raised arms + one leg standing + other leg folded -->\n    <g stroke=\"#cccccc\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <!-- Head -->\n      <circle cx=\"0\" cy=\"-340\" r=\"36\"/>\n      <!-- Body/torso -->\n      <line x1=\"0\" y1=\"-304\" x2=\"0\" y2=\"40\"/>\n      <!-- Raised arms (overhead) -->\n      <line x1=\"0\" y1=\"-260\" x2=\"-100\" y2=\"-440\"/>\n      <line x1=\"0\" y1=\"-260\" x2=\"100\" y2=\"-440\"/>\n      <!-- A second pair of arms slightly lower -->\n      <line x1=\"0\" y1=\"-200\" x2=\"-80\" y2=\"-320\"/>\n      <line x1=\"0\" y1=\"-200\" x2=\"80\" y2=\"-320\"/>\n      <!-- The standing leg (left) -->\n      <line x1=\"0\" y1=\"40\" x2=\"-40\" y2=\"320\"/>\n      <!-- The folded leg (bent at knee, foot on inner thigh) -->\n      <line x1=\"0\" y1=\"40\" x2=\"80\" y2=\"120\"/>\n      <line x1=\"80\" y1=\"120\" x2=\"40\" y2=\"220\"/>\n      <line x1=\"40\" y1=\"220\" x2=\"0\" y2=\"180\"/>\n    </g>\n    <!-- The 'bind point' — red dot where the fingertips meet overhead -->\n    <circle cx=\"0\" cy=\"-460\" r=\"14\" fill=\"#fc1c46\"/>\n    <!-- A faint red halo radiating from the bind point -->\n    <circle cx=\"0\" cy=\"-460\" r=\"36\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"1\" opacity=\"0.4\"/>\n    <circle cx=\"0\" cy=\"-460\" r=\"60\" fill=\"none\" stroke=\"#fc1c46\" stroke-width=\"1\" opacity=\"0.2\"/>\n    <!-- A red dot at the third eye (between the brows) -->\n    <circle cx=\"0\" cy=\"-360\" r=\"6\" fill=\"#fc1c46\"/>\n  </g>
+</svg>",
+  "rationale": "Yoga = yoke = union. A literal stick-figure person in tree pose (vrksasana), standing on one leg, the other foot folded at the inner thigh, arms raised overhead with fingertips meeting. The fingertip bind point is a RED 14px dot with a faint red halo radiating outward. A small red dot at the third eye. The figure is hairline; the sacred points are red. Title sits centered (the 'Yoke' word, 360px italic weight 300, the 'y' descends into a long tail). Brand 'अ + य' (the Devanagari letters) in the bottom-right; pill 'YOGA' at the top."
 }

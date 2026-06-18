@@ -1,0 +1,380 @@
+[
+  {
+    "slug": "competition-demystified",
+    "title": "Competition Demystified",
+    "author": "Brent Beshore",
+    "category": "Business & Career",
+    "subtopics": "strategy, competitive analysis, business"
+  },
+  {
+    "slug": "seeing-around-corners",
+    "title": "Seeing Around Corners",
+    "author": "Rita McGrath",
+    "category": "Business & Career",
+    "subtopics": "change, inflection points, foresight"
+  },
+  {
+    "slug": "just-work",
+    "title": "Just Work",
+    "author": "Kim Scott",
+    "category": "Business & Career",
+    "subtopics": "workplace, bias, harassment, inclusion"
+  },
+  {
+    "slug": "good-to-great",
+    "title": "Good to Great",
+    "author": "Jim Collins",
+    "category": "Business & Career",
+    "subtopics": "leadership, company growth, discipline"
+  },
+  {
+    "slug": "leadership-in-turbulent-times",
+    "title": "Leadership in Turbulent Times",
+    "author": "Doris Kearns Goodwin",
+    "category": "Business & Career",
+    "subtopics": "presidential leadership, crisis, vision"
+  },
+  {
+    "slug": "the-unfair-advantage",
+    "title": "The Unfair Advantage",
+    "author": "",
+    "category": "Business & Career",
+    "subtopics": "startup advantages, location, timing"
+  },
+  {
+    "slug": "all-joy-and-no-fun",
+    "title": "All Joy and No Fun",
+    "author": "Jennifer Senior",
+    "category": "Family",
+    "subtopics": "parenting, childhood, family dynamics"
+  },
+  {
+    "slug": "hardwiring-happiness-the-practical-science-of-reshaping-your-brain",
+    "title": "Hardwiring Happiness",
+    "author": "Rick Hanson",
+    "category": "Happiness",
+    "subtopics": "neuroplasticity, positivity, brain, mental health"
+  },
+  {
+    "slug": "good-vibes-good-life",
+    "title": "Good Vibes, Good Life",
+    "author": "Vex King",
+    "category": "Happiness",
+    "subtopics": "vibes, self-love, positivity, resilience"
+  },
+  {
+    "slug": "letting-go",
+    "title": "Letting Go",
+    "author": "David R. Hawkins",
+    "category": "Happiness",
+    "subtopics": "emotions, healing, courage, self-compassion"
+  },
+  {
+    "slug": "its-ok-that-youre-not-ok",
+    "title": "It's OK That You're Not OK",
+    "author": "Megan Devine",
+    "category": "Happiness",
+    "subtopics": "grief, loss, healing, emotional resilience"
+  },
+  {
+    "slug": "the-lost-art-of-connecting",
+    "title": "The Lost Art of Connecting",
+    "author": "",
+    "category": "Happiness",
+    "subtopics": "relationships, connection, communication"
+  },
+  {
+    "slug": "the-4-hour-body",
+    "title": "The 4-Hour Body",
+    "author": "Tim Ferriss",
+    "category": "Health",
+    "subtopics": "fitness, performance, sleep optimization"
+  },
+  {
+    "slug": "immunity-the-science-of-staying-well",
+    "title": "Immunity",
+    "author": "Jenna Macciochi",
+    "category": "Health",
+    "subtopics": "immune system, sleep, mental health, prevention"
+  },
+  {
+    "slug": "finding-ultra",
+    "title": "Finding Ultra",
+    "author": "Rich Roll",
+    "category": "Health",
+    "subtopics": "endurance, transformation, sobriety, plant-based"
+  },
+  {
+    "slug": "the-hidden-life-of-trees",
+    "title": "The Hidden Life of Trees",
+    "author": "Peter Wohlleben",
+    "category": "Home & Environment",
+    "subtopics": "trees, forests, ecosystems"
+  },
+  {
+    "slug": "the-hard-thing-about-hard-things",
+    "title": "The Hard Thing About Hard Things",
+    "author": "Ben Horowitz",
+    "category": "Leadership",
+    "subtopics": "entrepreneurship, leadership, tough decisions"
+  },
+  {
+    "slug": "herding-tigers",
+    "title": "Herding Tigers",
+    "author": "Todd Henry",
+    "category": "Leadership",
+    "subtopics": "creative leadership, team management, power, culture"
+  },
+  {
+    "slug": "platonic-how-the-science-of-attachment-can-help-you-make-and-keep-friends",
+    "title": "Platonic",
+    "author": "Marisa G. Franco",
+    "category": "Love & Sex",
+    "subtopics": "friendship, attachment, connection"
+  },
+  {
+    "slug": "the-molecule-of-more-how-a-single-chemical-in-your-brain-drives-love-sex-and-creativity",
+    "title": "The Molecule of More",
+    "author": "Daniel Z. Lieberman",
+    "category": "Love & Sex",
+    "subtopics": "dopamine, love, creativity"
+  },
+  {
+    "slug": "the-sacred-search",
+    "title": "The Sacred Search",
+    "author": "Gary Thomas",
+    "category": "Love & Sex",
+    "subtopics": "marriage, partner selection, dating"
+  },
+  {
+    "slug": "broke-millennial",
+    "title": "Broke Millennial",
+    "author": "Erin Lowry",
+    "category": "Money & Investments",
+    "subtopics": "budgeting, debt, financial literacy"
+  },
+  {
+    "slug": "killing-sacred-cows-overcoming-the-financial-myths-that-are-destroying-your-prosperity",
+    "title": "Killing Sacred Cows",
+    "author": "Garrett B. Gunderson, Stephen Palmer",
+    "category": "Money & Investments",
+    "subtopics": "financial myths, wealth building, prosperity"
+  },
+  {
+    "slug": "the-richest-man-in-babylon",
+    "title": "The Richest Man in Babylon",
+    "author": "George S. Clason",
+    "category": "Money & Investments",
+    "subtopics": "saving, investing, wealth principles"
+  },
+  {
+    "slug": "i-hear-you",
+    "title": "I Hear You",
+    "author": "Michael Sorensen",
+    "category": "Negotiation",
+    "subtopics": "empathy, validation, communication, relationships"
+  },
+  {
+    "slug": "the-greatest-salesman-in-the-world",
+    "title": "The Greatest Salesman in the World",
+    "author": "Og Mandino",
+    "category": "Negotiation",
+    "subtopics": "salesmanship, persistence, habits"
+  },
+  {
+    "slug": "how-to-listen-with-intention-the-foundation-of-true-connection-communication-and-relationships-how-to-be-more-likable-and-charismatic",
+    "title": "How to Listen with Intention",
+    "author": "",
+    "category": "Negotiation",
+    "subtopics": "listening, conversation, empathy, charisma"
+  },
+  {
+    "slug": "conversationally-speaking-tested-new-ways-to-increase-your-personal-and-social-effectiveness",
+    "title": "Conversationally Speaking",
+    "author": "Alan Garner",
+    "category": "Negotiation",
+    "subtopics": "conversation skills, social confidence, communication"
+  },
+  {
+    "slug": "a-life-on-our-planet",
+    "title": "A Life on Our Planet",
+    "author": "David Attenborough",
+    "category": "Personalities",
+    "subtopics": "memoir, natural history, biodiversity"
+  },
+  {
+    "slug": "growing-up-biden",
+    "title": "Growing Up Biden",
+    "author": "",
+    "category": "Personalities",
+    "subtopics": "Biden family, American politics, memoir"
+  },
+  {
+    "slug": "thirst",
+    "title": "Thirst",
+    "author": "Scott Harrison",
+    "category": "Personalities",
+    "subtopics": "charity, transformation, memoir"
+  },
+  {
+    "slug": "the-one-thing",
+    "title": "The One Thing",
+    "author": "Gary Keller",
+    "category": "Productivity",
+    "subtopics": "focus, singular goal, productivity"
+  },
+  {
+    "slug": "deep-work",
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "category": "Productivity",
+    "subtopics": "focus, deep work rules, distraction"
+  },
+  {
+    "slug": "how-to-break-up-with-your-phone",
+    "title": "How to Break Up with Your Phone",
+    "author": "Catherine Price",
+    "category": "Productivity",
+    "subtopics": "smartphone, focus, digital habits, mindfulness"
+  },
+  {
+    "slug": "choose-possibility",
+    "title": "Choose Possibility",
+    "author": "Sukhinder Singh Cassidy",
+    "category": "Self-Growth",
+    "subtopics": "risk-taking, opportunity, mindset"
+  },
+  {
+    "slug": "gaslighting-recognize-manipulative-and-emotionally-abusive-people-and-break-free",
+    "title": "Gaslighting",
+    "author": "Samantha Parker",
+    "category": "Self-Growth",
+    "subtopics": "manipulation, recovery, boundaries"
+  },
+  {
+    "slug": "judgment-detox",
+    "title": "Judgment Detox",
+    "author": "Gabrielle Bernstein",
+    "category": "Self-Growth",
+    "subtopics": "judgment, self-awareness, growth, emotional healing"
+  },
+  {
+    "slug": "fluent-forever-how-to-learn-any-language-fast-and-never-forget-it",
+    "title": "Fluent Forever",
+    "author": "Gabriel Wyner",
+    "category": "Self-Growth",
+    "subtopics": "language learning, memory, pronunciation"
+  },
+  {
+    "slug": "blink",
+    "title": "Blink",
+    "author": "Malcolm Gladwell",
+    "category": "Self-Growth",
+    "subtopics": "intuition, snap judgments, thin-slicing"
+  },
+  {
+    "slug": "craft-in-the-real-world",
+    "title": "Craft in the Real World",
+    "author": "Matthew Salesses",
+    "category": "Self-Growth",
+    "subtopics": "writing, creativity, craft"
+  },
+  {
+    "slug": "awaken-the-giant-within",
+    "title": "Awaken the Giant Within",
+    "author": "Anthony Robbins",
+    "category": "Self-Growth",
+    "subtopics": "decisions, beliefs, emotional mastery"
+  },
+  {
+    "slug": "as-a-man-thinketh",
+    "title": "As a Man Thinketh",
+    "author": "James Allen",
+    "category": "Self-Growth",
+    "subtopics": "thought, purpose, character"
+  },
+  {
+    "slug": "one-small-step-can-change-your-life",
+    "title": "One Small Step Can Change Your Life",
+    "author": "Robert Maurer",
+    "category": "Self-Growth",
+    "subtopics": "kaizen, small steps, habit change"
+  },
+  {
+    "slug": "ikigai",
+    "title": "Ikigai",
+    "author": "H\u00e9ctor Garc\u00eda and Francesc Miralles",
+    "category": "Self-Growth",
+    "subtopics": "purpose, longevity, mindfulness"
+  },
+  {
+    "slug": "neuro-linguistic-programming-for-dummies",
+    "title": "Neuro-Linguistic Programming for Dummies",
+    "author": "Romilla Ready, Kate Burton",
+    "category": "Self-Growth",
+    "subtopics": "NLP, mindset, communication"
+  },
+  {
+    "slug": "stay-positive",
+    "title": "Stay Positive",
+    "author": "Jon Gordon",
+    "category": "Self-Growth",
+    "subtopics": "positivity, mindset, perseverance"
+  },
+  {
+    "slug": "bag-man",
+    "title": "Bag Man",
+    "author": "Mady Siegler",
+    "category": "Society & Tech",
+    "subtopics": "politics, corruption, Watergate"
+  },
+  {
+    "slug": "the-battle-for-christmas",
+    "title": "The Battle for Christmas",
+    "author": "Stephen Nissenbaum",
+    "category": "Society & Tech",
+    "subtopics": "Christmas, tradition, American culture"
+  },
+  {
+    "slug": "radical-technologies",
+    "title": "Radical Technologies",
+    "author": "",
+    "category": "Society & Tech",
+    "subtopics": "AI, automation, smartphones, cryptocurrency"
+  },
+  {
+    "slug": "equity",
+    "title": "Equity",
+    "author": "Sara Zarr",
+    "category": "Society & Tech",
+    "subtopics": "equity, systems thinking, bias"
+  },
+  {
+    "slug": "iak-ukrayins-kii-fikshn-uchit-smilivosti",
+    "title": "\u042f\u043a \u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0438\u0439 \u0444\u0456\u043a\u0448\u043d \u0443\u0447\u0438\u0442\u044c \u0441\u043c\u0456\u043b\u0438\u0432\u043e\u0441\u0442\u0456",
+    "author": "",
+    "category": "Society & Tech",
+    "subtopics": "Ukrainian fiction, culture, courage, literature"
+  },
+  {
+    "slug": "empire-of-pain",
+    "title": "Empire of Pain",
+    "author": "Patrick Radden Keefe",
+    "category": "Society & Tech",
+    "subtopics": "opioid crisis, Sacklers, Big Pharma"
+  },
+  {
+    "slug": "the-secret",
+    "title": "The Secret",
+    "author": "Rhonda Byrne",
+    "category": "Spirituality",
+    "subtopics": "law of attraction, manifestation, positivity"
+  },
+  {
+    "slug": "the-four-agreements",
+    "title": "The Four Agreements",
+    "author": "Don Miguel Ruiz",
+    "category": "Spirituality",
+    "subtopics": "Toltec wisdom, freedom, ancient teachings"
+  }
+]

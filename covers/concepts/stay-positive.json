@@ -3,23 +3,24 @@
   "title": "Stay Positive",
   "author": "Jon Gordon",
   "category": "Self-Growth",
-  "subtopics": "positivity, mindset, perseverance",
-  "year": "",
+  "subtopics": "positivity, energy, mindset",
+  "year": "2009",
   "datelineLeft": "BOOK SUMMARY",
   "datelineRight": "SELF-GROWTH",
-  "motif": "orb",
+  "motif": "custom",
   "titlePos": "top",
-  "titleWeight": 300,
-  "titleSize": 198,
+  "titleWeight": 500,
+  "titleSize": 320,
   "titleTransform": "uppercase",
-  "lines": [
-    "Stay",
-    "Positive"
-  ],
-  "subline": "positivity",
+  "lines": ["STAY", "POSITIVE"],
+  "subline": "A simple thought can change a day, a life, the world.",
   "sublinePos": "subline-bot",
-  "accent": "brand-top",
-  "brandMark": "THOUGHTLAB",
+  "accent": "brand-bottom",
+  "brandMark": "JON GORDON",
+  "pill": "+",
+  "pillPos": "top",
   "redRule": "none",
-  "rationale": "motif=orb for \"Stay Positive\" (Self-Growth) — composed from book tokens."
+  "customHTML": "<svg viewBox=\"0 0 1600 2400\" preserveAspectRatio=\"xMidYMid slice\" style=\"position:absolute;inset:0;width:100%;height:100%\">\n  <!-- A scale. Left side has a heavy + sign, right side has multiple - signs. The + side dips down and is RED. The beam of the scale is at an angle. -->\n  <g transform=\"translate(800 1700)\" fill=\"none\">\n    <!-- The fulcrum: a triangle -->\n    <path d=\"M 0 240 L -60 100 L 60 100 Z\" stroke=\"#4c4c4c\" stroke-width=\"1.5\"/>\n    <!-- The beam: a line tilted (left side down) -->\n    <line x1=\"-540\" y1=\"80\" x2=\"540\" y2=\"-40\" stroke=\"#4c4c4c\" stroke-width=\"3\"/>\n    <!-- Left pan (lower = heavier) with a giant + sign in RED -->\n    <line x1=\"-540\" y1=\"80\" x2=\"-540\" y2=\"240\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <ellipse cx=\"-540\" cy=\"260\" rx=\"100\" ry=\"20\" stroke=\"#4c4c4c\" stroke-width=\"1.5\"/>\n    <!-- A massive red + sign hanging over the left pan -->\n    <line x1=\"-590\" y1=\"140\" x2=\"-490\" y2=\"140\" stroke=\"#fc1c46\" stroke-width=\"10\"/>\n    <line x1=\"-540\" y1=\"90\" x2=\"-540\" y2=\"190\" stroke=\"#fc1c46\" stroke-width=\"10\"/>\n    <!-- Right pan (lighter, with 4 minus signs) -->\n    <line x1=\"540\" y1=\"-40\" x2=\"540\" y2=\"120\" stroke=\"#4c4c4c\" stroke-width=\"1\"/>\n    <ellipse cx=\"540\" cy=\"140\" rx=\"100\" ry=\"20\" stroke=\"#4c4c4c\" stroke-width=\"1.5\"/>\n    <!-- 4 small minus signs -->\n    <g stroke=\"#cccccc\" stroke-width=\"3\">\n      <line x1=\"510\" y1=\"80\" x2=\"540\" y2=\"80\"/>\n      <line x1=\"525\" y1=\"60\" x2=\"555\" y2=\"60\"/>\n      <line x1=\"540\" y1=\"100\" x2=\"570\" y2=\"100\"/>\n      <line x1=\"525\" y1=\"40\" x2=\"555\" y2=\"40\"/>\n    </g>\n    <!-- A small label arrow at the fulcrum -->\n    <text x=\"0\" y=\"300\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">BALANCE</text>\n  </g>
+  <text x=\"800\" y=\"2200\" text-anchor=\"middle\" font-family=\"'Sui','Söhne','Inter',system-ui,sans-serif\" font-size=\"14\" font-weight=\"500\" fill=\"#4c4c4c\" letter-spacing=\"0.4em\">A SINGLE PLUS CAN OUTWEIGH MANY MINUSES</text>\n</svg>",
+  "rationale": "A balance scale tipping to the LEFT. The left pan holds one big RED + (10px stroke), the right pan holds four small ash - signs. The single plus outweighs the minuses. The beam tilts decisively. Title 320px uppercase, two lines, weight 500."
 }
