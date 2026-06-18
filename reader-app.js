@@ -22,7 +22,7 @@ import {
 } from './sync-model.js';
 import {
   buildReadingEvent, mergeEvents as mergeReadingEvents,
-  groupEventsByLocalDay, aggregateStats, checkAchievements,
+  buildGamificationSummary,
   summarizeCompletions,
 } from './analytics.js';
 
@@ -331,34 +331,65 @@ function refreshAnalyticsView() {
   const panel = $('libStats');
   if (!panel) return;
   const events = loadLocalEvents();
-  const stats = aggregateStats(events);
-  const days = groupEventsByLocalDay(events);
-  const dayList = Object.entries(days)
-    .sort((a, b) => a[0].localeCompare(b[0]))
-    .slice(-7);
+  const existing = loadAchievements();
+  const books = state.libraryBooks || [];
+  const completionSummary = summarizeCompletions(books);
+  const sessionMs = Math.max(0, ...events.map((e) => (e.endedAt || 0) - (e.startedAt || 0)));
+  const extra = {
+    chapterCompletions: completionSummary.chapterCompletions || getCompletionStats().totalChapters || 0,
+    booksFinished: completionSummary.booksFinished,
+    uniqueDevices7d: new Set(events.map((e) => e.deviceId).filter(Boolean)).size,
+    longestSingleSessionMs: sessionMs,
+  };
+  const summary = buildGamificationSummary(events, existing, extra);
+  const { stats, level } = summary;
+  const newUnlocks = summary.achievements.filter((a) => !existing.some((old) => old.id === a.id));
+  if (summary.achievements.length !== existing.length || newUnlocks.length) saveAchievements(summary.achievements);
+  const signedIn = authConfigured && isSignedIn();
+  const syncText = authConfigured
+    ? (signedIn ? 'Signed in — your level travels with your library progress.' : 'Sign in to keep your reading level across devices.')
+    : 'Local mode — your reading level stays on this device.';
+
   panel.innerHTML = `
+    <section class="quest-card" aria-label="Daily reading quest">
+      <div class="quest-card-main">
+        <div>
+          <div class="quest-kicker">Daily quest</div>
+          <h2>Read ${summary.dailyGoal.toLocaleString()} words today</h2>
+          <p>${summary.wordsToDailyGoal > 0
+            ? `${summary.wordsToDailyGoal.toLocaleString()} words left — about ${Math.ceil(summary.wordsToDailyGoal / Math.max(200, state.wpm || 300))} min at your speed.`
+            : 'Quest complete. Nice — keep the streak alive.'}</p>
+        </div>
+        <div class="quest-ring" style="--quest-progress:${summary.dailyPercent}%">
+          <strong>${summary.dailyPercent}%</strong>
+          <span>${stats.wordsToday.toLocaleString()} words</span>
+        </div>
+      </div>
+      <div class="quest-bar" aria-hidden="true"><span style="width:${summary.dailyPercent}%"></span></div>
+    </section>
+
+    <section class="level-card" aria-label="Reader level">
+      <div class="level-badge">L${level.level}</div>
+      <div class="level-body">
+        <div class="quest-kicker">Reader level</div>
+        <h2>${escapeHtml(level.name)}</h2>
+        <p>${level.nextLevel
+          ? `${level.wordsToNext.toLocaleString()} words to unlock ${escapeHtml(level.nextLevel.name)}.`
+          : 'Max level unlocked. You are a Focus Legend.'}</p>
+        <div class="level-progress" aria-hidden="true"><span style="width:${level.progress}%"></span></div>
+        <div class="level-meta"><span>${stats.totalWords.toLocaleString()} lifetime words</span><span>${syncText}</span></div>
+      </div>
+    </section>
+
     <div class="lib-stats-grid">
       <div class="lib-stat"><div class="lib-stat-num">${stats.wordsToday.toLocaleString()}</div><div class="lib-stat-label">words today</div></div>
       <div class="lib-stat"><div class="lib-stat-num">${stats.words7d.toLocaleString()}</div><div class="lib-stat-label">7-day words</div></div>
       <div class="lib-stat"><div class="lib-stat-num">${stats.currentStreak}</div><div class="lib-stat-label">day streak</div></div>
       <div class="lib-stat"><div class="lib-stat-num">${stats.bestStreak}</div><div class="lib-stat-label">best streak</div></div>
     </div>
-    ${renderSparkline(dayList)}
-    <div class="lib-achievements" id="libAchievements">${renderAchievementsList()}</div>
+    ${renderSparkline(Object.entries(summary.days).sort((a, b) => a[0].localeCompare(b[0])).slice(-7))}
+    <div class="lib-achievements" id="libAchievements">${renderAchievementsList(summary.badges)}</div>
   `;
-  // Re-check achievement unlocks after a render
-  const existing = loadAchievements();
-  const books = state.libraryBooks || [];
-  const summary = summarizeCompletions(books);
-  const newList = checkAchievements(stats, days, {
-    chapterCompletions: stats.totalEvents,
-    booksFinished: summary.booksFinished,
-    uniqueDevices7d: new Set(events.map((e) => e.deviceId).filter(Boolean)).size,
-    longestSingleSessionMs: 0,
-  }, existing);
-  if (newList.length !== existing.length) saveAchievements(newList);
-  const listEl = $('libAchievements');
-  if (listEl) listEl.innerHTML = renderAchievementsList();
 }
 
 function renderSparkline(dayList) {
@@ -376,14 +407,28 @@ function renderSparkline(dayList) {
   </svg>`;
 }
 
-function renderAchievementsList() {
-  const list = loadAchievements();
-  if (!list.length) return '<div class="lib-achievements-empty">No achievements yet — read 1,000 words in a day to start.</div>';
-  return `<ul class="lib-achievements-list">${list.map((a) => `
-    <li class="lib-achievement">
-      <span class="lib-achievement-title">${escapeHtml(a.title)}</span>
-      <span class="lib-achievement-desc">${escapeHtml(a.description)}</span>
-    </li>`).join('')}</ul>`;
+function renderAchievementsList(badges = null) {
+  const list = badges || buildGamificationSummary(loadLocalEvents(), loadAchievements()).badges;
+  if (!list.length) return '<div class="lib-achievements-empty">Read a few words to start unlocking badges.</div>';
+  return `<div class="badge-header"><span>Badges</span><span>${list.filter((a) => !a.locked).length}/${list.length} unlocked</span></div>
+    <ul class="lib-achievements-list">${list.map((a) => {
+      const pct = a.progress?.percent ?? (a.locked ? 0 : 100);
+      const value = a.progress?.value ?? 0;
+      const target = a.progress?.target ?? 1;
+      const progressLabel = target >= 60_000
+        ? `${Math.round(value / 60_000)} / ${Math.round(target / 60_000)} min`
+        : `${Math.min(value, target).toLocaleString()} / ${target.toLocaleString()}`;
+      return `
+        <li class="lib-achievement${a.locked ? ' locked' : ' earned'}">
+          <span class="lib-achievement-icon" aria-hidden="true">${escapeHtml(a.icon || (a.locked ? '○' : '✓'))}</span>
+          <span class="lib-achievement-copy">
+            <span class="lib-achievement-title">${escapeHtml(a.title)}</span>
+            <span class="lib-achievement-desc">${escapeHtml(a.description)}</span>
+            <span class="badge-progress"><span style="width:${pct}%"></span></span>
+            <span class="badge-progress-label">${a.locked ? progressLabel : 'Unlocked'}</span>
+          </span>
+        </li>`;
+    }).join('')}</ul>`;
 }
 
 function detectDesktopCapable() {
@@ -1302,7 +1347,6 @@ async function loadText(resetIndex = true) {
 let pendingReadSession = null; // { startAbs, startAt, wpm, contentHash, bookId }
 function noteReadStartIfNeeded() {
   if (!state.book?.id) return;
-  if (state.book.isSharedSummary) return;
   if (pendingReadSession) return;
   const abs = absoluteWordIndex(state.book, state.chapterIndex, state.index);
   pendingReadSession = {
@@ -1696,6 +1740,7 @@ async function renderSummariesGrid() {
     $('summariesFeaturedWrap')?.classList.add('hidden');
     $('summariesEmpty').textContent = err.message || 'Could not load summaries.';
     $('summariesEmpty').classList.remove('hidden');
+    refreshAnalyticsView();
     return;
   }
 
@@ -1721,6 +1766,7 @@ async function renderSummariesGrid() {
       ? 'No summaries match your filters.'
       : 'No summaries yet.';
     $('summariesEmpty').classList.remove('hidden');
+    refreshAnalyticsView();
     return;
   }
 
@@ -1747,6 +1793,7 @@ async function renderSummariesGrid() {
     $('summariesFeaturedGrid')?.replaceChildren();
     renderSummariesBrowseGrid(filtered);
   }
+  refreshAnalyticsView();
 }
 
 async function openSummaryById(summaryId) {
@@ -1783,6 +1830,7 @@ async function renderLibraryGrid() {
   if (!hasBooks) {
     $('libGrid').classList.add('hidden');
     $('libEmpty').classList.add('hidden');
+    refreshAnalyticsView();
     return;
   }
 

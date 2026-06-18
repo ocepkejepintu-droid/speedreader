@@ -226,6 +226,63 @@ function nextDayKey(key) {
   return `${yy}-${mm}-${dd}`;
 }
 
+
+export const DAILY_WORD_GOAL = 5000;
+
+export const READER_LEVELS = [
+  { level: 1, name: 'Focus Seed', minWords: 0 },
+  { level: 2, name: 'Page Starter', minWords: 2_000 },
+  { level: 3, name: 'Coffee Reader', minWords: 5_000 },
+  { level: 4, name: 'Chapter Climber', minWords: 15_000 },
+  { level: 5, name: 'Streak Builder', minWords: 30_000 },
+  { level: 6, name: 'Deep Reader', minWords: 60_000 },
+  { level: 7, name: 'Library Pro', minWords: 120_000 },
+  { level: 8, name: 'Focus Legend', minWords: 250_000 },
+];
+
+export function getReaderLevel(totalWords = 0) {
+  const words = Math.max(0, Number(totalWords) || 0);
+  let current = READER_LEVELS[0];
+  let next = null;
+  for (let i = 0; i < READER_LEVELS.length; i++) {
+    if (words >= READER_LEVELS[i].minWords) {
+      current = READER_LEVELS[i];
+      next = READER_LEVELS[i + 1] || null;
+    }
+  }
+  const span = next ? Math.max(1, next.minWords - current.minWords) : 1;
+  const gained = Math.max(0, words - current.minWords);
+  return {
+    ...current,
+    totalWords: words,
+    nextLevel: next,
+    wordsToNext: next ? Math.max(0, next.minWords - words) : 0,
+    progress: next ? Math.min(100, Math.round((gained / span) * 100)) : 100,
+  };
+}
+
+function maxDailyWords(days = {}) {
+  return Math.max(0, ...Object.values(days).map((d) => d?.words || 0));
+}
+
+function badgeProgress(kind, target, stats, days, extra = {}) {
+  let value = 0;
+  if (kind === 'daily') value = maxDailyWords(days);
+  if (kind === 'today') value = stats.wordsToday || 0;
+  if (kind === 'streak') value = Math.max(stats.currentStreak || 0, stats.bestStreak || 0);
+  if (kind === 'weekly') value = stats.words7d || 0;
+  if (kind === 'total') value = stats.totalWords || 0;
+  if (kind === 'chapters') value = extra.chapterCompletions || 0;
+  if (kind === 'books') value = extra.booksFinished || 0;
+  if (kind === 'devices') value = extra.uniqueDevices7d || 0;
+  if (kind === 'sessionMs') value = extra.longestSingleSessionMs || 0;
+  return {
+    value,
+    target,
+    percent: target > 0 ? Math.min(100, Math.round((value / target) * 100)) : 100,
+  };
+}
+
 /**
  * Achievement definitions. Each rule receives the aggregate stats and the
  * daily-bucket map and returns either null (locked) or { unlockedAt }.
@@ -233,56 +290,84 @@ function nextDayKey(key) {
 export const ACHIEVEMENTS = [
   {
     id: 'first-thousand',
-    title: '1,000 words in a day',
+    icon: '✨',
+    title: 'First 1K Day',
     description: 'Read 1,000 words in a single day.',
-    check: (stats, days) => {
-      for (const k of Object.keys(days)) {
-        if ((days[k].words || 0) >= 1000) return { unlockedAt: 0 };
-      }
-      return null;
-    },
+    kind: 'daily',
+    target: 1000,
+    check: (_stats, days) => (maxDailyWords(days) >= 1000 ? { unlockedAt: 0 } : null),
+  },
+  {
+    id: 'daily-quest-5k',
+    icon: '☕',
+    title: 'Coffee Quest',
+    description: 'Hit the 5,000-word daily quest.',
+    kind: 'daily',
+    target: DAILY_WORD_GOAL,
+    check: (_stats, days) => (maxDailyWords(days) >= DAILY_WORD_GOAL ? { unlockedAt: 0 } : null),
   },
   {
     id: 'streak-7',
-    title: '7-day streak',
+    icon: '🔥',
+    title: '7-Day Streak',
     description: 'Read on 7 consecutive days.',
+    kind: 'streak',
+    target: 7,
     check: (stats) => (stats.currentStreak >= 7 || stats.bestStreak >= 7 ? { unlockedAt: 0 } : null),
   },
   {
     id: 'ten-k-week',
-    title: '10,000 words in a week',
-    description: 'Read 10,000 words in any rolling 7-day window.',
+    icon: '⚡',
+    title: '10K Week',
+    description: 'Read 10,000 words in a rolling 7-day window.',
+    kind: 'weekly',
+    target: 10000,
     check: (stats) => (stats.words7d >= 10000 ? { unlockedAt: 0 } : null),
   },
   {
+    id: 'total-30k',
+    icon: '🏔️',
+    title: '30K Climber',
+    description: 'Read 30,000 total words.',
+    kind: 'total',
+    target: 30000,
+    check: (stats) => (stats.totalWords >= 30000 ? { unlockedAt: 0 } : null),
+  },
+  {
     id: 'first-chapter',
-    title: 'First chapter finished',
+    icon: '📘',
+    title: 'First Chapter',
     description: 'Complete your first chapter end-to-end.',
-    // Chapter completions come in as separate events; we count them via totalEvents
-    // plus the dedicated chapterEnd eventId prefix.
-    check: (stats, _days, extra) => (extra?.chapterCompletions >= 1 ? { unlockedAt: 0 } : null),
+    kind: 'chapters',
+    target: 1,
+    check: (_stats, _days, extra) => (extra?.chapterCompletions >= 1 ? { unlockedAt: 0 } : null),
   },
   {
     id: 'first-book',
-    title: 'First book finished',
+    icon: '🏁',
+    title: 'First Book',
     description: 'Reach 100% on a book.',
+    kind: 'books',
+    target: 1,
     check: (_stats, _days, extra) => (extra?.booksFinished >= 1 ? { unlockedAt: 0 } : null),
   },
   {
     id: 'two-devices',
-    title: 'Read on 2 devices in 1 week',
-    description: 'Have reading events from at least 2 different devices in the last 7 days.',
+    icon: '🔁',
+    title: 'Two-Device Reader',
+    description: 'Read from at least 2 devices in one week.',
+    kind: 'devices',
+    target: 2,
     check: (_stats, _days, extra) => ((extra?.uniqueDevices7d || 0) >= 2 ? { unlockedAt: 0 } : null),
   },
   {
     id: 'wpm-ten-min',
-    title: 'WPM target for 10 minutes',
+    icon: '⏱️',
+    title: '10-Minute Flow',
     description: 'Read at your chosen WPM for 10 minutes straight.',
-    check: (_stats, _days, extra) => {
-      const t = extra?.longestSingleSessionMs || 0;
-      if (t >= 10 * 60_000) return { unlockedAt: 0 };
-      return null;
-    },
+    kind: 'sessionMs',
+    target: 10 * 60_000,
+    check: (_stats, _days, extra) => ((extra?.longestSingleSessionMs || 0) >= 10 * 60_000 ? { unlockedAt: 0 } : null),
   },
 ];
 
@@ -291,16 +376,59 @@ export const ACHIEVEMENTS = [
  * are preserved.
  */
 export function checkAchievements(stats, days, extra = {}, existing = []) {
-  const known = new Set(existing.map((a) => a.id));
-  const out = existing.slice();
+  const byId = new Map((Array.isArray(existing) ? existing : []).map((a) => [a.id, a]));
+  const out = [];
   for (const a of ACHIEVEMENTS) {
-    if (known.has(a.id)) continue;
-    const result = a.check(stats, days, extra);
+    const progress = badgeProgress(a.kind, a.target, stats, days, extra);
+    const prior = byId.get(a.id);
+    const result = prior ? { unlockedAt: prior.unlockedAt } : a.check(stats, days, extra);
     if (result) {
-      out.push({ id: a.id, title: a.title, description: a.description, unlockedAt: result.unlockedAt || Date.now() });
+      out.push({
+        id: a.id,
+        icon: prior?.icon || a.icon,
+        title: prior?.title || a.title,
+        description: prior?.description || a.description,
+        unlockedAt: prior?.unlockedAt || result.unlockedAt || Date.now(),
+        progress,
+      });
     }
   }
+  // Preserve unknown legacy achievements instead of dropping user data.
+  for (const item of (Array.isArray(existing) ? existing : [])) {
+    if (item?.id && !ACHIEVEMENTS.some((a) => a.id === item.id)) out.push(item);
+  }
   return out;
+}
+
+export function buildGamificationSummary(events, existingAchievements = [], extra = {}, options = {}) {
+  const stats = aggregateStats(events, options);
+  const days = groupEventsByLocalDay(events, options.tzOffsetMin);
+  const achievements = checkAchievements(stats, days, extra, existingAchievements);
+  const unlockedIds = new Set(achievements.map((a) => a.id));
+  const badges = ACHIEVEMENTS.map((a) => {
+    const unlocked = achievements.find((item) => item.id === a.id);
+    const progress = badgeProgress(a.kind, a.target, stats, days, extra);
+    return unlocked || {
+      id: a.id,
+      icon: a.icon,
+      title: a.title,
+      description: a.description,
+      locked: true,
+      progress,
+    };
+  });
+  return {
+    stats,
+    days,
+    dailyGoal: DAILY_WORD_GOAL,
+    dailyPercent: Math.min(100, Math.round(((stats.wordsToday || 0) / DAILY_WORD_GOAL) * 100)),
+    wordsToDailyGoal: Math.max(0, DAILY_WORD_GOAL - (stats.wordsToday || 0)),
+    level: getReaderLevel(stats.totalWords || 0),
+    achievements,
+    badges,
+    unlockedCount: unlockedIds.size,
+    totalBadgeCount: ACHIEVEMENTS.length,
+  };
 }
 
 /**

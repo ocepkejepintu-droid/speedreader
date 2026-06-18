@@ -11,6 +11,9 @@ import {
   groupEventsByLocalDay,
   aggregateStats,
   checkAchievements,
+  buildGamificationSummary,
+  getReaderLevel,
+  DAILY_WORD_GOAL,
   summarizeCompletions,
   ACHIEVEMENT_DEFINITIONS,
 } from '../analytics.js';
@@ -107,6 +110,30 @@ test('checkAchievements preserves existing unlocks', () => {
   const first = out.find((a) => a.id === 'first-thousand');
   assert.equal(first.unlockedAt, 1, 'should not re-unlock an already-known achievement');
   assert.ok(out.find((a) => a.id === 'streak-7'));
+});
+
+test('getReaderLevel reports level progress and next threshold', () => {
+  const level = getReaderLevel(DAILY_WORD_GOAL);
+  assert.equal(level.name, 'Coffee Reader');
+  assert.equal(level.level, 3);
+  assert.equal(level.nextLevel.name, 'Chapter Climber');
+  assert.equal(level.wordsToNext, 10000);
+  assert.equal(level.progress, 0);
+});
+
+test('buildGamificationSummary exposes daily quest, level, and locked badge progress', () => {
+  const now = Date.UTC(2024, 0, 15, 12, 0);
+  const events = [
+    { endedAt: now, wordsRead: DAILY_WORD_GOAL, wpm: 333, contentHash: 'h1' },
+  ];
+  const summary = buildGamificationSummary(events, [], {}, { now, tzOffsetMin: 0 });
+  assert.equal(summary.dailyGoal, DAILY_WORD_GOAL);
+  assert.equal(summary.dailyPercent, 100);
+  assert.equal(summary.wordsToDailyGoal, 0);
+  assert.equal(summary.level.name, 'Coffee Reader');
+  assert.equal(summary.totalBadgeCount, ACHIEVEMENT_DEFINITIONS.length);
+  assert.ok(summary.achievements.some((a) => a.id === 'daily-quest-5k'));
+  assert.ok(summary.badges.some((a) => a.id === 'total-30k' && a.locked && a.progress.percent > 0));
 });
 
 test('summarizeCompletions counts books and chapters finished', () => {
