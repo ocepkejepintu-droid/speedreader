@@ -1,0 +1,38 @@
+{
+  "slug": "21-lessons-for-the-21st-century",
+  "title": "21 Lessons for the 21st Century",
+  "author": "Yuval Noah Harari",
+  "category": "Self-Growth",
+  "rank": 1,
+  "original_cover": {
+    "artist": "Marc Quinn",
+    "series": "We Share Our Chemistry with the Stars",
+    "motif": "abstract close-up iris / eye painting",
+    "palette_vibe": "muted grey backdrop, vivid hyper-detailed iris",
+    "mood": "watchful, intimate, slightly unsettling"
+  },
+  "identity_v1": {
+    "approach": "literal Marc Quinn motif reinterpretation (eye as cosmos)",
+    "verdict": "rejected by user",
+    "reason": "too literal/decorative; doesn't reflect book's actual thesis"
+  },
+  "identity_v2": {
+    "approach": "monumental scale + existential landscape",
+    "core_motif": "monumental numerals '21' as weathered stone monoliths on horizon",
+    "secondary_motifs": ["lone hooded silhouette", "breaking storm sky", "cliff edge"],
+    "themes": ["navigating uncertainty", "humanity facing unprecedented change", "monumental scale of the 21st century"],
+    "subtopics_anchor": "future challenges, critical thinking, resilience",
+    "mood": "existential, monumental, contemplative, cinematic",
+    "palette": "muted earth tones — slate grey, weathered stone, deep teal sky, amber sun, charcoal silhouette",
+    "typography": "title + author rendered as text on cover in bold serif"
+  },
+  "illustrated_redesign": {
+    "model": "grok-imagine-image",
+    "aspect_ratio": "portrait",
+    "prompt_path": "prompts/21-lessons-for-the-21st-century.txt",
+    "render_path_v1": "/Users/yoseph/.hermes/profiles/dev/cache/images/xai_grok-imagine-image_20260619_1755xx_*.jpg",
+    "render_path_v2": "/Users/yoseph/rsvp-reader/covers/renders/illustrated/21-lessons-for-the-21st-century-v2.jpg",
+    "approved": null,
+    "notes": "v2 is the live candidate. Vision-analyze API is currently failing (401 auth error) so I can't auto-verify text legibility — user must open the file to confirm."
+  }
+}
