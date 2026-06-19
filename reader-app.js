@@ -588,6 +588,110 @@ function escapeHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+function safeCoverSlug(id) {
+  if (typeof id !== 'string' || !id) return '';
+  return id.replace(/[^a-z0-9._-]/gi, '');
+}
+
+function renderBookCover(id, title, kind) {
+  const slug = safeCoverSlug(id);
+  const safeTitle = escapeHtml(title || id || 'Book');
+  // Use a CSS background so we can lazy-load via onload state and let
+  // the .is-loading class show a themed gradient until the image paints.
+  // If the id is empty or the cover is missing on the server, the
+  // onerror handler upgrades the fallback to a cleaner solid block.
+  if (!slug) {
+    return `<div class="book-card-cover is-fallback" role="img" aria-label="${safeTitle} cover" data-cover-kind="${escapeHtml(kind || 'book')}"></div>`;
+  }
+  return `<div class="book-card-cover is-loading" role="img" aria-label="${safeTitle} cover" data-cover-kind="${escapeHtml(kind || 'book')}" data-cover-slug="${escapeHtml(slug)}"></div>`;
+}
+
+const COVER_URL_RE = /\.(?:png|jpg|jpeg|webp|avif)$/i;
+
+function coverUrlForSlug(slug) {
+  // app/index.html is the host page; covers live at ../covers/renders/{slug}.png
+  return `../covers/renders/${slug}.png`;
+}
+
+// Caches one IO per scrollable root. The same root can be passed in many times.
+const __coverObservers = new WeakMap();
+let __coverProbes = [];
+
+function findScrollRoot(el) {
+  // Walk up the DOM to find the nearest ancestor with a vertical scrollbar
+  let p = el && el.parentElement;
+  while (p && p !== document.body) {
+    const style = getComputedStyle(p);
+    if (style.overflowY === 'auto' || style.overflowY === 'scroll') return p;
+    p = p.parentElement;
+  }
+  return null;
+}
+
+function getCoverObserver(root) {
+  // Reuse per-root so a card inside a scrollable panel observes that panel, not the viewport
+  if (typeof IntersectionObserver === 'undefined') return null;
+  if (root && __coverObservers.has(root)) return __coverObservers.get(root);
+  const ioOpts = { root: root || null, rootMargin: '300px 0px', threshold: 0.01 };
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const el = entry.target;
+      observer.unobserve(el);
+      const slug = el.dataset.coverSlug;
+      if (!slug) continue;
+      const url = coverUrlForSlug(slug);
+      const probe = new Image();
+      probe.decoding = 'async';
+      probe.loading = 'eager';
+      probe.referrerPolicy = 'no-referrer';
+      probe.onload = () => {
+        el.style.backgroundImage = `url("${url}")`;
+        el.classList.remove('is-loading', 'is-fallback', 'is-error');
+      };
+      probe.onerror = () => {
+        el.classList.remove('is-loading');
+        el.classList.add('is-error', 'is-fallback');
+        el.style.backgroundImage = '';
+      };
+      __coverProbes.push(probe); // keep reference so onload fires (avoid GC)
+      probe.src = url;
+    }
+  }, ioOpts);
+  if (root) __coverObservers.set(root, observer);
+  return observer;
+}
+
+function paintCoversIn(root) {
+  if (!root || typeof root.querySelectorAll !== 'function') return;
+  const covers = root.querySelectorAll('.book-card-cover[data-cover-slug]');
+  covers.forEach((el) => {
+    if (el.dataset.coverPainted === '1') return;
+    const slug = el.dataset.coverSlug;
+    if (!slug) return;
+    el.dataset.coverPainted = '1';
+    // Direct paint: probe.src triggers the fetch; loading="eager" bypasses the
+    // browser's lazy-load heuristic (which suppresses fetches for elements off
+    // the visual viewport, even when assigned programmatically).
+    const url = coverUrlForSlug(slug);
+    const probe = new Image();
+    probe.decoding = 'async';
+    probe.loading = 'eager';
+    probe.referrerPolicy = 'no-referrer';
+    probe.onload = () => {
+      el.style.backgroundImage = `url("${url}")`;
+      el.classList.remove('is-loading', 'is-fallback', 'is-error');
+    };
+    probe.onerror = () => {
+      el.classList.remove('is-loading');
+      el.classList.add('is-error', 'is-fallback');
+      el.style.backgroundImage = '';
+    };
+    __coverProbes.push(probe); // keep reference so onload fires (avoid GC)
+    probe.src = url;
+  });
+}
+
 function orpWordHtml(raw) {
   const idx = orpIndex(raw);
   return [...raw].map((ch, i) => {
@@ -1690,8 +1794,10 @@ function renderSummaryCard(s) {
   const catLabel = s.category ? `<span class="book-card-cat">${escapeHtml(s.category)}</span>` : '';
   const topBadge = s.featured ? '<span class="book-card-top">Top pick</span>' : '';
   const badges = [topBadge, catLabel].filter(Boolean).join('') || '<span class="book-card-type">Summary</span>';
+  const coverHtml = renderBookCover(s.id, s.title, 'summary');
   return `
-    <div class="book-card summary-card" data-summary-id="${escapeHtml(s.id)}">
+    <div class="book-card summary-card has-cover" data-summary-id="${escapeHtml(s.id)}">
+      ${coverHtml}
       <div class="book-card-badges">${badges}</div>
       <div class="book-card-body">
         <div class="book-card-title">${escapeHtml(s.title)}</div>
@@ -1748,11 +1854,13 @@ function renderSummariesBrowseGrid(items, { grouped = false, excludeFeatured = f
         </h2>
         <div class="book-grid">${g.items.map(renderSummaryCard).join('')}</div>
       </section>`).join('');
+    paintCoversIn(grid);
     return;
   }
 
   grid.className = 'book-grid';
   grid.innerHTML = items.map(renderSummaryCard).join('');
+  paintCoversIn(grid);
 }
 
 async function renderSummariesGrid() {
@@ -1806,6 +1914,7 @@ async function renderSummariesGrid() {
     if (featured.length && featuredWrap && featuredGrid) {
       featuredWrap.classList.remove('hidden');
       featuredGrid.innerHTML = featured.map(renderSummaryCard).join('');
+      paintCoversIn(featuredGrid);
     } else {
       featuredWrap?.classList.add('hidden');
       featuredGrid?.replaceChildren();
@@ -1886,8 +1995,10 @@ async function renderLibraryGrid() {
     const reuploadBtn = b.isCloudPlaceholder
       ? `<button class="book-reupload" data-id="${escapeHtml(b.id)}" type="button">Open EPUB</button>`
       : '';
+    const coverHtml = renderBookCover(b.id, b.title, b.type || 'book');
     return `
-      <div class="book-card${b.isCloudPlaceholder ? ' is-placeholder' : ''}" data-id="${escapeHtml(b.id)}">
+      <div class="book-card has-cover${b.isCloudPlaceholder ? ' is-placeholder' : ''}" data-id="${escapeHtml(b.id)}">
+        ${coverHtml}
         <div class="book-card-badges"><span class="book-card-type">${typeLabel}</span>${placeholderBadge}</div>
         <div class="book-card-body">
           <div class="book-card-title">${escapeHtml(b.title)}</div>
@@ -1902,6 +2013,7 @@ async function renderLibraryGrid() {
         <button class="book-delete" data-id="${escapeHtml(b.id)}" type="button" aria-label="Delete">×</button>
       </div>`;
   }).join('');
+  paintCoversIn($('libGrid'));
   refreshAnalyticsView();
 }
 
