@@ -34,6 +34,7 @@ function parsePngHeader(buf) {
 }
 
 const SIZES = [16, 32, 180, 192, 512];
+const REWARD_VARIANTS = ['midnight', 'ember', 'obsidian', 'crystal', 'gold'];
 
 for (const size of SIZES) {
   test(`icon-${size}.png exists with the correct PNG header and dimensions`, () => {
@@ -95,4 +96,28 @@ test('build-icons.mjs script is syntactically valid and reproducible', () => {
       assert.equal(height, size);
     }
   });
+});
+
+for (const variant of REWARD_VARIANTS) {
+  for (const size of [180, 192, 512]) {
+    test(`reward icon ${variant}@${size} exists with the correct dimensions`, () => {
+      const p = resolve(ICONS_DIR, `icon-${variant}-${size}.png`);
+      assert.ok(existsSync(p), `expected ${p} to exist`);
+      const buf = readFileSync(p);
+      assert.ok(buf.subarray(0, 8).equals(PNG_SIGNATURE), `${p} must have a PNG signature`);
+      const { width, height } = parsePngHeader(buf);
+      assert.equal(width, size);
+      assert.equal(height, size);
+    });
+  }
+}
+
+test('manifest.json declares every reward variant at 192 and 512', () => {
+  const manifestPath = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'manifest.json');
+  const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+  const sources = new Set((manifest.icons || []).map((i) => i.src));
+  for (const variant of REWARD_VARIANTS) {
+    assert.ok(sources.has(`icons/icon-${variant}-192.png`), `manifest must list icons/icon-${variant}-192.png`);
+    assert.ok(sources.has(`icons/icon-${variant}-512.png`), `manifest must list icons/icon-${variant}-512.png`);
+  }
 });

@@ -227,7 +227,118 @@ function nextDayKey(key) {
 }
 
 
-export const DAILY_WORD_GOAL = 5000;
+/**
+ * Per-level daily quest target. Word goals scale with reader level so new
+ * readers aren't asked to grind 5K on day one.
+ */
+export const DAILY_QUEST_TABLE = {
+  1: 500,    // Focus Seed — a 2-minute warm-up
+  2: 1000,   // Page Starter — a single chapter
+  3: 2000,   // Coffee Reader — one sitting
+  4: 3000,   // Chapter Climber
+  5: 4000,   // Streak Builder
+  6: 5000,   // Deep Reader — legacy 5K default
+  7: 6500,   // Library Pro
+  8: 7500,   // Focus Legend — full immersion
+};
+
+export function getDailyQuestTarget(level = 1) {
+  const capped = Math.max(1, Math.min(8, level | 0));
+  return DAILY_QUEST_TABLE[capped] || 1000;
+}
+
+export const DAILY_WORD_GOAL = 5000; // legacy default, superseded by getDailyQuestTarget()
+
+/**
+ * Returns a { icon, accent } descriptor for a reader level, used by the level
+ * badge and the level-up toast.
+ */
+export const LEVEL_VISUALS = {
+  1: { icon: '🌱', accent: '#7C3AED' }, // Focus Seed
+  2: { icon: '📖', accent: '#7C3AED' }, // Page Starter
+  3: { icon: '☕', accent: '#D97706' }, // Coffee Reader
+  4: { icon: '🧗', accent: '#D97706' }, // Chapter Climber
+  5: { icon: '🔥', accent: '#DC2626' }, // Streak Builder
+  6: { icon: '🧠', accent: '#DC2626' }, // Deep Reader
+  7: { icon: '📚', accent: '#059669' }, // Library Pro
+  8: { icon: '🏆', accent: '#059669' }, // Focus Legend
+};
+
+/**
+ * Title rewards unlocked by reaching a particular level. Titles decorate the
+ * reader's profile and reading-mode signature line.
+ */
+export const TITLES = [
+  { id: 't-budding',      name: 'Budding Reader',   minLevel: 1 },
+  { id: 't-page-walker',  name: 'Page Walker',      minLevel: 2 },
+  { id: 't-coffee-philo', name: 'Coffee Philosopher', minLevel: 3 },
+  { id: 't-climber',      name: 'Climber of Chapters', minLevel: 4 },
+  { id: 't-streaker',     name: 'Streak Stoker',    minLevel: 5 },
+  { id: 't-deep',         name: 'Deep Current',     minLevel: 6 },
+  { id: 't-librarian',    name: 'Field Librarian',  minLevel: 7 },
+  { id: 't-legend',       name: 'Focus Legend',     minLevel: 8 },
+];
+
+/**
+ * App-icon rewards — alternate manifest icons the user can pick. Unlocked
+ * by hitting a streak milestone or a level.
+ */
+export const APP_ICONS = [
+  { id: 'icon-default',  name: 'Crimson Reader',   kind: 'default',   accent: '#fc1c46', unlock: { type: 'level', level: 1 } },
+  { id: 'icon-midnight', name: 'Midnight Focus',   kind: 'dark',      accent: '#7C3AED', unlock: { type: 'level', level: 3 } },
+  { id: 'icon-ember',    name: 'Ember Streak',     kind: 'fire',      accent: '#D97706', unlock: { type: 'streak', days: 7 } },
+  { id: 'icon-obsidian', name: 'Obsidian Library', kind: 'obsidian',  accent: '#059669', unlock: { type: 'level', level: 5 } },
+  { id: 'icon-crystal',  name: 'Crystal Mind',     kind: 'crystal',   accent: '#0EA5E9', unlock: { type: 'level', level: 7 } },
+  { id: 'icon-gold',     name: 'Gold Legend',      kind: 'gold',      accent: '#D97706', unlock: { type: 'level', level: 8 } },
+];
+
+/**
+ * Reader themes unlocked through gameplay. Each theme overrides the visual
+ * accent used across the UI; the ORP word color, conic quest ring, and
+ * progress chips all read from `theme.accent`.
+ */
+export const THEMES = [
+  { id: 'theme-default',  name: 'Signal Crimson',  accent: '#fc1c46', unlock: { type: 'level', level: 1 } },
+  { id: 'theme-violet',   name: 'Violet Focus',    accent: '#7C3AED', unlock: { type: 'level', level: 2 } },
+  { id: 'theme-amber',    name: 'Amber Streak',    accent: '#D97706', unlock: { type: 'streak', days: 3 } },
+  { id: 'theme-ember',    name: 'Ember Library',   accent: '#DC2626', unlock: { type: 'streak', days: 7 } },
+  { id: 'theme-deep',     name: 'Deep Current',    accent: '#0EA5E9', unlock: { type: 'level', level: 5 } },
+  { id: 'theme-jade',     name: 'Jade Archive',    accent: '#059669', unlock: { type: 'level', level: 6 } },
+  { id: 'theme-gold',     name: 'Gold Legend',     accent: '#D97706', unlock: { type: 'level', level: 8 } },
+  { id: 'theme-obsidian', name: 'Obsidian Noon',   accent: '#4c4c4c', unlock: { type: 'level', level: 7 } },
+];
+
+/**
+ * Full reward catalog. Anything the user can earn — themes, icons, titles —
+ * lives here. The active reward set is the subset whose unlock conditions are
+ * met.
+ */
+export const REWARDS = [
+  ...THEMES.map((t) => ({ ...t, category: 'theme' })),
+  ...APP_ICONS.map((i) => ({ ...i, category: 'icon' })),
+  ...TITLES.map((t) => ({ ...t, category: 'title' })),
+];
+
+/**
+ * Resolve the list of reward ids currently unlocked for a given reader state.
+ */
+export function unlockedRewardIds({ level = 1, currentStreak = 0, bestStreak = 0 } = {}) {
+  const best = Math.max(currentStreak | 0, bestStreak | 0);
+  return REWARDS.filter((r) => {
+    const u = r.unlock;
+    if (!u) return true;
+    if (u.type === 'level' && level >= (u.level || 1)) return true;
+    if (u.type === 'streak' && best >= (u.days || 1)) return true;
+    return false;
+  }).map((r) => r.id);
+}
+
+/**
+ * Return the catalog entry for a given reward id, or null.
+ */
+export function getReward(id) {
+  return REWARDS.find((r) => r.id === id) || null;
+}
 
 export const READER_LEVELS = [
   { level: 1, name: 'Focus Seed', minWords: 0 },
@@ -288,6 +399,16 @@ function badgeProgress(kind, target, stats, days, extra = {}) {
  * daily-bucket map and returns either null (locked) or { unlockedAt }.
  */
 export const ACHIEVEMENTS = [
+  // --- Day / pace ---
+  {
+    id: 'first-hundred',
+    icon: '🟢',
+    title: 'First Hundred',
+    description: 'Read your first 100 words in a day.',
+    kind: 'today',
+    target: 100,
+    check: (stats) => (stats.wordsToday >= 100 ? { unlockedAt: 0 } : null),
+  },
   {
     id: 'first-thousand',
     icon: '✨',
@@ -303,8 +424,27 @@ export const ACHIEVEMENTS = [
     title: 'Coffee Quest',
     description: 'Hit the 5,000-word daily quest.',
     kind: 'daily',
-    target: DAILY_WORD_GOAL,
-    check: (_stats, days) => (maxDailyWords(days) >= DAILY_WORD_GOAL ? { unlockedAt: 0 } : null),
+    target: 5000,
+    check: (_stats, days) => (maxDailyWords(days) >= 5000 ? { unlockedAt: 0 } : null),
+  },
+  {
+    id: 'daily-quest-10k',
+    icon: '🛡️',
+    title: 'Iron Day',
+    description: 'Read 10,000 words in a single day.',
+    kind: 'daily',
+    target: 10000,
+    check: (_stats, days) => (maxDailyWords(days) >= 10000 ? { unlockedAt: 0 } : null),
+  },
+  // --- Streaks ---
+  {
+    id: 'streak-3',
+    icon: '🌅',
+    title: 'Hat Trick',
+    description: '3-day reading streak.',
+    kind: 'streak',
+    target: 3,
+    check: (stats) => (stats.currentStreak >= 3 || stats.bestStreak >= 3 ? { unlockedAt: 0 } : null),
   },
   {
     id: 'streak-7',
@@ -315,6 +455,16 @@ export const ACHIEVEMENTS = [
     target: 7,
     check: (stats) => (stats.currentStreak >= 7 || stats.bestStreak >= 7 ? { unlockedAt: 0 } : null),
   },
+  {
+    id: 'streak-30',
+    icon: '🌙',
+    title: '30-Day Streak',
+    description: 'A whole month of daily reading.',
+    kind: 'streak',
+    target: 30,
+    check: (stats) => (stats.currentStreak >= 30 || stats.bestStreak >= 30 ? { unlockedAt: 0 } : null),
+  },
+  // --- Volume ---
   {
     id: 'ten-k-week',
     icon: '⚡',
@@ -334,6 +484,25 @@ export const ACHIEVEMENTS = [
     check: (stats) => (stats.totalWords >= 30000 ? { unlockedAt: 0 } : null),
   },
   {
+    id: 'total-100k',
+    icon: '💯',
+    title: 'Six-Figure Reader',
+    description: 'Read 100,000 total words.',
+    kind: 'total',
+    target: 100000,
+    check: (stats) => (stats.totalWords >= 100000 ? { unlockedAt: 0 } : null),
+  },
+  {
+    id: 'total-250k',
+    icon: '🏆',
+    title: 'Quarter-Million',
+    description: 'Read 250,000 total words.',
+    kind: 'total',
+    target: 250000,
+    check: (stats) => (stats.totalWords >= 250000 ? { unlockedAt: 0 } : null),
+  },
+  // --- Books / chapters ---
+  {
     id: 'first-chapter',
     icon: '📘',
     title: 'First Chapter',
@@ -341,6 +510,15 @@ export const ACHIEVEMENTS = [
     kind: 'chapters',
     target: 1,
     check: (_stats, _days, extra) => (extra?.chapterCompletions >= 1 ? { unlockedAt: 0 } : null),
+  },
+  {
+    id: 'chapter-25',
+    icon: '📚',
+    title: '25 Chapters',
+    description: 'Finish 25 chapters.',
+    kind: 'chapters',
+    target: 25,
+    check: (_stats, _days, extra) => ((extra?.chapterCompletions || 0) >= 25 ? { unlockedAt: 0 } : null),
   },
   {
     id: 'first-book',
@@ -352,14 +530,15 @@ export const ACHIEVEMENTS = [
     check: (_stats, _days, extra) => (extra?.booksFinished >= 1 ? { unlockedAt: 0 } : null),
   },
   {
-    id: 'two-devices',
-    icon: '🔁',
-    title: 'Two-Device Reader',
-    description: 'Read from at least 2 devices in one week.',
-    kind: 'devices',
-    target: 2,
-    check: (_stats, _days, extra) => ((extra?.uniqueDevices7d || 0) >= 2 ? { unlockedAt: 0 } : null),
+    id: 'bookshelf-5',
+    icon: '🗄️',
+    title: 'Bookshelf Builder',
+    description: 'Finish 5 books.',
+    kind: 'books',
+    target: 5,
+    check: (_stats, _days, extra) => ((extra?.booksFinished || 0) >= 5 ? { unlockedAt: 0 } : null),
   },
+  // --- Sessions / devices ---
   {
     id: 'wpm-ten-min',
     icon: '⏱️',
@@ -368,6 +547,24 @@ export const ACHIEVEMENTS = [
     kind: 'sessionMs',
     target: 10 * 60_000,
     check: (_stats, _days, extra) => ((extra?.longestSingleSessionMs || 0) >= 10 * 60_000 ? { unlockedAt: 0 } : null),
+  },
+  {
+    id: 'wpm-thirty-min',
+    icon: '🌀',
+    title: 'Deep Flow',
+    description: 'A 30-minute single-session flow.',
+    kind: 'sessionMs',
+    target: 30 * 60_000,
+    check: (_stats, _days, extra) => ((extra?.longestSingleSessionMs || 0) >= 30 * 60_000 ? { unlockedAt: 0 } : null),
+  },
+  {
+    id: 'two-devices',
+    icon: '🔁',
+    title: 'Two-Device Reader',
+    description: 'Read from at least 2 devices in one week.',
+    kind: 'devices',
+    target: 2,
+    check: (_stats, _days, extra) => ((extra?.uniqueDevices7d || 0) >= 2 ? { unlockedAt: 0 } : null),
   },
 ];
 
@@ -417,17 +614,33 @@ export function buildGamificationSummary(events, existingAchievements = [], extr
       progress,
     };
   });
+
+  const level = getReaderLevel(stats.totalWords || 0);
+  const dailyGoal = getDailyQuestTarget(level.level);
+  const wordsToday = stats.wordsToday || 0;
+  const dailyPercent = Math.min(100, Math.round((wordsToday / dailyGoal) * 100));
+
   return {
     stats,
     days,
-    dailyGoal: DAILY_WORD_GOAL,
-    dailyPercent: Math.min(100, Math.round(((stats.wordsToday || 0) / DAILY_WORD_GOAL) * 100)),
-    wordsToDailyGoal: Math.max(0, DAILY_WORD_GOAL - (stats.wordsToday || 0)),
-    level: getReaderLevel(stats.totalWords || 0),
+    dailyGoal,
+    dailyPercent,
+    wordsToDailyGoal: Math.max(0, dailyGoal - wordsToday),
+    level,
     achievements,
     badges,
     unlockedCount: unlockedIds.size,
     totalBadgeCount: ACHIEVEMENTS.length,
+    rewards: {
+      unlockedIds: unlockedRewardIds({
+        level: level.level,
+        currentStreak: stats.currentStreak,
+        bestStreak: stats.bestStreak,
+      }),
+      themes: THEMES,
+      icons: APP_ICONS,
+      titles: TITLES,
+    },
   };
 }
 
@@ -456,3 +669,31 @@ export function summarizeCompletions(books) {
 }
 
 export { ACHIEVEMENTS as ACHIEVEMENT_DEFINITIONS };
+
+/**
+ * Compute which reward/achievement ids are NEWLY unlocked given the prior
+ * state. Used to fire toasts after each reading event flush.
+ */
+export function diffUnlocks(prev = {}, next = {}) {
+  const newly = { rewards: [], achievements: [], level: null };
+  const prevRewards = new Set(prev.rewardIds || []);
+  for (const id of (next.rewardIds || [])) if (!prevRewards.has(id)) newly.rewards.push(id);
+  const prevAch = new Set(prev.achievementIds || []);
+  for (const id of (next.achievementIds || [])) if (!prevAch.has(id)) newly.achievements.push(id);
+  if (prev.level != null && next.level != null && next.level > prev.level) {
+    newly.level = next.level;
+  }
+  return newly;
+}
+
+/**
+ * Snapshot of unlock state suitable for persistence. Persist this and feed it
+ * to diffUnlocks() on the next flush.
+ */
+export function snapshotUnlockState(summary) {
+  return {
+    rewardIds: summary?.rewards?.unlockedIds || [],
+    achievementIds: (summary?.achievements || []).map((a) => a.id),
+    level: summary?.level?.level || 1,
+  };
+}

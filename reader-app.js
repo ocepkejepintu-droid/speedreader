@@ -18,12 +18,13 @@ import {
 } from './summaries.js';
 import {
   buildAccountSnapshot, parseAccountSnapshot, mergeAccountSnapshot,
-  validateSnapshotShape, getOrCreateDeviceId, SNAPSHOT_VERSION, absoluteWordIndex,
+  validateSnapshotShape, getOrCreateDeviceId, absoluteWordIndex,
 } from './sync-model.js';
 import {
   buildReadingEvent, mergeEvents as mergeReadingEvents,
-  buildGamificationSummary,
-  summarizeCompletions,
+  buildGamificationSummary, summarizeCompletions,
+  ACHIEVEMENTS, LEVEL_VISUALS, REWARDS, getReward,
+  snapshotUnlockState, diffUnlocks,
 } from './analytics.js';
 
 const $ = (id) => document.getElementById(id);
@@ -146,7 +147,10 @@ const SYNC_SNAPSHOT_API = './sync/snapshot';
 const DEVICE_ID_KEY = 'rsvp-device-id';
 const READING_EVENTS_KEY = 'rsvp-reading-events';
 const ACHIEVEMENTS_KEY = 'rsvp-achievements';
+const REWARDS_KEY = 'rsvp-rewards';
+const UNLOCK_STATE_KEY = 'rsvp-unlock-state';
 const MAX_LOCAL_EVENTS = 2000;
+const TOAST_LIFETIME_MS = 3200;
 
 function getDeviceId() {
   try { return getOrCreateDeviceId(window.localStorage); }
@@ -178,6 +182,75 @@ function loadAchievements() {
 
 function saveAchievements(list) {
   try { localStorage.setItem(ACHIEVEMENTS_KEY, JSON.stringify(list)); } catch { /* ignore */ }
+}
+
+function loadRewards() {
+  try {
+    const raw = localStorage.getItem(REWARDS_KEY);
+    const obj = raw ? JSON.parse(raw) : {};
+    return obj && typeof obj === 'object' ? obj : {};
+  } catch { return {}; }
+}
+
+function saveRewards(obj) {
+  try { localStorage.setItem(REWARDS_KEY, JSON.stringify(obj || {})); } catch { /* ignore */ }
+}
+
+function loadUnlockState() {
+  try {
+    const raw = localStorage.getItem(UNLOCK_STATE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch { return null; }
+}
+
+function saveUnlockState(state) {
+  try { localStorage.setItem(UNLOCK_STATE_KEY, JSON.stringify(state)); } catch { /* ignore */ }
+}
+
+const GAMIFY_EVENTS_KEY = 'rsvp-gamify-events';
+const GAMIFY_MAX_EVENTS = 500;
+const GAMIFY_ALLOWED = new Set([
+  'reward_equip', 'reward_unlock', 'level_up', 'quest_complete', 'achievement_unlock',
+]);
+
+function loadGamifyEvents() {
+  try {
+    const raw = localStorage.getItem(GAMIFY_EVENTS_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch { return []; }
+}
+
+function saveGamifyEvents(events) {
+  try {
+    const trimmed = events.length > GAMIFY_MAX_EVENTS
+      ? events.slice(events.length - GAMIFY_MAX_EVENTS)
+      : events;
+    localStorage.setItem(GAMIFY_EVENTS_KEY, JSON.stringify(trimmed));
+  } catch { /* ignore */ }
+}
+
+export function trackGamify(eventType, payload = {}) {
+  if (!GAMIFY_ALLOWED.has(eventType)) return;
+  const safePayload = {};
+  for (const k of Object.keys(payload || {})) {
+    const v = payload[k];
+    if (v === null || ['string', 'number', 'boolean'].includes(typeof v)) {
+      safePayload[k] = v;
+    }
+  }
+  const event = { ts: Date.now(), type: eventType, ...safePayload };
+  const events = loadGamifyEvents();
+  events.push(event);
+  saveGamifyEvents(events);
+  if (window.location.search.includes('gamify=1')) {
+    // eslint-disable-next-line no-console
+    console.debug('[gamify]', eventType, safePayload);
+  }
+}
+
+export function getGamifyEvents() {
+  return loadGamifyEvents().slice().reverse();
 }
 
 const etaDisplay = { chapterSec: null, bookSec: null, lastWpm: null };
@@ -364,51 +437,138 @@ function refreshAnalyticsView() {
   const { stats, level } = summary;
   const newUnlocks = summary.achievements.filter((a) => !existing.some((old) => old.id === a.id));
   if (summary.achievements.length !== existing.length || newUnlocks.length) saveAchievements(summary.achievements);
-  const signedIn = authConfigured && isSignedIn();
-  const syncText = authConfigured
-    ? (signedIn ? 'Signed in — your level travels with your library progress.' : 'Sign in to keep your reading level across devices.')
-    : 'Local mode — your reading level stays on this device.';
 
-  panel.innerHTML = `
-    <section class="quest-card" aria-label="Daily reading quest">
-      <div class="quest-card-main">
-        <div>
-          <div class="quest-kicker">Daily quest</div>
-          <h2>Read ${summary.dailyGoal.toLocaleString()} words today</h2>
-          <p>${summary.wordsToDailyGoal > 0
-            ? `${summary.wordsToDailyGoal.toLocaleString()} words left — about ${Math.ceil(summary.wordsToDailyGoal / Math.max(200, state.wpm || 300))} min at your speed.`
-            : 'Quest complete. Nice — keep the streak alive.'}</p>
+  const isAccountView = panel.dataset.scope === 'full';
+  panel.innerHTML = isAccountView ? renderAccountDashboard(summary) : renderMiniSummary(summary);
+  applyActiveRewards(summary);
+  return summary;
+}
+
+function renderMiniSummary(summary) {
+  const { stats, level, dailyGoal, dailyPercent } = summary;
+  const acc = level.accent || 'var(--color-signal-red)';
+  return `
+    <div class="lib-mini-summary" data-mini-summary>
+      <a class="lib-mini-card" href="./account.html" aria-label="Open account dashboard">
+        <div class="lib-mini-level" style="--level-accent:${acc}">
+          <span class="lib-mini-level-num">L${level.level}</span>
+          <span class="lib-mini-level-icon" aria-hidden="true">${LEVEL_VISUALS[level.level]?.icon || '🌱'}</span>
         </div>
-        <div class="quest-ring" style="--quest-progress:${summary.dailyPercent}%">
-          <strong>${summary.dailyPercent}%</strong>
-          <span>${stats.wordsToday.toLocaleString()} words</span>
+        <div class="lib-mini-copy">
+          <div class="lib-mini-kicker">${escapeHtml(level.name)}</div>
+          <div class="lib-mini-headline">
+            <strong>${stats.wordsToday.toLocaleString()}</strong>
+            <span>/ ${dailyGoal.toLocaleString()} today</span>
+          </div>
+          <div class="lib-mini-progress" aria-hidden="true"><span style="width:${dailyPercent}%; --level-accent:${acc}"></span></div>
+          <div class="lib-mini-meta">
+            <span>🔥 ${stats.currentStreak}-day streak</span>
+            <span>${summary.unlockedCount}/${summary.totalBadgeCount} badges</span>
+          </div>
         </div>
-      </div>
-      <div class="quest-bar" aria-hidden="true"><span style="width:${summary.dailyPercent}%"></span></div>
-    </section>
-
-    <section class="level-card" aria-label="Reader level">
-      <div class="level-badge">L${level.level}</div>
-      <div class="level-body">
-        <div class="quest-kicker">Reader level</div>
-        <h2>${escapeHtml(level.name)}</h2>
-        <p>${level.nextLevel
-          ? `${level.wordsToNext.toLocaleString()} words to unlock ${escapeHtml(level.nextLevel.name)}.`
-          : 'Max level unlocked. You are a Focus Legend.'}</p>
-        <div class="level-progress" aria-hidden="true"><span style="width:${level.progress}%"></span></div>
-        <div class="level-meta"><span>${stats.totalWords.toLocaleString()} lifetime words</span><span>${syncText}</span></div>
-      </div>
-    </section>
-
-    <div class="lib-stats-grid">
-      <div class="lib-stat"><div class="lib-stat-num">${stats.wordsToday.toLocaleString()}</div><div class="lib-stat-label">words today</div></div>
-      <div class="lib-stat"><div class="lib-stat-num">${stats.words7d.toLocaleString()}</div><div class="lib-stat-label">7-day words</div></div>
-      <div class="lib-stat"><div class="lib-stat-num">${stats.currentStreak}</div><div class="lib-stat-label">day streak</div></div>
-      <div class="lib-stat"><div class="lib-stat-num">${stats.bestStreak}</div><div class="lib-stat-label">best streak</div></div>
+        <span class="lib-mini-cta" aria-hidden="true">View dashboard →</span>
+      </a>
     </div>
-    ${renderSparkline(Object.entries(summary.days).sort((a, b) => a[0].localeCompare(b[0])).slice(-7))}
-    <div class="lib-achievements" id="libAchievements">${renderAchievementsList(summary.badges)}</div>
   `;
+}
+
+function renderAccountDashboard(summary) {
+  const { stats, level, dailyGoal, dailyPercent, rewards, badges } = summary;
+  const acc = level.accent || 'var(--color-signal-red)';
+  return `
+    <div class="account-dashboard">
+      <header class="account-hero">
+        <div class="account-hero-level" style="--level-accent:${acc}">
+          <div class="account-hero-num">L${level.level}</div>
+          <div class="account-hero-name">
+            <span class="account-hero-icon" aria-hidden="true">${LEVEL_VISUALS[level.level]?.icon || '🌱'}</span>
+            ${escapeHtml(level.name)}
+          </div>
+        </div>
+        <div class="account-hero-progress">
+          <div class="account-progress-bar" aria-hidden="true"><span style="width:${level.progress}%; --level-accent:${acc}"></span></div>
+          <div class="account-progress-meta">
+            <span>${stats.totalWords.toLocaleString()} lifetime words</span>
+            <span>${level.nextLevel
+              ? `${level.wordsToNext.toLocaleString()} to ${escapeHtml(level.nextLevel.name)}`
+              : 'Max level reached'}</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="quest-card" aria-label="Daily reading quest">
+        <div class="quest-card-main">
+          <div>
+            <div class="quest-kicker">Daily quest · level ${level.level}</div>
+            <h2>Read ${dailyGoal.toLocaleString()} words today</h2>
+            <p>${summary.wordsToDailyGoal > 0
+              ? `${summary.wordsToDailyGoal.toLocaleString()} words left — about ${Math.ceil(summary.wordsToDailyGoal / Math.max(200, state.wpm || 300))} min at your speed.`
+              : 'Quest complete. Nice — keep the streak alive.'}</p>
+          </div>
+          <div class="quest-ring" style="--quest-progress:${dailyPercent}%; --level-accent:${acc}">
+            <strong>${dailyPercent}%</strong>
+            <span>${stats.wordsToday.toLocaleString()} words</span>
+          </div>
+        </div>
+        <div class="quest-bar" aria-hidden="true"><span style="width:${dailyPercent}%; --level-accent:${acc}"></span></div>
+      </section>
+
+      <div class="lib-stats-grid">
+        <div class="lib-stat"><div class="lib-stat-num">${stats.wordsToday.toLocaleString()}</div><div class="lib-stat-label">words today</div></div>
+        <div class="lib-stat"><div class="lib-stat-num">${stats.words7d.toLocaleString()}</div><div class="lib-stat-label">7-day words</div></div>
+        <div class="lib-stat"><div class="lib-stat-num">${stats.words30d.toLocaleString()}</div><div class="lib-stat-label">30-day words</div></div>
+        <div class="lib-stat"><div class="lib-stat-num">${stats.currentStreak}</div><div class="lib-stat-label">day streak</div></div>
+        <div class="lib-stat"><div class="lib-stat-num">${stats.bestStreak}</div><div class="lib-stat-label">best streak</div></div>
+        <div class="lib-stat"><div class="lib-stat-num">${stats.avgWpm}</div><div class="lib-stat-label">avg WPM</div></div>
+      </div>
+      ${renderSparkline(Object.entries(summary.days).sort((a, b) => a[0].localeCompare(b[0])).slice(-14))}
+      <section class="rewards-shelf" aria-label="Reward shelf">
+        <header class="rewards-header">
+          <h2>Rewards</h2>
+          <span>${rewards.unlockedIds.length} unlocked</span>
+        </header>
+        <div class="rewards-grid">${renderRewardsGrid(rewards)}</div>
+      </section>
+      <div class="lib-achievements" id="libAchievements">${renderAchievementsList(badges)}</div>
+      <p class="account-footnote">Streak logic is unchanged — your reading history still drives the daily ring exactly as before.</p>
+    </div>
+  `;
+}
+
+function renderRewardsGrid(rewards) {
+  const all = [
+    ...(rewards.themes || []).map((r) => ({ ...r, category: 'theme' })),
+    ...(rewards.icons || []).map((r) => ({ ...r, category: 'icon' })),
+    ...(rewards.titles || []).map((r) => ({ ...r, category: 'title' })),
+  ];
+  const unlocked = new Set(rewards.unlockedIds);
+  const active = loadRewards();
+  return all.map((r) => {
+    const isUnlocked = unlocked.has(r.id);
+    const unlock = r.unlock;
+    const unlockLabel = unlock
+      ? (unlock.type === 'level'
+          ? `Reach L${unlock.level}`
+          : unlock.type === 'streak'
+            ? `${unlock.days}-day streak`
+            : 'Locked')
+      : 'Default';
+    const swatch = r.accent ? `--reward-accent:${r.accent};` : '';
+    const isActive = active[r.category] === r.id;
+    return `
+      <article class="reward-card ${isUnlocked ? 'unlocked' : 'locked'} ${isActive ? 'active' : ''}" style="${swatch}" data-reward-id="${r.id}" data-reward-category="${r.category}">
+        <div class="reward-card-swatch" aria-hidden="true"></div>
+        <div class="reward-card-body">
+          <div class="reward-card-kicker">${r.category}</div>
+          <h3>${escapeHtml(r.name)}</h3>
+          <p>${escapeHtml(unlockLabel)}</p>
+        </div>
+        ${isUnlocked
+          ? `<button type="button" class="reward-card-action" data-reward-pick="${r.id}">${isActive ? 'Equipped' : 'Equip'}</button>`
+          : `<span class="reward-card-lock" aria-hidden="true">🔒</span>`}
+      </article>
+    `;
+  }).join('');
 }
 
 function renderSparkline(dayList) {
@@ -416,7 +576,7 @@ function renderSparkline(dayList) {
   const max = Math.max(1, ...dayList.map(([, d]) => d.words));
   const w = 280, h = 60, gap = 4;
   const barW = (w - gap * (dayList.length - 1)) / dayList.length;
-  return `<svg class="lib-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-label="Words per day, last 7 days">
+  return `<svg class="lib-spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-label="Words per day, last 14 days">
     ${dayList.map(([, d], i) => {
       const bh = Math.round((d.words / max) * h);
       const x = i * (barW + gap);
@@ -448,6 +608,225 @@ function renderAchievementsList(badges = null) {
           </span>
         </li>`;
     }).join('')}</ul>`;
+}
+
+/**
+ * Apply the currently-equipped reward set to the live DOM. Themes drive the
+ * --level-accent and --signal-accent CSS variables; icons change the
+ * apple-touch-icon; titles decorate the reader's signature line.
+ */
+function applyActiveRewards(summary) {
+  const picks = loadRewards();
+  const theme = getReward(picks.theme || 'theme-default');
+  const icon = getReward(picks.icon || 'icon-default');
+  const title = getReward(picks.title || 't-budding');
+  const accent = (theme?.accent) || (summary?.level?.accent) || '#fc1c46';
+  document.documentElement.style.setProperty('--signal-accent', accent);
+  document.documentElement.style.setProperty('--level-accent', accent);
+  document.documentElement.style.setProperty('--theme-accent', accent);
+  if (icon?.id) {
+    const href = resolveRewardIcon(icon.id);
+    if (href) {
+      const link = document.querySelector('link[rel="apple-touch-icon"]');
+      if (link) link.setAttribute('href', href);
+      const favicon = document.querySelector('link[rel="icon"][sizes="192x192"]')
+        || document.querySelector('link[rel="icon"]');
+      if (favicon) favicon.setAttribute('href', href);
+    }
+  }
+  const titleEl = document.querySelector('[data-active-title]');
+  if (titleEl && title?.name) titleEl.textContent = title.name;
+}
+
+/**
+ * Resolve an icon-reward id to a real PNG path, falling back only when the
+ * file actually exists. We probe the default set + every size we ship; if a
+ * generated alternate is missing on disk (older installs, partial git pulls),
+ * we leave the prior apple-touch-icon href alone instead of pointing the
+ * browser at a 404.
+ */
+function resolveRewardIcon(id) {
+  const sizes = [180, 192, 512];
+  for (const size of sizes) {
+    const candidate = `icons/icon-${id}-${size}.png`;
+    if (iconAssetExists(candidate)) return candidate;
+  }
+  if (iconAssetExists('icons/icon-192.png')) return 'icons/icon-192.png';
+  return null;
+}
+
+function iconAssetExists(href) {
+  try {
+    const u = new URL(href, document.baseURI);
+    return document.querySelector(`link[rel="preload"][href="${u.pathname}"][as="image"]`) != null
+      || (window.__iconCache && window.__iconCache[href]);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Wire reward-equip buttons inside the dashboard. Called from
+ * refreshAnalyticsView() after the dashboard renders.
+ */
+function bindRewardActions() {
+  const panel = $('libStats');
+  if (!panel) return;
+  panel.querySelectorAll('[data-reward-pick]').forEach((btn) => {
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = '1';
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = btn.getAttribute('data-reward-pick');
+      const category = btn.closest('[data-reward-category]')?.dataset.rewardCategory || 'theme';
+      const picks = loadRewards();
+      picks[category] = id;
+      saveRewards(picks);
+      trackGamify('reward_equip', { id, category });
+      refreshAnalyticsView();
+    });
+  });
+}
+
+/**
+ * Migrate legacy reward storage. Pre-v1 saves used a flat array; v1 uses an
+ * object keyed by category.
+ */
+function migrateRewards() {
+  try {
+    const raw = localStorage.getItem(REWARDS_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      const obj = {};
+      for (const id of parsed) {
+        const r = REWARDS.find((x) => x.id === id);
+        if (r) obj[r.category] = r.id;
+      }
+      saveRewards(obj);
+    }
+  } catch { /* ignore */ }
+}
+
+/**
+ * Compute session words read in the current play session. Sessions reset on
+ * book change or app restart.
+ */
+function sessionWordsRead() {
+  return Math.max(0, (state.index || 0) - (state.sessionStartIndex || 0));
+}
+
+/**
+ * Compute words read today (UTC-local day). Pulls from the same event source
+ * the dashboard uses, plus the in-flight session.
+ */
+function todayWordsRead() {
+  const events = loadLocalEvents();
+  const tzOffsetMin = new Date().getTimezoneOffset();
+  const today = new Date();
+  const y = today.getFullYear();
+  const m = String(today.getMonth() + 1).padStart(2, '0');
+  const d = String(today.getDate()).padStart(2, '0');
+  const key = `${y}-${m}-${d}`;
+  let words = 0;
+  for (const e of events) {
+    const local = new Date((e.endedAt || 0) - tzOffsetMin * 60_000);
+    const ey = local.getFullYear();
+    const em = String(local.getMonth() + 1).padStart(2, '0');
+    const ed = String(local.getDate()).padStart(2, '0');
+    if (`${ey}-${em}-${ed}` === key) words += e.wordsRead || 0;
+  }
+  return words;
+}
+
+/**
+ * Update the left-edge counter chip in the reading stage. Cheap to call on
+ * every tick; rewrites two text nodes and one progress bar.
+ */
+function updateReaderCounters() {
+  const sessionEl = $('sessionWords');
+  const todayEl = $('todayWords');
+  if (!sessionEl && !todayEl) return;
+  const session = sessionWordsRead();
+  const today = todayWordsRead();
+  if (sessionEl) sessionEl.textContent = session.toLocaleString();
+  if (todayEl) todayEl.textContent = today.toLocaleString();
+}
+
+/**
+ * Toast queue. Each call appends an entry; the toaster pops them in order.
+ */
+function pushToast({ icon = '✨', title, body = '', tone = 'info', lifetime = TOAST_LIFETIME_MS } = {}) {
+  if (!title) return;
+  let stack = document.getElementById('toastStack');
+  if (!stack) {
+    stack = document.createElement('div');
+    stack.id = 'toastStack';
+    stack.className = 'toast-stack';
+    stack.setAttribute('aria-live', 'polite');
+    document.body.appendChild(stack);
+  }
+  const el = document.createElement('div');
+  el.className = `toast toast-${tone}`;
+  el.innerHTML = `
+    <span class="toast-icon" aria-hidden="true">${icon}</span>
+    <span class="toast-body"><strong>${escapeHtml(title)}</strong>${body ? `<span>${escapeHtml(body)}</span>` : ''}</span>
+  `;
+  stack.appendChild(el);
+  requestAnimationFrame(() => el.classList.add('show'));
+  setTimeout(() => {
+    el.classList.remove('show');
+    setTimeout(() => el.remove(), 350);
+  }, lifetime);
+}
+
+/**
+ * Compare previously-stored unlocks to the freshly-computed summary and fire
+ * toasts for each new unlock. Persist the new snapshot.
+ */
+function emitUnlockToasts(summary) {
+  const prev = loadUnlockState();
+  const next = snapshotUnlockState(summary);
+  const diff = diffUnlocks(prev, next);
+  if (diff.rewards?.length) {
+    for (const id of diff.rewards) {
+      const r = getReward(id);
+      if (!r) continue;
+      const label = r.category === 'theme' ? 'Theme unlocked'
+        : r.category === 'icon' ? 'App icon unlocked'
+        : 'Title unlocked';
+      pushToast({ icon: r.accent ? '🎨' : r.category === 'title' ? '🎖️' : '🖼️', title: `${r.name}`, body: label, tone: 'reward' });
+      trackGamify('reward_unlock', { id, category: r.category });
+    }
+  }
+  if (diff.achievements?.length) {
+    for (const id of diff.achievements) {
+      const a = ACHIEVEMENTS.find((x) => x.id === id);
+      if (!a) continue;
+      pushToast({ icon: a.icon, title: a.title, body: a.description, tone: 'achievement' });
+      trackGamify('achievement_unlock', { id });
+    }
+  }
+  if (diff.level) {
+    const visual = LEVEL_VISUALS[diff.level];
+    pushToast({ icon: visual?.icon || '🌱', title: `Level ${diff.level} reached`, body: 'A new reading rank is yours.', tone: 'level' });
+    trackGamify('level_up', { level: diff.level });
+  }
+  saveUnlockState(next);
+}
+
+/**
+ * Run unlock diff after any event flush. Pulled out so the account view can
+ * reuse it without touching the home-page render path.
+ */
+function onGamificationChanged() {
+  const summary = refreshAnalyticsView();
+  if (summary) {
+    emitUnlockToasts(summary);
+    if (summary.dailyPercent >= 100) trackGamify('quest_complete', { wordsToday: summary.stats?.wordsToday });
+  }
+  bindRewardActions();
+  updateReaderCounters();
 }
 
 function detectDesktopCapable() {
@@ -1201,6 +1580,7 @@ function restartParagraph() {
 async function applyChapter(idx, wordIdx = 0) {
   state.chapterIndex = idx;
   state.index = wordIdx;
+  state.sessionStartIndex = wordIdx;
   state.book.chapterIndex = idx;
   state.book.wordIndex = wordIdx;
   $('inputText').value = state.book.chapters[idx].text;
@@ -1209,6 +1589,7 @@ async function applyChapter(idx, wordIdx = 0) {
   resetEtaDisplay();
   await loadChapterBoundaries();
   renderChapterSelects();
+  updateReaderCounters();
 }
 
 async function loopLandingDemo(continuePlaying = false) {
@@ -1263,6 +1644,7 @@ async function tick() {
   const delay = calcMsPerWord(word, state.wpm, timingSettings());
   state.index++;
   updateUI();
+  updateReaderCounters();
   saveProgressNow();
   if (state.index >= state.words.length) {
     recordChapterCompletion(state.chapterIndex, state.book?.id, state.wpm, state.book?.chapters?.[state.chapterIndex]?.wordCount || 0);
@@ -1506,7 +1888,7 @@ function flushReadingEvent() {
   const events = loadLocalEvents();
   const merged = mergeReadingEvents([], [ev, ...events]);
   saveLocalEvents(merged);
-  refreshAnalyticsView();
+  onGamificationChanged();
 }
 
 async function persistProgress() {
@@ -2409,6 +2791,29 @@ async function initLandingEmbed() {
 }
 
 export async function initReaderApp() {
+  const isAccountPage = window.location.pathname.endsWith('/account.html');
+  const hasReaderShell = !!($('library') && $('reader'));
+
+  if (!hasReaderShell && !isAccountPage) {
+    // Page neither hosts the reader nor the account dashboard — nothing to do.
+    return;
+  }
+
+  // Account-only page is missing the reader shell elements (scrubOverlay,
+  // modeSegment, etc.) that loadSettings/setReadingMode touch. Skip those
+  // and just bootstrap the dashboard.
+  if (isAccountPage && !hasReaderShell) {
+    await migrateFromLocalStorage();
+    await setupAuth();
+    migrateRewards();
+    const panel = $('libStats');
+    if (panel) panel.dataset.scope = 'full';
+    refreshAnalyticsView();
+    applyActiveRewards(refreshAnalyticsView());
+    bindRewardActions();
+    return;
+  }
+
   loadSettings();
   try {
     state.wordlist = await loadWordlist();
@@ -2420,6 +2825,18 @@ export async function initReaderApp() {
   await setupAuth();
 
   const landingEmbed = isLandingEmbed();
+  if (!hasReaderShell) {
+    // Account-only page: skip reader wiring and home tabs, jump straight to
+    // gamification refresh + reward binding.
+    migrateRewards();
+    const panel = $('libStats');
+    if (panel) panel.dataset.scope = 'full';
+    refreshAnalyticsView();
+    bindRewardActions();
+    applyActiveRewards(refreshAnalyticsView());
+    return;
+  }
+
   if (landingEmbed) {
     await initLandingEmbed();
   } else {
@@ -2486,6 +2903,14 @@ export async function initReaderApp() {
   bindReaderGestures();
   bindUI();
   setBodyMode();
+  migrateRewards();
+  if (isAccountPage) {
+    const panel = $('libStats');
+    if (panel) panel.dataset.scope = 'full';
+  }
+  refreshAnalyticsView();
+  bindRewardActions();
+  applyActiveRewards(refreshAnalyticsView());
   updateUI();
   if (!landingEmbed) await mountPaymentUI();
 }

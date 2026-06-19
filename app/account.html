@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Account">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="stylesheet" href="home.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/icon-16.png">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
+  <title>Account · RSVP Reader</title>
+  <style>
+    :root {
+      --color-signal-red: #fc1c46;
+      --color-pure-white: #ffffff;
+      --color-ash: #cccccc;
+      --color-graphite: #4c4c4c;
+      --surface-obsidian: #0a0a0a;
+      --surface-carbon: #151515;
+      --surface-elevated: #1a1a1a;
+      --font-reader: 'Courier New', Courier, monospace;
+      --font-focus: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+      --page-pad: clamp(16px, 4vw, 48px);
+      --max-width: 1200px;
+      --ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--surface-obsidian);
+      color: var(--color-ash);
+      font-family: var(--font-reader);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <div class="account-shell">
+    <header class="library-topbar">
+      <a class="wordmark" href="./index.html" aria-label="Back to library">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>RSVP</span>
+      </a>
+      <div class="library-topbar-end">
+        <a class="signal-cta-compact" href="./index.html">← Library</a>
+      </div>
+    </header>
+
+    <main class="account-main">
+      <section class="lib-stats-dashboard" id="libStats" data-scope="full" aria-label="Account dashboard"></section>
+    </main>
+  </div>
+
+  <script type="module">
+    import { initReaderApp, getGamifyEvents } from '../reader-app.js';
+
+    function renderGamifyLog() {
+      const panel = document.getElementById('libStats');
+      if (!panel) return;
+      const events = getGamifyEvents();
+      const rows = events.length
+        ? events.map((e) => {
+            const when = new Date(e.ts).toLocaleString();
+            const payload = Object.keys(e)
+              .filter((k) => k !== 'ts' && k !== 'type')
+              .map((k) => `${k}=${JSON.stringify(e[k])}`)
+              .join(' ');
+            return `<li class="gamify-row"><span class="gamify-ts">${escapeHtml(when)}</span><span class="gamify-type">${escapeHtml(e.type)}</span>${payload ? `<code class="gamify-payload">${escapeHtml(payload)}</code>` : ''}</li>`;
+          }).join('')
+        : '<li class="gamify-empty">No gamify events yet. Equip a reward or finish a quest to populate this log.</li>';
+      panel.innerHTML = `
+        <header class="gamify-log-head">
+          <h1>Gamify event log</h1>
+          <p>Last ${events.length} event${events.length === 1 ? '' : 's'} (newest first). Local-only; never leaves this device.</p>
+        </header>
+        <ul class="gamify-log">${rows}</ul>
+        <p class="gamify-foot"><a href="./account.html">← Back to dashboard</a></p>
+      `;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    if (window.location.search.includes('gamify=1')) {
+      renderGamifyLog();
+    } else {
+      initReaderApp();
+    }
+  </script>
+</body>
+</html>
