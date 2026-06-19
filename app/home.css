@@ -1093,6 +1093,30 @@
   color: var(--color-ash, #ccc);
 }
 .account-main { padding: 14px 0 32px; }
+.gamify-log-head h1 { font-size: 22px; margin: 4px 0 6px; color: var(--color-pure-white, #fff); }
+.gamify-log-head p { margin: 0 0 16px; color: var(--color-ash, #ccc); font-size: 13px; }
+.gamify-log { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.gamify-row {
+  display: grid;
+  grid-template-columns: 160px 160px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border: 1px solid var(--surface-elevated, #1a1a1a);
+  border-radius: 6px;
+  background: var(--surface-carbon, #151515);
+  font-family: var(--font-focus, ui-monospace, monospace);
+  font-size: 12px;
+}
+.gamify-ts { color: var(--color-graphite, #888); }
+.gamify-type { color: var(--color-pure-white, #fff); font-weight: 600; }
+.gamify-payload { color: var(--color-ash, #ccc); white-space: pre-wrap; word-break: break-all; }
+.gamify-empty { color: var(--color-ash, #ccc); padding: 16px; text-align: center; }
+.gamify-foot { margin-top: 16px; }
+.gamify-foot a { color: var(--color-signal-red, #fc1c46); text-decoration: none; }
+@media (max-width: 640px) {
+  .gamify-row { grid-template-columns: 1fr; }
+}
 #libStats[data-scope="full"] {
   grid-template-columns: 1fr;
   max-height: none;

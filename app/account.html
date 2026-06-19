@@ -57,8 +57,41 @@
   </div>
 
   <script type="module">
-    import { initReaderApp } from '../reader-app.js';
-    initReaderApp();
+    import { initReaderApp, getGamifyEvents } from '../reader-app.js';
+
+    function renderGamifyLog() {
+      const panel = document.getElementById('libStats');
+      if (!panel) return;
+      const events = getGamifyEvents();
+      const rows = events.length
+        ? events.map((e) => {
+            const when = new Date(e.ts).toLocaleString();
+            const payload = Object.keys(e)
+              .filter((k) => k !== 'ts' && k !== 'type')
+              .map((k) => `${k}=${JSON.stringify(e[k])}`)
+              .join(' ');
+            return `<li class="gamify-row"><span class="gamify-ts">${escapeHtml(when)}</span><span class="gamify-type">${escapeHtml(e.type)}</span>${payload ? `<code class="gamify-payload">${escapeHtml(payload)}</code>` : ''}</li>`;
+          }).join('')
+        : '<li class="gamify-empty">No gamify events yet. Equip a reward or finish a quest to populate this log.</li>';
+      panel.innerHTML = `
+        <header class="gamify-log-head">
+          <h1>Gamify event log</h1>
+          <p>Last ${events.length} event${events.length === 1 ? '' : 's'} (newest first). Local-only; never leaves this device.</p>
+        </header>
+        <ul class="gamify-log">${rows}</ul>
+        <p class="gamify-foot"><a href="./account.html">← Back to dashboard</a></p>
+      `;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    if (window.location.search.includes('gamify=1')) {
+      renderGamifyLog();
+    } else {
+      initReaderApp();
+    }
   </script>
 </body>
 </html>

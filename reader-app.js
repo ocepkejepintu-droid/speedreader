@@ -207,6 +207,52 @@ function saveUnlockState(state) {
   try { localStorage.setItem(UNLOCK_STATE_KEY, JSON.stringify(state)); } catch { /* ignore */ }
 }
 
+const GAMIFY_EVENTS_KEY = 'rsvp-gamify-events';
+const GAMIFY_MAX_EVENTS = 500;
+const GAMIFY_ALLOWED = new Set([
+  'reward_equip', 'reward_unlock', 'level_up', 'quest_complete', 'achievement_unlock',
+]);
+
+function loadGamifyEvents() {
+  try {
+    const raw = localStorage.getItem(GAMIFY_EVENTS_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch { return []; }
+}
+
+function saveGamifyEvents(events) {
+  try {
+    const trimmed = events.length > GAMIFY_MAX_EVENTS
+      ? events.slice(events.length - GAMIFY_MAX_EVENTS)
+      : events;
+    localStorage.setItem(GAMIFY_EVENTS_KEY, JSON.stringify(trimmed));
+  } catch { /* ignore */ }
+}
+
+export function trackGamify(eventType, payload = {}) {
+  if (!GAMIFY_ALLOWED.has(eventType)) return;
+  const safePayload = {};
+  for (const k of Object.keys(payload || {})) {
+    const v = payload[k];
+    if (v === null || ['string', 'number', 'boolean'].includes(typeof v)) {
+      safePayload[k] = v;
+    }
+  }
+  const event = { ts: Date.now(), type: eventType, ...safePayload };
+  const events = loadGamifyEvents();
+  events.push(event);
+  saveGamifyEvents(events);
+  if (window.location.search.includes('gamify=1')) {
+    // eslint-disable-next-line no-console
+    console.debug('[gamify]', eventType, safePayload);
+  }
+}
+
+export function getGamifyEvents() {
+  return loadGamifyEvents().slice().reverse();
+}
+
 const etaDisplay = { chapterSec: null, bookSec: null, lastWpm: null };
 
 const proseCache = {
@@ -578,12 +624,45 @@ function applyActiveRewards(summary) {
   document.documentElement.style.setProperty('--signal-accent', accent);
   document.documentElement.style.setProperty('--level-accent', accent);
   document.documentElement.style.setProperty('--theme-accent', accent);
-  if (icon?.accent) {
-    const link = document.querySelector('link[rel="apple-touch-icon"]');
-    if (link) link.setAttribute('href', `icons/${icon.id}.png`);
+  if (icon?.id) {
+    const href = resolveRewardIcon(icon.id);
+    if (href) {
+      const link = document.querySelector('link[rel="apple-touch-icon"]');
+      if (link) link.setAttribute('href', href);
+      const favicon = document.querySelector('link[rel="icon"][sizes="192x192"]')
+        || document.querySelector('link[rel="icon"]');
+      if (favicon) favicon.setAttribute('href', href);
+    }
   }
   const titleEl = document.querySelector('[data-active-title]');
   if (titleEl && title?.name) titleEl.textContent = title.name;
+}
+
+/**
+ * Resolve an icon-reward id to a real PNG path, falling back only when the
+ * file actually exists. We probe the default set + every size we ship; if a
+ * generated alternate is missing on disk (older installs, partial git pulls),
+ * we leave the prior apple-touch-icon href alone instead of pointing the
+ * browser at a 404.
+ */
+function resolveRewardIcon(id) {
+  const sizes = [180, 192, 512];
+  for (const size of sizes) {
+    const candidate = `icons/icon-${id}-${size}.png`;
+    if (iconAssetExists(candidate)) return candidate;
+  }
+  if (iconAssetExists('icons/icon-192.png')) return 'icons/icon-192.png';
+  return null;
+}
+
+function iconAssetExists(href) {
+  try {
+    const u = new URL(href, document.baseURI);
+    return document.querySelector(`link[rel="preload"][href="${u.pathname}"][as="image"]`) != null
+      || (window.__iconCache && window.__iconCache[href]);
+  } catch {
+    return false;
+  }
 }
 
 /**
@@ -603,6 +682,7 @@ function bindRewardActions() {
       const picks = loadRewards();
       picks[category] = id;
       saveRewards(picks);
+      trackGamify('reward_equip', { id, category });
       refreshAnalyticsView();
     });
   });
@@ -716,6 +796,7 @@ function emitUnlockToasts(summary) {
         : r.category === 'icon' ? 'App icon unlocked'
         : 'Title unlocked';
       pushToast({ icon: r.accent ? '🎨' : r.category === 'title' ? '🎖️' : '🖼️', title: `${r.name}`, body: label, tone: 'reward' });
+      trackGamify('reward_unlock', { id, category: r.category });
     }
   }
   if (diff.achievements?.length) {
@@ -723,11 +804,13 @@ function emitUnlockToasts(summary) {
       const a = ACHIEVEMENTS.find((x) => x.id === id);
       if (!a) continue;
       pushToast({ icon: a.icon, title: a.title, body: a.description, tone: 'achievement' });
+      trackGamify('achievement_unlock', { id });
     }
   }
   if (diff.level) {
     const visual = LEVEL_VISUALS[diff.level];
     pushToast({ icon: visual?.icon || '🌱', title: `Level ${diff.level} reached`, body: 'A new reading rank is yours.', tone: 'level' });
+    trackGamify('level_up', { level: diff.level });
   }
   saveUnlockState(next);
 }
@@ -738,7 +821,10 @@ function emitUnlockToasts(summary) {
  */
 function onGamificationChanged() {
   const summary = refreshAnalyticsView();
-  if (summary) emitUnlockToasts(summary);
+  if (summary) {
+    emitUnlockToasts(summary);
+    if (summary.dailyPercent >= 100) trackGamify('quest_complete', { wordsToday: summary.stats?.wordsToday });
+  }
   bindRewardActions();
   updateReaderCounters();
 }
