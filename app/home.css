@@ -1085,6 +1085,7 @@
   min-height: 100dvh;
   width: 100%;
   max-width: var(--max-width, 1200px);
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 0 var(--page-pad, clamp(16px, 4vw, 48px));
   padding-top: env(safe-area-inset-top);
@@ -1125,9 +1126,14 @@
 }
 .account-dashboard {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 18px;
   padding-bottom: 20px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
+.account-dashboard > * { min-width: 0; }
 .account-hero {
   display: grid;
   grid-template-columns: auto 1fr;

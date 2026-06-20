@@ -988,8 +988,11 @@ function renderBookCover(id, title, kind) {
 const COVER_URL_RE = /\.(?:png|jpg|jpeg|webp|avif)$/i;
 
 function coverUrlForSlug(slug) {
-  // app/index.html is the host page; covers live at ../covers/renders/{slug}.png
-  return `../covers/renders/${slug}.png`;
+  // app/index.html is the host page; covers live at ../covers/renders/{slug}.jpg
+  // (JPEG: covers/tools/compress-covers.py produces these from the master
+  // PNG tree at /Users/yoseph/rsvp-reader/covers/renders/, which is the
+  // source of truth and stays at full resolution.)
+  return `../covers/renders/${slug}.jpg`;
 }
 
 // Caches one IO per scrollable root. The same root can be passed in many times.
